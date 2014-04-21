@@ -1,0 +1,9 @@
+/bootstrap/compiled.php
+/vendor
+/workbench
+/public/vendor
+composer.phar
+composer.json
+composer.lock
+.DS_Store
+._**

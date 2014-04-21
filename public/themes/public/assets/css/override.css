@@ -1,0 +1,26 @@
+/* Override value of -
+/public/packages/select2/select2.css
+-------------------------------------------------- */
+
+.select2-container-multi .select2-choices {
+    border: none;
+	background-image:none;
+	background-color:transparent !important;
+	margin-top:-4px;
+}
+
+/* Override value of -
+/public/packages/bootstrap/css/bootstrap.css
+-------------------------------------------------- */
+.nav-tabs {
+  margin-bottom: 20px;
+}
+
+.control-label{
+	width: 100%;
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+  margin-top:  10px;
+}

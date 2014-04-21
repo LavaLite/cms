@@ -1,0 +1,28 @@
+
+{
+  "name": "LavaLite",
+  "version": "1.2.0",
+  "main": "",
+  "ignore": [
+  ".jshintrc",
+  "**/*.txt"
+  ],
+  "dependencies": {
+    "jquery": "2.1.*",
+    "bootstrap": "3.1.*",
+    "font-awesome":"*",
+    "bootstrap-datetimepicker": "*",
+    "bootstrap-switch": "v2.0.*",
+    "dropzone":"v3.8.*",
+    "chosen":"v1.1.*",
+    "animate.css":"v3.1.*",
+    "modernizr":"*",
+    "chartjs":"*",
+    "jquery.ui":"*",
+    "ezdz":"*",
+    "bootswatch":"*",
+    "summernote":"*",
+    "underscore":"*",
+    "bootstrap-arabic":"*"
+    }
+}
