@@ -1,6 +1,6 @@
 {
     "name": "lavalite/cms",
-    "description": "The lavalite CMS framework.",
+    "description": "Multilingual CMS based on Laravel 4.1 & Bootstrap 3.1",
     "keywords": ["lavalite", "framework", "core", "laravel"],
     "require": {
         "laravel/framework": "4.1.*",
