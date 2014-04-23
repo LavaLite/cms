@@ -18,12 +18,12 @@
         "mews/captcha": "dev-master",
         "rtconner/laravel-tagging": "dev-master",
         
-        "lavalite/core": "dev-master",
-        "lavalite/file": "dev-master",
-        "lavalite/menu": "dev-master",
-        "lavalite/translatable": "dev-master",
-        "lavalite/page": "dev-master",
-        "lavalite/image": "dev-master"
+        "lavalite/core": "v1.1",
+        "lavalite/file": "v1.1",
+        "lavalite/menu": "v1.1",
+        "lavalite/translatable": "v1.1",
+        "lavalite/page": "v1.1",
+        "lavalite/image": "v1.1"
        
     },
 
