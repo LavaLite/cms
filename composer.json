@@ -16,9 +16,8 @@
 
         "cviebrock/eloquent-sluggable": "dev-master",
         "mews/captcha": "dev-master",
-        "rtconner/laravel-tagging": "dev-master",
+        "rtconner/laravel-tagging": "dev-master"
         
-        "lavalite/cms": "dev-master"
     },
 
     "autoload": {
