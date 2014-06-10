@@ -12,13 +12,13 @@ return array(
 	*/
 
 	"change_password" 			=> "Change Password",
-	
+
 	"my_account" 				=> "My Account",
 	"my_profile" 				=> "My Profile",
-	"users"     					=> "Users",
-	"profile"     					=> "Profile",
-	"groups"    				=> "Groups",
+	"user"     					=> "Users",
+	"profile"     				=> "Profile",
+	"group"    					=> "Groups",
 	"change_language"    		=> "Change Language",
 	"change_password"    		=> "Change Password",
-
+	"clearcache"				=> "Clear cache",
 );

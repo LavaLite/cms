@@ -6,18 +6,19 @@
         "laravel/framework": "4.1.*",
         "cartalyst/sentry": "dev-master",
         "anahkiasen/former": "dev-master",
-        "laravelbook/ardent": "dev-master",
         "teepluss/theme": "dev-master",
         "intervention/imagecache": "dev-master",
         "venturecraft/revisionable": "dev-master",
         "philf/setting": "dev-master",
         "mcamara/laravel-localization": "0.13.*",
         "nwidart/db-exporter": "dev-master",
-
-        "cviebrock/eloquent-sluggable": "dev-master",
-        "mews/captcha": "dev-master",
-        "rtconner/laravel-tagging": "dev-master"
-        
+        "dimsav/laravel-translatable": "3.*",
+        "greggilbert/recaptcha": "dev-master",
+        "loic-sharma/profiler": "1.1.*",
+        "anouar/paypalpayment": "dev-master",
+        "lavalite/page": "dev-master",
+        "lavalite/user": "dev-master",
+        "lavalite/menu": "dev-master"
     },
 
     "autoload": {
@@ -25,11 +26,13 @@
             "app/commands",
             "app/controllers",
             "app/models",
+            "workbench",
             "app/database/migrations",
             "app/database/seeds",
             "app/tests/TestCase.php"
         ]
     },
+
     "scripts": {
         "post-install-cmd": [
             "php artisan optimize"

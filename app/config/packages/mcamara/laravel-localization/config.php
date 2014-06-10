@@ -318,6 +318,6 @@ return array(
 
 	// If LaravelLocalizationRedirectFilter is active and hideDefaultLocaleInURL
 	// is true, the url would not have the default application language
-	'hideDefaultLocaleInURL' => false,
+	'hideDefaultLocaleInURL' => true,
 
 );

@@ -23,6 +23,9 @@
     "bootswatch":"*",
     "summernote":"*",
     "underscore":"*",
-    "bootstrap-arabic":"*"
+    "bootstrap-arabic":"*",
+    "ihover":"*",
+    "CaptionHoverEffects":"*",
+    "selectize":"*"
     }
 }
