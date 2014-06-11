@@ -13,7 +13,7 @@ body {
   height: auto !important;
   height: 100%;
   /* Negative indent footer by its height */
-  margin: 0 auto 0px;
+  margin: 0 auto -40px;
   /* Pad bottom by footer height */
   padding-top:70px;
 }
@@ -67,96 +67,5 @@ code {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
-
-.paddingimg{
-  padding:5px;
-  margin:10px;
-}
-
-
-/*      view mask               */
-
-
-.contents{
-
-     padding-bottom:15px;   
-
-}
-
-.article{
-
-    background: white;
-    border: 1px solid #39B3D7;
-    overflow: hidden;
-    width:245px;
-    margin-bottom:25px;
-    margin-top:10px;
-}
-
-.featureds {
-
-    margin-bottom: 20px;
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-top: 0px;
-    text-align: center;
-
-}
-
-.article .mosaic-block {
-
-    height: 200px;
-    position: relative;
-}
-
- .mosaic-block a {
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    position: absolute;
-    text-indent: -9999px;
-    background-position: 20% 30%;
-}
-.article .desc1 {
-  background-color: white;
-  color: #858585;
-  text-align:left;
-  height:60px;
-  margin-top:5px;
-
-}
-
-.box{
-
-    background: white;
-    border: 1px solid #BF3E11;;
-    overflow: hidden;
-    width:230px;
-    margin-bottom:25px;
-    margin-top:10px;
-}
-
-.box:hover{
-
-   cursor: pointer; cursor: hand;
-}
-
-#play {
-    background: url('../../../admin/assets/image/defa.png') center center no-repeat;
-    background-color:black;opacity:0.5;
-    margin: -240px 10px 0 0;
-    height: 240px;
-    width: 240px;
-    position: relative;
-    z-index: 10;
-}
-
-.order-details{
-
-  padding-top: 15px;
 }
 

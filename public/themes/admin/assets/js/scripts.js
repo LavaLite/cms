@@ -35,7 +35,7 @@ jQuery(function( $ ) {
 
 	$('.image-up').ezdz({
 		text: 'Drop a picture',
-		/*validators: {
+		validators: {
 			maxWidth:  900,
 			maxHeight: 900,
 			maxSize: 1000000
@@ -52,7 +52,6 @@ jQuery(function( $ ) {
 			if (errors.maxHeight) {
 				alert(file.name + ' must be height:900px max.');
 			}
-		}*/
+		}
 	});	
-	
 });

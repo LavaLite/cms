@@ -10,12 +10,12 @@
 </head>
 <body dir='{{ Localization::getCurrentLocaleDirection() }}'>
 	{{ Theme::partial('menu') }}
-	<div class="container" id="wrap">
+	<div class="container" id="wrap" style='max-width:1170px'>
 		<div class="row">
 			<div class="col-md-12">
-				{{ Theme::content() }}
+				{{ Theme::content() }} 
 			</div>
-
+			
 		</div>
 	</div>
 	{{ Theme::partial('footer') }}

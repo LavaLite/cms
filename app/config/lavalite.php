@@ -25,15 +25,10 @@ return array(
 						'layout' 	=> 'default',
 						),
 
-	'packages'	=> array(
-						'user' 			=> true,
-						'page' 			=> true,
-						'menu' 			=> true,
-						'catalogue' 	=> true,
+	'packags'	=> array(
+						'core' 	=> true,
+						'page' 	=> true,
+						'menu' 	=> true,
 						),
-
-	'usertypes'	=> ['admin', 'superuser', 'user', 'developer'],
-
-	'caching'	=> true,
 
 );

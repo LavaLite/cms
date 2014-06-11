@@ -108,18 +108,10 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Lavalite\Core\CoreServiceProvider',
 		'Lavalite\Menu\MenuServiceProvider',
 		'Lavalite\Page\PageServiceProvider',
-		'Lavalite\LFile\LFileServiceProvider',
-		'Lavalite\ImageResize\ImageResizeServiceProvider',
-		'Lavalite\Product\ProductServiceProvider',
-		'Lavalite\Catalogue\CatalogueServiceProvider',
-//		'Lavalite\ContactForm\ContactFormServiceProvider',
-		'Lavalite\User\UserServiceProvider',
-		'Lavalite\Cart\CartServiceProvider',
-		'Lavalite\Shop\ShopServiceProvider',
-		'Lavalite\Slider\SliderServiceProvider',
-		'Lavalite\Gallery\GalleryServiceProvider',
+		'Lavalite\File\FileServiceProvider',
 
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Former\FormerServiceProvider',
@@ -127,10 +119,9 @@ return array(
 		'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Philf\Setting\SettingServiceProvider',
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		'Nwidart\DbExporter\DbExportHandlerServiceProvider',
-		'Greggilbert\Recaptcha\RecaptchaServiceProvider',
-		'Profiler\ProfilerServiceProvider',
-		'Anouar\Paypalpayment\PaypalpaymentServiceProvider',
+
 	),
 
 	/*
@@ -196,7 +187,6 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Paypalpayment'   => 'Anouar\Paypalpayment\Facades\PaypalPayment',
 
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Former'          => 'Former\Facades\Former',
@@ -208,10 +198,7 @@ return array(
 
 		'Menu'  		  => 'Lavalite\Menu\Facades\Menu',
 		'Page'  		  => 'Lavalite\Page\Facades\Page',
-		'LFile'  		  => 'Lavalite\LFile\Facades\LFile',
-		'Catalogue'  	  => 'Lavalite\Catalogue\Facades\Catalogue',
-		'Cart'  	  	  => 'Lavalite\Cart\Facades\Cart',
-		'Shop'  	  	  => 'Lavalite\Shop\Facades\Shop',
+		'LFile'  		  => 'Lavalite\File\Facades\LFile',
 
 	),
 
