@@ -8,3 +8,4 @@ composer.phar
 composer.lock
 .DS_Store
 ._**
+public/themes/admin/assets/image/defa.png
