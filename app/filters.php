@@ -37,15 +37,23 @@ Route::filter('auth', function()
 	if (Auth::guest()) return Redirect::guest('login');
 });
 
-
+//Basic auth filer
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
 });
 
+// Admin filter
 Route::filter('auth.admin', function()
 {
 	if (!is_object(\Sentry::getUser()) || !\Sentry::getUser()->hasAccess('admin')) return Redirect::guest('admin/login');
+});
+
+
+//User filter
+Route::filter('auth.user', function()
+{
+	if (!is_object(\Sentry::getUser()) || !\Sentry::getUser()->hasAccess('user')) return Redirect::guest('login');
 });
 
 /*
@@ -81,4 +89,27 @@ Route::filter('csrf', function()
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
+});
+
+/*
+|--------------------------------------------------------------------------
+| Cache Management Filter
+|--------------------------------------------------------------------------
+|
+| The Cache filter manages the all the
+| route caches for increasing the speed of the website.
+|
+*/
+
+Route::filter('cache', function($route, $request, $response = null)
+{
+    $key = 'route-'.Str::slug(Request::url());
+    if(is_null($response) && Cache::has($key))
+    {
+        return Cache::get($key);
+    }
+    elseif(!is_null($response) && !Cache::has($key))
+    {
+        Cache::put($key, $response->getContent(), 60*48);
+    }
 });

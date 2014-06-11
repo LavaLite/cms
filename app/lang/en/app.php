@@ -11,7 +11,7 @@ return array(
 	|
 	*/
 
-	
+
 	"name" 			=> "Lava Lite1",
 	"admin_panel"   => "Admin Panel",
 	"all_rights"    => "All rights reserved",
@@ -36,6 +36,12 @@ return array(
 	"status"     	=> "Status",
 	"update"    	=> "Update",
 	"view"    		=> "View",
+	"more"    		=> "More",
+
+	"flashsuccess"  => "Success",
+	"flasherror"    => "Error",
+	"flashwarning"  => "Warning",
+	"flashinfo"    	=> "Info",
 
 
 );

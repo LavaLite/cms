@@ -1,48 +1,74 @@
 <?php
 
-use Former, Theme, Config;
 
-class userController extends BaseController {
+class UserController extends BaseController {
 
+    protected $session;
 
-	/**
-	 * Theme instance.
-	 *
-	 * @var \Teepluss\Theme\Theme
-	 */
-	protected $theme 	= 'user';
+    public function __construct()
+    {
+        $this->session = App::make('Lavalite\User\Interfaces\SessionInterface');
+        $this->setupTheme('public', 'default');
 
+    }
 
-	/**
-	 * Layout instance.
-	 *
-	 * @var \Teepluss\Layout\Layout
-	 */
-	protected $layout 	= 'default';
+    /**
+     * Show the login form
+     */
+    public function login()
+    {
+        return $this->theme->of('user.login')->render();
+    }
 
-	/**
-	 * Model instance.
-	 *
-	 * @var \Menu\Model\Menu
-	 */
-	protected $model;
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function postLogin()
+    {
 
-	public function setupTheme() {
+        $input = Input::all();
 
-		if ( ! is_null($this->theme))
-		{
-			$this->theme = Config::get('lavalite.user.theme');
-		}
-		
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = Config::get('lavalite.user.layout');
-		}
-		
-		$this->theme = Theme::uses($this->theme)->layout($this->layout); 
-		
-		Former::framework('TwitterBootstrap3');
-		Former::config('fetch_errors', true);
-	}
+        $result = $this->session->store($input);
 
+        if ($result['success']) {
+
+           // Success!
+            $path = Session::get('url.intended', '/admin');
+            Session::forget('url.intended');
+            return Redirect::to($path);
+
+        } else {
+            Session::flash('error', $result['message']);
+
+            return Redirect::to('login')->withErrors($result['errors'])->withInput();
+        }
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int      $id
+     * @return Response
+     */
+    public function logout()
+    {
+        $this->session->destroy();
+        Event::fire('user.logout');
+
+        return Redirect::to('/admin');
+    }
+
+    public function showIndex()
+    {
+        $data['page'] = Page::getPage('home');
+        $this->theme->layout('home');
+        $this -> theme -> setTitle($data['page'] -> title);
+        $this -> theme -> setKeywords($data['page'] -> keyword);
+        $this -> theme -> setDescription($data['page'] -> description);
+
+        return $this->theme->of('user.home', $data)->render();
+    }
 }
