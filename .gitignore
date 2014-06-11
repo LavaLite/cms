@@ -2,8 +2,10 @@
 /vendor
 /workbench
 /public/vendor
+/public/packages
 composer.json
 composer.phar
 composer.lock
 .DS_Store
 ._**
+public/themes/admin/assets/image/defa.png
