@@ -120,6 +120,7 @@ return array(
 		'Lavalite\Shop\ShopServiceProvider',
 		'Lavalite\Slider\SliderServiceProvider',
 		'Lavalite\Gallery\GalleryServiceProvider',
+		'Lavalite\Contact\ContactServiceProvider',
 
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Former\FormerServiceProvider',
@@ -212,6 +213,8 @@ return array(
 		'Catalogue'  	  => 'Lavalite\Catalogue\Facades\Catalogue',
 		'Cart'  	  	  => 'Lavalite\Cart\Facades\Cart',
 		'Shop'  	  	  => 'Lavalite\Shop\Facades\Shop',
+		'Slider'  	  	  => 'Lavalite\Slider\Facades\Slider',
+		'SliderLang'      => 'Lavalite\Slider\Facades\SliderLang',
 
 	),
 

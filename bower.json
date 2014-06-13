@@ -26,6 +26,8 @@
     "bootstrap-arabic":"*",
     "ihover":"*",
     "CaptionHoverEffects":"*",
-    "selectize":"*"
+    "selectize":"*",
+    "nivo-slider":"*",
+    "yamm3":"*"
     }
 }
