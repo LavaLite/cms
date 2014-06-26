@@ -24,11 +24,20 @@
 
 =======
         "anouar/paypalpayment": "dev-master",
+<<<<<<< HEAD
         "lavalite/user": "dev-master",
         "lavalite/page": "dev-master",
         "lavalite/menu": "dev-master",
         "lavalite/filer": "dev-master",
         "lavalite/image": "dev-master"
+>>>>>>> dev
+=======
+
+        "lavalite/user": "2.*",
+        "lavalite/page": "2.*",
+        "lavalite/menu": "2.*",
+        "lavalite/filer": "2.*",
+        "lavalite/image": "2.*"
 >>>>>>> dev
     },
 
