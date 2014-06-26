@@ -108,27 +108,13 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Lavalite\User\UserServiceProvider',
 		'Lavalite\Menu\MenuServiceProvider',
 		'Lavalite\Page\PageServiceProvider',
-<<<<<<< HEAD
-		'Lavalite\LFile\LFileServiceProvider',
-=======
 		'Lavalite\Filer\FilerServiceProvider',
->>>>>>> dev
-		'Lavalite\ImageResize\ImageResizeServiceProvider',
-		'Lavalite\Product\ProductServiceProvider',
-		'Lavalite\Catalogue\CatalogueServiceProvider',
-//		'Lavalite\ContactForm\ContactFormServiceProvider',
-		'Lavalite\User\UserServiceProvider',
-		'Lavalite\Cart\CartServiceProvider',
-		'Lavalite\Shop\ShopServiceProvider',
-		'Lavalite\Slider\SliderServiceProvider',
-		'Lavalite\Gallery\GalleryServiceProvider',
-<<<<<<< HEAD
-=======
-		'Lavalite\Contact\ContactServiceProvider',
->>>>>>> dev
+		'Lavalite\Image\ImageServiceProvider',
 
+		
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Former\FormerServiceProvider',
 		'Teepluss\Theme\ThemeServiceProvider',
@@ -138,7 +124,6 @@ return array(
 		'Nwidart\DbExporter\DbExportHandlerServiceProvider',
 		'Greggilbert\Recaptcha\RecaptchaServiceProvider',
 		'Profiler\ProfilerServiceProvider',
-		'Anouar\Paypalpayment\PaypalpaymentServiceProvider',
 	),
 
 	/*
@@ -204,7 +189,6 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Paypalpayment'   => 'Anouar\Paypalpayment\Facades\PaypalPayment',
 
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Former'          => 'Former\Facades\Former',
@@ -214,21 +198,10 @@ return array(
 		'Setting'     	  => 'Philf\Setting\Facades\Setting',
 		'Sluggable' 	  => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
 
-		'Menu'  		  => 'Lavalite\Menu\Facades\Menu',
-		'Page'  		  => 'Lavalite\Page\Facades\Page',
-<<<<<<< HEAD
-		'LFile'  		  => 'Lavalite\LFile\Facades\LFile',
-		'Catalogue'  	  => 'Lavalite\Catalogue\Facades\Catalogue',
-		'Cart'  	  	  => 'Lavalite\Cart\Facades\Cart',
-		'Shop'  	  	  => 'Lavalite\Shop\Facades\Shop',
-=======
-		'Filer'  		  => 'Lavalite\Filer\Facades\Filer',
-		'Catalogue'  	  => 'Lavalite\Catalogue\Facades\Catalogue',
-		'Cart'  	  	  => 'Lavalite\Cart\Facades\Cart',
-		'Shop'  	  	  => 'Lavalite\Shop\Facades\Shop',
-		'Slider'  	  	  => 'Lavalite\Slider\Facades\Slider',
-		'SliderLang'      => 'Lavalite\Slider\Facades\SliderLang',
->>>>>>> dev
+		'Menu'  	  => 'Lavalite\Menu\Facades\Menu',
+		'Page'  	  => 'Lavalite\Page\Facades\Page',
+		'Filer'  	  => 'Lavalite\Filer\Facades\Filer',
+		'Image'  	  => 'Lavalite\Image\Facades\Image',
 
 	),
 
