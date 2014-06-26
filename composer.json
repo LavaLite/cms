@@ -12,6 +12,7 @@
         "philf/setting": "dev-master",
         "mcamara/laravel-localization": "0.13.*",
         "nwidart/db-exporter": "dev-master",
+<<<<<<< HEAD
         "dimsav/laravel-translatable": "3.*",
         "greggilbert/recaptcha": "dev-master",
         "loic-sharma/profiler": "1.1.*",
@@ -19,6 +20,20 @@
         "lavalite/page": "dev-master",
         "lavalite/user": "dev-master",
         "lavalite/menu": "dev-master"
+=======
+
+        "cviebrock/eloquent-sluggable": "dev-master",
+        "mews/captcha": "dev-master",
+        "rtconner/laravel-tagging": "dev-master",
+        
+        "lavalite/core": "v1.1",
+        "lavalite/file": "v1.1",
+        "lavalite/menu": "v1.1",
+        "lavalite/translatable": "v1.1",
+        "lavalite/page": "v1.1",
+        "lavalite/image": "v1.1"
+       
+>>>>>>> FETCH_HEAD
     },
 
     "autoload": {
