@@ -1,7 +1,7 @@
 {
     "name": "lavalite/cms",
-    "description": "Multilingual CMS based on Laravel 4.1 & Bootstrap 3.1",
-    "keywords": ["lavalite", "framework", "core", "laravel"],
+    "description": "Multilingual CMS based on Laravel 4 & Bootstrap 3",
+    "keywords": ["lavalite", "framework", "cms", "laravel"],
     "require": {
         "laravel/framework": "4.1.*",
         "cartalyst/sentry": "dev-master",
@@ -16,9 +16,11 @@
         "greggilbert/recaptcha": "dev-master",
         "loic-sharma/profiler": "1.1.*",
         "anouar/paypalpayment": "dev-master",
-        "lavalite/page": "dev-master",
         "lavalite/user": "dev-master",
-        "lavalite/menu": "dev-master"
+        "lavalite/page": "dev-master",
+        "lavalite/menu": "dev-master",
+        "lavalite/filer": "dev-master",
+        "lavalite/image": "dev-master"
     },
 
     "autoload": {
@@ -26,7 +28,6 @@
             "app/commands",
             "app/controllers",
             "app/models",
-            "workbench",
             "app/database/migrations",
             "app/database/seeds",
             "app/tests/TestCase.php"
@@ -50,5 +51,5 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
