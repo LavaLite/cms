@@ -14,7 +14,6 @@
         "dimsav/laravel-translatable": "3.*",
         "greggilbert/recaptcha": "dev-master",
         "loic-sharma/profiler": "1.1.*",
-<<<<<<< HEAD
 
         "lavalite/user": "2.*",
         "lavalite/page": "2.*",
@@ -22,23 +21,6 @@
         "lavalite/filer": "2.*",
         "lavalite/image": "2.*"
 
-=======
-        "anouar/paypalpayment": "dev-master",
-<<<<<<< HEAD
-        "lavalite/user": "dev-master",
-        "lavalite/page": "dev-master",
-        "lavalite/menu": "dev-master",
-        "lavalite/filer": "dev-master",
-        "lavalite/image": "dev-master"
->>>>>>> dev
-=======
-
-        "lavalite/user": "2.*",
-        "lavalite/page": "2.*",
-        "lavalite/menu": "2.*",
-        "lavalite/filer": "2.*",
-        "lavalite/image": "2.*"
->>>>>>> dev
     },
 
     "autoload": {
