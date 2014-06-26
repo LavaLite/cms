@@ -12,15 +12,24 @@
   {{ Theme::asset()->styles() }}
   {{ Theme::asset()->scripts() }}
   <script type="text/javascript">
+<<<<<<< HEAD
     $(window).load(function() 
       {     $('#slider').nivoSlider({effect:'sliceDownLeft',
         directionNavHide:false,
         prevText: 'Prev',  
         nextText: 'Next', 
+=======
+    $(window).load(function()
+      {     $('#slider').nivoSlider({effect:'sliceDownLeft',
+        directionNavHide:false,
+        prevText: 'Prev',
+        nextText: 'Next',
+>>>>>>> dev
       });  });
   </script>
 </head>
 <body  dir='{{ Localization::getCurrentLocaleDirection() }}'>
+<<<<<<< HEAD
  <div class="container"> 
    {{ Theme::partial('header') }}
    @include('user.partials.slider')
@@ -38,6 +47,14 @@
   {{ Theme::partial('footer') }}
 </div> <!-- /container -->
 {{ Theme::asset()->container('footer')->scripts() }}
+=======
+ <div class="container">
+    {{ Theme::partial('header') }}
+    {{ Theme::content() }}
+    {{ Theme::partial('footer') }}
+  </div> <!-- /container -->
+  {{ Theme::asset()->container('footer')->scripts() }}
+>>>>>>> dev
 </body>
 </html>
 

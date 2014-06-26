@@ -1,5 +1,6 @@
 
 jQuery(function( $ ) {
+<<<<<<< HEAD
 	$('.date-picker').datetimepicker({
 		pickTime: false,
 		format: "yyyy-MM-dd",
@@ -55,4 +56,8 @@ jQuery(function( $ ) {
 		}
 	});	
 	
+=======
+
+
+>>>>>>> dev
 });

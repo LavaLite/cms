@@ -110,7 +110,11 @@ return array(
 
 		'Lavalite\Menu\MenuServiceProvider',
 		'Lavalite\Page\PageServiceProvider',
+<<<<<<< HEAD
 		'Lavalite\LFile\LFileServiceProvider',
+=======
+		'Lavalite\Filer\FilerServiceProvider',
+>>>>>>> dev
 		'Lavalite\ImageResize\ImageResizeServiceProvider',
 		'Lavalite\Product\ProductServiceProvider',
 		'Lavalite\Catalogue\CatalogueServiceProvider',
@@ -120,6 +124,10 @@ return array(
 		'Lavalite\Shop\ShopServiceProvider',
 		'Lavalite\Slider\SliderServiceProvider',
 		'Lavalite\Gallery\GalleryServiceProvider',
+<<<<<<< HEAD
+=======
+		'Lavalite\Contact\ContactServiceProvider',
+>>>>>>> dev
 
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Former\FormerServiceProvider',
@@ -208,10 +216,19 @@ return array(
 
 		'Menu'  		  => 'Lavalite\Menu\Facades\Menu',
 		'Page'  		  => 'Lavalite\Page\Facades\Page',
+<<<<<<< HEAD
 		'LFile'  		  => 'Lavalite\LFile\Facades\LFile',
 		'Catalogue'  	  => 'Lavalite\Catalogue\Facades\Catalogue',
 		'Cart'  	  	  => 'Lavalite\Cart\Facades\Cart',
 		'Shop'  	  	  => 'Lavalite\Shop\Facades\Shop',
+=======
+		'Filer'  		  => 'Lavalite\Filer\Facades\Filer',
+		'Catalogue'  	  => 'Lavalite\Catalogue\Facades\Catalogue',
+		'Cart'  	  	  => 'Lavalite\Cart\Facades\Cart',
+		'Shop'  	  	  => 'Lavalite\Shop\Facades\Shop',
+		'Slider'  	  	  => 'Lavalite\Slider\Facades\Slider',
+		'SliderLang'      => 'Lavalite\Slider\Facades\SliderLang',
+>>>>>>> dev
 
 	),
 

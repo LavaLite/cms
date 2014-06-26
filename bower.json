@@ -26,6 +26,12 @@
     "bootstrap-arabic":"*",
     "ihover":"*",
     "CaptionHoverEffects":"*",
+<<<<<<< HEAD
     "selectize":"*"
+=======
+    "selectize":"*",
+    "nivo-slider":"*",
+    "yamm3":"*"
+>>>>>>> dev
     }
 }

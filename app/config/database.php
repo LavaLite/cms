@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'lavalite',
 			'username'  => 'root',
-			'password'  => '123',
+			'password'  => 'renfos',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
