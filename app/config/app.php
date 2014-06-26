@@ -110,7 +110,7 @@ return array(
 
 		'Lavalite\Menu\MenuServiceProvider',
 		'Lavalite\Page\PageServiceProvider',
-		'Lavalite\LFile\LFileServiceProvider',
+		'Lavalite\Filer\FilerServiceProvider',
 		'Lavalite\ImageResize\ImageResizeServiceProvider',
 		'Lavalite\Product\ProductServiceProvider',
 		'Lavalite\Catalogue\CatalogueServiceProvider',
@@ -209,7 +209,7 @@ return array(
 
 		'Menu'  		  => 'Lavalite\Menu\Facades\Menu',
 		'Page'  		  => 'Lavalite\Page\Facades\Page',
-		'LFile'  		  => 'Lavalite\LFile\Facades\LFile',
+		'Filer'  		  => 'Lavalite\Filer\Facades\Filer',
 		'Catalogue'  	  => 'Lavalite\Catalogue\Facades\Catalogue',
 		'Cart'  	  	  => 'Lavalite\Cart\Facades\Cart',
 		'Shop'  	  	  => 'Lavalite\Shop\Facades\Shop',
