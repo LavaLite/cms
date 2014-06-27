@@ -10,7 +10,6 @@ Lavalitw was designed to run on a  machine with PHP 5.5 and MySQL 5.5.
 
 * PHP 5.4.7+.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Lavalite.
-* You will need to configure the site in the app/config folder before production.
 * You will need [bower](http://bower.io/) for installing javascript libraries.
 
 ## Installation
@@ -26,7 +25,8 @@ Please check the system requirements before installing Lavalite.
 5. Run `php artisan migrate` to setup your database.
 6. Run `php artisan db:seed --class=LavaliteTableSeeder` to seed your database.
 7. You will need to enter your mail server details into `app/config/mail.php`.
-8. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
+8. You will need to configure the site in the app/config folder before production.
+9. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
 
 ####Permissions
