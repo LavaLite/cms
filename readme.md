@@ -19,8 +19,8 @@ Please check the system requirements before installing Lavalite.
 
 1. You may install by cloning from github, or via composer.
   * Github: `git clone git@github.com:LavaLite/cms.git`
+    * From a command line open in the folder, run `composer install`.
   * Composer: `composer create-project LavaLite/cms --prefer-dist -s dev`
-2. From a command line open in the folder, run `composer install`.
 3. Then, run `bower install` to install javascript libraries.
 4. Enter your database details into `app/config/databse.php`.
 5. Run `php artisan migrate` to setup your database.
@@ -39,7 +39,7 @@ Please check the system requirements before installing Lavalite.
 * [teepluss/theme](https://github.com/teepluss/laravel4-theme) - Theme and asset managing for laravel 4
 * [mcamara/laravel-localization](https://github.com/mcamara/laravel-localization) - laravel routes management for language
 * [intervention/imagecache](https://github.com/Intervention/imagecache) - Caching extension for the Intervention [Image Class](https://github.com/Intervention/image)
-* [philf/setting](https://packagist.org/packages/philf/setting‎) - Persistent configuration settings for Laravel
+* [dimsav/laravel-translatable](https://github.com/dimsav/laravel-translatable) - A Laravel package for multilingual models
 
 
 #### Javascript Libraries
