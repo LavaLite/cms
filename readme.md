@@ -29,6 +29,11 @@ Please check the system requirements before installing Lavalite.
 8. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
 
+####Permissions
+Lavalite may require one set of permissions to be configured: folders within app/storage require write access by the web server.
+
+####Paths
+Several of the framework directory paths are configurable. To change the location of these directories, check out the bootstrap/paths.php file.
 
 ##Frameworks/Libraries
 
