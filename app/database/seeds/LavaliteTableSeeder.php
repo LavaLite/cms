@@ -3,9 +3,7 @@
 class LavaliteTableSeeder extends Seeder {
     public function run()
     {
-        DB::table('files')->insert(
 
-        );
         DB::table('groups')->insert(array(
 
             array(
@@ -192,7 +190,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 1,
                 'order' => 1,
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-08 18:29:11',
                 'updated_at' => '2014-04-12 11:52:00',
             ),
@@ -207,7 +205,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 1,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-08 18:29:27',
                 'updated_at' => '2014-04-12 11:52:20',
             ),
@@ -222,7 +220,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 1,
                 'order' => 2,
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-08 19:12:18',
                 'updated_at' => '2014-04-12 11:52:31',
             ),
@@ -237,7 +235,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 1,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-08 19:45:13',
                 'updated_at' => '2014-06-09 05:22:42',
             ),
@@ -252,7 +250,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-08 21:15:44',
                 'updated_at' => '2014-04-16 11:04:45',
             ),
@@ -267,7 +265,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-08 15:45:44',
                 'updated_at' => '2014-04-12 11:50:37',
             ),
@@ -282,7 +280,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-11 13:17:26',
                 'updated_at' => '2014-04-12 11:53:19',
             ),
@@ -297,7 +295,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-11 13:17:55',
                 'updated_at' => '2014-04-12 11:53:34',
             ),
@@ -312,7 +310,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-11 13:18:16',
                 'updated_at' => '2014-04-12 11:53:53',
             ),
@@ -408,7 +406,7 @@ class LavaliteTableSeeder extends Seeder {
                 'order' => 0,
                 'banner' => '',
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-06 23:19:57',
                 'updated_at' => '2014-05-29 07:27:50',
             ),
@@ -420,7 +418,7 @@ class LavaliteTableSeeder extends Seeder {
                 'order' => 0,
                 'banner' => '',
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-06 23:20:20',
                 'updated_at' => '2014-04-21 10:47:25',
             ),
@@ -432,7 +430,7 @@ class LavaliteTableSeeder extends Seeder {
                 'order' => 0,
                 'banner' => '',
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-08 01:06:11',
                 'updated_at' => '2014-04-21 10:38:16',
             ),
@@ -444,14 +442,13 @@ class LavaliteTableSeeder extends Seeder {
                 'order' => 0,
                 'banner' => '',
                 'status' => 1,
-                'deleted_at' => '',
+
                 'created_at' => '2014-04-21 10:38:28',
                 'updated_at' => '2014-04-21 10:38:28',
             ),
 
-        ));DB::table('throttle')->insert(
+        ));
 
-        );
         DB::table('users')->insert(array(
 
             array(
@@ -483,7 +480,7 @@ class LavaliteTableSeeder extends Seeder {
                 'twitter' => '',
                 'google_plus' => '',
                 'linkedin' => '',
-                'deleted_at' => '',
+
                 'created_at' => '2014-05-12 10:33:41',
                 'updated_at' => '2014-06-28 08:57:03',
             ),
@@ -517,7 +514,7 @@ class LavaliteTableSeeder extends Seeder {
                 'twitter' => '',
                 'google_plus' => '',
                 'linkedin' => '',
-                'deleted_at' => '',
+
                 'created_at' => '2014-05-12 10:33:42',
                 'updated_at' => '2014-06-28 10:00:30',
             ),
@@ -551,7 +548,7 @@ class LavaliteTableSeeder extends Seeder {
                 'twitter' => '',
                 'google_plus' => '',
                 'linkedin' => '',
-                'deleted_at' => '',
+
                 'created_at' => '2014-05-12 10:33:42',
                 'updated_at' => '2014-05-27 12:43:48',
             ),

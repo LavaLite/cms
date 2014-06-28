@@ -40,7 +40,6 @@ class CreateLavaliteDatabase extends Migration {
              * Table: groups
              */
             Schema::create('groups', function($table) {
-                $table->index('groups_name_unique');
                 $table->increments('id')->unsigned();
                 $table->string('name', 255);
                 $table->text('permissions')->nullable();
@@ -117,7 +116,6 @@ class CreateLavaliteDatabase extends Migration {
              * Table: throttle
              */
             Schema::create('throttle', function($table) {
-                $table->index('throttle_user_id_index');
                 $table->increments('id')->unsigned();
                 $table->integer('user_id')->unsigned();
                 $table->string('ip_address', 255)->nullable();
@@ -134,9 +132,6 @@ class CreateLavaliteDatabase extends Migration {
              * Table: users
              */
             Schema::create('users', function($table) {
-                $table->index('users_email_unique');
-                $table->index('users_activation_code_index');
-                $table->index('users_reset_password_code_index');
                 $table->increments('id')->unsigned();
                 $table->string('email', 255);
                 $table->string('password', 255);
@@ -175,8 +170,8 @@ class CreateLavaliteDatabase extends Migration {
              * Table: users_groups
              */
             Schema::create('users_groups', function($table) {
-                $table->increments('user_id')->unsigned();
-                $table->increments('group_id')->unsigned();
+                $table->integer('user_id')->unsigned();
+                $table->integer('group_id')->unsigned();
             });
 
 
