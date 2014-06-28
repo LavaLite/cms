@@ -1,5 +1,5 @@
 ## Lavalite PHP Framework
-*Version Beta 1 - April 4th 2014*
+*Version Beta 2 - June 28th 2014*
 
 This is an implementation of the backend of lavalite, which can be used for web based application and Content Management System based upon [Laravel 4](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
 
@@ -38,11 +38,14 @@ Several of the framework directory paths are configurable. To change the locatio
 ## Login details
 ###Admin
 Url: sites-public-url/admin
+
 Superuser : superuser@superuser.com - superuser@superuser
+
 Admin : admin@admin.com - admin@admin
 
 ### User
 Url: sites-public-url/user
+
 User: user@user.com - user@user
 
 
