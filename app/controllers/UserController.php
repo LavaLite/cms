@@ -35,7 +35,7 @@ class UserController extends BaseController {
         if ($result['success']) {
 
            // Success!
-            $path = Session::get('url.intended', '/admin');
+            $path = Session::get('url.intended', '/user');
             Session::forget('url.intended');
             return Redirect::to($path);
 
