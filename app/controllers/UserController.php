@@ -61,7 +61,7 @@ class UserController extends BaseController {
         return Redirect::to('/admin');
     }
 
-    public function showIndex()
+    public function showHome()
     {
         $data['page'] = Page::getPage('home');
         $this->theme->layout('home');
