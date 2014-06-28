@@ -49,7 +49,7 @@ class AdminController extends BaseController {
         } else {
             Session::flash('error', $result['message']);
 
-            return Redirect::to('login')->withErrors($result['errors'])->withInput();
+            return Redirect::to('admin/login')->withErrors($result['errors'])->withInput();
         }
 
     }
@@ -65,7 +65,7 @@ class AdminController extends BaseController {
         $this->session->destroy();
         Event::fire('user.logout');
 
-        return Redirect::to('/admin');
+        return Redirect::to('/admin/login');
     }
 
 

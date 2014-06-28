@@ -3,36 +3,38 @@
 class LavaliteTableSeeder extends Seeder {
     public function run()
     {
+        DB::table('files')->insert(
 
+        );
         DB::table('groups')->insert(array(
-                    
+
             array(
                 'id' => 1,
                 'name' => 'Admin',
                 'permissions' => '{"admin":1}',
-                'created_at' => '2013-10-06 06:47:18',
-                'updated_at' => '2014-03-19 03:47:15',
+                'created_at' => '2014-05-12 10:33:41',
+                'updated_at' => '2014-06-28 09:00:12',
             ),
 
             array(
                 'id' => 2,
-                'name' => 'Developer',
-                'permissions' => '{"developer":1}',
-                'created_at' => '2013-11-07 07:19:12',
-                'updated_at' => '2014-01-23 05:51:53',
+                'name' => 'Superuser',
+                'permissions' => '{"superuser":1}',
+                'created_at' => '2014-05-12 10:33:41',
+                'updated_at' => '2014-06-28 09:02:11',
             ),
 
             array(
                 'id' => 3,
                 'name' => 'User',
                 'permissions' => '{"user":1}',
-                'created_at' => '2013-11-09 00:00:00',
-                'updated_at' => '2014-01-23 05:48:15',
+                'created_at' => '2014-05-12 10:33:41',
+                'updated_at' => '2014-05-29 12:16:40',
             ),
 
         ));
         DB::table('menu_langs')->insert(array(
-                    
+
             array(
                 'id' => 1,
                 'menu_id' => 1,
@@ -82,14 +84,6 @@ class LavaliteTableSeeder extends Seeder {
             ),
 
             array(
-                'id' => 7,
-                'menu_id' => 6,
-                'name' => 'Products',
-                'description' => '',
-                'lang' => 'en',
-            ),
-
-            array(
                 'id' => 8,
                 'menu_id' => 3,
                 'name' => 'تذييل',
@@ -122,22 +116,6 @@ class LavaliteTableSeeder extends Seeder {
             ),
 
             array(
-                'id' => 12,
-                'menu_id' => 11,
-                'name' => 'Category',
-                'description' => '',
-                'lang' => 'en',
-            ),
-
-            array(
-                'id' => 13,
-                'menu_id' => 6,
-                'name' => 'نتاج',
-                'description' => '',
-                'lang' => 'ar',
-            ),
-
-            array(
                 'id' => 14,
                 'menu_id' => 4,
                 'name' => 'محتوى',
@@ -157,14 +135,6 @@ class LavaliteTableSeeder extends Seeder {
                 'id' => 16,
                 'menu_id' => 7,
                 'name' => 'قائمة الطعام',
-                'description' => '',
-                'lang' => 'ar',
-            ),
-
-            array(
-                'id' => 17,
-                'menu_id' => 11,
-                'name' => 'فئة',
                 'description' => '',
                 'lang' => 'ar',
             ),
@@ -211,7 +181,7 @@ class LavaliteTableSeeder extends Seeder {
 
         ));
         DB::table('menus')->insert(array(
-                    
+
             array(
                 'id' => 1,
                 'parent_id' => 0,
@@ -222,7 +192,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 1,
                 'order' => 1,
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-08 18:29:11',
                 'updated_at' => '2014-04-12 11:52:00',
             ),
@@ -237,7 +207,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 1,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-08 18:29:27',
                 'updated_at' => '2014-04-12 11:52:20',
             ),
@@ -252,7 +222,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 1,
                 'order' => 2,
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-08 19:12:18',
                 'updated_at' => '2014-04-12 11:52:31',
             ),
@@ -260,16 +230,16 @@ class LavaliteTableSeeder extends Seeder {
             array(
                 'id' => 4,
                 'parent_id' => 1,
-                'key' => 'page',
+                'key' => 'content',
                 'url' => '/admin/page',
                 'icon' => 'fa fa-book',
                 'open' => '',
-                'has_sub' => 0,
+                'has_sub' => 1,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-08 19:45:13',
-                'updated_at' => '2014-04-12 11:49:44',
+                'updated_at' => '2014-06-09 05:22:42',
             ),
 
             array(
@@ -282,24 +252,9 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-08 21:15:44',
                 'updated_at' => '2014-04-16 11:04:45',
-            ),
-
-            array(
-                'id' => 6,
-                'parent_id' => 1,
-                'key' => 'page',
-                'url' => '/admin/product',
-                'icon' => 'fa fa-paperclip',
-                'open' => '',
-                'has_sub' => 0,
-                'order' => 0,
-                'status' => 1,
-                'deleted_at' => NULL,
-                'created_at' => '2014-04-08 14:15:13',
-                'updated_at' => '2014-04-12 11:49:09',
             ),
 
             array(
@@ -312,7 +267,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-08 15:45:44',
                 'updated_at' => '2014-04-12 11:50:37',
             ),
@@ -327,7 +282,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-11 13:17:26',
                 'updated_at' => '2014-04-12 11:53:19',
             ),
@@ -342,7 +297,7 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-11 13:17:55',
                 'updated_at' => '2014-04-12 11:53:34',
             ),
@@ -357,29 +312,14 @@ class LavaliteTableSeeder extends Seeder {
                 'has_sub' => 0,
                 'order' => 0,
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-11 13:18:16',
                 'updated_at' => '2014-04-12 11:53:53',
             ),
 
-            array(
-                'id' => 11,
-                'parent_id' => 6,
-                'key' => '',
-                'url' => '/admin/page',
-                'icon' => '',
-                'open' => '',
-                'has_sub' => 0,
-                'order' => 0,
-                'status' => 1,
-                'deleted_at' => NULL,
-                'created_at' => '2014-04-12 08:25:51',
-                'updated_at' => '2014-04-12 11:51:19',
-            ),
-
         ));
         DB::table('page_langs')->insert(array(
-                    
+
             array(
                 'id' => 1,
                 'page_id' => 1,
@@ -440,7 +380,7 @@ class LavaliteTableSeeder extends Seeder {
                 'title' => '',
                 'keyword' => '',
                 'description' => '',
-                'image' => '',
+                'image' => '/packages/lavalite/page/page/1/image/945817_615402761815172_260216169_n_2.jpg',
                 'abstract' => '',
                 'lang' => 'en',
             ),
@@ -460,17 +400,17 @@ class LavaliteTableSeeder extends Seeder {
 
         ));
         DB::table('pages')->insert(array(
-                    
+
             array(
                 'id' => 1,
-                'name' => 'Contact Us',
+                'name' => 'Contact Ust',
                 'slug' => 'contact',
                 'order' => 0,
                 'banner' => '',
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-06 23:19:57',
-                'updated_at' => '2014-04-21 10:47:12',
+                'updated_at' => '2014-05-29 07:27:50',
             ),
 
             array(
@@ -480,7 +420,7 @@ class LavaliteTableSeeder extends Seeder {
                 'order' => 0,
                 'banner' => '',
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-06 23:20:20',
                 'updated_at' => '2014-04-21 10:47:25',
             ),
@@ -492,7 +432,7 @@ class LavaliteTableSeeder extends Seeder {
                 'order' => 0,
                 'banner' => '',
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-08 01:06:11',
                 'updated_at' => '2014-04-21 10:38:16',
             ),
@@ -504,131 +444,121 @@ class LavaliteTableSeeder extends Seeder {
                 'order' => 0,
                 'banner' => '',
                 'status' => 1,
-                'deleted_at' => NULL,
+                'deleted_at' => '',
                 'created_at' => '2014-04-21 10:38:28',
                 'updated_at' => '2014-04-21 10:38:28',
             ),
 
-        ));
-        DB::table('throttle')->insert(array(
-                    
-            array(
-                'id' => 1,
-                'user_id' => 1,
-                'ip_address' => '192.168.1.6',
-                'attempts' => 0,
-                'suspended' => 0,
-                'banned' => 0,
-                'last_attempt_at' => '',
-                'suspended_at' => '',
-                'banned_at' => '',
-            ),
+        ));DB::table('throttle')->insert(
 
-            array(
-                'id' => 2,
-                'user_id' => 2,
-                'ip_address' => '',
-                'attempts' => 0,
-                'suspended' => 0,
-                'banned' => 0,
-                'last_attempt_at' => '',
-                'suspended_at' => '',
-                'banned_at' => '',
-            ),
-
-            array(
-                'id' => 3,
-                'user_id' => 3,
-                'ip_address' => '',
-                'attempts' => 0,
-                'suspended' => 0,
-                'banned' => 0,
-                'last_attempt_at' => '',
-                'suspended_at' => '',
-                'banned_at' => '',
-            ),
-
-            array(
-                'id' => 4,
-                'user_id' => 1,
-                'ip_address' => '192.168.1.5',
-                'attempts' => 0,
-                'suspended' => 0,
-                'banned' => 0,
-                'last_attempt_at' => '',
-                'suspended_at' => '',
-                'banned_at' => '',
-            ),
-
-            array(
-                'id' => 5,
-                'user_id' => 1,
-                'ip_address' => '192.168.1.2',
-                'attempts' => 0,
-                'suspended' => 0,
-                'banned' => 0,
-                'last_attempt_at' => '',
-                'suspended_at' => '',
-                'banned_at' => '',
-            ),
-
-        ));
+        );
         DB::table('users')->insert(array(
-                    
+
             array(
                 'id' => 1,
-                'email' => 'admin@admin.com',
-                'password' => '$2y$10$DK5NdYvxr5MR.iVET2Q00OBGCCln2kQZJoGVONkiSUb1sZ2BprpOG',
-                'first_name' => 'Admin',
-                'last_name' => 'Admin',
+                'email' => 'superuser@superuser.com',
+                'password' => '$2y$10$bKwW6PzSa1GDOeUTqtTaLOVMutZ12ObeslBfEXPx2pJAL/2B8aB06',
                 'permissions' => '',
                 'activated' => 1,
                 'activation_code' => '',
                 'activated_at' => '',
-                'last_login' => '2014-04-21 10:37:31',
-                'persist_code' => '$2y$10$K6jYbmurEKSNeQWvjLdCCuJdSssXbLj60.rfnoF76DlFav7J.4lNy',
+                'last_login' => '2014-06-28 08:57:03',
+                'persist_code' => '',
                 'reset_password_code' => '',
-                'created_at' => '2013-10-06 06:47:19',
-                'updated_at' => '2014-04-21 11:01:01',
+                'first_name' => 'Super',
+                'last_name' => 'User',
+                'sex' => 'male',
+                'date_of_birth' => '2014-05-15',
+                'mobile' => '',
+                'phone' => '',
+                'address' => '',
+                'street' => '',
+                'city' => '',
+                'district' => '',
+                'state' => '',
+                'country' => '',
+                'photo' => '',
+                'web' => '',
+                'facebook' => '',
+                'twitter' => '',
+                'google_plus' => '',
+                'linkedin' => '',
+                'deleted_at' => '',
+                'created_at' => '2014-05-12 10:33:41',
+                'updated_at' => '2014-06-28 08:57:03',
             ),
 
             array(
                 'id' => 2,
-                'email' => 'user@user.com',
-                'password' => '$2y$10$zIfN8Dgr3r9W5/44C5x29.0gYB5tA5ZN8UaUS85ZRi3SGTroeIMP.',
-                'first_name' => 'User',
-                'last_name' => 'User',
+                'email' => 'admin@admin.com',
+                'password' => '$2y$10$AfS5hyUsDMmWJvd1ASfc3O8CdznWjuRtP9zX4/A4.4wCcbHqRO7qu',
                 'permissions' => '',
                 'activated' => 1,
                 'activation_code' => '',
                 'activated_at' => '',
-                'last_login' => '2014-01-24 06:12:11',
-                'persist_code' => '$2y$10$rFe3O0WDIbf.luTn4AC4yO4RaAYUZvN6d10KV7mO5xOI8H8UrJasO',
+                'last_login' => '2014-06-28 10:00:30',
+                'persist_code' => '',
                 'reset_password_code' => '',
-                'created_at' => '2013-10-06 06:47:19',
-                'updated_at' => '2014-04-21 11:00:39',
+                'first_name' => 'Admin',
+                'last_name' => '',
+                'sex' => 'male',
+                'date_of_birth' => '0000-00-00',
+                'mobile' => '',
+                'phone' => '',
+                'address' => '',
+                'street' => '',
+                'city' => '',
+                'district' => '',
+                'state' => '',
+                'country' => '',
+                'photo' => '',
+                'web' => '',
+                'facebook' => '',
+                'twitter' => '',
+                'google_plus' => '',
+                'linkedin' => '',
+                'deleted_at' => '',
+                'created_at' => '2014-05-12 10:33:42',
+                'updated_at' => '2014-06-28 10:00:30',
             ),
 
             array(
                 'id' => 3,
-                'email' => 'developer@developer.com',
-                'password' => '$2y$10$Quffar.itlGK6uk40sGpYunmcuz6oJtQoHtbr7Mj9BBRFlsiHP6ra',
-                'first_name' => 'Developer',
-                'last_name' => 'Developer',
+                'email' => 'user@user.com',
+                'password' => '$2y$10$0qG4ju372fDcFRQESUCcZ.1/vyThBA.Y89tW7EBK6yNBKPTFMD5zi',
                 'permissions' => '',
                 'activated' => 1,
                 'activation_code' => '',
                 'activated_at' => '',
-                'last_login' => '2014-01-24 06:14:17',
-                'persist_code' => '$2y$10$UG17HLHefmj0ZgNMmKO9q.9s/x8BcIZa9hEMDNR0SSnBPwFL4LJ/6',
+                'last_login' => '',
+                'persist_code' => '',
                 'reset_password_code' => '',
-                'created_at' => '2013-10-15 09:13:06',
-                'updated_at' => '2014-04-21 11:01:23',
+                'first_name' => 'User',
+                'last_name' => '',
+                'sex' => 'male',
+                'date_of_birth' => '2014-05-15',
+                'mobile' => '',
+                'phone' => '',
+                'address' => '',
+                'street' => '',
+                'city' => '',
+                'district' => '',
+                'state' => '',
+                'country' => '',
+                'photo' => '',
+                'web' => '',
+                'facebook' => '',
+                'twitter' => '',
+                'google_plus' => '',
+                'linkedin' => '',
+                'deleted_at' => '',
+                'created_at' => '2014-05-12 10:33:42',
+                'updated_at' => '2014-05-27 12:43:48',
             ),
 
         ));
         DB::table('users_groups')->insert(array(
-                    
+
             array(
                 'user_id' => 1,
                 'group_id' => 1,
@@ -636,12 +566,12 @@ class LavaliteTableSeeder extends Seeder {
 
             array(
                 'user_id' => 2,
-                'group_id' => 3,
+                'group_id' => 2,
             ),
 
             array(
                 'user_id' => 3,
-                'group_id' => 2,
+                'group_id' => 3,
             ),
 
         ));

@@ -12,7 +12,7 @@ class CreateLavaliteDatabase extends Migration {
          */
          public function up()
          {
-            
+
              /**
              * Table: files
              */
@@ -25,6 +25,7 @@ class CreateLavaliteDatabase extends Migration {
                 $table->string('category', 50)->nullable();
                 $table->string('file', 100);
                 $table->string('path', 255);
+                $table->integer('default');
                 $table->integer('size');
                 $table->string('extension', 255);
                 $table->string('mimetype', 255);
@@ -39,6 +40,7 @@ class CreateLavaliteDatabase extends Migration {
              * Table: groups
              */
             Schema::create('groups', function($table) {
+                $table->index('groups_name_unique');
                 $table->increments('id')->unsigned();
                 $table->string('name', 255);
                 $table->text('permissions')->nullable();
@@ -51,7 +53,7 @@ class CreateLavaliteDatabase extends Migration {
              * Table: menu_langs
              */
             Schema::create('menu_langs', function($table) {
-                $table->increments('id');
+                $table->increments('id')->unsigned();
                 $table->integer('menu_id');
                 $table->string('name', 250);
                 $table->text('description');
@@ -63,13 +65,13 @@ class CreateLavaliteDatabase extends Migration {
              * Table: menus
              */
             Schema::create('menus', function($table) {
-                $table->increments('id');
+                $table->increments('id')->unsigned();
                 $table->integer('parent_id');
                 $table->string('key', 100);
                 $table->string('url', 100);
                 $table->string('icon', 50)->nullable();
                 $table->enum('open', array('New','Same'))->default("Same");
-                $table->boolean('has_sub')->nullable();
+                $table->boolean('has_sub');
                 $table->integer('order');
                 $table->boolean('status')->default("1");
                 $table->timestamp('deleted_at')->nullable();
@@ -82,14 +84,14 @@ class CreateLavaliteDatabase extends Migration {
              * Table: page_langs
              */
             Schema::create('page_langs', function($table) {
-                $table->increments('id');
+                $table->increments('id')->unsigned();
                 $table->integer('page_id');
                 $table->string('heading', 100);
-                $table->text('content');
+                $table->longText('content');
                 $table->string('title', 200);
                 $table->string('keyword', 200);
                 $table->string('description', 200);
-                $table->string('image', 50)->nullable();
+                $table->string('image', 250)->nullable();
                 $table->text('abstract');
                 $table->string('lang', 3)->default("en");
             });
@@ -99,7 +101,7 @@ class CreateLavaliteDatabase extends Migration {
              * Table: pages
              */
             Schema::create('pages', function($table) {
-                $table->increments('id');
+                $table->increments('id')->unsigned();
                 $table->string('name', 50);
                 $table->string('slug', 50);
                 $table->integer('order');
@@ -112,49 +114,10 @@ class CreateLavaliteDatabase extends Migration {
 
 
              /**
-             * Table: revisions
-             */
-            Schema::create('revisions', function($table) {
-                $table->increments('id')->unsigned();
-                $table->string('revisionable_type', 255);
-                $table->integer('revisionable_id');
-                $table->integer('user_id')->nullable();
-                $table->string('key', 255);
-                $table->text('old_value')->nullable();
-                $table->text('new_value')->nullable();
-                $table->timestamp('created_at')->default("0000-00-00 00:00:00");
-                $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
-            });
-
-
-             /**
-             * Table: tagging_tagged
-             */
-            Schema::create('tagging_tagged', function($table) {
-                $table->increments('id')->unsigned();
-                $table->integer('taggable_id')->unsigned();
-                $table->string('taggable_type', 255);
-                $table->string('tag_name', 60);
-                $table->string('tag_slug', 60);
-            });
-
-
-             /**
-             * Table: tagging_tags
-             */
-            Schema::create('tagging_tags', function($table) {
-                $table->increments('id')->unsigned();
-                $table->string('slug', 60);
-                $table->string('name', 60);
-                $table->boolean('suggest');
-                $table->integer('count')->unsigned();
-            });
-
-
-             /**
              * Table: throttle
              */
             Schema::create('throttle', function($table) {
+                $table->index('throttle_user_id_index');
                 $table->increments('id')->unsigned();
                 $table->integer('user_id')->unsigned();
                 $table->string('ip_address', 255)->nullable();
@@ -171,6 +134,9 @@ class CreateLavaliteDatabase extends Migration {
              * Table: users
              */
             Schema::create('users', function($table) {
+                $table->index('users_email_unique');
+                $table->index('users_activation_code_index');
+                $table->index('users_reset_password_code_index');
                 $table->increments('id')->unsigned();
                 $table->string('email', 255);
                 $table->string('password', 255);
@@ -183,6 +149,23 @@ class CreateLavaliteDatabase extends Migration {
                 $table->string('reset_password_code', 255)->nullable();
                 $table->string('first_name', 255)->nullable();
                 $table->string('last_name', 255)->nullable();
+                $table->enum('sex', array('male','female'));
+                $table->date('date_of_birth')->nullable();
+                $table->string('mobile', 255)->nullable();
+                $table->string('phone', 255)->nullable();
+                $table->string('address', 255)->nullable();
+                $table->string('street', 255)->nullable();
+                $table->string('city', 255)->nullable();
+                $table->string('district', 255)->nullable();
+                $table->string('state', 255)->nullable();
+                $table->string('country', 100);
+                $table->string('photo', 255)->nullable();
+                $table->string('web', 255)->nullable();
+                $table->string('facebook', 255)->nullable();
+                $table->string('twitter', 255)->nullable();
+                $table->string('google_plus', 255)->nullable();
+                $table->string('linkedin', 255)->nullable();
+                $table->timestamp('deleted_at')->nullable();
                 $table->timestamp('created_at')->default("0000-00-00 00:00:00");
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
@@ -192,8 +175,8 @@ class CreateLavaliteDatabase extends Migration {
              * Table: users_groups
              */
             Schema::create('users_groups', function($table) {
-                $table->integer('user_id')->unsigned();
-                $table->integer('group_id')->unsigned();
+                $table->increments('user_id')->unsigned();
+                $table->increments('group_id')->unsigned();
             });
 
 
@@ -206,16 +189,13 @@ class CreateLavaliteDatabase extends Migration {
          */
          public function down()
          {
-            
+
             Schema::drop('files');
             Schema::drop('groups');
             Schema::drop('menu_langs');
             Schema::drop('menus');
             Schema::drop('page_langs');
             Schema::drop('pages');
-            Schema::drop('revisions');
-            Schema::drop('tagging_tagged');
-            Schema::drop('tagging_tags');
             Schema::drop('throttle');
             Schema::drop('users');
             Schema::drop('users_groups');

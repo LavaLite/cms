@@ -12,7 +12,7 @@ return array(
 	*/
 
 
-	"name" 			=> "Lava Lite1",
+	"name" 			=> "Lava Lite",
 	"admin_panel"   => "Admin Panel",
 	"all_rights"    => "All rights reserved",
 	"back"    		=> "Back",
