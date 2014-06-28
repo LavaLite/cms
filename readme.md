@@ -35,6 +35,17 @@ Lavalite may require one set of permissions to be configured: folders within app
 ####Paths
 Several of the framework directory paths are configurable. To change the location of these directories, check out the bootstrap/paths.php file.
 
+## Login details
+###Admin
+Url: sites-public-url/admin
+Superuser : superuser@superuser.com - superuser@superuser
+Admin : admin@admin.com - admin@admin
+
+### User
+Url: sites-public-url/user
+User: user@user.com - user@user
+
+
 ##Frameworks/Libraries
 
 ### PHP Libraries
