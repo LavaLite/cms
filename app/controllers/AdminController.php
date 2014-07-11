@@ -8,7 +8,7 @@ class AdminController extends BaseController {
     public function __construct()
     {
         $this->session = App::make('Lavalite\User\Interfaces\SessionInterface');
-        $this->setupTheme('admin', 'default');
+        $this->setupTheme('admin-lavalite', 'default');
 
     }
 
@@ -72,7 +72,7 @@ class AdminController extends BaseController {
     public function showHome()
     {
         $this->theme->prependTitle(Lang::get('app.admin_panel') . ' :: ');
-        return $this->theme->of('admin.home')->layout('blank')->render();
+        return $this->theme->of('admin.home')->render();
     }
 
 }

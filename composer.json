@@ -3,7 +3,7 @@
     "description": "Multilingual CMS based on Laravel 4 & Bootstrap 3",
     "keywords": ["lavalite", "framework", "cms", "laravel"],
     "require": {
-        "laravel/framework": "4.1.*",
+        "laravel/framework": "4.2.*",
         "cartalyst/sentry": "dev-master",
         "anahkiasen/former": "dev-master",
         "teepluss/theme": "dev-master",
@@ -14,12 +14,14 @@
         "dimsav/laravel-translatable": "3.*",
         "greggilbert/recaptcha": "dev-master",
         "loic-sharma/profiler": "1.1.*",
+        "thomaswelton/laravel-gravatar": "0.0.x",
+        "weboap/visitor": "dev-master",
 
-        "lavalite/user": "2.*",
-        "lavalite/page": "2.*",
-        "lavalite/menu": "2.*",
-        "lavalite/filer": "2.*",
-        "lavalite/image": "2.*"
+        "lavalite/user": "dev-master",
+        "lavalite/page": "dev-master",
+        "lavalite/menu": "dev-master",
+        "lavalite/filer": "dev-master",
+        "lavalite/image": "dev-master"
 
     },
 
@@ -28,6 +30,7 @@
             "app/commands",
             "app/controllers",
             "app/models",
+            "workbench",
             "app/database/migrations",
             "app/database/seeds",
             "app/tests/TestCase.php"

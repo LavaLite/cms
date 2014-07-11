@@ -60,7 +60,8 @@ return array(
              //You may use this event to set up your assets.
 
 
-             $theme->asset()->add('bootstrap', '/vendor/bootswatch/united/bootstrap.css');
+             $theme->asset()->add('bootstrap', '/vendor/bootstrap/dist/css/bootstrap.min.css');
+             $theme->asset()->add('bootstrap', '/vendor/bootstrap/dist/css/bootstrap-theme.min.css');
              $theme->asset()->add('datetimepicker', '/vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
              $theme->asset()->add('font-awesome', '/vendor/font-awesome/css/font-awesome.min.css');
              $theme->asset()->add('summernote', '/vendor/summernote/summernote-dist/summernote.css');
@@ -69,11 +70,9 @@ return array(
              $theme->asset()->add('CaptionHoverEffects', '/vendor/CaptionHoverEffects/css/component.css');
 
 
-             $theme->asset()->usePath()->add('override', 'css/override.css');
-             $theme->asset()->usePath()->add('styles', 'css/styles.css');
 
              $theme->asset()->add('jquery', '/vendor/jquery/dist/jquery.min.js');
-             
+
              $theme->asset()->container('footer')->add('bootstrap', '/vendor/bootstrap/dist/js/bootstrap.min.js', array('jquery'));
              $theme->asset()->container('footer')->add('datetimepicker', '/vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js', array('jquery'));
              $theme->asset()->container('footer')->add('ezdz', '/vendor/ezdz/dist/jquery.ezdz.min.js', array('jquery'));
@@ -83,6 +82,7 @@ return array(
              $theme->asset()->container('footer')->add('CaptionHoverEffectsmod', '/vendor/CaptionHoverEffects/js/modernizr.custom.js');
              $theme->asset()->container('footer')->add('CaptionHoverEffects', '/vendor/CaptionHoverEffects/js/toucheffects.js');
              $theme->asset()->container('footer')->add('dropzone', '/vendor/dropzone/downloads/dropzone.min.js', array('jquery'));
+
              $theme->asset()->container('footer')->usePath()->add('restfulizer', 'js/restfulizer.js', array('jquery'));
 			 $theme->asset()->container('footer')->usePath()->add('core-script', 'js/scripts.js', array('jquery'));
              //Partial composer.

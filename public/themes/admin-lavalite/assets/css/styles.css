@@ -1,0 +1,19 @@
+/* CSS used here will be applied after bootstrap.css */
+
+.panel-default {
+ opacity: 0.8;
+ margin-top:30px;
+ width: 400px;
+
+}
+.form-group.last {
+ margin-bottom:0px;
+}
+div.panel-body {
+  background-color: rgba(255, 255, 255, 1)
+}
+.vcenter {
+  position: absolute;
+  top: calc(50% - 250px);
+    width: 100%;
+}

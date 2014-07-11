@@ -113,7 +113,13 @@ return array(
 		'Lavalite\Page\PageServiceProvider',
 		'Lavalite\Filer\FilerServiceProvider',
 		'Lavalite\Image\ImageServiceProvider',
-
+		'Lavalite\Catalogue\CatalogueServiceProvider',
+		'Lavalite\Gallery\GalleryServiceProvider',
+		'Lavalite\News\NewsServiceProvider',
+		'Lavalite\Contact\ContactServiceProvider',
+        'Lavalite\Advert\AdvertServiceProvider',
+		'Lavalite\Shop\ShopServiceProvider',
+		'Lavalite\Slider\SliderServiceProvider',
 		
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Former\FormerServiceProvider',
@@ -124,6 +130,7 @@ return array(
 		'Nwidart\DbExporter\DbExportHandlerServiceProvider',
 		'Greggilbert\Recaptcha\RecaptchaServiceProvider',
 		'Profiler\ProfilerServiceProvider',
+		'Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider',
 	),
 
 	/*
@@ -197,11 +204,21 @@ return array(
 		'Intervention' 	  => 'Intervention\Image\Facades\Image',
 		'Setting'     	  => 'Philf\Setting\Facades\Setting',
 		'Sluggable' 	  => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
+		'Gravatar' 		  => 'Thomaswelton\LaravelGravatar\Facades\Gravatar',
 
-		'Menu'  	  => 'Lavalite\Menu\Facades\Menu',
-		'Page'  	  => 'Lavalite\Page\Facades\Page',
-		'Filer'  	  => 'Lavalite\Filer\Facades\Filer',
-		'Image'  	  => 'Lavalite\Image\Facades\Image',
+		'Menu'  	      => 'Lavalite\Menu\Facades\Menu',
+		'Page'  	      => 'Lavalite\Page\Facades\Page',
+		'Filer'  	      => 'Lavalite\Filer\Facades\Filer',
+		'Image'  	      => 'Lavalite\Image\Facades\Image',
+		'Catalogue'   	  => 'Lavalite\Catalogue\Facades\Catalogue',
+		'Gallery'  	      => 'Lavalite\Gallery\Facades\Gallery',
+		'News'  	      => 'Lavalite\News\Facades\News',
+		'Contact'  	      => 'Lavalite\Contact\Facades\Contact',
+		'Slider'  	      => 'Lavalite\Slider\Facades\Slider',
+
+		'Shop'  	  => 'Lavalite\Shop\Facades\Shop',
+		'Cart'  	  => 'Lavalite\Shop\Facades\Cart',
+		'Advert'  	  => 'Lavalite\Advert\Facades\Advert',
 
 	),
 

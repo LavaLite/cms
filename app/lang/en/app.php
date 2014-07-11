@@ -14,6 +14,7 @@ return array(
 
 	"name" 			=> "Lava Lite",
 	"admin_panel"   => "Admin Panel",
+	"dashboard"   	=> "Dashboard",
 	"all_rights"    => "All rights reserved",
 	"back"    		=> "Back",
 	"contribute"    => "Contribute",
@@ -37,6 +38,7 @@ return array(
 	"update"    	=> "Update",
 	"view"    		=> "View",
 	"more"    		=> "More",
+	"manage"    	=> "Manage",
 
 	"flashsuccess"  => "Success",
 	"flasherror"    => "Error",

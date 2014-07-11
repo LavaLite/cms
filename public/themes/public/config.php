@@ -59,21 +59,21 @@ return array(
         {
 
              $theme->asset()->add('bootstrap', '/vendor/bootswatch/united/bootstrap.min.css');
-
              $theme->asset()->add('jquery', '/vendor/jquery/dist/jquery.min.js');
              $theme->asset()->add('font-awesome', '/vendor/font-awesome/css/font-awesome.min.css');
              $theme->asset()->add('datetimepicker', '/vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
+            
 
 
              $theme->asset()->usePath()->add('override', 'css/override.css');
              $theme->asset()->usePath()->add('styles', 'css/styles.css');
 
+$theme->asset()->container('footer')->add('map', '/vendor/map/map.js', array('jquery'));
              $theme->asset()->container('footer')->add('bootstrap', '/vendor/bootstrap/dist/js/bootstrap.min.js', array('jquery'));
              $theme->asset()->container('footer')->add('datetimepicker', '/vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js', array('jquery'));
              $theme->asset()->container('footer')->add('nivo', '/vendor/sample-banner/jquery.nivo.slider.pack.js', array('jquery'));
-
+             
              $theme->asset()->container('footer')->usePath()->add('core-script', 'js/scripts.js', array('jquery'));
-
 
         },
 

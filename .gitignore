@@ -9,3 +9,9 @@ composer.lock
 .DS_Store
 ._**
 public/themes/admin/assets/image/defa.png
+
+app/storage/geo/GeoLite2-City.mmdb
+
+*.tmp
+
+*.zip
