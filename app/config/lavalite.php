@@ -11,18 +11,18 @@ return array(
 	'locales' 	=> array('en', 'ar'),
 
 	'admin'	=> array(
-						'theme' 	=> 'admin',
+						'theme' 	=> 'admin-lavalite',
 						'layout' 	=> 'default',
 						),
 
 	'public'	=> array(
-						'theme' 	=> 'public',
+						'theme' 	=> 'public-lavalite',
 						'layout' 	=> 'default',
 						),
 
 	'user'	=> array(
 						'theme' 	=> 'public',
-						'layout' 	=> 'default',
+						'layout' 	=> 'user',
 						),
 
 	'packages'	=> array(

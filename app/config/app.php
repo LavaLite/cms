@@ -65,8 +65,10 @@ return array(
 	| will not be safe. Please do this before deploying an application!
 	|
 	*/
-
+	
 	'key' => 'LjiTvyf4mlWhD0W3N7wq2jC172yruzCY',
+
+	'cipher' => MCRYPT_RIJNDAEL_256,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -120,6 +122,9 @@ return array(
         'Lavalite\Advert\AdvertServiceProvider',
 		'Lavalite\Shop\ShopServiceProvider',
 		'Lavalite\Slider\SliderServiceProvider',
+		'Lavalite\Place\PlaceServiceProvider',
+		'Lavalite\Activity\ActivityServiceProvider',
+
 		
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Former\FormerServiceProvider',
@@ -131,6 +136,7 @@ return array(
 		'Greggilbert\Recaptcha\RecaptchaServiceProvider',
 		'Profiler\ProfilerServiceProvider',
 		'Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider',
+		'Dinesh\Barcode\BarcodeServiceProvider',
 	),
 
 	/*
@@ -216,9 +222,17 @@ return array(
 		'Contact'  	      => 'Lavalite\Contact\Facades\Contact',
 		'Slider'  	      => 'Lavalite\Slider\Facades\Slider',
 
-		'Shop'  	  => 'Lavalite\Shop\Facades\Shop',
-		'Cart'  	  => 'Lavalite\Shop\Facades\Cart',
-		'Advert'  	  => 'Lavalite\Advert\Facades\Advert',
+		'Shop'  	  	  => 'Lavalite\Shop\Facades\Shop',
+		'Cart'  	  	  => 'Lavalite\Shop\Facades\Cart',
+		'Advert'  	  	  => 'Lavalite\Advert\Facades\Advert',
+		'Country'  	  	  => 'Lavalite\Place\Facades\Country',
+		'State'  	  	  => 'Lavalite\Place\Facades\State',
+		'City'  	  	  => 'Lavalite\Place\Facades\City',
+		'Activity'    	  => 'Lavalite\Activity\Facades\Activity',
+		'Category'    	  => 'Lavalite\Activity\Facades\Category',
+
+		'DNS1D' 		  => 'Dinesh\Barcode\Facades\DNS1DFacade',
+        'DNS2D' 		  => 'Dinesh\Barcode\Facades\DNS2DFacade',
 
 	),
 

@@ -4,8 +4,7 @@ class PublicController extends BaseController {
 
     public function __construct()
     {
-        $this->setupTheme('public', 'default');
-
+        $this->setupTheme(Config::get('lavalite.public.theme'), Config::get('lavalite.public.layout'));
     }
 
     public function showIndex()

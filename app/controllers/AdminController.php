@@ -1,5 +1,7 @@
 <?php
 
+use Cartalyst\Sentry\Facades\Laravel\Sentry;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends BaseController {
 
@@ -8,8 +10,8 @@ class AdminController extends BaseController {
     public function __construct()
     {
         $this->session = App::make('Lavalite\User\Interfaces\SessionInterface');
-        $this->setupTheme('admin-lavalite', 'default');
-
+        $this->setupTheme(Config::get('lavalite.admin.theme'), Config::get('lavalite.admin.layout'));
+        $this->beforeFilter('@filterRequests', array('except' => array('login', 'postLogin')));
     }
 
     public function clearCache()
@@ -70,9 +72,19 @@ class AdminController extends BaseController {
 
 
     public function showHome()
-    {
+    { 
+        $group                 = Sentry::findGroupById(4);
+        $users                 = Sentry::findAllUsersInGroup($group);
+        $data['userCount']     = count($users);
         $this->theme->prependTitle(Lang::get('app.admin_panel') . ' :: ');
-        return $this->theme->of('admin.home')->render();
+        return $this->theme->of('admin.home',$data)->render();
     }
 
+    /**
+     * Filter the incoming requests.
+     */
+    public function filterRequests($route, $request)
+    {
+        if (!is_object(Sentry::getUser()) || !Sentry::getUser()->hasAccess('admin')) return Redirect::guest('admin/login');
+    }
 }

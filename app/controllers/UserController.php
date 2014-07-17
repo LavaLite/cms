@@ -8,8 +8,7 @@ class UserController extends BaseController {
     public function __construct()
     {
         $this->session = App::make('Lavalite\User\Interfaces\SessionInterface');
-        $this->setupTheme('public', 'default');
-
+        $this->setupTheme(Config::get('lavalite.user.theme'), Config::get('lavalite.user.layout'));
     }
 
     /**

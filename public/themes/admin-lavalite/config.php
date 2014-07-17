@@ -75,7 +75,7 @@ return array(
             $theme->asset()->add('yamm3',                       '/vendor/yamm3/yamm/yamm.css');
             $theme->asset()->add('selectize',                   '/vendor/selectize/dist/css/selectize.css');
             $theme->asset()->add('morrisjs',                    '/vendor/morrisjs/morris.css');
-            $theme->asset()->add('morrisjs',                    '/vendor/summernote/summernote-dist/summernote.css');
+            $theme->asset()->add('summernote',                  '/vendor/summernote/summernote-dist/summernote.css');
             $theme->asset()->add('CaptionHoverEffects',         '/vendor/CaptionHoverEffects/css/component.css');
 
 
@@ -108,6 +108,8 @@ return array(
             $theme->asset()->container('footer')->add('CaptionHoverEffectsmod',     '/vendor/CaptionHoverEffects/js/modernizr.custom.js');
             $theme->asset()->container('footer')->add('CaptionHoverEffects',        '/vendor/CaptionHoverEffects/js/toucheffects.js');
             $theme->asset()->container('footer')->add('print',                      '/vendor/print/jquery.printPage.js');
+            $theme->asset()->container('footer')->add('map',                        '/vendor/map/map.js');
+            $theme->asset()->container('footer')->add('googlemap',                  'http://maps.google.com/maps/api/js?sensor=false');
             $theme->asset()->container('footer')->usePath()->add('scripts',         'js/scripts.js');
 
              //Partial composer.

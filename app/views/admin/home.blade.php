@@ -1,4 +1,4 @@
-@extends('admin.layouts.default')
+@extends('Admin::views.default')
 
 @section('heading')
 <h1>
@@ -13,7 +13,7 @@
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                        150
+                                        {{ Shop::orderCount() }}
                                     </h3>
                                     <p>
                                         New Orders
@@ -51,7 +51,7 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        44
+                                      {{ $userCount }}
                                     </h3>
                                     <p>
                                         User Registrations

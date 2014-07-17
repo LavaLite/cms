@@ -4,6 +4,7 @@ use Teepluss\Theme\Facades\Theme;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\App;
 
 class BaseController extends Controller {
 
@@ -19,7 +20,7 @@ class BaseController extends Controller {
      */
     protected $model;
 
-    public function setupTheme($theme = 'default', $layout = 'default') {
+    public function setupTheme($theme = 'defsault', $layout = 'default') {
 
         $this->theme = Theme::uses($theme)->layout($layout);
 

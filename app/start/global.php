@@ -64,7 +64,7 @@ App::error(function(Exception $exception, $code)
 
 App::down(function()
 {
-	return Response::make("Be right back!", 503);
+    return Response::make("Be right back!", 503);
 });
 
 /*
@@ -77,5 +77,18 @@ App::down(function()
 | definitions instead of putting them all in the main routes file.
 |
 */
+
+/*
+|--------------------------------------------------------------------------
+| Load theme view path to namespace
+|--------------------------------------------------------------------------
+|
+| Here you can add view's name space to currently used theme.
+|
+*/
+
+View::addNamespace('Admin', public_path() . '/' . Theme::path(Config::get('lavalite.admin.theme')));
+View::addNamespace('Public', public_path() . '/' . Theme::path(Config::get('lavalite.public.theme')));
+
 
 require app_path().'/filters.php';
