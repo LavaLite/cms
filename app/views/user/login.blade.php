@@ -1,42 +1,92 @@
-<div class="row clearfix">
-    <div class="col-md-12 column">
-        <div class="page-header">
-            <h1>
-                Login <small>login to the website</small>
-            </h1>
-        </div>
-        <div class="row clearfix">
-            <div class="col-md-8 column">
-            @include('user::partials.notifications')
-            {{ Form::open(array('action' => 'Lavalite\User\Controllers\SessionController@store')) }}
+<header id="page-title">
+    <div class="container">
+        <h1>Sign In</h1>
 
-            <div class="form-group {{ ($errors->has('email')) ? 'has-error' : '' }}">
-                {{ Form::text('email', null, array('class' => 'form-control', 'placeholder' => trans('user::user.email'), 'autofocus')) }}
-                {{ ($errors->has('email') ? $errors->first('email') : '') }}
-            </div>
-
-            <div class="form-group {{ ($errors->has('password')) ? 'has-error' : '' }}">
-                {{ Form::password('password', array('class' => 'form-control', 'placeholder' => trans('user::user.pword')))}}
-                {{ ($errors->has('password') ?  $errors->first('password') : '') }}
-            </div>
-
-            <label class="checkbox">
-                {{ Form::checkbox('rememberMe', 'rememberMe') }} {{trans('user::user.remember')}}
-            </label>
-            {{ Form::submit(trans('user::user.label.login'), array('class' => 'btn btn-primary'))}}
-            <a class="btn btn-link" href="{{ URL::to('/forgot') }}">{{Lang::get('user::user.forgot')}}?</a>                {{ Form::close() }}
-            </div>
-            <div class="col-md-4 column">
-
-                <button type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-facebook"> Facebook</i></button>
-                <button type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-twitter"> Twitter</i></button>
-                <button type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-google-plus"> Google Plus</i></button>
-                <button type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-linkedin"> Linkedin</i></button>
-            </div>
-            <div class="col-md-12 column">
-                <h2> New User ? </h2>
-                    <p>By creating an account with us, you will be able to manage all the activities on this website. <a href="{{URL::to('register')}}"> Click here </a> to Create an account</p>
-            </div>
-        </div>
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Sign In</li>
+        </ul>
     </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Sign <strong>In</strong></h2>
+            <div class="row">
+                <div class="col-md-12">
+                    @include('user::partials.notifications')
+                    {{Former::vertical_open()
+                    ->id('contact')
+                    ->method('POST')
+                    ->class('white-row')
+                    ->action('login')}}
+
+                    {{ Former::email('email')
+                    -> label(trans('user::user.label.email'))
+                    -> placeholder(trans('user::user.placeholder.email'))}}
+
+                    {{ Former::password('password')
+                    -> label(trans('user::user.label.password'))
+                    -> placeholder(trans('user::user.placeholder.password'))}}
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="checkbox">
+                                {{ Form::checkbox('rememberMe', 'rememberMe') }} {{trans('user::user.remember')}}
+                            </label>
+                        </div>
+                        <div class="col-md-6" >
+                            {{ Form::submit(trans('user::user.signin'), array('class' => 'btn btn-primary pull-right'))}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <a href='#' ><i class="fa fa-facebook"> </i></a>
+                            <a href='#' ><i class="fa fa-twitter"> </i></a>
+                            <a href='#' ><i class="fa fa-google-plus">  </i></a>
+                            <a href='#' ><i class="fa fa-linkedin"> </i></a>
+                        </div>
+                    </div>
+                    {{ Former::close() }}
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6 "><h2>Forgot <strong>Password</strong>?</h2>
+            <div class="white-row">
+                <p>
+                    Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo.
+                </p>
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ Form::open(array('action' => 'Lavalite\User\Controllers\PublicController@forgot', 'method' => 'post')) }}
+
+
+                        <div class="form-group {{ ($errors->has('email')) ? 'has-error' : '' }}">
+                            {{ Form::text('email', null, array('class' => 'form-control', 'placeholder' => trans('user::user.email'), 'autofocus')) }}
+                            {{ ($errors->has('email') ? $errors->first('email') : '') }}
+                        </div>
+
+                        {{ Form::submit(trans('user::user.send'), array('class' => 'btn btn-primary'))}}
+
+
+                        {{ Form::close() }}
+                    </div>
+                </div>
+          </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </div>
+              </div>
+      </div>
+  </div>
+  <div class="col-md-12 white-row">
+    Don't have an account yet? <a href="{{URL::to('register')}}"> Click to create one </a>, it's free!
+</div>
 </div>

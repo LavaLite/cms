@@ -65,7 +65,7 @@ return array(
 	| will not be safe. Please do this before deploying an application!
 	|
 	*/
-	
+
 	'key' => 'LjiTvyf4mlWhD0W3N7wq2jC172yruzCY',
 
 	'cipher' => MCRYPT_RIJNDAEL_256,
@@ -112,20 +112,34 @@ return array(
 
 		'Lavalite\User\UserServiceProvider',
 		'Lavalite\Menu\MenuServiceProvider',
-		'Lavalite\Page\PageServiceProvider',
 		'Lavalite\Filer\FilerServiceProvider',
 		'Lavalite\Image\ImageServiceProvider',
 		'Lavalite\Catalogue\CatalogueServiceProvider',
 		'Lavalite\Gallery\GalleryServiceProvider',
 		'Lavalite\News\NewsServiceProvider',
+		'Lavalite\Plan\PlanServiceProvider',
+		'Lavalite\Videos\VideosServiceProvider',
+		'Lavalite\Career\CareerServiceProvider',
+		'Lavalite\Testimonial\TestimonialServiceProvider',
+
 		'Lavalite\Contact\ContactServiceProvider',
         'Lavalite\Advert\AdvertServiceProvider',
 		'Lavalite\Shop\ShopServiceProvider',
 		'Lavalite\Slider\SliderServiceProvider',
 		'Lavalite\Place\PlaceServiceProvider',
 		'Lavalite\Activity\ActivityServiceProvider',
+		'Lavalite\Package\PackageServiceProvider',
+		'Lavalite\Test\TestServiceProvider',
+		'Lavalite\Team\TeamServiceProvider',
+		'Lavalite\Block\BlockServiceProvider',
+		'Lavalite\Pricelist\PricelistServiceProvider',
+		'Lavalite\SocialIco\SocialIcoServiceProvider',
+		'Lavalite\Portfolio\PortfolioServiceProvider',
+		'Lavalite\Blog\BlogServiceProvider',
+		'Lavalite\FAQ\FAQServiceProvider',
+		'Lavalite\Page\PageServiceProvider',
 
-		
+
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Former\FormerServiceProvider',
 		'Teepluss\Theme\ThemeServiceProvider',
@@ -137,6 +151,9 @@ return array(
 		'Profiler\ProfilerServiceProvider',
 		'Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider',
 		'Dinesh\Barcode\BarcodeServiceProvider',
+		'Anouar\Paypalpayment\PaypalpaymentServiceProvider',
+		'Thujohn\Analytics\AnalyticsServiceProvider',
+
 	),
 
 	/*
@@ -211,16 +228,23 @@ return array(
 		'Setting'     	  => 'Philf\Setting\Facades\Setting',
 		'Sluggable' 	  => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
 		'Gravatar' 		  => 'Thomaswelton\LaravelGravatar\Facades\Gravatar',
+		'Analytics' 	  => 'Thujohn\Analytics\AnalyticsFacade',
 
 		'Menu'  	      => 'Lavalite\Menu\Facades\Menu',
 		'Page'  	      => 'Lavalite\Page\Facades\Page',
 		'Filer'  	      => 'Lavalite\Filer\Facades\Filer',
 		'Image'  	      => 'Lavalite\Image\Facades\Image',
+		'User'  	      => 'Lavalite\User\Facades\User',
 		'Catalogue'   	  => 'Lavalite\Catalogue\Facades\Catalogue',
 		'Gallery'  	      => 'Lavalite\Gallery\Facades\Gallery',
 		'News'  	      => 'Lavalite\News\Facades\News',
+		'Plan'  	      => 'Lavalite\Plan\Facades\Plan',
+		'Video'  	      => 'Lavalite\Videos\Facades\Videos',
+		'Career'  	      => 'Lavalite\Career\Facades\Career',
+		'Testimonial'  	  => 'Lavalite\Testimonial\Facades\Testimonial',
 		'Contact'  	      => 'Lavalite\Contact\Facades\Contact',
 		'Slider'  	      => 'Lavalite\Slider\Facades\Slider',
+		'Package'  	      => 'Lavalite\Package\Facades\Package',
 
 		'Shop'  	  	  => 'Lavalite\Shop\Facades\Shop',
 		'Cart'  	  	  => 'Lavalite\Shop\Facades\Cart',
@@ -230,9 +254,20 @@ return array(
 		'City'  	  	  => 'Lavalite\Place\Facades\City',
 		'Activity'    	  => 'Lavalite\Activity\Facades\Activity',
 		'Category'    	  => 'Lavalite\Activity\Facades\Category',
+	    'Place'    	      => 'Lavalite\Place\Facades\Place',
+	    'Block'    	      => 'Lavalite\Block\Facades\Block',
+	    'Pricelist'    	  => 'Lavalite\Pricelist\Facades\Pricelist',
+	    'SocialIco'    	  => 'Lavalite\SocialIco\Facades\SocialIco',
+	    'Portfolio'  	  => 'Lavalite\Portfolio\Facades\Portfolio',
+	    'Blog'  	  	  => 'Lavalite\Blog\Facades\Blog',
+	    'FAQ'  	          => 'Lavalite\FAQ\Facades\FAQ',
+
+
 
 		'DNS1D' 		  => 'Dinesh\Barcode\Facades\DNS1DFacade',
         'DNS2D' 		  => 'Dinesh\Barcode\Facades\DNS2DFacade',
+
+        'Paypalpayment'   => 'Anouar\Paypalpayment\Facades\PaypalPayment',
 
 	),
 

@@ -5,11 +5,12 @@
 /public/packages
 /public/themes/admin-lavalite
 /public/themes/public-lavalite
-composer.json
 composer.phar
 composer.lock
 .DS_Store
 ._**
 *.tmp
 *.zip
-app/storage/geo/GeoLite2-City.mmdb
+composer.json
+bower.json
+composer.json

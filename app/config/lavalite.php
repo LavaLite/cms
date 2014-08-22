@@ -21,8 +21,8 @@ return array(
 						),
 
 	'user'	=> array(
-						'theme' 	=> 'public',
-						'layout' 	=> 'user',
+						'theme' 	=> 'public-lavalite',
+						'layout' 	=> 'default',
 						),
 
 	'packages'	=> array(

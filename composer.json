@@ -9,16 +9,10 @@
         "anahkiasen/former": "dev-master",
         "teepluss/theme": "dev-master",
         "intervention/imagecache": "dev-master",
-        "philf/setting": "dev-master",
         "mcamara/laravel-localization": "0.14.*",
-        "nwidart/db-exporter": "dev-master",
         "dimsav/laravel-translatable": "4.2.*",
         "greggilbert/recaptcha": "dev-master",
-        "loic-sharma/profiler": "1.1.*",
-        "thomaswelton/laravel-gravatar": "0.0.x",
-        "weboap/visitor": "dev-master",
-        "dinesh/barcode": "dev-master"
-
+        "loic-sharma/profiler": "1.1.*"
     },
 
     "autoload": {

@@ -68,8 +68,7 @@ return array(
              $theme->asset()->add('bs-switch', '/vendor/bootstrap-switch/build/css/bootstrap3/bootstrap-switch.min.css');
              $theme->asset()->add('ezdz', '/vendor/ezdz/dist/jquery.ezdz.min.css');
              $theme->asset()->add('CaptionHoverEffects', '/vendor/CaptionHoverEffects/css/component.css');
-
-
+            
 
              $theme->asset()->add('jquery', '/vendor/jquery/dist/jquery.min.js');
 
@@ -81,7 +80,6 @@ return array(
              $theme->asset()->container('footer')->add('bs-switch', '/vendor/bootstrap-switch/build/js/bootstrap-switch.js', array('jquery'));
              $theme->asset()->container('footer')->add('CaptionHoverEffectsmod', '/vendor/CaptionHoverEffects/js/modernizr.custom.js');
              $theme->asset()->container('footer')->add('CaptionHoverEffects', '/vendor/CaptionHoverEffects/js/toucheffects.js');
-             $theme->asset()->container('footer')->add('dropzone', '/vendor/dropzone/downloads/dropzone.min.js', array('jquery'));
 
              $theme->asset()->container('footer')->usePath()->add('restfulizer', 'js/restfulizer.js', array('jquery'));
 			 $theme->asset()->container('footer')->usePath()->add('core-script', 'js/scripts.js', array('jquery'));

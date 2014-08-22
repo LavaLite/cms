@@ -15,7 +15,7 @@ return array(
 		//'gn'          => array('name' => 'Guaraní',                'script' => 'Latn', 'dir' => 'ltr', 'native' => 'Avañe’ẽ'),
 		//'ae'          => array('name' => 'Avestan',                'script' => 'Latn', 'dir' => 'ltr', 'native' => 'avesta'),
 		//'ay'          => array('name' => 'Aymara',                 'script' => 'Latn', 'dir' => 'ltr', 'native' => 'aymar aru'),
-		//'az'          => array('name' => 'Azerbaijani (Latin)',    'script' => 'Latn', 'dir' => 'ltr', 'native' => 'azərbaycanca'),
+		'az'          => array('name' => 'Azerbaijani (Latin)',    'script' => 'Latn', 'dir' => 'ltr', 'native' => 'azərbaycanca'),
 		//'id'          => array('name' => 'Indonesian',             'script' => 'Latn', 'dir' => 'ltr', 'native' => 'Bahasa Indonesia'),
 		//'ms'          => array('name' => 'Malay',                  'script' => 'Latn', 'dir' => 'ltr', 'native' => 'Bahasa Melayu'),
 		//'bm'          => array('name' => 'Bambara',                'script' => 'Latn', 'dir' => 'ltr', 'native' => 'bamanakan'),
@@ -294,7 +294,7 @@ return array(
 		//'ii'          => array('name' => 'Sichuan Yi',             'script' => 'Yiii', 'dir' => 'ltr', 'native' => 'ꆈꌠꉙ'),
 		//'vai'         => array('name' => 'Vai (Vai)',              'script' => 'Vaii', 'dir' => 'ltr', 'native' => 'ꕙꔤ'),
 		//'jv-Java'     => array('name' => 'Javanese (Javanese)',    'script' => 'Java', 'dir' => 'ltr', 'native' => 'ꦧꦱꦗꦮ'),
-		//'ko'          => array('name' => 'Korean',                 'script' => 'Hang', 'dir' => 'ltr', 'native' => '한국어'),
+		'ko'          => array('name' => 'Korean',                 'script' => 'Hang', 'dir' => 'ltr', 'native' => '한국어'),
 	),
 
 	// Negotiate for the user locale using the Accept-Language header if it's not defined in the URL?

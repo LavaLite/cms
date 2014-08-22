@@ -26,6 +26,7 @@ class BaseController extends Controller {
 
         Former::framework('TwitterBootstrap3');
         Former::config('fetch_errors', true);
+        Former::config('push_checkboxes', true);
     }
 
 

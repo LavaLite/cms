@@ -24,15 +24,12 @@
             <section class="right-side">
 
 
-                        {{ Theme::content() }}
+                {{ Theme::content() }}
 
             </section><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
-        <!-- add new calendar event modal -->
-
         {{ Theme::asset()->container('footer')->scripts() }}
-       
 
     </body>
     </html>

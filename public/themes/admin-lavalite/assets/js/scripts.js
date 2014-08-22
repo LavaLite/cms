@@ -1,24 +1,35 @@
+$(function(){
 
-jQuery(function( $ ) {
     $('.date-picker').datetimepicker({
         pickTime: false,
-        format: "dd MM yyyy",
-        minView:2,
-        autoclose:true
+        autoclose:true,
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
+        }
     });
 
     $('.time-picker').datetimepicker({
         pickDate: false,
-        format: "HH:ii P",
-        maxView: 1,
-        startView: 1,
-        showMeridian: true,
-        autoclose: true
+        autoclose: true,
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
+        }
     });
 
     $('.date-time-picker').datetimepicker({
-        format: "dd MM yyyy HH:ii P",
-        autoclose: true
+        autoclose: true,
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
+        }
     });
 
     $('.html-editor').summernote({
@@ -28,13 +39,18 @@ jQuery(function( $ ) {
         }
     });
 
-    $('.checkbox-switch').attr('data-label-text', '<span class=\'fa fa-filter fa-lg\'></span>');
-    $('.checkbox-switch').attr('data-ono-text', '<span class=\'fa fa-check fa-lg\'></span>');
-    $('.checkbox-switch').attr('data-off-text', '<span class=\'fa fa-times fa-lg\'></span>');
-    $('.checkbox-switch').attr('data-on-color', 'success');
-    $('.checkbox-switch').attr('data-off-color', 'danger');
-    $('.checkbox-switch').bootstrapSwitch();
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
+    elems.forEach(function(html) {
+      var switchery = new Switchery(html, {
+                        color          : '#3cc8ad'
+                      , secondaryColor : '#db5554'
+                      , className      : 'switchery'
+                      , disabled       : false
+                      , disabledOpacity: 0.5
+                      , speed          : '0.5s'
+                    });
+    });
 
     $('.image-up').ezdz({
         text: 'Drop a picture',

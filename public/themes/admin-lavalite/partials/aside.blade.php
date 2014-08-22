@@ -4,12 +4,12 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="{{Gravatar::src('georgemjohn1@gmail.com')}}" class="img-circle" alt="User Image" />
+                            <img src="{{User::avatar()}}" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, Jane</p>
+                            <p>Hello, {{User::name()}}</p>
 
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            <a href="#"><i class="fa fa-circle text-success"></i> {{User::designation()}}</a>
                         </div>
                     </div>
                     <!-- search form -->

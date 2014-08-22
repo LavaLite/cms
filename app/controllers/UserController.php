@@ -57,12 +57,12 @@ class UserController extends BaseController {
         $this->session->destroy();
         Event::fire('user.logout');
 
-        return Redirect::to('/admin');
+        return Redirect::to('/shop');
     }
 
     public function showHome()
     {
-        $data['page'] = Page::getPage('home');
+        $data['page'] = Page::getPage('welcome');
         $this->theme->layout('home');
         $this -> theme -> setTitle($data['page'] -> title);
         $this -> theme -> setKeywords($data['page'] -> keyword);

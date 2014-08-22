@@ -21,23 +21,19 @@ Route::get('admin/login',   array('as' => 'admin.login',        'uses'  => 'Admi
 Route::post('admin/login',  array('as' => 'admin.post.login',   'uses'  => 'AdminController@postLogin'));
 Route::get('admin/logout',  array('as' => 'admin.logout',       'uses'  => 'AdminController@logout'));
 
-Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
-{
-    Route::any('/', 'AdminController@showHome');
-    Route::get('/cache/clear', 'AdminController@clearCache');
-});
+Route::any('admin/', 'AdminController@showHome');
+Route::get('admin/cache/clear', 'AdminController@clearCache');
 
 // User routes
 Route::get('login',  array('as' => 'user.login',  'uses'  => 'UserController@login'));
+Route::post('login',  array('as' => 'user.login',  'uses'  => 'UserController@postLogin'));
 Route::get('logout', array('as' => 'user.logout', 'uses'  => 'UserController@logout'));
 
-Route::group(array('prefix' => 'user', 'before' => 'auth.user'), function()
-{
-    Route::any('/', 'UserController@showHome');
-});
 
 // Homepage
 Route::get('/',  'PublicController@showIndex');
+
+
 
 
 

@@ -66,34 +66,37 @@ return array(
             $theme->asset()->add('animate',                     '/vendor/animate.css/animate.css');
             $theme->asset()->add('bootstrap',                   '/vendor/bootstrap/dist/css/bootstrap.css');
             $theme->asset()->add('font-awesome',                '/vendor/font-awesome/css/font-awesome.min.css');
-            $theme->asset()->add('bootstrap-datetimepicker',    '/vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
-            $theme->asset()->add('bootstrap-switch',            '/vendor/bootstrap-switch/build/css/bootstrap3/bootstrap-switch.css');
+            $theme->asset()->add('bootstrap-datetimepicker',    '/vendor/bootstrap3-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
             $theme->asset()->add('bootstrap-tagsinput',         '/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css');
             $theme->asset()->add('ezdz',                        '/vendor/ezdz/dist/jquery.ezdz.min.css');
             $theme->asset()->add('fullcalendar',                '/vendor/fullcalendar/dist/fullcalendar.css');
+            $theme->asset()->add('icheck',                      '/vendor/iCheck/skins/minimal/blue.css');
             $theme->asset()->add('ionicons',                    '/vendor/ionicons/css/ionicons.css');
             $theme->asset()->add('yamm3',                       '/vendor/yamm3/yamm/yamm.css');
             $theme->asset()->add('selectize',                   '/vendor/selectize/dist/css/selectize.css');
             $theme->asset()->add('morrisjs',                    '/vendor/morrisjs/morris.css');
             $theme->asset()->add('summernote',                  '/vendor/summernote/summernote-dist/summernote.css');
             $theme->asset()->add('CaptionHoverEffects',         '/vendor/CaptionHoverEffects/css/component.css');
+          
+            
+            
 
 
             $theme->asset()->usePath()->add('override', 'css/override.css');
             $theme->asset()->usePath()->add('styles',   'css/styles.css');
             $theme->asset()->usePath()->add('lavalite', 'css/lavalite.css');
+            $theme->asset()->add('switch',                      '/vendor/switchery/dist/switchery.min.css');
 
-            $theme->asset()->add('jquery',              '/vendor/jquery/dist/jquery.min.js');
+            $theme->asset()->add('jquery',              '/vendor/jquery/jquery.min.js');
 
             $theme->asset()->container('footer')->add('jqueryui',                   '/vendor/jquery-ui/jquery-ui.min.js');
             $theme->asset()->container('footer')->add('bootstrap',                  '/vendor/bootstrap/dist/js/bootstrap.js');
-            $theme->asset()->container('footer')->add('bootstrap-daterangepicker',  '/vendor/bootstrap-daterangepicker/daterangepicker.js');
-            $theme->asset()->container('footer')->add('bootstrap-datetimepicker',   '/vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
-            $theme->asset()->container('footer')->add('bootstrap-switch',           '/vendor/bootstrap-switch/build/js/bootstrap-switch.js');
+            $theme->asset()->container('footer')->add('moment',                     '/vendor/moment/min/moment.min.js');
+            $theme->asset()->container('footer')->add('bootstrap-datetimepicker',   '/vendor/bootstrap3-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
+            $theme->asset()->container('footer')->add('switch',                     '/vendor/switchery/dist/switchery.min.js');
             $theme->asset()->container('footer')->add('bootstrap-tagsinput',        '/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js');
             $theme->asset()->container('footer')->add('morrisjs',                   '/vendor/morrisjs/morris.js');
             $theme->asset()->container('footer')->add('chartjs',                    '/vendor/chartjs/Chart.min.js');
-            $theme->asset()->container('footer')->add('moment',                     '/vendor/moment/min/moment.min.js');
             $theme->asset()->container('footer')->add('ezdz',                       '/vendor/ezdz/dist/jquery.ezdz.min.js');
             $theme->asset()->container('footer')->add('fullcalendar',               '/vendor/fullcalendar/dist/fullcalendar.js');
             $theme->asset()->container('footer')->add('iCheck',                     '/vendor/iCheck/icheck.min.js');
@@ -103,20 +106,18 @@ return array(
             $theme->asset()->container('footer')->add('mocha',                      '/vendor/mocha/mocha.js');
             $theme->asset()->container('footer')->add('jquery-knob',                '/vendor/jquery-knob/js/jquery.knob.js');
             $theme->asset()->container('footer')->add('summernote',                 'vendor/summernote/summernote-dist/summernote.min.js');
-            $theme->asset()->container('footer')->usePath()->add('lavalite',        'js/lavalite.js');
-            $theme->asset()->container('footer')->usePath()->add('restfulizer',     'js/restfulizer.js');
             $theme->asset()->container('footer')->add('CaptionHoverEffectsmod',     '/vendor/CaptionHoverEffects/js/modernizr.custom.js');
             $theme->asset()->container('footer')->add('CaptionHoverEffects',        '/vendor/CaptionHoverEffects/js/toucheffects.js');
             $theme->asset()->container('footer')->add('print',                      '/vendor/print/jquery.printPage.js');
             $theme->asset()->container('footer')->add('map',                        '/vendor/map/map.js');
             $theme->asset()->container('footer')->add('googlemap',                  'http://maps.google.com/maps/api/js?sensor=false');
-            $theme->asset()->container('footer')->usePath()->add('scripts',         'js/scripts.js');
 
-             //Partial composer.
-             $theme->partialComposer('header', function($view)
-             {
-                 $view->with('auth', Auth::user());
-             });
+
+
+            $theme->asset()->container('footer')->usePath()->add('scripts',         'js/scripts.js');
+            $theme->asset()->container('footer')->usePath()->add('lavalite',        'js/lavalite.js');
+            $theme->asset()->container('footer')->usePath()->add('restfulizer',     'js/restfulizer.js');
+
         },
 
         // Listen on event before render a layout,
