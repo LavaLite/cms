@@ -1,30 +1,26 @@
-/* Override value of -
-/public/packages/select2/select2.css
--------------------------------------------------- */
-.container {
-width: auto;
-margin: 0 0px;
+.nav-tabs-custom > form > .tab-content
+{
+  padding: 10px;
 }
 
-.select2-container-multi .select2-choices {
-    border: none;
-	background-image:none;
-	background-color:transparent !important;
-	margin-top:-4px;
+.nav-tabs-custom > form > .tab-footer
+{
+  border-top: 1px solid #f4f4f4;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 10px;
+  background-color: #ffffff;
 }
-
-/* Override value of -
-/public/packages/bootstrap/css/bootstrap.css
--------------------------------------------------- */
-.nav-tabs {
-  margin-bottom: 20px;
-}
-
-.control-label{
-	width: 100%;
-}
-
-.radio-inline + .radio-inline,
-.checkbox-inline + .checkbox-inline {
-  margin-top:  10px;
+.alert {
+  margin-left: 0px !important;
 }

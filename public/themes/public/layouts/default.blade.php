@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- layout /themes/public-lavalite/layouts/default.blade.php -->
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,17 +17,15 @@
     {{ Theme::asset()->scripts() }}
 </head>
 <body  dir='{{ Localization::getCurrentLocaleDirection() }}'>
-   <div class="container"> 
      {{ Theme::partial('header') }}
 
-    <div class="row">
-        <div class="col-lg-12">
-            {{ Theme::content() }}
-        </div>
-    </div>
 
-  {{ Theme::partial('footer') }}
-</div> <!-- /container -->
+<div id="wrapper" style="padding-top: 120px;">
+            {{ Theme::content() }}
+</div>
+
+</div>
+{{ Theme::partial('footer') }}
 {{ Theme::asset()->container('footer')->scripts() }}
 </body>
 </html>

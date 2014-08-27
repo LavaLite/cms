@@ -1,124 +1,188 @@
-/* Sticky footer styles
--------------------------------------------------- */
+.events
+{
+	border: #ddd 1px solid;
+	box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.2);
+	width: 200px;
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 5px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.date, .head
+{
+	font-family: "Open Sans",Arial,sans-serif;
+    font-size: 14px;
+    width: 100%;
+    display: block;
+}
+.date
+{
+	color: #F07057;
+}
+.head a
+{
+	color: #aaa;
+	text-decoration: none;
+}
+.head a:hover
+{
+	color: #FF723B;
+	text-decoration: none;
+}
+.head a:active
+{
+	text-decoration: none;
+}
+.noitems
+{
+	font-family: "Open Sans",Arial,sans-serif;
+    font-size: 14px;
+    padding: 15px;
+    color:#999;
+}
+.main_head
+{
+	font-family: "Open Sans",Arial,sans-serif;
+    font-size: 18px;
+    color:#999;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    border-bottom: 3px solid rgba(128, 128, 128, 0.2);
+}
+.calender_box
+{
+	border: #ddd 1px solid;
+	box-shadow: 0px 0px 1px rgba(128, 128, 128, 0.2);
+	width: 255px;
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+	margin-top: 5px;
+}
+.title_box
+{
+	height: 30px;
+	background: none repeat scroll 0% 0% #FF723B;
+}
+.calender_title
+{
+	font-family: "Open Sans",Arial,sans-serif;
+    font-size: 16px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 190px;
+	float: left;
+	text-align: center;
+	color: #fff;
+}
+.next a
+{
+	width: 30px;
+	height: 30px;
+	float: left;
+	color: #fff;
+}
+.prev a
+{
+	width: 30px;
+	height: 30px;
+	float: left;
+	color: #fff;
+}
+.week_box
+{
+	background-color:#2B2C2E;
+	height: 30px;
+}
+.day_box
+{
+	background-color:#fff;
+	margin: 0px;
+}
+.week
+{
+	width: 36px;
+	margin-top: 3px;
+	text-align: center;
+	font-family: "Open Sans",Arial,sans-serif;
+    font-size: 12px;
+    float: left;
+    color: #999;
+}
+.day
+{
+	width: 36px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    float: left;
+    color: #999;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+.icon
+{
+	padding: 0px;
+	padding-top: 5px;
+	color: #FF723B;
+}
+.text
+{
+	font-family: "Open Sans",Arial,sans-serif;
+    font-size: 14px;
+    color: #999;
+    line-height: 12px;
+    padding-top: 3px;
+}
+.color
+{
+	color: #FF723B;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-right: 15px;
-  padding-left: 15px;
+.para
+{
+	font-family: "Open Sans",Arial,sans-serif;
+    font-size: 14px;
+    color: #999;
+    text-align: justify;
 }
+.show_head
+{
+	font-family: "Bree Serif",sans-serif;
+    font-size: 20px;
+    color: #FF723B;
+    padding-bottom: 10px;
+}
+.panel-default > .panel-heading
+{
+	padding: 5px 15px;
+}
+.panel-title a
+{
+	font-weight: bold;
+}
+.btn-default
+{
+	color: #F07057;
+}
+.btn-default:hover
+{
+	color: #F07057;
+}
+.social-icons li
+	{
+		list-style:none;
+		float:left;
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  padding-bottom: 19px;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-
-code {
-  font-size: 80%;
-}
-
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-}
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
-}
-.form-signin .checkbox {
-  font-weight: normal;
-}
-.form-signin .form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-
-
+		padding-right: 0px;
+	}
+	.social-icons li a
+	{
+		cursor:pointer;
+		text-decoration:none;
+	}

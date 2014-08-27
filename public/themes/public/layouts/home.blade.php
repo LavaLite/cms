@@ -14,12 +14,11 @@
 
 </head>
 <body  dir='{{ Localization::getCurrentLocaleDirection() }}'>
-
- <div class="container">
     {{ Theme::partial('header') }}
-    {{ Theme::content() }}
+    <div id="wrapper" style="padding-top: 120px;">
+    {{ Theme::content()}}
+    </div>
     {{ Theme::partial('footer') }}
-  </div> <!-- /container -->
   {{ Theme::asset()->container('footer')->scripts() }}
 </body>
 </html>

@@ -1,162 +1,19 @@
-/* Sticky footer styles
--------------------------------------------------- */
+/* CSS used here will be applied after bootstrap.css */
 
-html,
-body {
-  height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
-}
-
-/* Wrapper for page content to push down footer */
-#wrap {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  /* Negative indent footer by its height */
-  margin: 0 auto 0px;
-  /* Pad bottom by footer height */
-  padding-top:70px;
-}
-
-/* Set the fixed height of the footer here */
-#footer {
-  padding:10px 0px;
-  background-color: #f5f5f5;
-}
-
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
- 
-code {
-  font-size: 80%;
-}
-
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-}
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
-}
-.form-signin .checkbox {
-  font-weight: normal;
-}
-.form-signin .form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.paddingimg{
-  padding:5px;
-  margin:10px;
-}
-
-
-/*      view mask               */
-
-
-.contents{
-
-     padding-bottom:15px;   
+.panel-default {
+ opacity: 0.8;
+ margin-top:30px;
+ width: 400px;
 
 }
-
-.article{
-
-    background: white;
-    border: 1px solid #39B3D7;
-    overflow: hidden;
-    width:245px;
-    margin-bottom:25px;
-    margin-top:10px;
+.form-group.last {
+ margin-bottom:0px;
 }
-
-.featureds {
-
-    margin-bottom: 20px;
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-top: 0px;
-    text-align: center;
-
+div.panel-body {
+  background-color: rgba(255, 255, 255, 1)
 }
-
-.article .mosaic-block {
-
-    height: 200px;
-    position: relative;
+.vcenter {
+  position: absolute;
+  top: calc(50% - 250px);
+    width: 100%;
 }
-
- .mosaic-block a {
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    position: absolute;
-    text-indent: -9999px;
-    background-position: 20% 30%;
-}
-.article .desc1 {
-  background-color: white;
-  color: #858585;
-  text-align:left;
-  height:60px;
-  margin-top:5px;
-
-}
-
-.box{
-
-    background: white;
-    border: 1px solid #BF3E11;;
-    overflow: hidden;
-    width:230px;
-    margin-bottom:25px;
-    margin-top:10px;
-}
-
-.box:hover{
-
-   cursor: pointer; cursor: hand;
-}
-
-#play {
-    background: url('../../../admin/assets/image/defa.png') center center no-repeat;
-    background-color:black;opacity:0.5;
-    margin: -240px 10px 0 0;
-    height: 240px;
-    width: 240px;
-    position: relative;
-    z-index: 10;
-}
-
-.order-details{
-
-  padding-top: 15px;
-}
-

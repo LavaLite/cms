@@ -58,21 +58,22 @@ return array(
         'beforeRenderTheme' => function($theme)
         {
 
-             $theme->asset()->add('bootstrap', '/vendor/bootswatch/united/bootstrap.min.css');
-             $theme->asset()->add('jquery', '/vendor/jquery/dist/jquery.min.js');
-             $theme->asset()->add('font-awesome', '/vendor/font-awesome/css/font-awesome.min.css');
-             $theme->asset()->add('datetimepicker', '/vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
+             $theme->asset()->add('bootstrap',          '/vendor/bootstrap/dist/css/bootstrap.min.css');
+             $theme->asset()->add('font-awesome',       '/vendor/font-awesome/css/font-awesome.min.css');
 
+             $theme->asset()->add('animate',            '/vendor/animate.css/animate.min.css');
 
-             $theme->asset()->usePath()->add('override', 'css/override.csss');
-             $theme->asset()->usePath()->add('styles', 'css/styles.css');
-             $theme->asset()->add('nivo', '/vendor/sample-banner/nivo-slider.css');
+             $theme->asset()->usePath()->add('essentials',  'css/essentials.css');
+             $theme->asset()->usePath()->add('layout',      'css/layout.css');
+             $theme->asset()->usePath()->add('responsive',  'css/layout-responsive.css');
+             $theme->asset()->usePath()->add('override',    'css/override.css');
+             $theme->asset()->usePath()->add('styles',      'css/styles.css');
+             $theme->asset()->usePath()->add('shop',        'css/shop.css');
+             $theme->asset()->usePath()->add('orange',      'css/orange.css');
 
-             $theme->asset()->container('footer')->add('bootstrap', '/vendor/bootstrap/dist/js/bootstrap.min.js', array('jquery'));
-             $theme->asset()->container('footer')->add('datetimepicker', '/vendor/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js', array('jquery'));
-             $theme->asset()->container('footer')->add('nivo', '/vendor/sample-banner/jquery.nivo.slider.pack.js', array('jquery'));
-
-             $theme->asset()->container('footer')->usePath()->add('core-script', 'js/scripts.js', array('jquery'));
+             $theme->asset()->add('jquery',             '/vendor/jquery/dist/jquery.min.js');
+             $theme->asset()->container('footer')->add('bootstrap',            '/vendor/bootstrap/dist/js/bootstrap.min.js', array('jquery'));
+             $theme->asset()->container('footer')->usePath()->add('core-script',        'js/scripts.js');
 
 
         },

@@ -11,17 +11,17 @@ return array(
 	'locales' 	=> array('en', 'ar'),
 
 	'admin'	=> array(
-						'theme' 	=> 'admin-lavalite',
+						'theme' 	=> 'admin',
 						'layout' 	=> 'default',
 						),
 
 	'public'	=> array(
-						'theme' 	=> 'public-lavalite',
+						'theme' 	=> 'public',
 						'layout' 	=> 'default',
 						),
 
 	'user'	=> array(
-						'theme' 	=> 'public-lavalite',
+						'theme' 	=> 'public',
 						'layout' 	=> 'default',
 						),
 

@@ -1,0 +1,107 @@
+
+a 
+{
+  color: #3c8dbc;
+}
+a:hover,
+a:active,
+a:focus 
+{
+  outline: none;
+  text-decoration: none;
+  color: #72afd2;
+}
+.sidebar {
+  margin-bottom: 5px;
+}
+.sidebar .sidebar-form input:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-color: transparent!important;
+}
+.sidebar .sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.sidebar .sidebar-menu > li {
+  margin: 0;
+  padding: 0;
+}
+.sidebar .sidebar-menu > li > a {
+  padding: 12px 5px 12px 15px;
+  display: block;
+}
+.sidebar .sidebar-menu > li > a > .fa,
+.sidebar .sidebar-menu > li > a > .glyphicon,
+.sidebar .sidebar-menu > li > a > .ion {
+  width: 20px;
+}
+.sidebar .sidebar-menu .treeview-menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar .sidebar-menu .treeview-menu > li {
+  margin: 0;
+}
+.sidebar .sidebar-menu .treeview-menu > li > a {
+  padding: 5px 5px 5px 15px;
+  display: block;
+  font-size: 14px;
+  margin: 0px 0px;
+}
+.sidebar .sidebar-menu .treeview-menu > li > a > .fa,
+.sidebar .sidebar-menu .treeview-menu > li > a > .glyphicon,
+.sidebar .sidebar-menu .treeview-menu > li > a > .ion {
+  width: 20px;
+}
+.skin-blue
+{
+  padding-bottom: 6px;
+}
+.skin-blue .sidebar {
+  border-bottom: 1px solid #fff;
+}
+.skin-blue .sidebar > .sidebar-menu > li {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #dbdbdb;
+}
+.skin-blue .sidebar > .sidebar-menu > li:first-of-type {
+  border-top: 1px solid #dbdbdb;
+}
+.skin-blue .sidebar > .sidebar-menu > li:first-of-type > a {
+  border-top: 1px solid #fff;
+}
+.skin-blue .sidebar > .sidebar-menu > li > a {
+  margin-right: 1px;
+}
+.skin-blue .sidebar > .sidebar-menu > li > a:hover,
+.skin-blue .sidebar > .sidebar-menu > li.active > a {
+  color: #222;
+  background: #f9f9f9;
+}
+.skin-blue .sidebar > .sidebar-menu > li > .treeview-menu {
+  margin: 0 1px;
+  background: #f9f9f9;
+}
+.skin-blue .sidebar a {
+  color: #555555;
+}
+.skin-blue .sidebar a:hover {
+  text-decoration: none;
+}
+.skin-blue .treeview-menu > li > a {
+  color: #777;
+}
+.skin-blue .treeview-menu > li.active > a,
+.skin-blue .treeview-menu > li > a:hover {
+  color: #111;
+}
+.active
+{
+  color: #111;
+}

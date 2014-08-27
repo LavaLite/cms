@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>{{ Theme::getTitle() }}</title>
-	<meta charset="utf-8">
-	<meta name="keywords" content="{{ Theme::get('keywords') }}">
-	<meta name="description" content="{{ Theme::get('description') }}">
-	{{ Theme::asset()->styles() }}
-	{{ Theme::asset()->scripts() }}
-</head>
-<body dir='{{ Localization::getCurrentLocaleDirection() }}'>
-	{{ Theme::partial('menu') }}
-	<div class="container" id="wrap">
-		<div class="row">
-			<div class="col-md-12">
-				{{ Theme::content() }}
-			</div>
+<html class="lockscreen">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ Theme::getTitle() }}</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- bootstrap 3.0.2 -->
+        {{ Theme::asset()->styles() }}
+        {{ Theme::asset()->scripts() }}
 
-		</div>
-	</div>
-	{{ Theme::partial('footer') }}
-	{{ Theme::asset()->container('footer')->scripts() }}
-</body>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Automatic element centering using js -->
+        <div class="center">
+             {{ Theme::content() }}
+        </div><!-- /.center -->
+
+
+    {{ Theme::asset()->container('footer')->scripts() }}
+    </body>
 </html>
