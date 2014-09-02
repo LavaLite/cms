@@ -14,11 +14,10 @@
         "greggilbert/recaptcha": "dev-master",
         "loic-sharma/profiler": "1.1.*",
 
-        "lavalite/user": "dev-master",
-        "lavalite/page": "dev-master",
-        "lavalite/menu": "dev-master",
-        "lavalite/filer": "dev-master",
-        "lavalite/image": "dev-master"
+
+
+        "nwidart/db-exporter": "1.0"
+
     },
 
     "autoload": {
@@ -28,7 +27,9 @@
             "app/models",
             "app/database/migrations",
             "app/database/seeds",
-            "app/tests/TestCase.php"
+            "app/tests/TestCase.php",
+
+            "workbench"
         ]
     },
 
