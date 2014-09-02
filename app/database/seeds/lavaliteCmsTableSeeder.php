@@ -1,11 +1,12 @@
 <?php
 
-class lavaliteCmsTableSeeder extends Seeder {
+class lavaliteCmsTableSeeder extends Seeder
+{
     public function run()
     {
-        
+
         DB::table('contact_langs')->insert(array(
-            
+
             array(
                 'id' => 1,
                 'contact_id' => 1,
@@ -16,7 +17,7 @@ class lavaliteCmsTableSeeder extends Seeder {
 
         ));
         DB::table('contacts')->insert(array(
-            
+
             array(
                 'id' => 1,
                 'pin' => 23423,
@@ -34,7 +35,7 @@ class lavaliteCmsTableSeeder extends Seeder {
 
         ));
         DB::table('groups')->insert(array(
-            
+
             array(
                 'id' => 1,
                 'name' => 'Superuser',
@@ -61,7 +62,7 @@ class lavaliteCmsTableSeeder extends Seeder {
 
         ));
         DB::table('menu_langs')->insert(array(
-            
+
             array(
                 'id' => 1,
                 'menu_id' => 1,
@@ -176,7 +177,7 @@ class lavaliteCmsTableSeeder extends Seeder {
 
         ));
         DB::table('menus')->insert(array(
-            
+
             array(
                 'id' => 1,
                 'parent_id' => 0,
@@ -389,56 +390,56 @@ class lavaliteCmsTableSeeder extends Seeder {
 
         ));
         DB::table('page_langs')->insert(array(
-            
+
             array(
                 'id' => 1,
                 'page_id' => 1,
                 'heading' => 'Home',
                 'title' => 'Home',
                 'content' => '<section class=\"container text-center\">
-				<h1 class=\"text-center\">
-					<strong>Welcome</strong> to Atropos
-					<span class=\"subtitle\">COME ON, DON\'T BE SHY! TODAY WE DON\'T BITE!</span>
-				</h1>
-				<p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.</p>
-			</section>
+                <h1 class=\"text-center\">
+                    <strong>Welcome</strong> to Atropos
+                    <span class=\"subtitle\">COME ON, DON\'T BE SHY! TODAY WE DON\'T BITE!</span>
+                </h1>
+                <p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.</p>
+            </section>
 <div class=\"container\">
-				<hr class=\"half-margins\"><!-- hr line -->
-			</div>
+                <hr class=\"half-margins\"><!-- hr line -->
+            </div>
 <section class=\"container\">
-				<div class=\"row\">
-					<div class=\"col-md-3\">
-						<div class=\"featured-box nobg border-only\">
-							<div class=\"box-content\">
-								<i class=\"fa fa-users\"></i>
-								<h4>For Everyone</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-					</div>
-					<div class=\"col-md-3\">
-						<div class=\"featured-box nobg border-only left-separator\">
-							<i class=\"fa fa-book\"></i>
-							<h4>Well Documented</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						</div>
-					</div>
-					<div class=\"col-md-3\">
-						<div class=\"featured-box nobg border-only left-separator\">
-							<i class=\"fa fa-trophy\"></i>
-							<h4>For Your Business</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						</div>
-					</div>
-					<div class=\"col-md-3\">
-						<div class=\"featured-box nobg border-only left-separator\">
-							<i class=\"fa fa-cogs\"></i>
-							<h4>Highly Customizable</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						</div>
-					</div>
-				</div>
-			</section>',
+                <div class=\"row\">
+                    <div class=\"col-md-3\">
+                        <div class=\"featured-box nobg border-only\">
+                            <div class=\"box-content\">
+                                <i class=\"fa fa-users\"></i>
+                                <h4>For Everyone</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=\"col-md-3\">
+                        <div class=\"featured-box nobg border-only left-separator\">
+                            <i class=\"fa fa-book\"></i>
+                            <h4>Well Documented</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class=\"col-md-3\">
+                        <div class=\"featured-box nobg border-only left-separator\">
+                            <i class=\"fa fa-trophy\"></i>
+                            <h4>For Your Business</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class=\"col-md-3\">
+                        <div class=\"featured-box nobg border-only left-separator\">
+                            <i class=\"fa fa-cogs\"></i>
+                            <h4>Highly Customizable</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>',
                 'keyword' => NULL,
                 'description' => NULL,
                 'image' => NULL,
@@ -506,7 +507,7 @@ class lavaliteCmsTableSeeder extends Seeder {
 
         ));
         DB::table('pages')->insert(array(
-            
+
             array(
                 'id' => 1,
                 'name' => 'Home',
@@ -565,7 +566,7 @@ class lavaliteCmsTableSeeder extends Seeder {
 
         ));
         DB::table('throttle')->insert(array(
-            
+
             array(
                 'id' => 1,
                 'user_id' => 2,
@@ -700,7 +701,7 @@ class lavaliteCmsTableSeeder extends Seeder {
 
         ));
         DB::table('users')->insert(array(
-            
+
             array(
                 'id' => 1,
                 'email' => 'superuser@superuser.com',
@@ -808,7 +809,7 @@ class lavaliteCmsTableSeeder extends Seeder {
 
         ));
         DB::table('users_groups')->insert(array(
-            
+
             array(
                 'user_id' => 1,
                 'group_id' => 1,

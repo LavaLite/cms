@@ -14,7 +14,6 @@ return array(
     'upload_form' => 'cabinet::upload',
     'upload_list' => 'cabinet::upload_list',
 
-
     /*
     |--------------------------------------------------------------------------
     | Model
@@ -26,7 +25,6 @@ return array(
     */
 
     'upload_model' => 'Upload',
-
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +53,6 @@ return array(
     'upload_folder' => 'public/packages/andrew13/cabinet/uploads/',
     'upload_folder_public_path' => 'packages/andrew13/cabinet/uploads/',
     'upload_folder_permission_value' => 0777, // Default 0777 - Other likely values 0775, 0755
-
 
     /*
     |--------------------------------------------------------------------------

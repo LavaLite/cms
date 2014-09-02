@@ -3,8 +3,8 @@
 use Cartalyst\Sentry\Facades\Laravel\Sentry;
 use Illuminate\Support\Facades\Redirect;
 
-class AdminController extends BaseController {
-
+class AdminController extends BaseController
+{
     protected $session;
 
     public function __construct()
@@ -16,8 +16,9 @@ class AdminController extends BaseController {
 
     public function clearCache()
     {
-		Cache::flush();
-		return $this->theme->of('admin.cache')->layout('blank')->render();
+        Cache::flush();
+
+        return $this->theme->of('admin.cache')->layout('blank')->render();
     }
 
     /**
@@ -26,6 +27,7 @@ class AdminController extends BaseController {
     public function login()
     {
         $this->theme->layout('blank');
+
         return $this->theme->of('admin.login')->render();
     }
 
@@ -46,6 +48,7 @@ class AdminController extends BaseController {
            // Success!
             $path = Session::get('url.intended', '/admin');
             Session::forget('url.intended');
+
             return Redirect::to($path);
 
         } else {
@@ -70,10 +73,10 @@ class AdminController extends BaseController {
         return Redirect::to('/admin/login');
     }
 
-
     public function showHome()
     {
         $this->theme->prependTitle(Lang::get('app.admin_panel') . ' :: ');
+
         return $this->theme->of('admin.home')->render();
     }
 

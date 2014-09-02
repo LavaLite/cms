@@ -1,7 +1,7 @@
 <?php
 
-class PublicController extends BaseController {
-
+class PublicController extends BaseController
+{
     public function __construct()
     {
         $this->setupTheme(Config::get('lavalite.public.theme'), Config::get('lavalite.public.layout'));

@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 
-class CreateLavaliteDatabase extends Migration {
-
+class CreateLavaliteDatabase extends Migration
+{
         /**
          * Run the migrations.
          *
@@ -16,7 +15,7 @@ class CreateLavaliteDatabase extends Migration {
              /**
              * Table: files
              */
-            Schema::create('files', function($table) {
+            Schema::create('files', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('of_id');
                 $table->string('of_type', 250);
@@ -35,11 +34,10 @@ class CreateLavaliteDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
              /**
              * Table: groups
              */
-            Schema::create('groups', function($table) {
+            Schema::create('groups', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->string('name', 255);
                 $table->text('permissions')->nullable();
@@ -47,11 +45,10 @@ class CreateLavaliteDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
              /**
              * Table: menu_langs
              */
-            Schema::create('menu_langs', function($table) {
+            Schema::create('menu_langs', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('menu_id');
                 $table->string('name', 250);
@@ -59,11 +56,10 @@ class CreateLavaliteDatabase extends Migration {
                 $table->string('lang', 5)->default("en");
             });
 
-
              /**
              * Table: menus
              */
-            Schema::create('menus', function($table) {
+            Schema::create('menus', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('parent_id');
                 $table->string('key', 100);
@@ -78,11 +74,10 @@ class CreateLavaliteDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
              /**
              * Table: page_langs
              */
-            Schema::create('page_langs', function($table) {
+            Schema::create('page_langs', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('page_id');
                 $table->string('heading', 100);
@@ -95,11 +90,10 @@ class CreateLavaliteDatabase extends Migration {
                 $table->string('lang', 3)->default("en");
             });
 
-
              /**
              * Table: pages
              */
-            Schema::create('pages', function($table) {
+            Schema::create('pages', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->string('name', 50);
                 $table->string('slug', 50);
@@ -111,11 +105,10 @@ class CreateLavaliteDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
              /**
              * Table: throttle
              */
-            Schema::create('throttle', function($table) {
+            Schema::create('throttle', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('user_id')->unsigned();
                 $table->string('ip_address', 255)->nullable();
@@ -127,11 +120,10 @@ class CreateLavaliteDatabase extends Migration {
                 $table->timestamp('banned_at')->nullable();
             });
 
-
              /**
              * Table: users
              */
-            Schema::create('users', function($table) {
+            Schema::create('users', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->string('email', 255);
                 $table->string('password', 255);
@@ -165,15 +157,13 @@ class CreateLavaliteDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
              /**
              * Table: users_groups
              */
-            Schema::create('users_groups', function($table) {
+            Schema::create('users_groups', function ($table) {
                 $table->integer('user_id')->unsigned();
                 $table->integer('group_id')->unsigned();
             });
-
 
          }
 

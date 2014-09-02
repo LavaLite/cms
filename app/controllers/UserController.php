@@ -1,8 +1,7 @@
 <?php
 
-
-class UserController extends BaseController {
-
+class UserController extends BaseController
+{
     protected $session;
 
     public function __construct()
@@ -36,6 +35,7 @@ class UserController extends BaseController {
            // Success!
             $path = Session::get('url.intended', '/user');
             Session::forget('url.intended');
+
             return Redirect::to($path);
 
         } else {

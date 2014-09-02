@@ -1,39 +1,37 @@
 <?php
 return array(
-	'name' 		=> 'Lava Lite',
+    'name' 		=> 'Lava Lite',
 
+    'url' 		=> 'http://www.lavalite.org',
 
-	'url' 		=> 'http://www.lavalite.org',
+    'locale' 	=> 'en',
 
+    'locales' 	=> array('en', 'ar'),
 
-	'locale' 	=> 'en',
+    'admin'	=> array(
+                        'theme' 	=> 'admin',
+                        'layout' 	=> 'default',
+                        ),
 
-	'locales' 	=> array('en', 'ar'),
+    'public'	=> array(
+                        'theme' 	=> 'public',
+                        'layout' 	=> 'default',
+                        ),
 
-	'admin'	=> array(
-						'theme' 	=> 'admin',
-						'layout' 	=> 'default',
-						),
+    'user'	=> array(
+                        'theme' 	=> 'public',
+                        'layout' 	=> 'default',
+                        ),
 
-	'public'	=> array(
-						'theme' 	=> 'public',
-						'layout' 	=> 'default',
-						),
+    'packages'	=> array(
+                        'user' 			=> true,
+                        'page' 			=> true,
+                        'menu' 			=> true,
+                        'catalogue' 	=> true,
+                        ),
 
-	'user'	=> array(
-						'theme' 	=> 'public',
-						'layout' 	=> 'default',
-						),
+    'usertypes'	=> ['admin', 'superuser', 'user', 'developer'],
 
-	'packages'	=> array(
-						'user' 			=> true,
-						'page' 			=> true,
-						'menu' 			=> true,
-						'catalogue' 	=> true,
-						),
-
-	'usertypes'	=> ['admin', 'superuser', 'user', 'developer'],
-
-	'caching'	=> true,
+    'caching'	=> true,
 
 );

@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 
-class CreateLavalite_CmsDatabase extends Migration {
-
+class CreateLavalite_CmsDatabase extends Migration
+{
         /**
          * Run the migrations.
          *
@@ -12,11 +11,11 @@ class CreateLavalite_CmsDatabase extends Migration {
          */
          public function up()
          {
-            
-	    /**
-	     * Table: contact_langs
-	     */
-	    Schema::create('contact_langs', function($table) {
+
+        /**
+         * Table: contact_langs
+         */
+        Schema::create('contact_langs', function ($table) {
                 $table->increments('id');
                 $table->integer('contact_id');
                 $table->string('name', 50);
@@ -24,11 +23,10 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->string('lang', 5);
             });
 
-
-	    /**
-	     * Table: contacts
-	     */
-	    Schema::create('contacts', function($table) {
+        /**
+         * Table: contacts
+         */
+        Schema::create('contacts', function ($table) {
                 $table->increments('id');
                 $table->integer('pin');
                 $table->string('phone', 100);
@@ -43,11 +41,10 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
-	    /**
-	     * Table: files
-	     */
-	    Schema::create('files', function($table) {
+        /**
+         * Table: files
+         */
+        Schema::create('files', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('of_id');
                 $table->string('of_type', 250);
@@ -66,11 +63,10 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
-	    /**
-	     * Table: groups
-	     */
-	    Schema::create('groups', function($table) {
+        /**
+         * Table: groups
+         */
+        Schema::create('groups', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->string('name', 255);
                 $table->text('permissions')->nullable();
@@ -78,11 +74,10 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
-	    /**
-	     * Table: menu_langs
-	     */
-	    Schema::create('menu_langs', function($table) {
+        /**
+         * Table: menu_langs
+         */
+        Schema::create('menu_langs', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('menu_id');
                 $table->string('name', 250);
@@ -90,11 +85,10 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->string('lang', 5)->default("en");
             });
 
-
-	    /**
-	     * Table: menus
-	     */
-	    Schema::create('menus', function($table) {
+        /**
+         * Table: menus
+         */
+        Schema::create('menus', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('parent_id');
                 $table->string('key', 100);
@@ -109,11 +103,10 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
-	    /**
-	     * Table: page_langs
-	     */
-	    Schema::create('page_langs', function($table) {
+        /**
+         * Table: page_langs
+         */
+        Schema::create('page_langs', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('page_id');
                 $table->string('heading', 100);
@@ -126,11 +119,10 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->string('lang', 3)->default("en");
             });
 
-
-	    /**
-	     * Table: pages
-	     */
-	    Schema::create('pages', function($table) {
+        /**
+         * Table: pages
+         */
+        Schema::create('pages', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->string('name', 50);
                 $table->string('slug', 50);
@@ -144,11 +136,10 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
-	    /**
-	     * Table: throttle
-	     */
-	    Schema::create('throttle', function($table) {
+        /**
+         * Table: throttle
+         */
+        Schema::create('throttle', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('user_id')->unsigned();
                 $table->string('ip_address', 255)->nullable();
@@ -160,11 +151,10 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->timestamp('banned_at')->nullable();
             });
 
-
-	    /**
-	     * Table: users
-	     */
-	    Schema::create('users', function($table) {
+        /**
+         * Table: users
+         */
+        Schema::create('users', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->string('email', 255);
                 $table->string('password', 255);
@@ -199,15 +189,13 @@ class CreateLavalite_CmsDatabase extends Migration {
                 $table->timestamp('updated_at')->default("0000-00-00 00:00:00");
             });
 
-
-	    /**
-	     * Table: users_groups
-	     */
-	    Schema::create('users_groups', function($table) {
+        /**
+         * Table: users_groups
+         */
+        Schema::create('users_groups', function ($table) {
                 $table->integer('user_id')->unsigned();
                 $table->integer('group_id')->unsigned();
             });
-
 
          }
 
@@ -218,18 +206,18 @@ class CreateLavalite_CmsDatabase extends Migration {
          */
          public function down()
          {
-            
-	            Schema::drop('contact_langs');
-	            Schema::drop('contacts');
-	            Schema::drop('files');
-	            Schema::drop('groups');
-	            Schema::drop('menu_langs');
-	            Schema::drop('menus');
-	            Schema::drop('page_langs');
-	            Schema::drop('pages');
-	            Schema::drop('throttle');
-	            Schema::drop('users');
-	            Schema::drop('users_groups');
+
+                Schema::drop('contact_langs');
+                Schema::drop('contacts');
+                Schema::drop('files');
+                Schema::drop('groups');
+                Schema::drop('menu_langs');
+                Schema::drop('menus');
+                Schema::drop('page_langs');
+                Schema::drop('pages');
+                Schema::drop('throttle');
+                Schema::drop('users');
+                Schema::drop('users_groups');
          }
 
 }

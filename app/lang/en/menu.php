@@ -1,24 +1,24 @@
 <?php
 return array(
 
-	/*
-	|--------------------------------------------------------------------------
-	| Label language files for main menu items
-	|--------------------------------------------------------------------------
-	|
-	| The following language lines are the default labels for course module,
-	| and it is used by the template/view files in this module
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Label language files for main menu items
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are the default labels for course module,
+    | and it is used by the template/view files in this module
+    |
+    */
 
-	"change_password" 			=> "Change Password",
+    "change_password" 			=> "Change Password",
 
-	"my_account" 				=> "My Account",
-	"my_profile" 				=> "My Profile",
-	"user"     					=> "Users",
-	"profile"     				=> "Profile",
-	"group"    					=> "Groups",
-	"change_language"    		=> "Change Language",
-	"change_password"    		=> "Change Password",
-	"clearcache"				=> "Clear cache",
+    "my_account" 				=> "My Account",
+    "my_profile" 				=> "My Profile",
+    "user"     					=> "Users",
+    "profile"     				=> "Profile",
+    "group"    					=> "Groups",
+    "change_language"    		=> "Change Language",
+    "change_password"    		=> "Change Password",
+    "clearcache"				=> "Clear cache",
 );
