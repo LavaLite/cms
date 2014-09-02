@@ -17,6 +17,7 @@
         "lavalite/user": "dev-master",
         "lavalite/page": "dev-master",
         "lavalite/menu": "dev-master",
+        "lavalite/contact": "dev-master",
         "lavalite/filer": "dev-master",
         "lavalite/image": "dev-master"
     },
