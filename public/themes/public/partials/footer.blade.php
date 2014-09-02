@@ -74,13 +74,13 @@
 								<h3><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
 							</div>
 
-							<a href="blog-masonry-sidebar.html" class="view-more pull-right">View Blog <i class="fa fa-arrow-right"></i></a>
+							
 
 						</div>
 						<!-- /FOOTER LATEST POSTS -->
 
 					</div>
- {{ SocialIcon::socialIcon('3','footerIcon') }}
+
 				</div>
 			</div>
 			<!-- footer content -->

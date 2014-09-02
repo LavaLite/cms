@@ -9,6 +9,7 @@ class PublicController extends BaseController {
 
     public function showIndex()
     {
+
         $data['page'] = Page::getPage('home');
         $this->theme->layout('home');
         $this -> theme -> setTitle($data['page'] -> title);

@@ -17,15 +17,13 @@
     {{ Theme::asset()->scripts() }}
 </head>
 <body  dir='{{ Localization::getCurrentLocaleDirection() }}'>
-     {{ Theme::partial('header') }}
+    {{ Theme::partial('header') }}
 
+    <div id="wrapper" style="padding-top: 120px;">
+        {{ Theme::content() }}
+    </div>
 
-<div id="wrapper" style="padding-top: 120px;">
-            {{ Theme::content() }}
-</div>
-
-</div>
-{{ Theme::partial('footer') }}
-{{ Theme::asset()->container('footer')->scripts() }}
+    {{ Theme::partial('footer') }}
+    {{ Theme::asset()->container('footer')->scripts() }}
 </body>
 </html>

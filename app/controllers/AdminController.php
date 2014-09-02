@@ -72,12 +72,9 @@ class AdminController extends BaseController {
 
 
     public function showHome()
-    { 
-        $group                 = Sentry::findGroupById(4);
-        $users                 = Sentry::findAllUsersInGroup($group);
-        $data['userCount']     = count($users);
+    {
         $this->theme->prependTitle(Lang::get('app.admin_panel') . ' :: ');
-        return $this->theme->of('admin.home',$data)->render();
+        return $this->theme->of('admin.home')->render();
     }
 
     /**

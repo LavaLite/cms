@@ -13,7 +13,7 @@
                 <!-- LANGUAGE -->
                 <div class="btn-group pull-right hidden-xs">
                     <div class="row">
-                        <div class="col-md-5">
+                        
                             <button class="dropdown-toggle language" type="button" data-toggle="dropdown">
                                 <img src="{{Theme::asset()->url('images/flags/us.png')}}" width="16" height="11" alt="EN Language" /> English <span class="caret"></span>
                             </button>
@@ -40,10 +40,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="col-md-7">
-                            {{ SocialIcon::socialIcon('3','headerIcon') }}
-                        </div>
+                       
                     </div>
                 </div>
                 <!-- /LANGUAGE -->
@@ -108,7 +105,7 @@
 
                 <!-- LINKS -->
                 <div class="pull-right nav hidden-xs">
-                    <a href="{{ URL::to('about-us.html') }}"><i class="fa fa-angle-right"></i> About</a>
+                    <a href="{{ URL::to('about-us.html') }}"><i class="fa fa-angle-right"></i> About-us</a>
                     <a href="{{ URL::to('/contact.htm') }}"><i class="fa fa-angle-right"></i> Contact</a>
 
                 </div>
@@ -312,84 +309,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" href="#">
-                                    <b>Special</b> <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="magazine-home.html">Magazine - Home</a></li>
-                                    <li><a href="magazine-category.html">Magazine - Category</a></li>
-                                    <li><a href="magazine-single.html">Magazine - Single</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="realestate-home.html">Real Estate - Home</a></li>
-                                    <li><a href="realestate-list.html">Real Estate - List</a></li>
-                                    <li><a href="realestate-single.html">Real Estate - Single</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" href="#">
-                                    Shop <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ URL::to('/shop') }}">Shop - Home</a></li>
-                                    <li class="divider"></li>
-                                  <li class="dropdown-submenu">
-                                                                    <a href="#"><i class="fa fa-check-square"></i> Categories</a>
-                                                                    <ul class="dropdown-menu">
-                                                                    @foreach(Shop::tree() as $value)
-                                                                    @if($value['category']->parent_id == 0)
-                                                                        <li class="{{ (count(Shop::getSubcatlist($value['category']->id)) <> 0) ? 'dropdown-submenu' : ''}}"><a href="{{ $value['category']->slug }}">{{ $value['category']->name }}</a>
-
-                                                                                @if(count(Shop::getSubcatlist($value['category']->id)) <> 0)
-                                                                                 <ul class="dropdown-menu">
-                                                                                        @foreach(Shop::getSubcatlist($value['category']->id) as $subcategory)
-                                                                                        <li><a href="{{ URL::to('shop/'.$subcategory['category']->slug) }}">{{ $subcategory['category']->name }}</a></li>
-                                                                                        @endforeach
-                                                                                 </ul>
-                                                                               @endif
-
-                                                                        </li>
-                                                                    @endif
-                                                                    @endforeach
-
-                                                                    </ul>
-                                </li>
-
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" href="#">
-                                    Blog <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ URL::to('blog/blog-full-width') }}">Blog Without Sidebar</a></li>
-                                    <li><a href="{{ URL::to('blog/blog-left-sidebar') }}">Blog With Sidebar Left</a></li>
-                                    <li><a href="{{ URL::to('/blog') }}">Blog With Sidebar Right</a></li>
-                                    <li><a href="blog-timeline.html">Blog Timeline</a></li>
-                                    <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                    <li><a href="blog-masonry-full-width.html">Blog Masonry - Full Width</a></li>
-                                    <li><a href="blog-masonry-sidebar.html">Blog Masonry - Sidebar</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="blog-post.html">Single Post</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" href="#">
-                                    Portfolio <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="portfolio-2-columns.html">2 Columns</a></li>
-                                    <li><a href="portfolio-3-columns.html">3 Columns</a></li>
-                                    <li><a href="{{ URL::to('/portfolio') }}">4 Columns</a></li>
-                                    <li><a href="portfolio-lightbox.html">Portfolio - Gallery</a></li>
-                                    <li><a href="portfolio-full-width.html">Portfolio Full Width</a></li>
-                                    <li><a href="portfolio-full-center.html">Portfolio Full Center</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="portfolio-single.html">Single - Basic</a></li>
-                                    <li><a href="portfolio-single-extended.html">Single - Extended</a></li>
-                                    <li><a href="portfolio-single-full-slider.html">Single - Full Slider</a></li>
-                                </ul>
-                            </li>
+                            
 
                             <!-- GLOBAL SEARCH -->
                             <li class="search">
@@ -405,40 +325,7 @@
                             <!-- /GLOBAL SEARCH -->
 
                             <!-- QUICK SHOP CART -->
-                            <li class="quick-cart">
-                                <span class="badge pull-right">{{ Cart::count() }} </span>
-
-                                <div class="quick-cart-content">
-
-                                    <p><i class="fa fa-warning"></i> You have {{ Cart::count() }}  products on your cart</p>
-
-                                    @foreach(Shop::cartContents() as $value)
-                                    <a class="item" href="{{ URL::to('shop/'.$value['product']['category']['slug'].'/'.$value->product->slug.'.html') }}"><!-- item 1 -->
-                                        <img class="pull-left" src="{{ isset($value->product->file[0]) ? URL::to('image/shop/product/'.$value->product['id'].'/images/'.'xs'.'_'.$value->product->file[0]->file) : URL::to('packages/lavalite/shop/default/product/'.$image['cart'].'.png')}}" width="40" alt="quick cart" />
-                                        <div class="inline-block">
-                                            <span class="title">{{ $value['product']['name'] }}</span>
-                                            <span class="price">{{ $value['qty'] }}&times; ${{ $value['price'] }}</span>
-                                        </div>
-                                    </a>
-                                    @endforeach
-                                    <!-- /item 1 -->
-
-
-
-                                    <!-- QUICK CART BUTTONS -->
-                                    <div class="row cart-footer">
-                                        <div class="col-md-6 nopadding-right">
-                                            <a href="{{ URL::to('shop/cart') }}" class="btn btn-primary btn-xs fullwidth">VIEW CART</a>
-                                        </div>
-                                        <div class="col-md-6 nopadding-left">
-                                            <a href="{{ URL::to('shop/checkout') }}" class="btn btn-info btn-xs fullwidth">CHECKOUT</a>
-                                        </div>
-                                    </div>
-                                    <!-- /QUICK CART BUTTONS -->
-
-                                </div>
-
-                            </li>
+                         
                             <!-- /QUICK SHOP CART -->
 
 

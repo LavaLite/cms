@@ -13,7 +13,7 @@
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                        {{ Shop::orderCount() }}
+                                        0
                                     </h3>
                                     <p>
                                         New Orders
@@ -51,7 +51,7 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                      {{ $userCount }}
+                                      4
                                     </h3>
                                     <p>
                                         User Registrations
@@ -120,7 +120,7 @@
                     <span class="badge bg-fuchsia">4</span>
                     <i class="fa fa-group"></i>Groups
                 </a>
-                <a href="{{URL::to('/admin/settings')}}" class="btn btn-app">
+                <a href="{{URL::to('/admin')}}" class="btn btn-app">
                     <i class="fa fa-cog"></i>Settings
                 </a>
             </div><!-- /.box-body -->

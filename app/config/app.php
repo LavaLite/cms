@@ -115,6 +115,7 @@ return array(
 		'Lavalite\Filer\FilerServiceProvider',
 		'Lavalite\Image\ImageServiceProvider',
 		'Lavalite\Page\PageServiceProvider',
+		'Lavalite\Contact\ContactServiceProvider',
 
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Former\FormerServiceProvider',
@@ -201,6 +202,8 @@ return array(
 		'Filer'  	      => 'Lavalite\Filer\Facades\Filer',
 		'Image'  	      => 'Lavalite\Image\Facades\Image',
 		'User'  	      => 'Lavalite\User\Facades\User',
+		'Contact'  	      => 'Lavalite\Contact\Facades\Contact',
+
 
 	),
 
