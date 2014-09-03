@@ -125,8 +125,6 @@ return array(
         'Greggilbert\Recaptcha\RecaptchaServiceProvider',
         'Profiler\ProfilerServiceProvider'
 
-        'Nwidart\DbExporter\DbExportHandlerServiceProvider'
-
     ),
 
     /*

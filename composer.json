@@ -14,9 +14,12 @@
         "greggilbert/recaptcha": "dev-master",
         "loic-sharma/profiler": "1.1.*",
 
-
-
-        "nwidart/db-exporter": "1.0"
+        "lavalite/user": "dev-master",
+        "lavalite/page": "dev-master",
+        "lavalite/contact": "dev-master",
+        "lavalite/menu": "dev-master",
+        "lavalite/filer": "dev-master",
+        "lavalite/image": "dev-master",
 
     },
 
