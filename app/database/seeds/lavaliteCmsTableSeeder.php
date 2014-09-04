@@ -1,6 +1,6 @@
 <?php
 
-class lavaliteCmsTableSeeder extends Seeder
+class LavaliteTableSeeder extends Seeder
 {
     public function run()
     {
