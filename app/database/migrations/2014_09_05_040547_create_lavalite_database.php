@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateLavalite_CmsDatabase extends Migration {
+class CreateLavaliteDatabase extends Migration {
 
         /**
          * Run the migrations.
@@ -12,7 +12,7 @@ class CreateLavalite_CmsDatabase extends Migration {
          */
          public function up()
          {
-            
+
 	    /**
 	     * Table: contact_langs
 	     */
@@ -218,7 +218,7 @@ class CreateLavalite_CmsDatabase extends Migration {
          */
          public function down()
          {
-            
+
 	            Schema::drop('contact_langs');
 	            Schema::drop('contacts');
 	            Schema::drop('files');
