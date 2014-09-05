@@ -39,7 +39,7 @@ class LavaliteTableSeeder extends Seeder
             array(
                 'id' => 1,
                 'name' => 'Superuser',
-                'permissions' => '{\"superuser\":1}',
+                'permissions' => '{"superuser":1}',
                 'created_at' => '2014-05-12 10:33:41',
                 'updated_at' => '2014-08-29 11:57:23',
             ),
@@ -47,7 +47,7 @@ class LavaliteTableSeeder extends Seeder
             array(
                 'id' => 2,
                 'name' => 'Admin',
-                'permissions' => '{\"admin\":1}',
+                'permissions' => '{"admin":1}',
                 'created_at' => '2014-05-12 10:33:41',
                 'updated_at' => '2014-08-29 11:57:29',
             ),
@@ -55,7 +55,7 @@ class LavaliteTableSeeder extends Seeder
             array(
                 'id' => 3,
                 'name' => 'User',
-                'permissions' => '{\"user\":1}',
+                'permissions' => '{"user":1}',
                 'created_at' => '2014-05-12 10:33:41',
                 'updated_at' => '2014-08-29 11:58:20',
             ),
@@ -396,44 +396,44 @@ class LavaliteTableSeeder extends Seeder
                 'page_id' => 1,
                 'heading' => 'Home',
                 'title' => 'Home',
-                'content' => '<section class=\"container text-center\">
-                <h1 class=\"text-center\">
+                'content' => '<section class="container text-center">
+                <h1 class="text-center">
                     <strong>Welcome</strong> to Atropos
-                    <span class=\"subtitle\">COME ON, DON\'T BE SHY! TODAY WE DON\'T BITE!</span>
+                    <span class="subtitle">COME ON, DON\'T BE SHY! TODAY WE DON\'T BITE!</span>
                 </h1>
-                <p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.</p>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.</p>
             </section>
-<div class=\"container\">
-                <hr class=\"half-margins\"><!-- hr line -->
+<div class="container">
+                <hr class="half-margins"><!-- hr line -->
             </div>
-<section class=\"container\">
-                <div class=\"row\">
-                    <div class=\"col-md-3\">
-                        <div class=\"featured-box nobg border-only\">
-                            <div class=\"box-content\">
-                                <i class=\"fa fa-users\"></i>
+<section class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="featured-box nobg border-only">
+                            <div class="box-content">
+                                <i class="fa fa-users"></i>
                                 <h4>For Everyone</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                         </div>
                     </div>
-                    <div class=\"col-md-3\">
-                        <div class=\"featured-box nobg border-only left-separator\">
-                            <i class=\"fa fa-book\"></i>
+                    <div class="col-md-3">
+                        <div class="featured-box nobg border-only left-separator">
+                            <i class="fa fa-book"></i>
                             <h4>Well Documented</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </div>
-                    <div class=\"col-md-3\">
-                        <div class=\"featured-box nobg border-only left-separator\">
-                            <i class=\"fa fa-trophy\"></i>
+                    <div class="col-md-3">
+                        <div class="featured-box nobg border-only left-separator">
+                            <i class="fa fa-trophy"></i>
                             <h4>For Your Business</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </div>
-                    <div class=\"col-md-3\">
-                        <div class=\"featured-box nobg border-only left-separator\">
-                            <i class=\"fa fa-cogs\"></i>
+                    <div class="col-md-3">
+                        <div class="featured-box nobg border-only left-separator">
+                            <i class="fa fa-cogs"></i>
                             <h4>Highly Customizable</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
@@ -453,19 +453,19 @@ class LavaliteTableSeeder extends Seeder
                 'heading' => 'About Us',
                 'title' => 'About Us',
                 'content' => '<article>
-                    <h2><span style=\"color: inherit; line-height: 1.1;\">Welcome to Atropos</span><br></h2></article><article>
-                    <p>Sed ut perspiciatis unde omnis <strong>iste natus error</strong> sit voluptatem accusantium <em>doloremque laudantium</em>, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia <a href=\"#\">voluptas sit aspernatur</a> aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut <strong>labore dolore magnm</strong> aliquam quaerat voluptatem.</p>
-                    <p class=\"lead\">Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
+                    <h2><span style="color: inherit; line-height: 1.1;">Welcome to Atropos</span><br></h2></article><article>
+                    <p>Sed ut perspiciatis unde omnis <strong>iste natus error</strong> sit voluptatem accusantium <em>doloremque laudantium</em>, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia <a href="#">voluptas sit aspernatur</a> aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut <strong>labore dolore magnm</strong> aliquam quaerat voluptatem.</p>
+                    <p class="lead">Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
                 </article>
-<div class=\"divider\"><!-- divider -->
-                    <i class=\"fa fa-star\"></i>
+<div class="divider"><!-- divider -->
+                    <i class="fa fa-star"></i>
                 </div>
 
-<article class=\"row\">
-                    <div class=\"col-md-6\">
-<img src=\"/packages/lavalite/page/page/3/content/4_1.jpg\" style=\"width: 319px;\">
+<article class="row">
+                    <div class="col-md-6">
+<img src="/packages/lavalite/page/page/3/content/4_1.jpg" style="width: 319px;">
                     </div>
-                    <div class=\"col-md-6\">
+                    <div class="col-md-6">
                         <h3>Atropos : Born to be a Winner</h3>
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                         <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
