@@ -46,10 +46,12 @@ Url: sites-public-url/user
 User: user@user.com - user@user
 
 ## Demo
-[Public](http://demo.lavalite.org) 
-[Admin](http://demo.lavalite.org/admin) 
+Public [http://demo.lavalite.org](http://demo.lavalite.org)
+
+Admin [http://demo.lavalite.org/admin](http://demo.lavalite.org/admin) 
 
 Superuser : superuser@superuser.com - superuser@superuser
+
 Admin : admin@admin.com - admin@admin
 
 ##Frameworks/Libraries
