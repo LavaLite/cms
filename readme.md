@@ -21,7 +21,7 @@ Please check the system requirements before installing Lavalite.
     * From a command line open in the folder, run `composer install`.
   * Composer: `composer create-project LavaLite/cms path 2.2.*`
 3. Then, run `bower install` to install javascript libraries.
-4. Enter your database details into `app/config/databse.php`.
+4. Enter your database details into `app/config/database.php`.
 5. Run `php artisan migrate` to setup your database.
 6. Run `php artisan db:seed --class=LavaliteTableSeeder` to seed your database.
 7. You will need to enter your mail server details into `app/config/mail.php`.
