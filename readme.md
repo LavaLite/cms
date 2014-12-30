@@ -59,7 +59,7 @@ Admin : admin@admin.com - admin@admin
 ### PHP Libraries
 * [laravel/laravel](https://github.com/laravel/laravel) - A PHP Framework For Web Artisans
 * [cartalyst/sentry](https://github.com/cartalyst/sentry) - A framework agnostic authentication & authorization system
-* [anahkiasen/former](https://github.com/Anahkiasen/former‎) -A powerful form builder
+* [anahkiasen/former](https://github.com/Anahkiasen/former) -A powerful form builder
 * [teepluss/theme](https://github.com/teepluss/laravel4-theme) - Theme and asset managing for laravel 4
 * [mcamara/laravel-localization](https://github.com/mcamara/laravel-localization) - laravel routes management for language
 * [intervention/imagecache](https://github.com/Intervention/imagecache) - Caching extension for the Intervention [Image Class](https://github.com/Intervention/image)
