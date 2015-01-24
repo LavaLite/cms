@@ -1,24 +1,26 @@
 {
-  "name": "LavaLite",
-  "version": "2.2",
-  "main": "",
-  "ignore": [
-  ".jshintrc",
-  "**/*.txt"
-  ],
-  "dependencies": {
-    "animate.css":"v3.1.*",
-    "bootstrap":"*",
-    "bootstrap3-datetimepicker": "*",
-    "bootstrap-tagsinput":"*",
-    "CaptionHoverEffects":"*",
-    "ezdz":"*",
-    "font-awesome":"*",
-    "iCheck":"*",
-    "ionicons":"*",
-    "jquery": "2.1.*",
-    "jquery.ui":"*",
-    "summernote":"*",
-    "switchery":"*"
-    }
+    "name": "LavaLite",
+    "version": "2.2",
+    "main": "",
+    "ignore": [
+        ".jshintrc",
+        "**/*.txt"
+    ],
+    "dependencies": {
+        "animate.css": "v3.1.*",
+        "bootstrap": "*",
+        "bootstrap3-datetimepicker": "*",
+        "bootstrap-tagsinput": "*",
+        "CaptionHoverEffects": "*",
+        "ezdz": "*",
+        "font-awesome": "*",
+        "iCheck": "*",
+        "ionicons": "*",
+        "jquery": "2.1.*",
+        "jquery.ui": "*",
+        "select2": "*",
+        "select2-bootstrap-css" : "*",
+        "summernote": "*",
+        "switchery": "*"
+     }
 }

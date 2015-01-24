@@ -6,21 +6,14 @@
     "require": {
         "laravel/framework": "4.2.*",
         "cartalyst/sentry": "dev-master",
-        "anahkiasen/former": "dev-master",
-        "teepluss/theme": "dev-master",
+        "anahkiasen/former": "3.*",
+        "teepluss/theme": "1.2.*",
         "intervention/imagecache": "dev-master",
-        "mcamara/laravel-localization": "0.14.*",
-        "dimsav/laravel-translatable": "4.2.*",
+        "mcamara/laravel-localization": "0.15.*",
+        "dimsav/laravel-translatable": "4.*",
         "greggilbert/recaptcha": "dev-master",
         "loic-sharma/profiler": "1.1.*",
-
-        "lavalite/user": "2.2.*",
-        "lavalite/page": "2.2.*",
-        "lavalite/contact": "2.2.*",
-        "lavalite/menu": "2.2.*",
-        "lavalite/filer": "2.2.*",
-        "lavalite/image": "2.2.*"
-
+        "lusitanian/oauth": "~0.3"
     },
 
     "autoload": {
@@ -28,6 +21,7 @@
             "app/commands",
             "app/controllers",
             "app/models",
+            "workbench",
             "app/database/migrations",
             "app/database/seeds",
             "app/tests/TestCase.php"

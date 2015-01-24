@@ -21,7 +21,7 @@
                             </span>
                         </div>
                     </form>
-                    {{Menu::menu('admin')}}
+                    {{Menu::menu('admin', 'admin')}}
 
                 </section>
                 <!-- /.sidebar -->

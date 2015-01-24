@@ -110,20 +110,22 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
-        'Lavalite\User\UserServiceProvider',
-        'Lavalite\Menu\MenuServiceProvider',
-        'Lavalite\Filer\FilerServiceProvider',
-        'Lavalite\Image\ImageServiceProvider',
-        'Lavalite\Page\PageServiceProvider',
-        'Lavalite\Contact\ContactServiceProvider',
-
         'Cartalyst\Sentry\SentryServiceProvider',
         'Former\FormerServiceProvider',
         'Teepluss\Theme\ThemeServiceProvider',
         'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Greggilbert\Recaptcha\RecaptchaServiceProvider',
-        'Profiler\ProfilerServiceProvider'
+        'Profiler\ProfilerServiceProvider',
+        'Dimsav\Translatable\TranslatableServiceProvider',
+
+        'Lavalite\User\UserServiceProvider',
+        'Lavalite\Menu\MenuServiceProvider',
+        'Lavalite\Filer\FilerServiceProvider',
+        'Lavalite\Picture\PictureServiceProvider',
+        'Lavalite\Page\PageServiceProvider',
+        'Lavalite\Contact\ContactServiceProvider',
+
 
     ),
 
@@ -200,7 +202,7 @@ return array(
         'Menu'  	      => 'Lavalite\Menu\Facades\Menu',
         'Page'  	      => 'Lavalite\Page\Facades\Page',
         'Filer'  	      => 'Lavalite\Filer\Facades\Filer',
-        'Image'  	      => 'Lavalite\Image\Facades\Image',
+        'Picture'  	      => 'Lavalite\Picture\Facades\Picture',
         'User'  	      => 'Lavalite\User\Facades\User',
         'Contact'  	      => 'Lavalite\Contact\Facades\Contact',
 

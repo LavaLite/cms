@@ -32,3 +32,5 @@ Route::get('logout', array('as' => 'user.logout', 'uses'  => 'UserController@log
 
 // Homepage
 Route::get('/',  'PublicController@showIndex');
+
+Route::get('/test',  'PublicController@test');

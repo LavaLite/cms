@@ -18,4 +18,8 @@ class PublicController extends BaseController
 
         return $this->theme->of('public.home', $data)->render();
     }
+
+    public function test(){
+        return Menu::menu('admin');
+    }
 }

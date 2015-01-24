@@ -18,7 +18,7 @@ class BaseController extends Controller
      */
     protected $model;
 
-    public function setupTheme($theme = 'defsault', $layout = 'default')
+    public function setupTheme($theme = 'default', $layout = 'default')
     {
         $this->theme = Theme::uses($theme)->layout($layout);
 

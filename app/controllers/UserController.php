@@ -57,7 +57,7 @@ class UserController extends BaseController
         $this->session->destroy();
         Event::fire('user.logout');
 
-        return Redirect::to('/shop');
+        return Redirect::to('/login');
     }
 
     public function showHome()

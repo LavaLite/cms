@@ -39,14 +39,14 @@
                             {{ Form::submit(trans('user::user.signin'), array('class' => 'btn btn-primary pull-right'))}}
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12" >
-                            <a href='#' ><i class="fa fa-facebook"> </i></a>
-                            <a href='#' ><i class="fa fa-twitter"> </i></a>
-                            <a href='#' ><i class="fa fa-google-plus">  </i></a>
-                            <a href='#' ><i class="fa fa-linkedin"> </i></a>
-                        </div>
-                    </div>
+                     <div class="row">
+                          <div class="col-md-12" > Register with:
+                              <a href='{{URL::to('user/social/facebook')}}' ><span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span></a>
+                              <a href='{{URL::to('user/social/twitter')}}' ><span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span></a>
+                              <a href='{{URL::to('user/social/google')}}' ><span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i> </span></a>
+                              <a href='{{URL::to('user/social/linkedin')}}' ><span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> </span></a>
+                          </div>
+                     </div>
                     {{ Former::close() }}
                 </div>
 

@@ -11,3 +11,4 @@ composer.lock
 ._**
 *.tmp
 *.zip
+.idea

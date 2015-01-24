@@ -14,12 +14,13 @@
 
 </head>
 <body  dir='{{ Localization::getCurrentLocaleDirection() }}'>
-    {{ Theme::partial('header') }}
-    <div id="wrapper" style="padding-top: 120px;">
-    {{ Theme::content()}}
-    </div>
-    {{ Theme::partial('footer') }}
+  {{ Theme::partial('header') }}
+  {{ Theme::content()}}
+  {{ Theme::partial('footer') }}
   {{ Theme::asset()->container('footer')->scripts() }}
+<script type="text/javascript">
+  $(".dropdown-button").dropdown();
+</script>
 </body>
 </html>
 

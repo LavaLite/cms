@@ -72,6 +72,8 @@ return array(
             $theme->asset()->add('icheck',                      '/vendor/iCheck/skins/minimal/blue.css');
             $theme->asset()->add('ionicons',                    '/vendor/ionicons/css/ionicons.css');
             $theme->asset()->add('summernote',                  '/vendor/summernote/dist/summernote.css');
+            $theme->asset()->add('select2',                     '/vendor/select2/select2.css');
+            $theme->asset()->add('select2-bootstrap-css',       '/vendor/select2-bootstrap-css/select2-bootstrap.css');
             $theme->asset()->add('CaptionHoverEffects',         '/vendor/CaptionHoverEffects/css/component.css');
 
 
@@ -95,6 +97,7 @@ return array(
             $theme->asset()->container('footer')->add('iCheck',                     '/vendor/iCheck/icheck.min.js');
             $theme->asset()->container('footer')->add('summernote',                 '/vendor/summernote/dist/summernote.min.js');
             $theme->asset()->container('footer')->add('CaptionHoverEffectsmod',     '/vendor/CaptionHoverEffects/js/modernizr.custom.js');
+            $theme->asset()->container('footer')->add('select2',                    '/vendor/select2/select2.min.js');
             $theme->asset()->container('footer')->add('CaptionHoverEffects',        '/vendor/CaptionHoverEffects/js/toucheffects.js');
             $theme->asset()->container('footer')->add('googlemap',                  'http://maps.google.com/maps/api/js?sensor=false');
 
