@@ -6,7 +6,7 @@ This is an implementation of the backend of lavalite, which can be used for web 
 
 ## System Requirements
 
-Lavalitw was designed to run on a  machine with PHP 5.5 and MySQL 5.5.
+Lavalite was designed to run on a  machine with PHP 5.5 and MySQL 5.5.
 
 * PHP 5.4.7+.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Lavalite.
