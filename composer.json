@@ -7,7 +7,7 @@
         "laravel/framework": "4.2.*",
         "cartalyst/sentry": "dev-master",
         "anahkiasen/former": "dev-master",
-        "teepluss/theme": "dev-master",
+        "teepluss/theme": "1.*",
         "intervention/imagecache": "dev-master",
         "mcamara/laravel-localization": "0.14.*",
         "dimsav/laravel-translatable": "4.2.*",
