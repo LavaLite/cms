@@ -11,7 +11,7 @@
         "intervention/imagecache": "dev-master",
         "mcamara/laravel-localization": "0.14.*",
         "dimsav/laravel-translatable": "4.2.*",
-        "greggilbert/recaptcha": "dev-master",
+        "greggilbert/recaptcha": "1.*",
         "loic-sharma/profiler": "1.1.*",
 
         "lavalite/user": "2.2.*",
