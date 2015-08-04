@@ -1,0 +1,8 @@
+/vendor
+/node_modules
+.env
+composer.lock
+.DS_Store
+._**
+*.tmp
+*.zip

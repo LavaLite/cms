@@ -1,0 +1,39 @@
+{
+  "name": "LavaLite",
+  "version": "2.2",
+  "main": "",
+  "ignore": [
+  ".jshintrc",
+  "**/*.txt"
+  ],
+  "dependencies": {
+    "bootstrap":"*",
+    "font-awesome":"*",
+    "jquery": "*",
+    "jquery-ui": "*",
+
+    "jquery-slimscroll":"*",
+    "chartjs":"*",
+    "morris.js":"*",
+    "peity":"*",
+
+    "eonasdan-bootstrap-datetimepicker":"*",
+    "mjolnic-bootstrap-colorpicker":"*",
+    "iCheck":"*",
+    "jquery.inputmask":"*",
+    "summernote":"*",
+    "jquery-validation" : "*",
+    "eonasdan-bootstrap-datetimepicker":"",
+    "toastr":"",
+
+    "DataTables":"*",
+    "fullcalendar":"*",
+    "jquery-knob":"*",
+    "pace":"*",
+    "dropzone":"*",
+
+    "FlexSlider" : "*",
+    "sweetalert" : "*",
+    "smoke.js" : "*"
+    }
+}
