@@ -2,11 +2,12 @@
 <html class="lockscreen">
     <head>
         <meta charset="UTF-8">
-        <title>{{ Theme::getTitle() }}</title>
+        <title>{!! Theme::getTitle() !!}</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- bootstrap 3.0.2 -->
-        {{ Theme::asset()->styles() }}
-        {{ Theme::asset()->scripts() }}
+        {!! Theme::asset()->styles() !!}
+        {!! Theme::asset()->scripts() !!}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -15,13 +16,13 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body>
+    <body class="login-page">
         <!-- Automatic element centering using js -->
-        <div class="center">
-             {{ Theme::content() }}
-        </div><!-- /.center -->
+
+             {!! Theme::content() !!}
+        <!-- /.center -->
 
 
-    {{ Theme::asset()->container('footer')->scripts() }}
+    {!! Theme::asset()->container('footer')->scripts() !!}
     </body>
 </html>

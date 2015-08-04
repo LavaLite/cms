@@ -1,31 +1,45 @@
-<section class="content-header">
-    @section('heading')
-    @show
+<div id="content" class="app-content" role="main">
+    <div class="app-content-body">
+        <div class="bg-light lter b-b wrapper-md">
 
-    @section('breadcrumb')
-    @show
-</section>
-<section class="content">
-    @include('admin.notifications')
-    <div class="box box-primary">
-        <div class="box-header">
-            <h3 class="box-title">
-                @section('icon')
-                <i class="fa fa-th"></i>
-                @show
+            @section('heading')
+                Heading
+            @show
 
-                @section('title')
-                Entry
-                @show
-            </h3>
-            <div class="box-tools pull-right">
-                @section('buttons')
-                @show
-            </div>
+
         </div>
-            @yield('content')
-    </div>
-</section>
+        <div class="wrapper-md" ng-controller="FormDemoCtrl">
+         @include('admin.notifications')
+         <div class="row">
+          <div class="col-sm-12">
+              <div class="panel panel-default">
+               <div class="panel-heading font-bold">
+                @section('title')
+                 Title
+                @show
+                </div>
+                <div class="panel-body">
+                  <div class="col-md-12">
+                  <ul id="myTab" class="nav nav-tabs" role="tablist">
+                     @section('tabs')
+                        Tabs
+                     @show
+                 </ul>
+
+                     @section('content')
+                        Content
+                     @show
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+</div>
+
+</div>
+</div>
+
 @section('script')
 
 @show

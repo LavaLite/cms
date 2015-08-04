@@ -36,7 +36,7 @@ return array(
         'before' => function($theme)
         {
             // You can remove this line anytime.
-            $theme->setTitle('Welcome to demo site');
+            $theme->setTitle(trans('app.name'));
 
             // Breadcrumb template.
             // $theme->breadcrumb()->setTemplate('
@@ -53,18 +53,24 @@ return array(
         },
 
         // Listen on event before render a theme,
-        // this event should call to awebsites/zover/cms/publicssign some assets,
+        // this event should call to assign some assets,
         // breadcrumb template.
         'beforeRenderTheme' => function($theme)
         {
+            //You may use this event to set up your assets.
 
-             $theme->asset()->add('bootstrap',          '/vendor/materialize/dist/css/materialize.min.css');
-             $theme->asset()->add('font-awesome',       '/vendor/font-awesome/css/font-awesome.min.css');
-             $theme->asset()->add('animate',            '/vendor/animate.css/animate.min.css');
+            //You may use this event to set up your assets.
+            $theme->asset()->add('bootstrap',               'css/bootstrap.min.css');
+            $theme->asset()->usePath()->add('lavalite',     'css/lavalite.css');
+            $theme->asset()->add('fontawsome',              'css/font-awesome.min.css');
 
-             $theme->asset()->add('jquery',             '/vendor/jquery/dist/jquery.min.js');
-             $theme->asset()->container('footer')->add('bootstrap',            '/vendor/materialize/dist/js/materialize.min.js', array('jquery'));
+            $theme->asset()->add('jquery',                  'js/jquery.min.js');
+            $theme->asset()->add('bootstrap',               'js/bootstrap.min.js');
 
+            $theme->asset()->container('footer')->add('easying',                   'http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js');
+            $theme->asset()->container('footer')->usePath()->add('lavalite',                   'js/lavalite.js');
+            $theme->asset()->container('footer')->usePath()->add('cbpanim',                   'js/cbpAnimatedHeader.js');
+            $theme->asset()->container('footer')->usePath()->add('classie',                   'js/classie.js');
 
         },
 
@@ -72,9 +78,8 @@ return array(
         // this should call to assign style, script for a layout.
         'beforeRenderLayout' => array(
 
-            'default' => function($theme)
+            'blank' => function($theme)
             {
-                // $theme->asset()->usePath()->add('ipad', 'css/layouts/ipad.css');
             }
 
         )

@@ -36,7 +36,7 @@ return array(
         'before' => function($theme)
         {
             // You can remove this line anytime.
-            $theme->setTitle(Lang::get('app.name'));
+            $theme->setTitle(trans('cms.name'));
 
             // Breadcrumb template.
             // $theme->breadcrumb()->setTemplate('
@@ -57,56 +57,17 @@ return array(
         // breadcrumb template.
         'beforeRenderTheme' => function($theme)
         {
-             //You may use this event to set up your assets.
+            //You may use this event to set up your assets.
+            $theme->asset()->add('bootstrap',               'css/bootstrap.min.css');
+            $theme->asset()->usePath()->add('lavalite',     'css/lavalite.css');
+            $theme->asset()->usePath()->add('skins',        'css/skins/_all-skins.min.css');
+            $theme->asset()->add('fontawsome',              'css/font-awesome.min.css');
 
+            $theme->asset()->add('jquery',                  'js/jquery.min.js');
+            $theme->asset()->add('bootstrap',               'js/bootstrap.min.js');
+            $theme->asset()->add('scripts',                 'js/scripts.js');
 
-
-
-            $theme->asset()->add('jqueryui',                    '/vendor/jquery.ui/themes/base/core.css');
-            $theme->asset()->add('animate',                     '/vendor/animate.css/animate.css');
-            $theme->asset()->add('bootstrap',                   '/vendor/bootstrap/dist/css/bootstrap.css');
-            $theme->asset()->add('font-awesome',                '/vendor/font-awesome/css/font-awesome.min.css');
-            $theme->asset()->add('bootstrap-datetimepicker',    '/vendor/bootstrap3-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
-            $theme->asset()->add('bootstrap-tagsinput',         '/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css');
-            $theme->asset()->add('ezdz',                        '/vendor/ezdz/dist/jquery.ezdz.min.css');
-            $theme->asset()->add('icheck',                      '/vendor/iCheck/skins/minimal/blue.css');
-            $theme->asset()->add('ionicons',                    '/vendor/ionicons/css/ionicons.css');
-            $theme->asset()->add('summernote',                  '/vendor/summernote/dist/summernote.css');
-            $theme->asset()->add('select2',                     '/vendor/select2/select2.css');
-            $theme->asset()->add('select2-bootstrap-css',       '/vendor/select2-bootstrap-css/select2-bootstrap.css');
-            $theme->asset()->add('CaptionHoverEffects',         '/vendor/CaptionHoverEffects/css/component.css');
-
-
-
-
-
-            $theme->asset()->usePath()->add('override', 'css/override.css');
-            $theme->asset()->usePath()->add('styles',   'css/styles.css');
-            $theme->asset()->usePath()->add('lavalite', 'css/lavalite.css');
-            $theme->asset()->add('switch',                      '/vendor/switchery/dist/switchery.min.css');
-
-            $theme->asset()->add('jquery',              '/vendor/jquery/dist/jquery.min.js');
-
-            $theme->asset()->container('footer')->add('jqueryui',                   '/vendor/jquery.ui/ui/core.js');
-            $theme->asset()->container('footer')->add('bootstrap',                  '/vendor/bootstrap/dist/js/bootstrap.js');
-            $theme->asset()->container('footer')->add('moment',                     '/vendor/moment/min/moment.min.js');
-            $theme->asset()->container('footer')->add('bootstrap-datetimepicker',   '/vendor/bootstrap3-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
-            $theme->asset()->container('footer')->add('switch',                     '/vendor/switchery/dist/switchery.min.js');
-            $theme->asset()->container('footer')->add('bootstrap-tagsinput',        '/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js');
-            $theme->asset()->container('footer')->add('ezdz',                       '/vendor/ezdz/dist/jquery.ezdz.min.js');
-            $theme->asset()->container('footer')->add('iCheck',                     '/vendor/iCheck/icheck.min.js');
-            $theme->asset()->container('footer')->add('summernote',                 '/vendor/summernote/dist/summernote.min.js');
-            $theme->asset()->container('footer')->add('CaptionHoverEffectsmod',     '/vendor/CaptionHoverEffects/js/modernizr.custom.js');
-            $theme->asset()->container('footer')->add('select2',                    '/vendor/select2/select2.min.js');
-            $theme->asset()->container('footer')->add('CaptionHoverEffects',        '/vendor/CaptionHoverEffects/js/toucheffects.js');
-            $theme->asset()->container('footer')->add('googlemap',                  'http://maps.google.com/maps/api/js?sensor=false');
-
-
-
-            $theme->asset()->container('footer')->usePath()->add('scripts',         'js/scripts.js');
-            $theme->asset()->container('footer')->usePath()->add('lavalite',        'js/lavalite.js');
-            $theme->asset()->container('footer')->usePath()->add('restfulizer',     'js/restfulizer.js');
-
+            $theme->asset()->usePath()->add('lavalite',     'js/lavalite.min.js');
         },
 
         // Listen on event before render a layout,
@@ -115,19 +76,56 @@ return array(
 
             'blank' => function($theme)
             {
-                $theme->asset()->add('bootstrap',                   '/vendor/bootstrap/dist/css/bootstrap.css');
+                $theme->asset()->add('icheck',              'css/icheck/square/blue.css');
+                $theme->asset()->add('icheck',              'js/icheck.min.js');
+            },
 
-                $theme->asset()->usePath()->add('override', 'css/override.css');
-                $theme->asset()->usePath()->add('styles',   'css/styles.css');
-                $theme->asset()->usePath()->add('lavalite', 'css/lavalite.css');
+            'default' => function($theme)
+            {
+                $theme->asset()->add('dataTables',              'css/jquery.dataTables.min.css');
+                $theme->asset()->add('summernote',              'css/summernote.css');
+                $theme->asset()->add('toastr',                  'css/toastr.min.css');
+                $theme->asset()->add('dropzone',                'css/dropzone.min.css');
+                $theme->asset()->add('icheck',                  'css/icheck/square/blue.css');
+                $theme->asset()->add('smoke',                   'css/smoke.css');
+                $theme->asset()->usePath()->add('styles',       'css/styles.css');
 
-                $theme->asset()->add('jquery',              '/vendor/jquery/dist/jquery.min.js');
+                $theme->asset()->container('footer')->add('icheck',                  'js/icheck.min.js');
+                $theme->asset()->container('footer')->add('dataTables',              'js/jquery.dataTables.min.js');
+                $theme->asset()->container('footer')->add('dataTablesbootstrap',     'js/dataTables.bootstrap.js');
+                $theme->asset()->container('footer')->add('summernote',              'js/summernote.min.js');
+                $theme->asset()->container('footer')->add('dropzone',                'js/dropzone.min.js');
+                $theme->asset()->container('footer')->add('moment',                  'js/moment-with-locales.min.js');
+                $theme->asset()->container('footer')->add('datetimepicker',          'js/bootstrap-datetimepicker.js');
+                $theme->asset()->container('footer')->add('nestable',                'js/jquery.nestable.js');
+                $theme->asset()->container('footer')->add('validate',                'js/jquery.validate.min.js');
+                $theme->asset()->container('footer')->add('toastr',                  'js/toastr.min.js');
+                $theme->asset()->container('footer')->add('sortable',                'js/sortable.min.js');
+                $theme->asset()->container('footer')->add('smoke',                   'js/smoke.min.js');
+            },
 
-                $theme->asset()->container('footer')->add('bootstrap',                  '/vendor/bootstrap/dist/js/bootstrap.js');
-            }
+            'page' => function($theme)
+            {
+                $theme->asset()->add('dataTables',              'css/jquery.dataTables.min.css');
+                $theme->asset()->add('summernote',              'css/summernote.css');
+                $theme->asset()->add('toastr',                  'css/toastr.min.css');
+                $theme->asset()->add('dropzone',                'css/dropzone.min.css');
+
+                $theme->asset()->add('icheck',                  'css/icheck/square/blue.css');
+
+                $theme->asset()->container('footer')->add('icheck',                  'js/icheck.min.js');
+                $theme->asset()->container('footer')->add('dataTables',              'js/jquery.dataTables.min.js');
+                $theme->asset()->container('footer')->add('dataTablesbootstrap',     'js/dataTables.bootstrap.js');
+                $theme->asset()->container('footer')->add('summernote',              'js/summernote.min.js');
+                $theme->asset()->container('footer')->add('dropzone',                'js/dropzone.min.js');
+                $theme->asset()->container('footer')->add('moment',                  'js/moment-with-locales.min.js');
+                $theme->asset()->container('footer')->add('datetimepicker',          'js/bootstrap-datetimepicker.js');
+                $theme->asset()->container('footer')->add('validate',                'js/jquery.validate.min.js');
+                $theme->asset()->container('footer')->add('nestable',                'js/jquery.nestable.min.js');
+                $theme->asset()->container('footer')->add('toastr',                  'js/toastr.min.js');
+                $theme->asset()->container('footer')->add('sortable',                'js/sortable.min.js');
+            })
 
         )
-
-    )
 
 );

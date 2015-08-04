@@ -1,14 +1,7 @@
-/bootstrap/compiled.php
 /vendor
-/workbench
-/public/vendor
-/public/packages
-/public/themes/admin-lavalite
-/public/themes/public-lavalite
-composer.phar
+/node_modules
 composer.lock
 .DS_Store
 ._**
 *.tmp
 *.zip
-.idea

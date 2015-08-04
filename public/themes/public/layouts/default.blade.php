@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<!-- layout /themes/public-lavalite/layouts/default.blade.php -->
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+<html class="lockscreen">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ Theme::getTitle() }}</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- bootstrap 3.0.2 -->
+        {!! Theme::asset()->styles() !!}
+        {!! Theme::asset()->scripts() !!}
 
-    <title>{{ Theme::get('title') }}</title>
-    <meta charset="utf-8">
-    <meta name="keywords" content="{{ Theme::get('keywords') }}">
-    <meta name="description" content="{{ Theme::get('description') }}">
-    {{ Theme::asset()->styles() }}
-    {{ Theme::asset()->scripts() }}
-</head>
-<body  dir='{{ Localization::getCurrentLocaleDirection() }}'>
-    {{ Theme::partial('header') }}
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
 
-    <div id="wrapper" style="padding-top: 120px;">
-        {{ Theme::content() }}
-    </div>
+<body id="page-top" class="index">
 
-    {{ Theme::partial('footer') }}
-    {{ Theme::asset()->container('footer')->scripts() }}
+    {!! Theme::partial('header') !!}
+    {!! Theme::content() !!}
+    {!! Theme::partial('footer') !!}
+    {!! Theme::asset()->container('footer')->scripts() !!}
 </body>
 </html>

@@ -1,42 +1,47 @@
 {
     "name": "lavalite/cms",
-    "description": "Multilingual CMS based on Laravel 4 & Bootstrap 3",
-    "keywords": ["lavalite", "framework", "cms", "laravel"],
+    "description": "The Lavalite CMS based on laravel.",
+    "keywords": ["framework", "laravel", "lavalite", "cms"],
     "license": "MIT",
+    "type": "cms",
     "require": {
-        "laravel/framework": "4.2.*",
-        "cartalyst/sentry": "dev-master",
-        "anahkiasen/former": "3.*",
-        "teepluss/theme": "1.2.*",
-        "intervention/imagecache": "dev-master",
-        "mcamara/laravel-localization": "0.15.*",
-        "dimsav/laravel-translatable": "4.*",
-        "greggilbert/recaptcha": "dev-master",
-        "loic-sharma/profiler": "1.1.*",
-        "lusitanian/oauth": "~0.3"
+        "php": ">=5.5.9",
+        "laravel/framework": "5.1.*",
+        "anahkiasen/former": "4.0.*@dev",
+        "teepluss/theme": "dev-master",
+        "intervention/imagecache": "2.2.*"
     },
-
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~4.0",
+        "phpspec/phpspec": "~2.1"
+    },
     "autoload": {
         "classmap": [
-            "app/commands",
-            "app/controllers",
-            "app/models",
-            "workbench",
-            "app/database/migrations",
-            "app/database/seeds",
-            "app/tests/TestCase.php"
+            "database",
+            "workbench"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
         ]
     },
-
     "scripts": {
         "post-install-cmd": [
+            "php artisan clear-compiled",
             "php artisan optimize"
-        ],
-        "pre-update-cmd": [
-            "php artisan clear-compiled"
         ],
         "post-update-cmd": [
+            "php artisan clear-compiled",
             "php artisan optimize"
+        ],
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "php artisan key:generate"
@@ -45,5 +50,6 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
