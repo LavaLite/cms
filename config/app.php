@@ -152,8 +152,6 @@ return [
         Lavalite\Menu\Providers\MenuServiceProvider::class,
         Lavalite\Filer\Providers\FilerServiceProvider::class,
         Lavalite\Page\Providers\PageServiceProvider::class,
-        Lavalite\Package\Providers\PackageServiceProvider::class,
-        Lavalite\Example\ExampleServiceProvider::class,
 
     ],
 

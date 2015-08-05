@@ -2,3 +2,6 @@
     overflow-y: scroll;
     max-height: 500px;
 }
+.error {
+    border:red 1px solid !important;
+}
