@@ -76,10 +76,12 @@ $( document ).ajaxComplete(function() {
 
     $('.html-editor').summernote({
         height: "200px",
-        onImageUpload: function(files, editor, welEditable) {
-            sendFile(files[0], editor, welEditable);
+        onImageUpload: function(files) {
+            url = $(this).data('upload');
+            sendFile(files[0], url, $(this));
         }
-    });
+    })
+
 
     $('input[type="date"]').datetimepicker({
         format: "yyyy-mm-dd",
@@ -111,23 +113,21 @@ $( document ).ajaxSuccess(function( event, xhr, settings ) {
     app.message(xhr, appdebug);
 });
 
-function sendFile(file, editor, welEditable) {
-    var urlup = welEditable.parent('div').prev('textarea').data('upload');
+function sendFile(file, url, editor) {
     var data = new FormData();
     data.append("file", file);
     $.ajax({
         data: data,
         type: "POST",
-        url: urlup,
+        url: url,
         cache: false,
         contentType: false,
         processData: false,
         success: function(objFile) {
-          editor.insertImage(welEditable, objFile.folder + objFile.file);
+            editor.summernote('insertImage', objFile.folder+objFile.file);
         },
         error: function(jqXHR, textStatus, errorThrown)
         {
-          app.message(jqXHR);
         }
     });
 }
