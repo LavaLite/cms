@@ -24,7 +24,7 @@ Please check the system requirements before installing Lavalite.
 1. You may install by cloning from github, or via composer.
   * Github: `git clone git@github.com:LavaLite/cms.git`
     * From a command line open in the folder, run `composer install`.
-  * Composer: `composer create-project LavaLite/cms path 5.1.*`
+  * Composer: `composer create-project LavaLite/cms `
 3. Then, run `bower install` to install javascript libraries.
 4. Enter your database details in `.env` file on root folder.
 5. Run `php artisan migrate` to setup your database.
@@ -52,7 +52,7 @@ User: user@user.com - user@user
 ## Demo
 Public [http://demo.lavalite.org](http://demo.lavalite.org)
 
-Admin [http://demo.lavalite.org/admin](http://demo.lavalite.org/admin) 
+Admin [http://demo.lavalite.org/admin](http://demo.lavalite.org/admin)
 
 Superuser : superuser@superuser.com - superuser@superuser
 
