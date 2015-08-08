@@ -1,22 +1,21 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 
-class CreateLavaliteDatabase extends Migration {
-
-        /**
-         * Run the migrations.
-         *
-         * @return void
-         */
+class CreateLavaliteDatabase extends Migration
+{
+    /**
+          * Run the migrations.
+          *
+          * @return void
+          */
          public function up()
          {
 
-	    /**
-	     * Table: contacts
-	     */
-	    Schema::create('contacts', function($table) {
+        /*
+         * Table: contacts
+         */
+        Schema::create('contacts', function ($table) {
                 $table->increments('id');
                 $table->integer('pin');
                 $table->string('phone', 100);
@@ -32,22 +31,20 @@ class CreateLavaliteDatabase extends Migration {
                 $table->nullableTimestamps();
             });
 
-
-	    /**
-	     * Table: groups
-	     */
-	    Schema::create('groups', function($table) {
+        /*
+         * Table: groups
+         */
+        Schema::create('groups', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->string('name', 255)->nullable();
                 $table->text('permissions')->nullable();
                 $table->nullableTimestamps();
             });
 
-
-	    /**
-	     * Table: menus
-	     */
-	    Schema::create('menus', function($table) {
+        /*
+         * Table: menus
+         */
+        Schema::create('menus', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('parent_id');
                 $table->string('key', 100)->nullable();
@@ -55,26 +52,26 @@ class CreateLavaliteDatabase extends Migration {
                 $table->string('icon', 50)->nullable();
                 $table->text('name')->nullable();
                 $table->text('description')->nullable();
-                $table->enum('open', array('New','Same'))->default("Same")->nullable();
+                $table->enum('open', ['New','Same'])->default('Same')->nullable();
                 $table->boolean('has_sub')->nullable();
                 $table->integer('order')->nullable();
-                $table->boolean('status')->default("1")->nullable();
+                $table->boolean('status')->default('1')->nullable();
                 $table->softDeletes()->nullable();
                 $table->nullableTimestamps();
             });
 
-	    /**
-	     * Table: pages
-	     */
-	    Schema::create('pages', function($table) {
+        /*
+         * Table: pages
+         */
+        Schema::create('pages', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->string('name', 50)->nullable();
                 $table->string('slug', 50)->nullable();
                 $table->integer('order')->nullable();
                 $table->mediumText('banner')->nullable();
-                $table->string('view', 20)->default("page");
-                $table->enum('compiler', array('php','blade','twif','none'))->default("none")->nullable();
-                $table->boolean('status')->default("1");
+                $table->string('view', 20)->default('page');
+                $table->enum('compiler', ['php','blade','twif','none'])->default('none')->nullable();
+                $table->boolean('status')->default('1');
                 $table->string('upload_folder', 100)->nullable();
                 $table->text('heading')->nullable();
                 $table->text('title')->nullable();
@@ -87,11 +84,10 @@ class CreateLavaliteDatabase extends Migration {
                 $table->nullableTimestamps();
             });
 
-
-	    /**
-	     * Table: throttle
-	     */
-	    Schema::create('throttle', function($table) {
+        /*
+         * Table: throttle
+         */
+        Schema::create('throttle', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->integer('user_id')->unsigned();
                 $table->string('ip_address', 255)->nullable();
@@ -103,11 +99,10 @@ class CreateLavaliteDatabase extends Migration {
                 $table->timestamp('banned_at')->nullable();
             });
 
-
-	    /**
-	     * Table: users
-	     */
-	    Schema::create('users', function($table) {
+        /*
+         * Table: users
+         */
+        Schema::create('users', function ($table) {
                 $table->increments('id')->unsigned();
                 $table->string('email', 255);
                 $table->string('password', 255);
@@ -120,7 +115,7 @@ class CreateLavaliteDatabase extends Migration {
                 $table->string('reset_password_code', 255)->nullable();
                 $table->string('first_name', 255)->nullable();
                 $table->string('last_name', 255)->nullable();
-                $table->enum('sex', array('male','female'))->nullable();
+                $table->enum('sex', ['male','female'])->nullable();
                 $table->date('dob')->nullable();
                 $table->string('designation', 50)->nullable();
                 $table->string('mobile', 255)->nullable();
@@ -133,7 +128,7 @@ class CreateLavaliteDatabase extends Migration {
                 $table->string('country', 100)->nullable();
                 $table->string('photo', 500)->nullable();
                 $table->string('web', 255)->nullable();
-                $table->enum('type', array('Admin','Public','User'))->nullable();
+                $table->enum('type', ['Admin','Public','User'])->nullable();
                 $table->string('facebook', 255)->nullable();
                 $table->string('twitter', 255)->nullable();
                 $table->string('google_plus', 255)->nullable();
@@ -142,33 +137,28 @@ class CreateLavaliteDatabase extends Migration {
                 $table->nullableTimestamps();
             });
 
-
-	    /**
-	     * Table: users_groups
-	     */
-	    Schema::create('users_groups', function($table) {
+        /*
+         * Table: users_groups
+         */
+        Schema::create('users_groups', function ($table) {
                 $table->integer('user_id')->unsigned();
                 $table->integer('group_id')->unsigned();
             });
-
-
          }
 
-        /**
-         * Reverse the migrations.
-         *
-         * @return void
-         */
+         /**
+          * Reverse the migrations.
+          *
+          * @return void
+          */
          public function down()
          {
-
-	            Schema::drop('contacts');
-	            Schema::drop('groups');
-	            Schema::drop('menus');
-	            Schema::drop('pages');
-	            Schema::drop('throttle');
-	            Schema::drop('users');
-	            Schema::drop('users_groups');
+             Schema::drop('contacts');
+             Schema::drop('groups');
+             Schema::drop('menus');
+             Schema::drop('pages');
+             Schema::drop('throttle');
+             Schema::drop('users');
+             Schema::drop('users_groups');
          }
-
 }

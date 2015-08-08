@@ -1,26 +1,25 @@
-<?php namespace App\Http\Controllers;
+<?php
 
-use Cartalyst\Sentry\Facades\Laravel\Sentry;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Request;
-use User;
-use Session;
+namespace app\Http\Controllers;
+
 use Event;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Session;
+use User;
 
 class AdminController extends Controller
 {
     protected $session;
 
-
     public function __construct()
     {
-
         $this->setupTheme(config('cms.themes.admin.theme'), config('cms.themes.admin.layout'));
         $this->middleware('auth.admin', ['except' => ['login', 'postLogin', 'logout']]);
     }
 
     /**
-     * Show the login form
+     * Show the login form.
      */
     public function login()
     {
@@ -36,16 +35,14 @@ class AdminController extends Controller
      */
     public function postLogin(Request $request)
     {
+        $input = $request->only('email', 'password', 'type');
+        $remember = $request->get('rememberme');
 
-        $input      = $request->only('email', 'password', 'type');
-        $remember   = $request->get('rememberme');
-
-        try
-        {
+        try {
             // Authenticate the user
             $user = User::authenticate($input, $remember);
-            return Redirect::intended('/admin');
 
+            return Redirect::intended('/admin');
         } catch (\Lavalite\user\Exceptions\LoginRequiredException $e) {
             $result = 'Login field is required.';
         } catch (\Lavalite\user\Exceptions\PasswordRequiredException $e) {
@@ -68,14 +65,13 @@ class AdminController extends Controller
         Session::flash('error', $result);
 
         return Redirect::to('admin/login')->withInput();
-
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int      $id
+     * @param int $id
+     *
      * @return Response
      */
     public function logout()
@@ -90,6 +86,4 @@ class AdminController extends Controller
     {
         return $this->theme->of('admin::home')->render();
     }
-
-
 }

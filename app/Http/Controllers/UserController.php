@@ -1,23 +1,23 @@
-<?php namespace App\Http\Controllers;
+<?php
 
-use Cartalyst\Sentry\Facades\Laravel\Sentry;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Request;
-use User;
-use Session;
+namespace app\Http\Controllers;
+
 use Event;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Page;
+use Session;
+use User;
 
 class UserController extends Controller
 {
-
     public function __construct()
     {
         $this->setupTheme(config('cms.themes.user.theme'), config('cms.themes.user.layout'));
     }
 
     /**
-     * Show the login form
+     * Show the login form.
      */
     public function login()
     {
@@ -31,16 +31,14 @@ class UserController extends Controller
      */
     public function postLogin(Request $request)
     {
+        $input = $request->only('email', 'password', 'type');
+        $remember = $request->get('rememberme');
 
-        $input      = $request->only('email', 'password', 'type');
-        $remember   = $request->get('rememberme');
-
-        try
-        {
+        try {
             // Authenticate the user
             $user = User::authenticate($input, $remember);
-            return Redirect::intended('/user');
 
+            return Redirect::intended('/user');
         } catch (\Lavalite\user\Exceptions\LoginRequiredException $e) {
             $result = 'Login field is required.';
         } catch (\Lavalite\user\Exceptions\PasswordRequiredException $e) {
@@ -63,19 +61,20 @@ class UserController extends Controller
         Session::flash('error', $result);
 
         return Redirect::to('login')->withInput();
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int      $id
+     * @param int $id
+     *
      * @return Response
      */
     public function logout()
     {
         User::logout();
         Event::fire('user.logout');
+
         return Redirect::to('/login');
     }
 
@@ -96,17 +95,14 @@ class UserController extends Controller
      */
     public function postRegister(Request $request)
     {
+        $input = $request->only(['name', 'email', 'password']);
+        $input['type'] = 'User';
 
-
-        $input          = $request -> only(['name', 'email', 'password']);
-        $input['type']  = 'User';
-
-        try
-        {
+        try {
             // Authenticate the user
             User::register($input);
-            return Redirect::intended('/user');
 
+            return Redirect::intended('/user');
         } catch (\Lavalite\user\Exceptions\LoginRequiredException $e) {
             $result = 'Login field is required.';
         } catch (\Lavalite\user\Exceptions\PasswordRequiredException $e) {
@@ -120,7 +116,7 @@ class UserController extends Controller
         } catch (Exception $e) {
             $result = 'User is not activated.';
         }
-echo $result;
+        echo $result;
 
         if ($result['success']) {
 
@@ -128,7 +124,6 @@ echo $result;
             Session::flash('success', $result['message']);
 
             return Redirect::to('/checkActive');
-
         } else {
             Session::flash('error', $result['message']);
 
@@ -138,65 +133,55 @@ echo $result;
 
     public function getProfile()
     {
-
-        if(User::check()){
-
-            if(!User::getUser()->hasAccess('admin')){
-
+        if (User::check()) {
+            if (!User::getUser()->hasAccess('admin')) {
                 $id = User::getUser()->id;
                 $user['user'] = $this->user->find($id);
-                return $this->theme->of('user::user.public.profile',$user)->render();
+
+                return $this->theme->of('user::user.public.profile', $user)->render();
             } else {
-
-
                 return Redirect::to('login');
             }
         } else {
-
-             return Redirect::to('login');
+            return Redirect::to('login');
         }
-
     }
-
-
 
     public function postProfile()
     {
-
-        $id     = User::getUser()->id;
+        $id = User::getUser()->id;
         $result = $this->user->profileedit($id);
         if ($result['success']) {
             // Success!
             Session::flash('success', $result['message']);
-            return Redirect::to('user/profile');
 
+            return Redirect::to('user/profile');
         } else {
             Session::flash('error', $result['message']);
+
             return Redirect::to('user/profile')
                 ->withInput()
                 ->withErrors($result['errors']);
         }
-
     }
 
-
     /**
-     * Process resend activation request
+     * Process resend activation request.
+     *
      * @return Response
      */
     public function resend()
     {
         // Form Processing
 
-        $result = $this->user->resend( Input::all() );
+        $result = $this->user->resend(Input::all());
 
         if ($result['success']) {
-
-            Event::fire('user.resend', array(
-                'email' => $result['mailData']['email'],
-                'userId' => $result['mailData']['userId'],
-                'activationCode' => $result['mailData']['activationCode']
-            ));
+            Event::fire('user.resend', [
+                'email'          => $result['mailData']['email'],
+                'userId'         => $result['mailData']['userId'],
+                'activationCode' => $result['mailData']['activationCode'],
+            ]);
             // Success!
             Session::flash('success', $result['message']);
 
@@ -211,18 +196,19 @@ echo $result;
     }
 
     /**
-     * Process resend activation request
+     * Process resend activation request.
+     *
      * @return Response
      */
     public function getResend()
     {
         // Form Processing
         return $this->theme->of('user::user.public.resend')->render();
-
     }
 
     /**
-     * Process Forgot Password request
+     * Process Forgot Password request.
+     *
      * @return Response
      */
     public function forgot()
@@ -237,33 +223,34 @@ echo $result;
 
             return Redirect::to('/login');
         } else {
-
             Session::flash('error', $result['message']);
+
             return Redirect::to('forgot')
                 ->withInput()
                 ->withErrors($result['errors']);
         }
-
     }
 
     /**
-     * Show Forgot Password form
+     * Show Forgot Password form.
+     *
      * @return Response
      */
     public function getForgot()
     {
         // Display form
        return $this->theme->of('user::user.public.forgot')->render();
-
     }
 
     /**
-     * Process a password reset request link
-     * @param  [type] $id   [description]
-     * @param  [type] $code [description]
+     * Process a password reset request link.
+     *
+     * @param [type] $id   [description]
+     * @param [type] $code [description]
+     *
      * @return [type] [description]
      */
-    public function reset($id,$code)
+    public function reset($id, $code)
     {
         if (!is_numeric($id)) {
             // @codeCoverageIgnoreStart
@@ -274,16 +261,15 @@ echo $result;
         $result = $this->user->resetPassword($id, $code);
 
         if ($result['success']) {
-            Event::fire('user.newpassword', array(
-                'email' => $result['mailData']['email'],
-                'newPassword' => $result['mailData']['newPassword']
-            ));
+            Event::fire('user.newpassword', [
+                'email'       => $result['mailData']['email'],
+                'newPassword' => $result['mailData']['newPassword'],
+            ]);
 
             // Success!
             Session::flash('success', $result['message']);
 
             return Redirect::to('/login');
-
         } else {
             Session::flash('error', $result['message']);
 
@@ -291,13 +277,12 @@ echo $result;
         }
     }
 
-
     public function home()
     {
         $data['page'] = Page::getPage('user');
-        $this -> theme -> setTitle($data['page'] -> title);
-        $this -> theme -> setKeywords($data['page'] -> keyword);
-        $this -> theme -> setDescription($data['page'] -> description);
+        $this->theme->setTitle($data['page']->title);
+        $this->theme->setKeywords($data['page']->keyword);
+        $this->theme->setDescription($data['page']->description);
 
         return $this->theme->of('user.home', $data)->render();
     }
