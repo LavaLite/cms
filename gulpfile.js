@@ -18,7 +18,7 @@ elixir(function(mix) {
     	.copy('vendor/bower_components/jquery/dist/jquery.min.map', 'public/js/jquery.min.map')
 
     	.copy('vendor/bower_components/bootstrap/dist/js/bootstrap.min.js', 'public/js/bootstrap.min.js')
-        .copy('vendor/bower_components/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css ')
+        .copy('vendor/bower_components/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css')
         .copy('vendor/bower_components/bootstrap/fonts', 'public/fonts')
 
         .copy('vendor/bower_components/font-awesome/css/font-awesome.min.css', 'public/css/font-awesome.min.css')

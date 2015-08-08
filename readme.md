@@ -22,9 +22,11 @@ Lavalite is designed to run on a  machine with PHP 5.5 and MySQL 5.5.
 Please check the system requirements before installing Lavalite.
 
 1. You may install by cloning from github, or via composer.
-  * Github: `git clone git@github.com:LavaLite/cms.git`
+  * Github:
+    * `git clone git@github.com:LavaLite/cms.git`
     * From a command line open in the folder, run `composer install`.
-  * Composer: `composer create-project LavaLite/cms cms dev-msater`
+  * Composer:
+    * `composer create-project LavaLite/cms cms dev-msater`
 3. Then, run `bower install` to install javascript libraries.
 4. Enter your database details in `.env` file on root folder.
 5. Run `php artisan migrate` to setup your database.
