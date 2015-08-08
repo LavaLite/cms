@@ -1,5 +1,6 @@
 <?php
-return array(
+
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -10,19 +11,19 @@ return array(
     |
     */
 
-    "success" =>        [
+    'success' => [
                           'create'      => ':Module has been added successfully.',
                           'delete'      => ':Module has been deleted successfully',
-                          'update'      => ':Module has been updated successfully.'
+                          'update'      => ':Module has been updated successfully.',
                         ],
 
-    "error" =>          [
+    'error' => [
                           'create'      => ':Module couldnot be created.',
                           'delete'      => ':Module couldnot be deleted.',
                           'update'      => ':Module couldnot be updated.',
 
                           'auth'        => 'You are not authorized.',
                           'notlogged'   => 'You are not logged in.',
-                        ]
+                        ],
 
-);
+];

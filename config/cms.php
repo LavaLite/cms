@@ -1,4 +1,5 @@
 <?php
+
 return [
     'name'      => 'Lava Lite',
 
@@ -9,12 +10,12 @@ return [
     'locales'   => ['en', 'fr'],
 
     'themes'    => [
-                    'admin'     => [ 'theme'    => 'admin',     'layout'    => 'default'],
-                    'public'    => [ 'theme'    => 'public',    'layout'    => 'default'],
-                    'user'      => [ 'theme'    => 'public',    'layout'    => 'user'],
+                    'admin'     => ['theme'    => 'admin',     'layout'    => 'default'],
+                    'public'    => ['theme'    => 'public',    'layout'    => 'default'],
+                    'user'      => ['theme'    => 'public',    'layout'    => 'user'],
                     ],
 
-    'packages'  => [ 'user', 'pages', 'menu'],
+    'packages'  => ['user', 'pages', 'menu'],
 
     'usertypes' => ['admin' => 'Administrator', 'superuser' => 'Super user', 'user' => 'User', 'developer' => 'Developer'],
 

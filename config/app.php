@@ -210,7 +210,7 @@ return [
         'Filer'           => Lavalite\Filer\Facades\Filer::class,
         'User'            => Lavalite\User\Facades\User::class,
         'Contact'         => Lavalite\Contact\Facades\Contact::class,
-        'Package'         => Lavalite\Package\Facades\Package::class
+        'Package'         => Lavalite\Package\Facades\Package::class,
 
     ],
 

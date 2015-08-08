@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace app\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-         $this->loadViewsFrom(public_path('themes/admin/views'), 'admin');
+        $this->loadViewsFrom(public_path('themes/admin/views'), 'admin');
     }
 
     /**
