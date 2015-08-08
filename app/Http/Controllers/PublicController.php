@@ -1,6 +1,5 @@
 <?php namespace App\Http\Controllers;
 
-use Config;
 use Page;
 
 class PublicController extends Controller
@@ -10,7 +9,7 @@ class PublicController extends Controller
         $this->setupTheme(config('cms.themes.public.theme'), config('cms.themes.public.layout'));
     }
 
-    public function showIndex()
+    public function home()
     {
 
         $data['page'] = Page::getPage('home');

@@ -9,7 +9,6 @@
             {!!Former::text('email')->raw()!!}
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
-          @include('admin.notifications')
           <div class="form-group has-feedback">
             {!!Former::password('password')->raw()!!}
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>

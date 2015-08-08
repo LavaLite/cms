@@ -2,3 +2,5 @@
 !.gitignore
 !scripts.js
 !sortable.min.js
+!jquery.nestable.js
+!dataTables.bootstrap.min.js

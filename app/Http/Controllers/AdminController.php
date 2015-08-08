@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use User;
 use Session;
-use Config;
 use Event;
 
 class AdminController extends Controller
@@ -16,7 +15,7 @@ class AdminController extends Controller
     public function __construct()
     {
 
-        $this->setupTheme(Config::get('cms.themes.admin.theme'), Config::get('cms.themes.admin.layout'));
+        $this->setupTheme(config('cms.themes.admin.theme'), config('cms.themes.admin.layout'));
         $this->middleware('auth.admin', ['except' => ['login', 'postLogin', 'logout']]);
     }
 
@@ -38,12 +37,15 @@ class AdminController extends Controller
     public function postLogin(Request $request)
     {
 
-        $input = $request->only('email', 'password');
+        $input      = $request->only('email', 'password', 'type');
+        $remember   = $request->get('rememberme');
 
         try
         {
             // Authenticate the user
-            $user = User::authenticate($input, false);
+            $user = User::authenticate($input, $remember);
+            return Redirect::intended('/admin');
+
         } catch (\Lavalite\user\Exceptions\LoginRequiredException $e) {
             $result = 'Login field is required.';
         } catch (\Lavalite\user\Exceptions\PasswordRequiredException $e) {
@@ -63,15 +65,10 @@ class AdminController extends Controller
             $result = 'User is banned.';
         }
 
-        if (User::check()) {
+        Session::flash('error', $result);
 
-            return Redirect::intended('/admin');
+        return Redirect::to('admin/login')->withInput();
 
-        } else {
-            Session::flash('error', $result);
-
-            return Redirect::to('admin/login')->withInput();
-        }
 
     }
 
@@ -89,17 +86,10 @@ class AdminController extends Controller
         return Redirect::to('/admin/login');
     }
 
-    public function showHome()
+    public function home()
     {
         return $this->theme->of('admin::home')->render();
     }
 
 
-    /**
-     * Filter the incoming requests.
-     */
-    public function filterRequests($route, $request)
-    {
-        if (!is_object(User::getUser()) || !User::getUser()->hasAnyAccess('admin')) return Redirect::guest('/login');
-    }
 }

@@ -1,7 +1,7 @@
-## Lavalite PHP Framework
-*Version Beta 2 - June 28th 2014*
+## Lavalite - Content Management System (CMS) built on Laravel 5.1
+*Version Beta
 
-This is an implementation of the backend of lavalite, which can be used for web based application and Content Management System based upon [Laravel 4](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
+This is an implementation of the backend of lavalite, which can be used for web based application and Content Management System based upon [Laravel 5.1](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
 
 
 ## System Requirements
@@ -24,7 +24,7 @@ Please check the system requirements before installing Lavalite.
 1. You may install by cloning from github, or via composer.
   * Github: `git clone git@github.com:LavaLite/cms.git`
     * From a command line open in the folder, run `composer install`.
-  * Composer: `composer create-project LavaLite/cms `
+  * Composer: `composer create-project LavaLite/cms cms dev-msater`
 3. Then, run `bower install` to install javascript libraries.
 4. Enter your database details in `.env` file on root folder.
 5. Run `php artisan migrate` to setup your database.
