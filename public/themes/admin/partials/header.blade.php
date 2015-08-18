@@ -16,16 +16,16 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{!!User::avatar()!!}" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">{!!User::name()!!}</span>
+                  <img src="{!!User::users('photo')!!}" class="user-image" alt="User Image"/>
+                  <span class="hidden-xs">{!!User::users('name')!!}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="{!!User::avatar()!!}" class="img-circle" alt="User Image" />
+                    <img src="{!!User::users('photo')!!}" class="img-circle" alt="User Image" />
                     <p>
-                      {!!User::name()!!} - {!!User::designation()!!}
-                      <small>Member since {!!User::joined()!!}</small>
+                      {!!User::users('name')!!} - {!!User::users('designation')!!}
+                      <small>Member since {!!User::users('joined')!!}</small>
                     </p>
                   </li>
                   <!-- Menu Body -->

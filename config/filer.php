@@ -28,7 +28,6 @@ return array(
 
     'model' => 'Lavalite\Filer\File',
 
-
     /*
     |--------------------------------------------------------------------------
     | Table
@@ -102,12 +101,12 @@ return array(
         array(300, 200, true), // 300x200 image ratio constrained aspect ratio
         array(null, 400, true), // auto width x 400 height constrained aspect ratio
     ),
-    'size'         => [
-            'xs'            => ['width' =>'60',     'height' =>'45', 'default' => 'path-to-banner-set-it-in-page-config'],
-            'sm'            => ['width' =>'160',    'height' =>'75'],
-            'md'            => ['width' =>'460',    'height' =>'345'],
-            'lg'            => ['width' =>'800',    'height' =>'600'],
-            'xl'            => ['width' =>'1000',   'height' =>'750'],
+    'size' => [
+            'xs' => ['width' => '60',     'height' => '45', 'default' => 'path-to-banner-set-it-in-page-config'],
+            'sm' => ['width' => '160',    'height' => '75'],
+            'md' => ['width' => '460',    'height' => '345'],
+            'lg' => ['width' => '800',    'height' => '600'],
+            'xl' => ['width' => '1000',   'height' => '750'],
     ],
 
 );

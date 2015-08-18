@@ -9,11 +9,7 @@
         "laravel/framework": "5.1.*",
         "anahkiasen/former": "4.0.*@dev",
         "teepluss/theme": "dev-master",
-        "intervention/imagecache": "2.2.*",
-        "lavalite/menu": "dev-master",
-        "lavalite/filer": "dev-master",
-        "lavalite/page": "dev-master",
-        "lavalite/user": "dev-master"
+        "prettus/l5-repository": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

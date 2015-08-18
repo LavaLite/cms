@@ -36,7 +36,7 @@ return array(
         'before' => function($theme)
         {
             // You can remove this line anytime.
-            $theme->setTitle(trans('app.name'));
+            $theme->setTitle(trans('cms.name'));
 
             // Breadcrumb template.
             // $theme->breadcrumb()->setTemplate('

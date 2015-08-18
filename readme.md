@@ -26,8 +26,9 @@ Please check the system requirements before installing Lavalite.
     * `git clone git@github.com:LavaLite/cms.git`
     * From a command line open in the folder, run `composer install`.
   * Composer:
-    * `composer create-project LavaLite/cms cms dev-msater`
+    * `composer create-project LavaLite/cms cms dev-master`
 3. Then, run `bower install` to install javascript libraries.
+3. Run `gulp` to to copy javascript library files to public folder.
 4. Enter your database details in `.env` file on root folder.
 5. Run `php artisan migrate` to setup your database.
 6. Run `php artisan db:seed --class=LavaliteTableSeeder` to seed your database.

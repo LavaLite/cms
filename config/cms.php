@@ -1,20 +1,21 @@
 <?php
+
 return [
-    'name'      => 'Lava Lite',
+    'name' => 'Lava Lite',
 
-    'url'       => 'http://www.lavalite.org',
+    'url' => 'http://www.lavalite.org',
 
-    'locale'    => 'en',
+    'locale' => 'en',
 
-    'locales'   => ['en', 'fr'],
+    'locales' => ['en', 'fr'],
 
-    'themes'    => [
-                    'admin'     => [ 'theme'    => 'admin',     'layout'    => 'default'],
-                    'public'    => [ 'theme'    => 'public',    'layout'    => 'default'],
-                    'user'      => [ 'theme'    => 'public',    'layout'    => 'user'],
+    'themes' => [
+                    'admin' => ['theme' => 'admin',     'layout' => 'default'],
+                    'public' => ['theme' => 'public',    'layout' => 'default'],
+                    'user' => ['theme' => 'public',    'layout' => 'user'],
                     ],
 
-    'packages'  => [ 'user', 'pages', 'menu'],
+    'packages' => ['user', 'pages', 'menu'],
 
     'usertypes' => ['admin' => 'Administrator', 'superuser' => 'Super user', 'user' => 'User', 'developer' => 'Developer'],
 

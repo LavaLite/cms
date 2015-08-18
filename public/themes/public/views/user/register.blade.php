@@ -1,4 +1,5 @@
-<div class="content">
+<!-- resources/views/auth/register.blade.php -->
+
     <div class="container">
         <div class="row profile">
             <div class="col-md-6  col-md-offset-3">
@@ -30,4 +31,3 @@
             </div>
         </div>
     </div>
-</div>

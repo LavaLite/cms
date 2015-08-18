@@ -5,10 +5,10 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="{!!User::avatar()!!}" class="img-circle" alt="User Image" />
+              <img src="{!!User::users('photo')!!}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>{!!User::name()!!}</p>
+              <p>{!!User::users('name')!!}</p>
 
               <a href="/admin"><i class="fa fa-circle text-success"></i> Online</a>
             </div>

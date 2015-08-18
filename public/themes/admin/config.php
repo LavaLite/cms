@@ -65,7 +65,6 @@ return array(
 
             $theme->asset()->add('jquery',                  'js/jquery.min.js');
             $theme->asset()->add('bootstrap',               'js/bootstrap.min.js');
-            $theme->asset()->add('scripts',                 'js/scripts.js');
 
             $theme->asset()->usePath()->add('lavalite',     'js/lavalite.min.js');
         },
@@ -102,6 +101,7 @@ return array(
                 $theme->asset()->container('footer')->add('toastr',                  'js/toastr.min.js');
                 $theme->asset()->container('footer')->add('sortable',                'js/sortable.min.js');
                 $theme->asset()->container('footer')->add('smoke',                   'js/smoke.min.js');
+                $theme->asset()->container('footer')->add('scripts',                 'js/scripts.js');
             },
 
             'page' => function($theme)
@@ -124,6 +124,7 @@ return array(
                 $theme->asset()->container('footer')->add('nestable',                'js/jquery.nestable.min.js');
                 $theme->asset()->container('footer')->add('toastr',                  'js/toastr.min.js');
                 $theme->asset()->container('footer')->add('sortable',                'js/sortable.min.js');
+                $theme->asset()->container('footer')->add('scripts',                 'js/scripts.js');
             })
 
         )

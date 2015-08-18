@@ -1,28 +1,28 @@
 <?php
 
 return array(
-/**
-* Provider .
-*/
-'provider'      => 'lavalite',
 
-/**
-* Package .
-*/
-'package'       => 'user',
+    /**
+     * Provider .
+     */
 
-/**
-* Modules .
-*/
-'modules'       => ['user'],
+    'provider' => 'lavalite',
 
-'permissions'   => ['user.view' => 'View', 'user.create' => 'Create', 'user.edit' => 'Edit', 'user.delete' => 'Delete'],
+    /**
+     * package .
+     */
 
-'user' => [
-                    'Name'          => 'User',
-                    'name'          => 'user',
-                    'table'         => 'users',
-                    'model'         => 'Lavalite\User\Models\User',
+    'package' => 'user',
+
+    'modules' => ['user', 'role', 'role'],
+
+    'permission' =>
+                    [
+                    'Name'          => 'Permission',
+                    'name'          => 'permission',
+                    'table'         => 'permissions',
+                    'model'         => 'Lavalite\User\Models\Permission',
+                    'permissions'   => ['view', 'create', 'edit', 'delete'],
                     'image'         =>
                         [
                         'xs'        => ['width' =>'60',     'height' =>'45'],
@@ -31,10 +31,35 @@ return array(
                         'lg'        => ['width' =>'800',    'height' =>'600'],
                         'xl'        => ['width' =>'1000',   'height' =>'750'],
                         ],
-                    'fillable'          =>  ['id', 'parent', 'email', 'password', 'permissions', 'activated', 'activation_code', 'activated_at', 'last_login', 'persist_code', 'reset_password_code', 'first_name', 'last_name', 'sex', 'dob', 'designation', 'department', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'type'],
-                    'listfields'        =>  ['id', 'parent', 'email', 'password', 'permissions', 'activated', 'activation_code', 'activated_at', 'last_login', 'persist_code', 'reset_password_code', 'first_name', 'last_name', 'sex', 'dob', 'designation', 'department', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'type'],
-                    'translatable'      =>  ['id', 'parent', 'email', 'password', 'permissions', 'activated', 'activation_code', 'activated_at', 'last_login', 'persist_code', 'reset_password_code', 'first_name', 'last_name', 'sex', 'dob', 'designation', 'department', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'type'],
-                    'upload-folder'     =>  '/uploads/users',
+                    'fillable'          =>  ['id', 'name', 'readable_name', 'created_at', 'updated_at'],
+                    'listfields'        =>  ['id', 'name', 'readable_name', 'created_at', 'updated_at'],
+                    'translatable'      =>  ['id', 'name', 'readable_name', 'created_at', 'updated_at'],
+                    'upload-folder'     =>  '/uploads/permissions',
+                    'uploadable'        =>  [
+                                                'single' => [],
+                                                'multiple' => []
+                                            ],
+
+                    ],
+    'role' =>
+                    [
+                    'Name'          => 'Role',
+                    'name'          => 'role',
+                    'table'         => 'roles',
+                    'model'         => 'Lavalite\User\Models\Role',
+                    'permissions'   => ['view', 'create', 'edit', 'delete'],
+                    'image'         =>
+                        [
+                        'xs'        => ['width' =>'60',     'height' =>'45'],
+                        'sm'        => ['width' =>'100',    'height' =>'75'],
+                        'md'        => ['width' =>'460',    'height' =>'345'],
+                        'lg'        => ['width' =>'800',    'height' =>'600'],
+                        'xl'        => ['width' =>'1000',   'height' =>'750'],
+                        ],
+                    'fillable'          =>  ['id', 'name', 'created_at', 'updated_at'],
+                    'listfields'        =>  ['id', 'name', 'created_at', 'updated_at'],
+                    'translatable'      =>  ['id', 'name', 'created_at', 'updated_at'],
+                    'upload-folder'     =>  '/uploads/roles',
                     'uploadable'        =>  [
                                                 'single' => [],
                                                 'multiple' => []
@@ -42,4 +67,28 @@ return array(
 
                     ],
 
+    'user' => [
+                    'Name'          => 'User',
+                    'name'          => 'user',
+                    'table'         => 'users',
+                    'model'         => 'Lavalite\User\Models\User',
+                    'permissions'   => ['view', 'create', 'edit', 'delete'],
+                    'image'         =>
+                        [
+                        'xs'        => ['width' =>'60',     'height' =>'45'],
+                        'sm'        => ['width' =>'100',    'height' =>'75'],
+                        'md'        => ['width' =>'460',    'height' =>'345'],
+                        'lg'        => ['width' =>'800',    'height' =>'600'],
+                        'xl'        => ['width' =>'1000',   'height' =>'750'],
+                        ],
+                    'fillable'          =>  ['id', 'reporting_to', 'first_name', 'last_name', 'email', 'password', 'active', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'building', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'social_login', 'deleted_at', 'created_at', 'updated_at'],
+                    'listfields'        =>  ['id', 'reporting_to', 'first_name', 'last_name', 'email', 'password', 'active', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'building', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'social_login', 'deleted_at', 'created_at', 'updated_at'],
+                    'translatable'      =>  ['id', 'reporting_to', 'first_name', 'last_name', 'email', 'password', 'active', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'building', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'social_login', 'deleted_at', 'created_at', 'updated_at'],
+                    'upload-folder'     =>  '/uploads/users',
+                    'uploadable'        =>  [
+                                                'single' => ['photo'],
+                                                'multiple' => []
+                                            ],
+
+                    ],
 );

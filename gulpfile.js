@@ -53,7 +53,5 @@ elixir(function(mix) {
         .copy('vendor/bower_components/smoke.js/smoke.min.js', 'public/js/smoke.min.js')
         .copy('vendor/bower_components/smoke.js/smoke.css', 'public/css/smoke.css')
 
-        .copy('vendor/bower_components/Sortable/Sortable.min.js', 'public/js/sortable.min.js')
-
     	;
 });

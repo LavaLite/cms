@@ -19,7 +19,9 @@
 <body id="page-top" class="index">
 
     {!! Theme::partial('header') !!}
+    <div class="container">
     {!! Theme::content() !!}
+    </div>
     {!! Theme::partial('footer') !!}
     {!! Theme::asset()->container('footer')->scripts() !!}
 </body>

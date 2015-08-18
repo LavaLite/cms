@@ -5,3 +5,4 @@ composer.lock
 ._**
 *.tmp
 *.zip
+.env
