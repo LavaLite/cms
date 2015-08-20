@@ -8,7 +8,11 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "anahkiasen/former": "4.0.*@dev",
-        "teepluss/theme": "dev-master"
+        "teepluss/theme": "dev-master",
+        "lavalite/menu": "dev-master",
+        "lavalite/filer": "dev-master",
+        "lavalite/page": "dev-master",
+        "lavalite/user": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
