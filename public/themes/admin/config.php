@@ -82,6 +82,7 @@ return array(
             'default' => function($theme)
             {
                 $theme->asset()->add('dataTables',              'css/jquery.dataTables.min.css');
+                $theme->asset()->add('dataTables.bs',           'css/dataTables.bootstrap.css');
                 $theme->asset()->add('summernote',              'css/summernote.css');
                 $theme->asset()->add('toastr',                  'css/toastr.min.css');
                 $theme->asset()->add('dropzone',                'css/dropzone.min.css');

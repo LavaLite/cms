@@ -1,6 +1,12 @@
       <header class="main-header">
         <!-- Logo -->
-        <a href="/admin" class="logo">{!!trans('cms.name.html')!!}</a>
+        <a href="/admin" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini">{!!trans('cms.name.short')!!}</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg">{!!trans('cms.name.html')!!}</span>
+
+        </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
@@ -16,7 +22,7 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{!!User::users('photo')!!}" class="user-image" alt="User Image"/>
+                  <img src="{!!User::users('picture')!!}" class="user-image" alt="User Image"/>
                   <span class="hidden-xs">{!!User::users('name')!!}</span>
                 </a>
                 <ul class="dropdown-menu">

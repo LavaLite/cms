@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                    <span class="info-box-icon bg-aqua"><i class="fa fa-cog"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">CPU Traffic</span>
                         <span class="info-box-number">90<small>%</small></span>
@@ -32,7 +32,7 @@
             <div class="clearfix visible-sm-block"></div>
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+                    <span class="info-box-icon bg-green"><i class="fa fa-bar-chart"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Sales</span>
                         <span class="info-box-number">760</span>
@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+                    <span class="info-box-icon bg-yellow"><i class="fa fa-users"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">New Members</span>
                         <span class="info-box-number">2,000</span>

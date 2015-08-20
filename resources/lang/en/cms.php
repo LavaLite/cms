@@ -10,6 +10,7 @@ return array(
 
     "name"           => "Lava Lite",
     "name.html"      => "<b>Lava</b>lite",
+    "name.short"      => "<b>L</b>l",
     "admin.panel"    => "Admin Panel",
     "dashboard"   	 => "Dashboard",
     "all.rights"     => "<strong>Copyright © 2014-2015 <a href='http://lavalite.org'>Lava lite</a>.</strong> All rights reserved.",

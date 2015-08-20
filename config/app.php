@@ -147,9 +147,6 @@ return [
 
         Former\FormerServiceProvider::class,
         Teepluss\Theme\ThemeServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-
-        Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
         Lavalite\User\Providers\UserServiceProvider::class,
         Lavalite\Menu\Providers\MenuServiceProvider::class,

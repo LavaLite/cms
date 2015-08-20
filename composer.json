@@ -8,8 +8,7 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "anahkiasen/former": "4.0.*@dev",
-        "teepluss/theme": "dev-master",
-        "prettus/l5-repository": "dev-master"
+        "teepluss/theme": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

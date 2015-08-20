@@ -30,13 +30,11 @@ class UserController extends Controller
 
     /**
      * Redirect path after login or register
-     *
      */
     protected $redirectPath = '/user';
 
     /**
      * Redirect path after unsucessful attempt.
-     *
      */
     protected $loginPath = '/login';
 
@@ -110,34 +108,11 @@ class UserController extends Controller
         return $this->theme->of('public::user.reset', compact('token'))->render();
     }
 
-    public function getProfile()
-    {
-        if (User::check()) {
-            $user = User::user();
-            return $this->theme->of('user::user.public.profile', compact('user'))->render();
-        }
-
-        return Redirect::to('login');
-    }
-
-    public function postProfile()
-    {
-        $id = User::getUser()->id;
-        $result = $this->user->profileedit($id);
-        if ($result['success']) {
-            // Success!
-            Session::flash('success', $result['message']);
-
-            return Redirect::to('user/profile');
-        } else {
-            Session::flash('error', $result['message']);
-
-            return Redirect::to('user/profile')
-                ->withInput()
-                ->withErrors($result['errors']);
-        }
-    }
-
+    /**
+     * Display dashboard
+     *
+     * @return response
+     */
     public function home()
     {
         $data['page'] = Page::getPage('user');
