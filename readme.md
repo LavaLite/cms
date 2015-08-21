@@ -28,13 +28,17 @@ Please check the system requirements before installing Lavalite.
   * Composer:
     * `composer create-project LavaLite/cms cms dev-master`
 3. Then, run `bower install` to install javascript libraries.
-3. Run `gulp` to to copy javascript library files to public folder.
-4. Enter your database details in `.env` file on root folder.
-5. Run `php artisan migrate` to setup your database.
-6. Run `php artisan db:seed --class=LavaliteTableSeeder` to seed your database.
-7. You can contigure mail server details in `config/mail.php`.
-8. You can configure the site in the app/config folder before production.
-9. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
+4. Run `gulp` to to copy javascript library files to public folder.
+5. Publish migratins seeds config etc `php artisan vendor:publish`
+6. Enter your database details in `.env` file on root folder.
+7. Run `php artisan migrate` to setup your database.
+8. Execute celow likes ti seed your tables
+   `php artisan db:seed --class=PageTableSeeder`
+   `php artisan db:seed --class=MenuTableSeeder`
+   `php artisan db:seed --class=UserTableSeeder`
+9. You can contigure mail server details in `config/mail.php`.
+10. You can configure the site in the app/config folder before production.
+11. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
 
 ####Permissions
@@ -43,14 +47,11 @@ For more detals on installation check laravel installation giude
 http://laravel.com/docs/5.1/installation
 
 ## Login details
+
 ###Admin
 Url: sites-public-url/admin
 Superuser : superuser@superuser.com - superuser@superuser
-Admin : admin@admin.com - admin@admin
 
-### User
-Url: sites-public-url/user
-User: user@user.com - user@user
 
 ## Demo
 Public [http://demo.lavalite.org](http://demo.lavalite.org)
@@ -59,12 +60,9 @@ Admin [http://demo.lavalite.org/admin](http://demo.lavalite.org/admin)
 
 Superuser : superuser@superuser.com - superuser@superuser
 
-Admin : admin@admin.com - admin@admin
-
 ##Frameworks/Libraries
 
 ### PHP Libraries
 * [laravel/laravel](https://github.com/laravel/laravel) - A PHP Framework For Web Artisans
-* [anahkiasen/former](https://github.com/Anahkiasen/former‎) -A powerful form builder
-* [teepluss/theme](https://github.com/teepluss/laravel4-theme) - Theme and asset managing for laravel 4
-* [intervention/imagecache](https://github.com/Intervention/imagecache) - Caching extension for the Intervention [Image Class](https://github.com/Intervention/image)
+* [anahkiasen/former](https://github.com/Anahkiasen/former‎) - A powerful form builder
+* [teepluss/theme](https://github.com/teepluss/laravel4-theme) - Theme and asset management
