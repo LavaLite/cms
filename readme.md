@@ -32,7 +32,7 @@ Please check the system requirements before installing Lavalite.
 5. Publish migratins seeds config etc `php artisan vendor:publish`
 6. Enter your database details in `.env` file on root folder.
 7. Run `php artisan migrate` to setup your database.
-8. Execute celow likes ti seed your tables
+8. Execute below commands to seed your tables, before executing this commands run `composer dump-autolad` to load published table seeders to the class map.
    - `php artisan db:seed --class=PageTableSeeder`
    - `php artisan db:seed --class=MenuTableSeeder`
    - `php artisan db:seed --class=UserTableSeeder`
