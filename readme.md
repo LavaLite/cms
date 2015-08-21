@@ -33,9 +33,9 @@ Please check the system requirements before installing Lavalite.
 6. Enter your database details in `.env` file on root folder.
 7. Run `php artisan migrate` to setup your database.
 8. Execute celow likes ti seed your tables
-   `php artisan db:seed --class=PageTableSeeder`
-   `php artisan db:seed --class=MenuTableSeeder`
-   `php artisan db:seed --class=UserTableSeeder`
+   - `php artisan db:seed --class=PageTableSeeder`
+   - `php artisan db:seed --class=MenuTableSeeder`
+   - `php artisan db:seed --class=UserTableSeeder`
 9. You can contigure mail server details in `config/mail.php`.
 10. You can configure the site in the app/config folder before production.
 11. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
@@ -46,19 +46,14 @@ Lavalite may require one set of permissions to be configured: folders within `st
 For more detals on installation check laravel installation giude
 http://laravel.com/docs/5.1/installation
 
-## Login details
-
-###Admin
-Url: sites-public-url/admin
-Superuser : superuser@superuser.com - superuser@superuser
-
+## Admin login details
+- Url: sites-public-url/admin
+- Superuser : superuser@superuser.com - superuser@superuser
 
 ## Demo
-Public [http://demo.lavalite.org](http://demo.lavalite.org)
-
-Admin [http://demo.lavalite.org/admin](http://demo.lavalite.org/admin)
-
-Superuser : superuser@superuser.com - superuser@superuser
+- Public [http://demo.lavalite.org](http://demo.lavalite.org)
+- Admin [http://demo.lavalite.org/admin](http://demo.lavalite.org/admin)
+- Superuser : superuser@superuser.com - superuser@superuser
 
 ##Frameworks/Libraries
 
