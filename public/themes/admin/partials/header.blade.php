@@ -28,7 +28,7 @@
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="{!!User::users('photo')!!}" class="img-circle" alt="User Image" />
+                    <img src="{!!User::users('picture')!!}" class="img-circle" alt="User Image" />
                     <p>
                       {!!User::users('name')!!} - {!!User::users('designation')!!}
                       <small>Member since {!!User::users('joined')!!}</small>

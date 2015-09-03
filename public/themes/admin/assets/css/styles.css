@@ -1,3 +1,12 @@
+#main-list tbody tr:hover.selected td,
+#main-list tbody tr:hover td {
+    background-color: #FFEFD4;
+    cursor: pointer;
+}
+#main-list tbody tr.selected td {
+    background-color: #FFEFC6 !important;
+}
+
 .smoke-base .dialog-inner {
     overflow-y: scroll;
     max-height: 500px;

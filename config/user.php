@@ -14,7 +14,7 @@ return array(
 
     'package' => 'user',
 
-    'modules' => ['user', 'role', 'role'],
+    'modules' => ['user', 'role', 'permission'],
 
     'permission' =>
                     [
@@ -71,7 +71,7 @@ return array(
                     'Name'          => 'User',
                     'name'          => 'user',
                     'table'         => 'users',
-                    'model'         => 'Lavalite\User\Models\User',
+                    'model'         => '\Lavalite\User\Models\User',
                     'permissions'   => ['view', 'create', 'edit', 'delete'],
                     'image'         =>
                         [

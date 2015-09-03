@@ -122,5 +122,25 @@ class AdminController extends Controller
         return $this->theme->of('admin::user.lock')->render();
     }
 
+    /**
+     * Show master table lists.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function masters()
+    {
+        return $this->theme->of('admin::general.masters')->render();
+    }
+
+    /**
+     * Show reports homepage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function reports()
+    {
+        return $this->theme->of('admin::general.reports')->render();
+    }
+
 
 }

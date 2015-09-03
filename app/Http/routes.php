@@ -37,6 +37,8 @@ Route::post('user/password/reset', 'UserController@postReset');
 // Admin routes...
 Route::get('admin/', 'AdminController@home');
 Route::get('admin/lock', 'AdminController@lock');
+Route::get('admin/masters', 'AdminController@masters');
+Route::get('admin/reports', 'AdminController@reports');
 
 // Authentication routes...
 Route::get('admin/login', 'AdminController@getLogin');

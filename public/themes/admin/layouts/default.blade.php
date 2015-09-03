@@ -9,7 +9,7 @@
         {!! Theme::asset()->styles() !!}
         {!! Theme::asset()->scripts() !!}
     </head>
-    <body class="sidebar-mini skin-red sidebar-collapse">
+    <body class="sidebar-mini skin-red">
         <div class="wrapper">
             {!! Theme::partial('header') !!}
             {!! Theme::partial('aside') !!}

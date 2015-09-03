@@ -43,7 +43,7 @@ class AdminAuthenticate
             }
         }
 
-        if (!$this->auth->hasRole('admin')) {
+        if (!$this->auth->hasRole('admin') && !$this->auth->hasRole('superuser')) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {

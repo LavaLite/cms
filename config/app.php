@@ -151,7 +151,7 @@ return [
         Lavalite\Menu\Providers\MenuServiceProvider::class,
         Lavalite\Filer\Providers\FilerServiceProvider::class,
         Lavalite\Page\Providers\PageServiceProvider::class,
-
+        Lavalite\Settings\Providers\SettingsServiceProvider::class,
     ],
 
     /*
@@ -210,6 +210,7 @@ return [
         'Page' => Lavalite\Page\Facades\Page::class,
         'Filer' => Lavalite\Filer\Facades\Filer::class,
         'User' => Lavalite\User\Facades\User::class,
+        'Settings' => Lavalite\Settings\Facades\Settings::class,
     ],
 
 ];

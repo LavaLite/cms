@@ -28,9 +28,9 @@
       <li class="header">MAIN NAVIGATION<d/li>
       {!!Menu::menu('admin', 'admin')!!}
       <li class="header">Masters</li>
-      <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+      <li><a href="{{ URL::to('admin/settings/setting') }}"><i class="fa fa-circle-o text-red"></i> <span>Settings</span></a></li>
+      <li><a href="{{ URL::to('admin/masters') }}"><i class="fa fa-circle-o text-yellow"></i> <span>Masters</span></a></li>
+      <li><a href="{{ URL::to('admin/reports') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Reports</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->
