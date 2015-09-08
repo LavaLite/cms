@@ -1,3 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100);
+.control-label sup {
+  color: red;
+}
+
+.title {
+    font-family: 'Lato';
+    font-size: 96px;
+}
+.sub-title {
+    font-family: 'Lato';
+    font-size: 46px;
+}
+
 #main-list tbody tr:hover.selected td,
 #main-list tbody tr:hover td {
     background-color: #FFEFD4;
@@ -81,4 +95,91 @@ box-shadow:1px 1px 0 rgba(255, 255, 255, 0.2) inset;
 .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
 
   margin-left: 0px;
+}
+
+.ibox {
+  clear: both;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 0;
+}
+.ibox.collapsed .ibox-content {
+  display: none;
+}
+.ibox.collapsed .fa.fa-chevron-up:before {
+  content: "\f078";
+}
+.ibox.collapsed .fa.fa-chevron-down:before {
+  content: "\f077";
+}
+.ibox:after,
+.ibox:before {
+  display: table;
+}
+.ibox-title {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #ffffff;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 3px 0 0;
+  color: inherit;
+  margin-bottom: 0;
+  padding: 14px 15px 7px;
+  min-height: 48px;
+}
+.ibox-content {
+  background-color: #ffffff;
+  color: inherit;
+  padding: 15px 20px 20px 20px;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 0px;
+}
+.ibox-footer {
+  color: inherit;
+  border-top: 1px solid #e7eaec;
+  font-size: 90%;
+  background: #ffffff;
+  padding: 10px 15px;
+}
+
+/* AGILE BOARD */
+.sortable-list {
+  padding: 10px 0;
+}
+.agile-list {
+  list-style: none;
+  margin: 0;
+}
+.agile-list li {
+  background: #FAFAFB;
+  border: 1px solid #e7eaec;
+  margin: 0px 0 10px 0;
+  padding: 10px;
+  border-radius: 2px;
+}
+.agile-list li:hover {
+  cursor: pointer;
+  background: #fff;
+}
+.agile-list li.warning-element {
+  border-left: 3px solid #f8ac59;
+}
+.agile-list li.danger-element {
+  border-left: 3px solid #ed5565;
+}
+.agile-list li.info-element {
+  border-left: 3px solid #1c84c6;
+}
+.agile-list li.success-element {
+  border-left: 3px solid #1ab394;
+}
+.agile-detail {
+  margin-top: 5px;
+  font-size: 12px;
 }

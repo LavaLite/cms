@@ -112,6 +112,16 @@ class AdminController extends Controller
     }
 
     /**
+     * Show admin dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function profile()
+    {
+        return $this->theme->of('admin::user.profile')->render();
+    }
+
+    /**
      * Show locked screen.
      *
      * @return \Illuminate\Http\Response

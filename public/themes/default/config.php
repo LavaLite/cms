@@ -60,10 +60,10 @@ return array(
             //You may use this event to set up your assets.
 
             //You may use this event to set up your assets.
-            $theme->asset()->add('bootstrap',               'css/bootstrap.min.css');
+            $theme->asset()->add('bootstrap',               'packages/bootstrap/css/bootstrap.min.css');
 
-            $theme->asset()->add('jquery',                  'js/jquery.min.js');
-            $theme->asset()->add('bootstrap',               'js/bootstrap.min.js');
+            $theme->asset()->add('jquery',                  'packages/jquery/js/jquery.min.js');
+            $theme->asset()->add('bootstrap',               'packages/bootstrap/js/bootstrap.min.js');
 
         },
 

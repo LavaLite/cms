@@ -152,6 +152,9 @@ return [
         Lavalite\Filer\Providers\FilerServiceProvider::class,
         Lavalite\Page\Providers\PageServiceProvider::class,
         Lavalite\Settings\Providers\SettingsServiceProvider::class,
+        Lavalite\Task\Providers\TaskServiceProvider::class,
+        Lavalite\Message\Providers\MessageServiceProvider::class,
+        Lavalite\Calendar\Providers\CalendarServiceProvider::class,
     ],
 
     /*
@@ -211,6 +214,9 @@ return [
         'Filer' => Lavalite\Filer\Facades\Filer::class,
         'User' => Lavalite\User\Facades\User::class,
         'Settings' => Lavalite\Settings\Facades\Settings::class,
+        'Task' => Lavalite\Task\Facades\Task::class,
+        'Calendar' => Lavalite\Calendar\Facades\Calendar::class,
+        'Message' => Lavalite\Message\Facades\Message::class,
     ],
 
 ];

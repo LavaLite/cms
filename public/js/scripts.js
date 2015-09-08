@@ -19,19 +19,16 @@ $(function () {
 
     $('input[type="date"]').datetimepicker({
         format: "yyyy-mm-dd",
-        minView: 'month',
-        autoclose : true
+        viewMode: 'months'
     }).prop('type','text');
 
     $('input[type="datetime"]').datetimepicker({
-        format: "yyyy-mm-dd hh:ii:00",
-        autoclose : true
+        format: "yyyy-mm-dd hh:ii:00"
     }).prop('type','text');
 
     $('input[type="time"]').datetimepicker({
             format: "hh:ii:00",
-            startView: 'day',
-            autoclose : true
+            startView: 'day'
     }).prop('type','text');
 
     $('a').click(function(event){

@@ -37,7 +37,7 @@
                   <!-- Menu Body -->
                   <li class="user-body">
                     <div class="col-xs-12 text-center">
-                      <a href="/admin/change-password">Change Password</a>
+                      <a href="/admin/profile#cp">Change Password</a>
                     </div>
                   </li>
                   <!-- Menu Footer-->
