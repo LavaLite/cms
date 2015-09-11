@@ -87,7 +87,7 @@ return array(
                 $theme->asset()->add('dropzone',                'packages/dropzone/css/dropzone.min.css');
                 $theme->asset()->add('icheck',                  'packages/icheck/css/icheck/square/blue.css');
                 $theme->asset()->add('smoke',                   'packages/smoke-js/css/smoke.css');
-                $theme->asset()->add('fullcalendar',            'packages/fullcalendar/css/fullcalendar.min.css');
+                $theme->asset()->add('fullcalendar',            'packages/fullcalendar/fullcalendar.min.css');
 
                 $theme->asset()->usePath()->add('styles',       'css/styles.css');
 
@@ -103,7 +103,8 @@ return array(
                 $theme->asset()->container('footer')->add('toastr',                  'packages/toastr/js/toastr.min.js');
                 $theme->asset()->container('footer')->add('sortable',                'packages/sortable/sortable.min.js');
                 $theme->asset()->container('footer')->add('smoke',                   'packages/smoke-js/js/smoke.min.js');
-                $theme->asset()->container('footer')->add('fullcalendar',            'packages/fullcalendar/js/fullcalendar.min.js');
+                $theme->asset()->container('footer')->add('fullcalendar',            'packages/fullcalendar/fullcalendar.min.js');
+                $theme->asset()->container('footer')->add('jquery-ui',               'packages/jquery-ui/jquery-ui.min.js');
 
                 $theme->asset()->container('footer')->add('scripts',                 'js/scripts.js');
             },

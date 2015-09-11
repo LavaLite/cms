@@ -12,6 +12,10 @@
     font-size: 46px;
 }
 
+.navbar-nav > .user-menu > .dropdown-menu > .user-body a {
+    color: #FFF !important;
+}
+
 #main-list tbody tr:hover.selected td,
 #main-list tbody tr:hover td {
     background-color: #FFEFD4;

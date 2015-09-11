@@ -27,8 +27,5 @@ abstract class Controller extends BaseController
     public function setupTheme($theme = 'default', $layout = 'default')
     {
         $this->theme = Theme::uses($theme)->layout($layout);
-        //Former::framework('TwitterBootstrap3');
-        //Former::config('fetch_errors', true);
-        //Former::config('push_checkboxes', true);
     }
 }

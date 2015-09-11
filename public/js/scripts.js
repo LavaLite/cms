@@ -66,6 +66,12 @@ $(function () {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
     });
+
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
 });
 
 $( document ).ajaxComplete(function() {
@@ -100,6 +106,12 @@ $( document ).ajaxComplete(function() {
     $.AdminLTE.boxWidget.activate()
     $("#formEntry").validate();
     $("#formEntry").valid();
+
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
 });
 
 $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {

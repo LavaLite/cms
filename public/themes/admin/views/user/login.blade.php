@@ -4,6 +4,13 @@
   </div><!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                - {{ $error }}<br/>
+            @endforeach
+    </div>
+@endif
     {!!Former::vertical_open()!!}
       <div class="form-group has-feedback">
         {!!Former::text('email')->raw()!!}

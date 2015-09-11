@@ -14,7 +14,7 @@ return array(
 
     'package' => 'user',
 
-    'modules' => ['user', 'role', 'role'],
+    'modules' => ['user', 'role', 'permission'],
 
     'permission' =>
                     [
@@ -81,9 +81,10 @@ return array(
                         'lg'        => ['width' =>'800',    'height' =>'600'],
                         'xl'        => ['width' =>'1000',   'height' =>'750'],
                         ],
-                    'fillable'          =>  ['id', 'reporting_to', 'first_name', 'last_name', 'email', 'password', 'active', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'building', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'social_login', 'deleted_at', 'created_at', 'updated_at'],
-                    'listfields'        =>  ['id', 'reporting_to', 'first_name', 'last_name', 'email', 'password', 'active', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'building', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'social_login', 'deleted_at', 'created_at', 'updated_at'],
-                    'translatable'      =>  ['id', 'reporting_to', 'first_name', 'last_name', 'email', 'password', 'active', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'building', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'social_login', 'deleted_at', 'created_at', 'updated_at'],
+                    'fillable'          =>  ['id', 'reporting_to', 'name', 'email', 'password', 'active', 'remember_token', 'sex', 'dob',
+                                            'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'web'],
+                    'listfields'        =>  ['id', 'reporting_to', 'name', 'email', 'password', 'active', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'web', 'social_login', 'deleted_at', 'created_at', 'updated_at'],
+                    'translatable'      =>  ['id', 'reporting_to', 'name', 'email', 'password', 'active', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'web', 'social_login', 'deleted_at', 'created_at', 'updated_at'],
                     'upload-folder'     =>  '/uploads/users',
                     'uploadable'        =>  [
                                                 'single' => ['photo'],

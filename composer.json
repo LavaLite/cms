@@ -12,6 +12,10 @@
         "lavalite/menu": "dev-master",
         "lavalite/filer": "dev-master",
         "lavalite/page": "dev-master",
+        "lavalite/settings": "dev-master",
+        "lavalite/task": "dev-master",
+        "lavalite/message": "dev-master",
+        "lavalite/calendar": "dev-master",
         "lavalite/user": "dev-master"
     },
     "require-dev": {
