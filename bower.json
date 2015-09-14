@@ -34,6 +34,10 @@
 
     "FlexSlider" : "*",
     "sweetalert" : "*",
-    "smoke.js" : "*"
+    "smoke.js" : "*",
+
+    "Sortable" : "*",
+    "nestable2" : "*",
+    "datatables-bootstrap3" : "*"
     }
 }

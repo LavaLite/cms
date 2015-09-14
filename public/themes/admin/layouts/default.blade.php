@@ -14,6 +14,7 @@
             {!! Theme::partial('header') !!}
             {!! Theme::partial('aside') !!}
             {!! Theme::content() !!}
+            {!! Theme::partial('right') !!}
             {!! Theme::partial('footer') !!}
             {!! Theme::asset()->container('footer')->scripts() !!}
         </div>
