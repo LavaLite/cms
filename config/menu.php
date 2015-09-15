@@ -25,7 +25,7 @@ return array(
                                         'lg'        => ['width' =>'800',    'height' =>'600'],
                                         'xl'        => ['width' =>'1000',   'height' =>'750'],
                                     ],
-                'fillable'          =>  ['name','url','order','status', 'icon', 'description','has_sub','type','open','key'],
+                'fillable'          =>  ['parent_id', 'key', 'url', 'icon', 'permission', 'name', 'description', 'open', 'has_sub', 'order', 'status', 'upload_folder'],
                 'listfields'        =>  ['id', 'name', 'level', 'url','order', 'icon', 'status', 'has_sub','type','open','key'],
                 'upload-folder'     =>  'uploads/menu',
                 'uploadable'        =>  [
