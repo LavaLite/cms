@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 {!! Former::close() !!}
-                Forgot password? <a href="/user/password/email"> Click to reset </a> <br>
+                Forgot password? <a href="/password/email"> Click to reset </a> <br>
                 Don't have an account yet? <a href="/register"> Click to create one </a>
             </div>
         </div>

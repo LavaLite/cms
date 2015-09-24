@@ -11,47 +11,51 @@
 |
 */
 
-// User routs
+// Public routs.
 Route::get('/',  'PublicController@home');
 
+//********* User routs. *********//
+Route::get('home',  'UserController@home');
+
 // Authentication routes...
-Route::get('login', 'UserController@getLogin');
-Route::post('login', 'UserController@postLogin');
-Route::get('logout', 'UserController@getLogout');
+Route::get('login', 'Auth\UserAuthController@getLogin');
+Route::post('login', 'Auth\UserAuthController@postLogin');
+Route::get('logout', 'Auth\UserAuthController@getLogout');
 
 // Registration routes...
-Route::get('register', 'UserController@getRegister');
-Route::post('register', 'UserController@postRegister');
-
-// User routs
-Route::get('user',  'UserController@home');
+Route::get('register', 'Auth\UserAuthController@getRegister');
+Route::post('register', 'Auth\UserAuthController@postRegister');
 
 // Password reset link request routes...
-Route::get('user/password/email', 'UserController@getEmail');
-Route::post('user/password/email', 'UserController@postEmail');
+Route::get('password/email', 'Auth\UserPasswordController@getEmail');
+Route::post('password/email', 'Auth\UserPasswordController@postEmail');
 
 // Password reset routes...
-Route::get('user/password/reset/{token}', 'UserController@getReset');
-Route::post('user/password/reset', 'UserController@postReset');
+Route::get('password/reset/{token}', 'Auth\UserPasswordController@getReset');
+Route::post('password/reset', 'Auth\UserPasswordController@postReset');
 
-// Admin routes...
-Route::get('admin/', 'AdminController@home');
+//********* Admin routs. *********//
+Route::get('admin', 'AdminController@home');
+
+// Authentication routes...
+Route::get('admin/login', 'Auth\AdminAuthController@getLogin');
+Route::post('admin/login', 'Auth\AdminAuthController@postLogin');
+Route::get('admin/logout', 'Auth\AdminAuthController@getLogout');
+
+// Registration routes...
+//Route::get('admin/register', 'Auth\AdminAuthController@getRegister');
+//Route::post('admin/register', 'Auth\AdminAuthController@postRegister');
+
+// Password reset link request routes...
+Route::get('admin/password/email', 'Auth\AdminPasswordController@getEmail');
+Route::post('admin/password/email', 'Auth\AdminPasswordController@postEmail');
+
+// Password reset routes...
+Route::get('admin/password/reset/{token}', 'Auth\AdminPasswordController@getReset');
+Route::post('admin/password/reset', 'Auth\AdminPasswordController@postReset');
+
 Route::get('admin/profile', 'AdminController@profile');
 Route::get('admin/lock', 'AdminController@lock');
 Route::get('admin/masters', 'AdminController@masters');
 Route::get('admin/reports', 'AdminController@reports');
-
-// Authentication routes...
-Route::get('admin/login', 'AdminController@getLogin');
-Route::post('admin/login', 'AdminController@postLogin');
-Route::get('admin/logout', 'AdminController@getLogout');
-
-// Password reset link request routes...
-Route::get('admin/password/email', 'AdminController@getEmail');
-Route::post('admin/password/email', 'AdminController@postEmail');
-
-// Password reset routes...
-Route::get('admin/password/reset/{token}', 'AdminController@getReset');
-Route::post('admin/password/reset', 'AdminController@postReset');
-
 

@@ -9,8 +9,7 @@
                     {!!Former::vertical_open()
                     ->id('contact')
                     ->method('POST')
-                    ->class('white-row')
-                    ->action('register')!!}
+                    ->class('white-row')!!}
 
                     {!! Former::text('name')
                     -> label(trans('user::user.label.name'))

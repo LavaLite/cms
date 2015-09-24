@@ -43,14 +43,6 @@ class UserAuthenticate
             }
         }
 
-        if (!$this->auth->hasRole('user')) {
-            if ($request->ajax()) {
-                return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('login');
-            }
-        }
-
         return $next($request);
     }
 }

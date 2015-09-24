@@ -4,12 +4,15 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        {!!Former::vertical_open()!!}
+        {!!Former::vertical_open()
+        ->id('reset')
+        ->method('POST')
+        ->action('admin/password/reset')!!}
         {!! csrf_field() !!}
         <div class="form-group has-feedback">
             {!!Former::text('email')!!}
-            {!!Former::text('password')!!}
-            {!!Former::text('password_confirmation')!!}
+            {!!Former::password('password')!!}
+            {!!Former::password('password_confirmation')!!}
         </div>
         <div class="row">
             <!-- /.col -->

@@ -38,6 +38,8 @@
 
     "Sortable" : "*",
     "nestable2" : "*",
-    "datatables-bootstrap3-plugin" : "*"
+    "datatables-bootstrap3-plugin" : "*",
+
+    "classie":"*"
     }
 }

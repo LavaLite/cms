@@ -7,9 +7,9 @@
                 <h1>Reset <small>Password</small></h1>
                 <hr>
                 {!!Former::vertical_open()
-                ->id('contact')
+                ->id('reset')
                 ->method('POST')
-                ->action('user/password/reset')!!}
+                ->action('password/reset')!!}
                 {!! csrf_field() !!}
                 {!! Former::hidden('token')->value($token) !!}
 
