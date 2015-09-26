@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User as UserModal;
+use User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;

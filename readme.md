@@ -1,4 +1,5 @@
-## Lavalite - Content Management System (CMS) built on Laravel 5.1
+## Lavalite - Bootstrapper for Laravel 5 CMS or Application.
+
 *Version Beta
 
 This is an implementation of the backend of lavalite, which can be used for web based application and Content Management System based upon [Laravel 5.1](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
@@ -14,8 +15,6 @@ Lavalite is designed to run on a  machine with PHP 5.5 and MySQL 5.5.
     * Mbstring PHP Extension
     * Tokenizer PHP Extension
 * [Composer](https://getcomposer.org) installed to load the dependencies of Lavalite.
-* [bower](http://bower.io/) for installing javascript libraries.
-* [glup](http://gulpjs.com/) for managing javascript and css.
 
 ## Installation
 
@@ -27,18 +26,16 @@ Please check the system requirements before installing Lavalite.
     * From a command line open in the folder, run `composer install`.
   * Composer:
     * `composer create-project LavaLite/cms your-project-name dev-master`
-3. Then, run `bower install` to install javascript libraries.
-4. Run `gulp` to to copy javascript library files to public folder.
-5. Publish migratins seeds config etc `php artisan vendor:publish`
-6. Enter your database details in `.env` file on root folder.
-7. Run `php artisan migrate` to setup your database.
-8. Execute below commands to seed your tables, before executing this commands run `composer dump-autload` to load published table seeders to the class map.
+4. Publish migratins seeds config etc `php artisan vendor:publish`
+5. Enter your database details in `.env` file on root folder.
+6. Run `php artisan migrate` to setup your database.
+7. Execute below commands to seed your tables, before executing this commands run `composer dump-autoload` to load published table seeders to the class map.
    - `php artisan db:seed --class=PageTableSeeder`
    - `php artisan db:seed --class=MenuTableSeeder`
    - `php artisan db:seed --class=UserTableSeeder`
-9. You can contigure mail server details in `config/mail.php`.
-10. You can configure the site in the app/config folder before production.
-11. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
+8. You can contigure mail server details in `config/mail.php`.
+9. You can configure the site in the app/config folder before production.
+10. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
 
 ####Permissions
