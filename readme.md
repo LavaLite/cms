@@ -32,6 +32,8 @@ Please check the system requirements before installing Lavalite.
 7. Execute below commands to seed your tables, before executing this commands run `composer dump-autoload` to load published table seeders to the class map.
    - `php artisan db:seed --class=PageTableSeeder`
    - `php artisan db:seed --class=MenuTableSeeder`
+   - `php artisan db:seed --class=RoleTableSeeder`
+   - `php artisan db:seed --class=PermissionTableSeeder`
    - `php artisan db:seed --class=UserTableSeeder`
 8. You can contigure mail server details in `config/mail.php`.
 9. You can configure the site in the app/config folder before production.
