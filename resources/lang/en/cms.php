@@ -16,7 +16,11 @@ return array(
     "all.rights"     => "<strong>Copyright © 2014-2015 <a href='http://lavalite.org'>Lava lite</a>.</strong> All rights reserved.",
     "version"        => "<b>Version</b> 5.1",
 
+    "add"            => "Add",
     "back"           => "Back",
+    "cancel"         => "Cancel",
+    "close"          => "Close",
+    "create"         => "Create",
     "delete"         => "Delete",
     "edit"           => "Edit",
     "go"             => "Go",
@@ -26,6 +30,7 @@ return array(
     "manage"         => "Manage",
     "more"           => "More",
     "new"            => "New",
+    "no"             => "No",
     "opt"            => "Options",
     "option"         => "Option",
     "options"        => "Options",
@@ -39,6 +44,7 @@ return array(
     "status"         => "Status",
     "update"         => "Update",
     "view"           => "View",
+    "yes"            => "Yes",
 
     "flash.success"  => "Success",
     "flash.error"    => "Error",

@@ -1,5 +1,5 @@
 
-var appdebug = true;
+va = true;
 
 $(function () {
     jQuery.validator.setDefaults({
@@ -83,7 +83,7 @@ $( document ).ajaxComplete(function() {
             url = $(this).data('upload');
             sendFile(files[0], url, $(this));
         }
-    })
+    });
 
 
     $('input[type="date"]').datetimepicker({
@@ -104,8 +104,6 @@ $( document ).ajaxComplete(function() {
     }).prop('type','text');
 
     $.AdminLTE.boxWidget.activate()
-    $("#formEntry").validate();
-    $("#formEntry").valid();
 
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
@@ -115,11 +113,11 @@ $( document ).ajaxComplete(function() {
 });
 
 $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
-    app.message(jqxhr, appdebug);
+    app.message(jqxhr);
 });
 
 $( document ).ajaxSuccess(function( event, xhr, settings ) {
-    app.message(xhr, appdebug);
+    app.message(xhr);
 });
 
 function sendFile(file, url, editor) {
@@ -142,31 +140,49 @@ function sendFile(file, url, editor) {
 }
 
 var app = {
-    'message': function(info, debug){
-        if (typeof info === 'undefined') return;
-        debug = (typeof debug !== 'undefined') ? debug : appdebug;
+    'message': function(info){
 
-        if (info.status >= 100 && info.status <= 199)
-            toastr['info'](info.statusText, 'Info');
-
-        if (info.status >= 200 && info.status <= 299) {
-            if (info.status != 200) {
-                response = jQuery.parseJSON(info.responseText);
-                toastr['success'](response.message, response.title);
-            }
+        if (info.status == 200) {
+            return true;
         }
 
-        if (info.status >= 400 && info.status <= 499)
-            toastr['warning'](info.statusText, 'Warning');
+        var msgTyp;
+        var msgTitle;
+        var msgText = '';
 
-        if (info.status >= 500 && info.status <= 599)
-            toastr['error'](info.statusText, 'Error');
+        if (info.status == 201) {
+            msgTitle   = 'Success';
+            msgType    = 'success';
+            response   = jQuery.parseJSON(info.responseText);
+            msgText    = response.message;
+        }else if (info.status == 422) {
+            msgType    = 'warning';
+            msgTitle   = info.statusText;
+            response   = jQuery.parseJSON(info.responseText);
+            $.each(response, function(key, val){
+                msgText    += val + "<br>";
+            });
+        }else if (info.status >= 100 && info.status <= 199){
+            msgTitle   = 'Info';
+            msgType    = 'info';
+            msgText    = info.statusText;
+        }else if (info.status >= 202 && info.status <= 299){
+            msgTitle   = 'Success';
+            msgType    = 'success';
+            msgText    = info.statusText;
+        }else if (info.status >= 400 && info.status <= 499){
+            msgTitle   = 'Warning';
+            msgType    = 'warning';
+            msgText    = info.statusText;
+        }else if (info.status >= 500 && info.status <= 599){
+            msgType    = 'error';
+            msgTitle   = 'Error';
+            msgText    = info.statusText;
+        }
 
-        if (debug === false) return;
-            console.log(info);
+        if (msgType != undefined)
+            toastr[msgType](msgText, msgTitle);
 
-        if(info.status >= 400)
-            smoke.alert(info.responseText);
 
         return true;
 

@@ -87,10 +87,10 @@ return array(
                 $theme->asset()->add('dropzone',                'packages/dropzone/css/dropzone.min.css');
                 $theme->asset()->add('icheck',                  'packages/icheck/css/icheck/square/blue.css');
                 $theme->asset()->add('smoke',                   'packages/smoke-js/css/smoke.css');
+                $theme->asset()->add('sweetalert',              'packages/sweetalert/css/sweetalert.css');
                 $theme->asset()->add('fullcalendar',            'packages/fullcalendar/fullcalendar.min.css');
 
                 $theme->asset()->usePath()->add('styles',       'css/styles.css');
-
                 $theme->asset()->container('footer')->add('icheck',                  'packages/icheck/js/icheck.min.js');
                 $theme->asset()->container('footer')->add('dataTables',              'packages/data-tables/js/jquery.dataTables.min.js');
                 $theme->asset()->container('footer')->add('dataTablesbootstrap',     'packages/datatables-bootstrap3/js/datatables-bootstrap3.min.js');
@@ -103,6 +103,7 @@ return array(
                 $theme->asset()->container('footer')->add('toastr',                  'packages/toastr/js/toastr.min.js');
                 $theme->asset()->container('footer')->add('sortable',                'packages/sortable/sortable.min.js');
                 $theme->asset()->container('footer')->add('smoke',                   'packages/smoke-js/js/smoke.min.js');
+                $theme->asset()->container('footer')->add('sweetalert',              'packages/sweetalert/js/sweetalert.min.js');
                 $theme->asset()->container('footer')->add('fullcalendar',            'packages/fullcalendar/fullcalendar.min.js');
                 $theme->asset()->container('footer')->add('jquery-ui',               'packages/jquery-ui/jquery-ui.min.js');
 

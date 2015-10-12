@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers\Auth;
 
-use App\User as UserModal;
 use User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -103,13 +102,14 @@ class UserAuthController extends Controller
      */
     protected function create(array $data)
     {
-        $user = UserModal::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
 
-        User::attachRole($user->id, 'user');
+        $role = User::findRole('user');
+        $user->attachRole($role);
 
         return $user;
     }

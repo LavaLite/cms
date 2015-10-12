@@ -207,7 +207,6 @@ return [
         'Former' => Former\Facades\Former::class,
         'Theme' => Teepluss\Theme\Facades\Theme::class,
         'Intervention' => Intervention\Image\Facades\Image::class,
-        'Defender' => \Artesaos\Defender\Facades\Defender::class,
 
         'Menu' => Lavalite\Menu\Facades\Menu::class,
         'Page' => Lavalite\Page\Facades\Page::class,

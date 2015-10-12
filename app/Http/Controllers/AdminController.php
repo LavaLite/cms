@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use User;
+use Response;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -71,4 +72,25 @@ class AdminController extends Controller
     }
 
 
+    /**
+     * Return success message.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function error($message, $status = 400)
+    {
+        return Response::json(['message' => $message, 'type' => 'error', 'title' => trans('messages.type.error')], $status);
+    }
+
+    /**
+     * Return error message.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function success($message, $status = 201)
+    {
+        return Response::json(['message' => $message, 'type' => 'success', 'title' => trans('messages.type.success')], $status);
+    }
 }
