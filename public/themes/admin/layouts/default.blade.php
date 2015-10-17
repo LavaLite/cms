@@ -17,6 +17,7 @@
             {!! Theme::partial('right') !!}
             {!! Theme::partial('footer') !!}
             {!! Theme::asset()->container('footer')->scripts() !!}
+            {!! Theme::asset()->container('extra')->scripts() !!}
         </div>
     </body>
 </html>

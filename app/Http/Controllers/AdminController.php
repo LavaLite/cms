@@ -1,12 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use User;
 use Response;
-use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class AdminController extends Controller
 {
