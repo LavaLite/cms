@@ -26,7 +26,7 @@ class AdminPasswordController extends Controller
     public function __construct()
     {
         $this->setupTheme(config('cms.themes.admin.theme'), config('cms.themes.admin.layout'));
-        $this->middleware('guest');
+        $this->middleware('auth.admin');
     }
 
     /**

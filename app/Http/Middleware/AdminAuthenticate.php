@@ -36,14 +36,7 @@ class AdminAuthenticate
     public function handle($request, Closure $next)
     {
 
-        if (!$this->auth->check()) {
-            if ($request->ajax()) {
-                return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('admin/login');
-            }
-        }
-        if (!$this->auth->hasRole('admin') && !$this->auth->hasRole('superuser')) {
+        if (!$this->auth->check() || !$this->auth->hasRoles(['admin', 'superuser'])) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {

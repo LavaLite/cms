@@ -27,7 +27,7 @@ class AdminAuthController extends Controller
      * Redirect path after login or register
      *
      */
-    protected $redirectPath = '/admin';
+    protected $redirectPath = 'admin';
 
     /**
      * Redirect path after unsucessful attempt.
@@ -41,7 +41,7 @@ class AdminAuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('auth.admin', ['except' => ['getLogout', 'getLogin', 'postLogin']]);
         $this->setupTheme(config('cms.themes.admin.theme'), config('cms.themes.admin.layout'));
     }
 
