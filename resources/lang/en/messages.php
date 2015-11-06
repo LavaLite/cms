@@ -1,4 +1,5 @@
 <?php
+
 return [
 
     /*
@@ -10,13 +11,13 @@ return [
     |
     */
 
-    "success"       => [
+    'success'       => [
                           'created'      => ':Module has been added successfully.',
                           'updated'      => ':Module has been updated successfully.',
                           'deleted'      => ':Module has been deleted successfully',
                         ],
 
-    "error"         => [
+    'error'         => [
                           'created'      => ':Module couldnot be created.',
                           'deleted'      => ':Module couldnot be deleted.',
                           'updated'      => ':Module couldnot be updated.',

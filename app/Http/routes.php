@@ -12,10 +12,10 @@
 */
 
 // Public routs.
-Route::get('/',  'PublicController@home');
+Route::get('/', 'PublicController@home');
 
 //********* User routs. *********//
-Route::get('home',  'UserController@home');
+Route::get('home', 'UserController@home');
 
 // Authentication routes...
 Route::get('login', 'Auth\UserAuthController@getLogin');
@@ -59,14 +59,14 @@ Route::get('admin/lock', 'AdminController@lock');
 Route::get('admin/masters', 'AdminController@masters');
 Route::get('admin/reports', 'AdminController@reports');
 
-Route::get('test/facades', function(){
+Route::get('test/facades', function () {
     $secret = 'dddd';//Crypt::encrypt('!qserf!');
-    echo $secret ;
+    echo $secret;
 
     try {
         $decrypted = Crypt::decrypt($secret);
     } catch (Illuminate\Contracts\Encryption\DecryptException $e) {
         echo $secret;
     }
-    echo $secret ;
+    echo $secret;
 });

@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Lavalite\User\User;
 use Illuminate\Contracts\Auth\Guard;
+use Lavalite\User\User;
 
 class UserAuthenticate
 {

@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
 /*
 * Provider .
@@ -38,17 +38,17 @@ return array(
                     ],
 
 'page' => [
-                        'table' => 'pages',
-                        'model' => 'Lavalite\Page\Models\Page',
+                        'table'    => 'pages',
+                        'model'    => 'Lavalite\Page\Models\Page',
                         'fillable' => ['name', 'slug', 'order', 'view', 'compiler', 'status', 'upload_folder',
-                                                 'heading', 'title', 'content', 'keyword', 'description', 'abstract'],
+                                                 'heading', 'title', 'content', 'keyword', 'description', 'abstract', ],
                         'listfields' => ['id', 'name', 'category_id', 'slug', 'order', 'status', 'heading', 'title',
                                                 'abstract', 'compiler', 'view', ],
-                        'translatable' => ['heading', 'content', 'title', 'keyword', 'description', 'images'],
+                        'translatable'  => ['heading', 'content', 'title', 'keyword', 'description', 'images'],
                         'upload-folder' => '/uploads/page',
-                        'uploadable' => [
-                                                    'single' => ['banner'],
+                        'uploadable'    => [
+                                                    'single'   => ['banner'],
                                                     'multiple' => ['images'],
                                                 ],
                 ],
-);
+];

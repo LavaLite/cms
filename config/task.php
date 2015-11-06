@@ -1,18 +1,18 @@
 <?php
 
-return array(
-/**
+return [
+/*
 * Provider .
 */
 'provider'  => 'lavalite',
 
-/**
+/*
 * Package .
 */
 'package'   => 'task',
 
-/**
+/*
 * Modules .
 */
-'modules'   => []
-);
+'modules'   => [],
+];
