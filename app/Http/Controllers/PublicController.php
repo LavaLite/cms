@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Page;
+
 /**
  *
- * @package Lavalite
  */
 class PublicController extends Controller
 {
@@ -32,6 +32,7 @@ class PublicController extends Controller
         $this->theme->setDescription($data['page']->description);
 
         $this->theme->layout('home');
+
         return $this->theme->of('public.home', $data)->render();
     }
 }

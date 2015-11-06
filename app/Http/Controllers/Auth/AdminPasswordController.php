@@ -37,23 +37,25 @@ class AdminPasswordController extends Controller
     public function getEmail()
     {
         $this->theme->layout('blank');
+
         return $this->theme->of('admin::user.password')->render();
     }
 
     /**
      * Display the password reset view for the given token.
      *
-     * @param  string  $token
+     * @param string $token
+     *
      * @return \Illuminate\Http\Response
      */
     public function getReset($token = null)
     {
         if (is_null($token)) {
-            throw new NotFoundHttpException;
+            throw new NotFoundHttpException();
         }
 
         $this->theme->layout('blank');
+
         return $this->theme->of('admin::user.reset', compact('token'))->render();
     }
-
 }
