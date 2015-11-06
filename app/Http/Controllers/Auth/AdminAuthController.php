@@ -1,12 +1,13 @@
 <?php
+
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\User as UserModal;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 use User;
 use Validator;
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AdminAuthController extends Controller
 {
@@ -24,17 +25,14 @@ class AdminAuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
-     * Redirect path after login or register
-     *
+     * Redirect path after login or register.
      */
     protected $redirectPath = '/admin';
 
     /**
      * Redirect path after unsucessful attempt.
-     *
      */
     protected $loginPath = 'admin/login';
-
 
     /**
      * Create a new password controller instance.
@@ -46,7 +44,7 @@ class AdminAuthController extends Controller
     }
 
     /**
-     * Show the login form
+     * Show the login form.
      *
      * @return HTML
      */
@@ -57,11 +55,10 @@ class AdminAuthController extends Controller
         return $this->theme->of('admin::user.login')->render();
     }
 
-
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return mixed
      */
@@ -69,6 +66,7 @@ class AdminAuthController extends Controller
     {
         User::logout();
         event('user.logout');
+
         return redirect()->to($this->loginPath);
     }
 
@@ -92,8 +90,8 @@ class AdminAuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'name'     => 'required|max:255',
+            'email'    => 'required|email|max:255|unique:users',
             'password' => 'required|min:6',
         ]);
     }
@@ -108,15 +106,14 @@ class AdminAuthController extends Controller
     protected function create(array $data)
     {
         $user = UserModal::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'name'     => $data['name'],
+            'email'    => $data['email'],
             'password' => bcrypt($data['password']),
-            'active' => 0,
+            'active'   => 0,
         ]);
 
         User::attachRole($user->id, 'admin');
 
         return $user;
     }
-
 }

@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Lavalite\User\User;
 use Illuminate\Contracts\Auth\Guard;
+use Lavalite\User\User;
 
 class AdminAuthenticate
 {
@@ -35,7 +35,6 @@ class AdminAuthenticate
      */
     public function handle($request, Closure $next)
     {
-
         if (!$this->auth->check()) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);

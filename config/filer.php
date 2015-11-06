@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -11,11 +11,11 @@ return array(
     |
     */
 
-    'views' => array(
+    'views' => [
                     'upload' => 'File::upload',
-                    'list' => 'File::list',
-                    'drop' => 'File::dropzone',
-                    ),
+                    'list'   => 'File::list',
+                    'drop'   => 'File::dropzone',
+                    ],
     /*
     |--------------------------------------------------------------------------
     | Model
@@ -27,7 +27,6 @@ return array(
     */
 
     'model' => 'Lavalite\Filer\File',
-
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +56,6 @@ return array(
 
     'folder_permission' => 0777, // Default 0777 - Other likely values 0775, 0755
 
-
     /*
     |--------------------------------------------------------------------------
     | Upload Filer
@@ -67,8 +65,8 @@ return array(
     |
     */
 
-    'allowed_types' => array('image/png','image/gif','image/jpg','image/jpeg'),
-    'allowed_extensions' => array('png','gif','jpg','jpeg','pdf','doc','docx','xls','xlsx','mp3','txt','zip','bmp','jpeg'), // Case insensitive
+    'allowed_types'      => ['image/png','image/gif','image/jpg','image/jpeg'],
+    'allowed_extensions' => ['png','gif','jpg','jpeg','pdf','doc','docx','xls','xlsx','mp3','txt','zip','bmp','jpeg'], // Case insensitive
 
     // Max upload size - In BYTES. 1GB = 1073741824 bytes, 10 MB = 10485760, 1 MB = 1048576
     'max_upload_size' => 10485760, // Converter - http://www.beesky.com/newsite/bit_byte.htm
@@ -91,22 +89,22 @@ return array(
 
     // Must be in the upload list as well.
     // Must also be supported by invention. http://intervention.olivervogel.net/image/formats/image
-    'image_types' => array('image/png','image/gif','image/jpg','image/jpeg'),
-    'image_extensions' => array('png','gif','jpg','jpeg'), // Case insensitive
+    'image_types'      => ['image/png','image/gif','image/jpg','image/jpeg'],
+    'image_extensions' => ['png','gif','jpg','jpeg'], // Case insensitive
 
-    'image_max_size' => array('w' => 4000, 'h' => 4000),
+    'image_max_size'         => ['w' => 4000, 'h' => 4000],
     'image_resize_on_upload' => true,
     // Image resizing params. http://intervention.olivervogel.net/image/methods/resize
-    'image_resize' => array(
-        array(300, 200), // 300x200 image
-        array(300, 200, true), // 300x200 image ratio constrained aspect ratio
-        array(null, 400, true), // auto width x 400 height constrained aspect ratio
-    ),
-    'size'         => [
-            'xs'            => ['width' =>'60',     'height' =>'45', 'default' => 'path-to-banner-set-it-in-page-config'],
-            'sm'            => ['width' =>'160',    'height' =>'75'],
-            'md'            => ['width' =>'460',    'height' =>'345'],
-            'lg'            => ['width' =>'800',    'height' =>'600'],
-            'xl'            => ['width' =>'1000',   'height' =>'750'],
+    'image_resize' => [
+        [300, 200], // 300x200 image
+        [300, 200, true], // 300x200 image ratio constrained aspect ratio
+        [null, 400, true], // auto width x 400 height constrained aspect ratio
     ],
-);
+    'size'         => [
+            'xs'            => ['width' => '60',     'height' => '45', 'default' => 'path-to-banner-set-it-in-page-config'],
+            'sm'            => ['width' => '160',    'height' => '75'],
+            'md'            => ['width' => '460',    'height' => '345'],
+            'lg'            => ['width' => '800',    'height' => '600'],
+            'xl'            => ['width' => '1000',   'height' => '750'],
+    ],
+];
