@@ -2,15 +2,14 @@
 
 namespace App;
 
-use Lavalite\Filer\FilerTrait;
 use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
-use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Lavalite\Filer\FilerTrait;
 use Lavalite\User\Traits\CheckPermission;
 use URL;
 
@@ -39,11 +38,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $casts = [
         'photo'         => 'array',
-        'permissions'   => 'array'
+        'permissions'   => 'array',
     ];
 
     /**
-     * Initialiaze page modal
+     * Initialiaze page modal.
      *
      * @param $name
      */
@@ -60,12 +59,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function initialize()
     {
-        $this->fillable             = config('user.user.fillable');
-        $this->uploads              = config('user.user.uploadable');
-        $this->uploadRootFolder     = config('user.user.upload_root_folder');
-        $this->table                = config('user.user.table');
+        $this->fillable = config('user.user.fillable');
+        $this->uploads = config('user.user.uploadable');
+        $this->uploadRootFolder = config('user.user.upload_root_folder');
+        $this->table = config('user.user.table');
     }
-
 
     /**
      * Returns the profile picture of the user.
@@ -76,11 +74,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         if (!empty($value)) {
             $photo = json_encode($value);
-            return URL::to($photo['folder'] . '/' . $photo['file']);
+
+            return URL::to($photo['folder'].'/'.$photo['file']);
         }
 
-        if ($this->sex == 'Female')
+        if ($this->sex == 'Female') {
             return URL::to('images/avatar/female.png');
+        }
 
         return URL::to('images/avatar/male.png');
     }

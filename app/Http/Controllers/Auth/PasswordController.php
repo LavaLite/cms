@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
-use User;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use User;
 
 class PasswordController extends Controller
 {
@@ -31,7 +31,7 @@ class PasswordController extends Controller
     /**
      * Store user role.
      */
-    protected $role    = 'user';
+    protected $role = 'user';
 
     /**
      * Create a new password controller instance.
@@ -39,7 +39,7 @@ class PasswordController extends Controller
     public function __construct(Request $request)
     {
         $this->middleware('guest');
-        $this->role   = $request->route('role');
+        $this->role = $request->route('role');
         $this->redirectPath = $this->role;
         $this->setupTheme(config('cms.themes.public.theme'), config('cms.themes.public.layout'));
     }
@@ -51,11 +51,12 @@ class PasswordController extends Controller
      */
     public function getEmail(Request $request)
     {
-        if (!User::roleExists($this->role)){
+        if (!User::roleExists($this->role)) {
             throw new NotFoundHttpException();
         }
 
         $role = $this->role;
+
         return $this->theme->of('public::user.password', compact('role'))->render();
     }
 
@@ -68,7 +69,7 @@ class PasswordController extends Controller
      */
     public function getReset($token = null)
     {
-        if (!User::roleExists($this->role)){
+        if (!User::roleExists($this->role)) {
             throw new NotFoundHttpException();
         }
 

@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use User;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Validator;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use User;
+use Validator;
 
 class AuthController extends Controller
 {
@@ -33,19 +33,19 @@ class AuthController extends Controller
     /**
      * Redirect path after unsucessful attempt.
      */
-    protected $loginPath    = 'auth/user/login';
+    protected $loginPath = 'auth/user/login';
 
     /**
      * Store user role.
      */
-    protected $role    = 'user';
+    protected $role = 'user';
 
     public function __construct(Request $request)
     {
-        $this->role   = $request->route('role');
+        $this->role = $request->route('role');
         $this->middleware('guest', ['except' => 'getLogout']);
-        $this->loginPath        = "auth/{$this->role}/login";
-        $this->redirectPath     = $this->role;
+        $this->loginPath = "auth/{$this->role}/login";
+        $this->redirectPath = $this->role;
 
         $this->setupTheme(config('cms.themes.user.theme'), config('cms.themes.user.layout'));
     }
@@ -57,15 +57,14 @@ class AuthController extends Controller
      */
     public function getLogin(Request $request)
     {
-        if (!User::roleExists($this->role) || $this->role == config('user.superuser_role', 'superuser')){
+        if (!User::roleExists($this->role) || $this->role == config('user.superuser_role', 'superuser')) {
             throw new NotFoundHttpException();
         }
 
         $role = $this->role;
+
         return $this->theme->of('public::user.login', compact('role'))->render();
     }
-
-
 
     /**
      * Remove the specified resource from storage.
@@ -89,11 +88,12 @@ class AuthController extends Controller
      */
     public function getRegister(Request $request)
     {
-        if (!User::roleExists($this->role) || $this->role == config('user.superuser_role', 'superuser') || $this->role == 'admin'){
+        if (!User::roleExists($this->role) || $this->role == config('user.superuser_role', 'superuser') || $this->role == 'admin') {
             throw new NotFoundHttpException();
         }
 
         $role = $this->role;
+
         return $this->theme->of('public::user.register', compact('role'))->render();
     }
 
@@ -122,7 +122,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        if (!User::roleExists($this->role) || $this->role == config('user.superuser_role', 'superuser') || $this->role == 'admin'){
+        if (!User::roleExists($this->role) || $this->role == config('user.superuser_role', 'superuser') || $this->role == 'admin') {
             throw new NotFoundHttpException();
         }
 
