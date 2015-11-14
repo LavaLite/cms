@@ -7,11 +7,9 @@ use Request;
 
 class UserController extends Controller
 {
-
-
     public function __construct(\Illuminate\Http\Request $request)
     {
-        $role   = $request->route('role');
+        $role = $request->route('role');
         $this->middleware('auth.role:'.$role);
         $this->setupTheme(config('cms.themes.user.theme'), config('cms.themes.user.layout'));
     }

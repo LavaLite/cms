@@ -34,7 +34,7 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next)
     {
-        $role   = $request->route('role');
+        $role = $request->route('role');
         if ($this->auth->check() && $this->auth->user()->hasRole($role)) {
             return redirect($role);
         }
