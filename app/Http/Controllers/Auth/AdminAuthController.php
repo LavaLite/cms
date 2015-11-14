@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\User as UserModal;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use User;
-use Validator;
 
 class AdminAuthController extends Controller
 {
@@ -69,5 +67,4 @@ class AdminAuthController extends Controller
 
         return redirect()->to($this->loginPath);
     }
-
 }
