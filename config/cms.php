@@ -15,5 +15,5 @@ return [
                     'user'   => ['theme' => 'public',    'layout' => 'user'],
                     ],
 
-    'packages'  => ['user', 'pages', 'menu'],
+    'roles'  => 'user|teamlead',
 ];

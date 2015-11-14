@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Lavalite\User\User;
 
-class UserAuthenticate
+class RoleAuthenticate
 {
     /**
      * The Guard implementation.
@@ -33,16 +33,16 @@ class UserAuthenticate
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $role)
     {
-        if (!$this->auth->check()) {
-            if ($request->ajax()) {
-                return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('login');
-            }
+        if ($this->auth->check() && $this->auth->user()->is($role)) {
+            return $next($request);
         }
 
-        return $next($request);
+        if ($request->ajax()) {
+            return response('Unauthorized.', 401);
+        } else {
+            return redirect()->guest("auth/$role/login");
+        }
     }
 }

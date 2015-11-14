@@ -7,8 +7,7 @@
                 {!!Former::vertical_open()
                 ->id('contact')
                 ->method('POST')
-                ->class('white-row')
-                ->action('login')!!}
+                ->class('white-row')!!}
 
                 {!! Former::email('email')
                 -> label(trans('user::user.label.email'))
@@ -29,8 +28,8 @@
                     </div>
                 </div>
                 {!! Former::close() !!}
-                Forgot password? <a href="/password/email"> Click to reset </a> <br>
-                Don't have an account yet? <a href="/register"> Click to create one </a>
+                Forgot password? <a href="/password/{{ $role }}/email"> Click to reset </a> <br>
+                Don't have an account yet? <a href="/auth/{{ $role }}/register"> Click to create one </a>
             </div>
         </div>
     </div>

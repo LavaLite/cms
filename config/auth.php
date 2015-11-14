@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => Lavalite\User\Models\User::class,
+    'model' => App\User::class,
 
     /*
     |--------------------------------------------------------------------------

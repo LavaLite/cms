@@ -32,7 +32,7 @@
       </div>
     {!!Former::Close()!!}
 
-    <a href="{!! URL::to('admin/password/email') !!}">I forgot my password</a><br>
+    <a href="{!! URL::to('password/admin/email') !!}">I forgot my password</a><br>
   </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->
 <script>

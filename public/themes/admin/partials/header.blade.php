@@ -68,7 +68,7 @@
                                 <a href="/admin/profile" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="/admin/logout" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="/auth/admin/logout" class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>

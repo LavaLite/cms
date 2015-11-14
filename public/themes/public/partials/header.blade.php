@@ -28,14 +28,14 @@
                 </li>
                 @if(User::check())
                 <li class="page-scroll">
-                    <a href="/home">My Account</a>
+                    <a href="/user">My Account</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="/logout">Logout</a>
+                    <a href="/auth/user/logout">Logout</a>
                 </li>
                 @else
                 <li class="page-scroll">
-                    <a href="/login">Login</a>
+                    <a href="/auth/user/login">Login</a>
                 </li>
                 @endif
             </ul>

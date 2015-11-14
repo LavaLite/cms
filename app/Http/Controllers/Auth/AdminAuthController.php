@@ -32,14 +32,14 @@ class AdminAuthController extends Controller
     /**
      * Redirect path after unsucessful attempt.
      */
-    protected $loginPath = 'admin/login';
+    protected $loginPath = 'auth/admin/login';
 
     /**
      * Create a new password controller instance.
      */
     public function __construct()
     {
-        $this->middleware('auth.admin', ['except' => ['getLogout', 'getLogin', 'postLogin']]);
+        $this->middleware('guest', ['except' => 'getLogout']);
         $this->setupTheme(config('cms.themes.admin.theme'), config('cms.themes.admin.layout'));
     }
 
@@ -70,50 +70,4 @@ class AdminAuthController extends Controller
         return redirect()->to($this->loginPath);
     }
 
-    /**
-     * Show the form for creating a new user.
-     *
-     * @return Response
-     */
-    public function getRegister()
-    {
-        return $this->theme->of('admin::user.register')->render();
-    }
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param array $data
-     *
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name'     => 'required|max:255',
-            'email'    => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6',
-        ]);
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param array $data
-     *
-     * @return User
-     */
-    protected function create(array $data)
-    {
-        $user = UserModal::create([
-            'name'     => $data['name'],
-            'email'    => $data['email'],
-            'password' => bcrypt($data['password']),
-            'active'   => 0,
-        ]);
-
-        User::attachRole($user->id, 'admin');
-
-        return $user;
-    }
 }

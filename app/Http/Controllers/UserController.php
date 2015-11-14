@@ -7,15 +7,13 @@ use Request;
 
 class UserController extends Controller
 {
-    /**
-     * Redirect path after an action.
-     */
-    protected $redirectPath;
 
-    public function __construct()
+
+    public function __construct(\Illuminate\Http\Request $request)
     {
+        $role   = $request->route('role');
+        $this->middleware('auth.role:'.$role);
         $this->setupTheme(config('cms.themes.user.theme'), config('cms.themes.user.layout'));
-        $this->middleware('auth.user');
     }
 
     /**

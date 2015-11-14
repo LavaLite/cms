@@ -20,13 +20,17 @@ class AdminPasswordController extends Controller
 
     use ResetsPasswords;
 
+    /*
+     * Redirect path after password reset
+     */
+    protected $redirectTo = '/admin';
+
     /**
      * Create a new password controller instance.
      */
     public function __construct()
     {
         $this->setupTheme(config('cms.themes.admin.theme'), config('cms.themes.admin.layout'));
-        $this->middleware('auth.admin');
     }
 
     /**

@@ -11,8 +11,8 @@ class AdminController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('auth.role:admin');
         $this->setupTheme(config('cms.themes.admin.theme'), config('cms.themes.admin.layout'));
-        $this->middleware('auth.admin');
     }
 
     /**

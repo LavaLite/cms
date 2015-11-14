@@ -25,7 +25,7 @@
                     <br>
 
                     {!! Former::close() !!}
-                    Already have an account ! <a href="/login"> Click to login </a>
+                    Already have an account ! <a href="/auth/{{ $role }}/login"> Click to login </a>
                 </div>
             </div>
         </div>

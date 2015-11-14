@@ -27,7 +27,7 @@
             <!-- /.col -->
         </div>
         {!!Former::Close()!!}
-        <a href="{!! URL::to('/admin/login') !!}">Back to login</a><br>
+        <a href="{!! URL::to('/auth/admin/login') !!}">Back to login</a><br>
     </div>
     <!-- /.login-box-body -->
 </div>
