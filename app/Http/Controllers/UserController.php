@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Redirect;
 use Request;
+use App;
 
 class UserController extends Controller
 {
-    public function __construct(\Illuminate\Http\Request $request)
+
+    public function __construct()
     {
+        $request = App::make(\Illuminate\Http\Request::class);
         $role = $request->route('role');
         $this->middleware('auth.role:'.$role);
         $this->setupTheme(config('cms.themes.user.theme'), config('cms.themes.user.layout'));

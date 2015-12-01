@@ -133,7 +133,7 @@ class AuthController extends Controller
         ]);
 
         $role = User::findRole($role);
-        $user->attachRole($role);
+        $user->attachRole($this->role);
 
         return $user;
     }
