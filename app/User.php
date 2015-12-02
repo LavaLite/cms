@@ -59,10 +59,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function initialize()
     {
-        $this->fillable = config('user.user.fillable');
-        $this->uploads = config('user.user.uploadable');
-        $this->uploadRootFolder = config('user.user.upload_root_folder');
-        $this->table = config('user.user.table');
+        $this->fillable = config('package.user.user.fillable');
+        $this->uploads = config('package.user.user.uploadable');
+        $this->uploadRootFolder = config('package.user.user.upload_root_folder');
+        $this->table = config('package.user.user.table');
     }
 
     /**

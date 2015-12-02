@@ -35,7 +35,7 @@ Route::get('password/admin/reset/{token}', 'Auth\AdminPasswordController@getRese
 Route::post('password/admin/reset', 'Auth\AdminPasswordController@postReset');
 
 //********* User routs. *********//
-Route::get('{role}', 'UserController@home');
+Route::get('{role}/home', 'UserController@home');
 
 // Authentication routes for users...
 Route::get('auth/{role}/login', 'Auth\AuthController@getLogin');

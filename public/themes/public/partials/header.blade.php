@@ -28,7 +28,7 @@
                 </li>
                 @if(User::check())
                 <li class="page-scroll">
-                    <a href="/user">My Account</a>
+                    <a href="/user/home">My Account</a>
                 </li>
                 <li class="page-scroll">
                     <a href="/auth/user/logout">Logout</a>

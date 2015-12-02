@@ -28,7 +28,7 @@ class AuthController extends Controller
     /**
      * Redirect path after login or register.
      */
-    protected $redirectPath = 'user';
+    protected $redirectPath = 'user/home';
 
     /**
      * Redirect path after unsucessful attempt.
@@ -45,7 +45,7 @@ class AuthController extends Controller
         $this->role = $request->route('role');
         $this->middleware('guest', ['except' => 'getLogout']);
         $this->loginPath = "auth/{$this->role}/login";
-        $this->redirectPath = $this->role;
+        $this->redirectPath = $this->role . '/home';
 
         $this->setupTheme(config('cms.themes.user.theme'), config('cms.themes.user.layout'));
     }
@@ -132,8 +132,8 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        $role = User::findRole($role);
-        $user->attachRole($this->role);
+        $role = User::findRole($this->role);
+        $user->attachRole($role);
 
         return $user;
     }
