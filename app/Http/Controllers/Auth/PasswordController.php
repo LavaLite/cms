@@ -40,7 +40,7 @@ class PasswordController extends Controller
     {
         $this->middleware('guest');
         $this->role = $request->route('role');
-        $this->redirectPath = $this->role;
+        $this->redirectPath = $this->role . '/home';
         $this->setupTheme(config('cms.themes.public.theme'), config('cms.themes.public.layout'));
     }
 
@@ -67,17 +67,16 @@ class PasswordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getReset($token = null)
+    public function getReset($role, $token = null)
     {
-        if (!User::roleExists($this->role)) {
+        if (!User::roleExists($role)) {
             throw new NotFoundHttpException();
         }
 
-        $role = $this->role;
         if (is_null($token)) {
             throw new NotFoundHttpException();
         }
 
-        return $this->theme->of('public::user.reset', compact('token'))->render();
+        return $this->theme->of('public::user.reset', compact('token', 'role'))->render();
     }
 }

@@ -9,7 +9,7 @@
                 {!!Former::vertical_open()
                 ->id('reset')
                 ->method('POST')
-                ->action('auth/password/reset')!!}
+                ->action('/password/'.$role.'/reset')!!}
                 {!! csrf_field() !!}
                 {!! Former::hidden('token')->value($token) !!}
 
