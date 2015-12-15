@@ -25,7 +25,7 @@ Please check the system requirements before installing Lavalite.
     * `git clone git@github.com:LavaLite/cms.git`
     * From a command line open in the folder, run `composer install`.
   * Composer:
-    * `composer create-project LavaLite/cms your-project-name dev-master`
+    * `composer create-project LavaLite/cms your-project-name 3.0`
 4. Publish migratins seeds config etc `php artisan vendor:publish`
 5. Enter your database details in `.env` file on root folder.
 6. Run `php artisan migrate` to setup your database.
