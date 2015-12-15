@@ -9,14 +9,14 @@
         "laravel/framework": "5.1.*",
         "anahkiasen/former": "4.0.*@dev",
         "teepluss/theme": "dev-master",
-        "lavalite/menu": "dev-master",
-        "lavalite/filer": "dev-master",
-        "lavalite/page": "dev-master",
-        "lavalite/settings": "dev-master",
-        "lavalite/task": "dev-master",
-        "lavalite/message": "dev-master",
-        "lavalite/calendar": "dev-master",
-        "lavalite/user": "dev-master"
+        "lavalite/menu": "3.0.*",
+        "lavalite/filer": "3.0.*",
+        "lavalite/page": "3.0.*",
+        "lavalite/settings": "3.0.*",
+        "lavalite/task": "3.0.*",
+        "lavalite/message": "3.0.*",
+        "lavalite/calendar": "3.0.*",
+        "lavalite/user": "3.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
