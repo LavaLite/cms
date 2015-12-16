@@ -1,7 +1,5 @@
 ## Lavalite - Bootstrapper for Laravel 5 CMS or Application.
 
-*Version Beta
-
 This is an implementation of the backend of lavalite, which can be used for web based application and Content Management System based upon [Laravel 5.1](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
 
 
@@ -25,7 +23,7 @@ Please check the system requirements before installing Lavalite.
     * `git clone git@github.com:LavaLite/cms.git`
     * From a command line open in the folder, run `composer install`.
   * Composer:
-    * `composer create-project LavaLite/cms your-project-name dev-master`
+    * `composer create-project LavaLite/cms your-project-name --prefer-dist`
 4. Publish migratins seeds config etc `php artisan vendor:publish`
 5. Enter your database details in `.env` file on root folder.
 6. Run `php artisan migrate` to setup your database.
