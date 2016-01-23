@@ -1,8 +1,4 @@
 /vendor
 /node_modules
 composer.lock
-.DS_Store
-._**
-*.tmp
-*.zip
 .env

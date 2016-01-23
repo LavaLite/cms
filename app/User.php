@@ -2,44 +2,27 @@
 
 namespace App;
 
-use Illuminate\Auth\Authenticatable;
-use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\Access\Authorizable;
-use Lavalite\Filer\FilerTrait;
-use Lavalite\User\Traits\CheckPermission;
-use URL;
+use Litepie\Database\Traits\Slugger;
+use Litepie\Database\Model;
+use Litepie\Filer\Traits\Filer;
+use Litepie\Hashids\Traits\Hashids;
+use Litepie\Trans\Traits\Trans;
+use Litepie\User\Traits\CheckPermission;
+use Litepie\User\Traits\Users\UserProfile;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+class User extends Authenticatable
 {
-    use CheckPermission, Authenticatable, Authorizable, CanResetPassword, FilerTrait, SoftDeletes;
+    use CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger;
 
     /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'users';
-
-    /**
-     * The attributes excluded from the model's JSON form.
+     * Configuartion for the model.
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
+     protected $config = 'user.user';
 
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'photo'         => 'array',
-        'permissions'   => 'array',
-    ];
 
     /**
      * Initialiaze page modal.
@@ -49,49 +32,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function __construct()
     {
         parent::__construct();
-        $this->initialize();
-    }
-
-    /**
-     * Initialize the modal variables.
-     *
-     * @return void
-     */
-    public function initialize()
-    {
-        $this->fillable = config('package.user.user.fillable');
-        $this->uploads = config('package.user.user.uploadable');
-        $this->uploadRootFolder = config('package.user.user.upload_root_folder');
-        $this->table = config('package.user.user.table');
-    }
-
-    /**
-     * Returns the profile picture of the user.
-     *
-     * @return string image path
-     */
-    public function getPictureAttribute($value)
-    {
-        if (!empty($value)) {
-            $photo = json_encode($value);
-
-            return URL::to($photo['folder'].'/'.$photo['file']);
+        $config = config($this->config);
+        foreach ($config as $key => $val) {
+            if (property_exists(get_called_class(), $key)) {
+                $this->$key = $val;
+            }
         }
-
-        if ($this->sex == 'Female') {
-            return URL::to('images/avatar/female.png');
-        }
-
-        return URL::to('images/avatar/male.png');
     }
 
-    /**
-     * Returns the joined date of the user.
-     *
-     * @return string date
-     */
-    public function getJoinedAttribute()
-    {
-        return $this->created_at->format(config('cms.format.date'));
-    }
+
 }

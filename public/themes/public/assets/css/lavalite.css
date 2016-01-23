@@ -1,0 +1,5 @@
+body.home {
+    background-image: linear-gradient(to right,#207ce5 0,#26a9ff 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF207CE5', endColorstr='#FF26A9FF', GradientType=1);
+}

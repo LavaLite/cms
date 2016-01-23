@@ -16,7 +16,7 @@ class PublicController extends Controller
      */
     public function __construct()
     {
-        $this->setupTheme(config('cms.themes.public.theme'), config('cms.themes.public.layout'));
+        $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
     }
 
     /**
@@ -26,13 +26,13 @@ class PublicController extends Controller
      */
     public function home()
     {
-        $data['page'] = Page::getPageBySlug('home');
-        $this->theme->setTitle($data['page']->title);
-        $this->theme->setKeywords($data['page']->keyword);
-        $this->theme->setDescription($data['page']->description);
+        $page = Page::page('home');
+        $this->theme->setTitle($page->title);
+        $this->theme->setKeywords($page->keyword);
+        $this->theme->setDescription($page->description);
 
         $this->theme->layout('home');
 
-        return $this->theme->of('public.home', $data)->render();
+        return $this->theme->of('public.home', compact('page'))->render();
     }
 }

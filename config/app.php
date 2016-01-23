@@ -4,6 +4,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Environment
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the "environment" your application is currently
+    | running in. This may determine how you prefer to configure various
+    | services your application utilizes. Set this in your ".env" file.
+    |
+    */
+
+    'env' => env('APP_ENV', 'production'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
@@ -13,7 +26,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG'),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +91,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -95,7 +108,7 @@ return [
     |
     */
 
-    'log' => 'single',
+    'log' => env('APP_LOG', 'single'),
 
     /*
     |--------------------------------------------------------------------------
@@ -113,13 +126,11 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-        Illuminate\Routing\ControllerServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
@@ -138,6 +149,25 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Lavalite Framework Service Providers...
+         */
+        Litepie\Form\FormServiceProvider::class,
+        Litepie\Theme\ThemeServiceProvider::class,
+        Litepie\Trans\TransServiceProvider::class,
+        Litepie\Filer\FilerServiceProvider::class,
+        Litepie\Hashids\HashidsServiceProvider::class,
+        Litepie\User\UserServiceProvider::class,
+        Litepie\Menu\MenuServiceProvider::class,
+
+        /*
+         * Lavalite package Service Providers...
+         */
+        Lavalite\Page\Providers\PageServiceProvider::class,
+        Lavalite\Message\Providers\MessageServiceProvider::class,
+        Lavalite\Calendar\Providers\CalendarServiceProvider::class,
+        Lavalite\Task\Providers\TaskServiceProvider::class,
+
+        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
@@ -145,17 +175,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Former\FormerServiceProvider::class,
-        Teepluss\Theme\ThemeServiceProvider::class,
-
-        Lavalite\User\Providers\UserServiceProvider::class,
-        Lavalite\Menu\Providers\MenuServiceProvider::class,
-        Lavalite\Filer\Providers\FilerServiceProvider::class,
-        Lavalite\Page\Providers\PageServiceProvider::class,
-        Lavalite\Settings\Providers\SettingsServiceProvider::class,
-        Lavalite\Task\Providers\TaskServiceProvider::class,
-        Lavalite\Message\Providers\MessageServiceProvider::class,
-        Lavalite\Calendar\Providers\CalendarServiceProvider::class,
     ],
 
     /*
@@ -175,7 +194,6 @@ return [
         'Artisan'   => Illuminate\Support\Facades\Artisan::class,
         'Auth'      => Illuminate\Support\Facades\Auth::class,
         'Blade'     => Illuminate\Support\Facades\Blade::class,
-        'Bus'       => Illuminate\Support\Facades\Bus::class,
         'Cache'     => Illuminate\Support\Facades\Cache::class,
         'Config'    => Illuminate\Support\Facades\Config::class,
         'Cookie'    => Illuminate\Support\Facades\Cookie::class,
@@ -186,8 +204,6 @@ return [
         'File'      => Illuminate\Support\Facades\File::class,
         'Gate'      => Illuminate\Support\Facades\Gate::class,
         'Hash'      => Illuminate\Support\Facades\Hash::class,
-        'Input'     => Illuminate\Support\Facades\Input::class,
-        'Inspiring' => Illuminate\Foundation\Inspiring::class,
         'Lang'      => Illuminate\Support\Facades\Lang::class,
         'Log'       => Illuminate\Support\Facades\Log::class,
         'Mail'      => Illuminate\Support\Facades\Mail::class,
@@ -204,15 +220,15 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
-        'Former'       => Former\Facades\Former::class,
-        'Theme'        => Teepluss\Theme\Facades\Theme::class,
-        'Intervention' => Intervention\Image\Facades\Image::class,
+        'Form'      => Litepie\Support\Facades\Form::class,
+        'Theme'     => Litepie\Support\Facades\Theme::class,
+        'Trans'     => Litepie\Support\Facades\Trans::class,
+        'Hashids'   => Litepie\Support\Facades\Hashids::class,
+        'Filer'     => Litepie\Support\Facades\Filer::class,
 
         'Menu'     => Lavalite\Menu\Facades\Menu::class,
         'Page'     => Lavalite\Page\Facades\Page::class,
-        'Filer'    => Lavalite\Filer\Facades\Filer::class,
         'User'     => Lavalite\User\Facades\User::class,
         'Settings' => Lavalite\Settings\Facades\Settings::class,
         'Task'     => Lavalite\Task\Facades\Task::class,

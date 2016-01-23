@@ -1,45 +1,50 @@
 {
-  "name": "LavaLite",
-  "version": "2.2",
-  "main": "",
-  "ignore": [
-  ".jshintrc",
-  "**/*.txt"
-  ],
-  "dependencies": {
-    "bootstrap":"*",
-    "font-awesome":"*",
-    "jquery": "*",
-    "jquery-ui": "*",
+    "name": "LavaLite",
+    "version": "2.2",
+    "main": "",
+    "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+    ],
+    "dependencies": {
+        "bootstrap-sass": "~3.3.5",
+        "font-awesome":"*",
+        "jquery": "*",
+        "jquery-ui": "*",
 
-    "jquery-slimscroll":"*",
-    "chartjs":"*",
-    "morris.js":"*",
-    "peity":"*",
+        "jquery-slimscroll":"*",
+        "chartjs":"*",
+        "morris.js":"*",
+        "peity":"*",
 
-    "eonasdan-bootstrap-datetimepicker":"*",
-    "mjolnic-bootstrap-colorpicker":"*",
-    "iCheck":"*",
-    "jquery.inputmask":"*",
-    "summernote":"*",
-    "jquery-validation" : "*",
-    "eonasdan-bootstrap-datetimepicker":"",
-    "toastr":"",
+        "eonasdan-bootstrap-datetimepicker":"*",
+        "mjolnic-bootstrap-colorpicker":"*",
+        "iCheck":"*",
+        "jquery.inputmask":"*",
+        "summernote":"*",
+        "jquery-validation" : "*",
+        "eonasdan-bootstrap-datetimepicker":"",
+        "toastr":"*",
 
-    "DataTables":"*",
-    "fullcalendar":"*",
-    "jquery-knob":"*",
-    "pace":"*",
-    "dropzone":"*",
+        "DataTables":"*",
+        "fullcalendar":"*",
+        "jquery-knob":"*",
+        "pace":"*",
+        "dropzone":"*",
 
-    "FlexSlider" : "*",
-    "sweetalert" : "*",
-    "smoke.js" : "*",
+        "FlexSlider" : "*",
+        "sweetalert" : "*",
+        "smoke.js" : "*",
 
-    "Sortable" : "*",
-    "nestable2" : "*",
-    "datatables-bootstrap3-plugin" : "*",
+        "Sortable" : "*",
+        "nestable2" : "*",
+        "datatables-bootstrap3-plugin" : "*",
 
-    "classie":"*"
+        "classie":"*",
+        "animate-sass": "~0.6.4",
+        "font-awesome": "~4.4.0",
+        "jquery-timeago": "~1.4.2",
+        "lodash": "~3.10.1",
+        "pusher": "~3.0.0"
     }
 }

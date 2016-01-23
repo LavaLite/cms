@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use User;
 use Validator;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
@@ -26,28 +24,26 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
-     * Redirect path after login or register.
-     */
-    protected $redirectPath = 'user/home';
-
-    /**
-     * Redirect path after unsucessful attempt.
-     */
-    protected $loginPath = 'auth/user/login';
-
-    /**
-     * Store user role.
+     * Default role to be assigned for newely created user.
      */
     protected $role = 'user';
 
-    public function __construct(Request $request)
-    {
-        $this->role = $request->route('role');
-        $this->middleware('guest', ['except' => 'getLogout']);
-        $this->loginPath = "auth/{$this->role}/login";
-        $this->redirectPath = $this->role . '/home';
+    /**
+     * Where to redirect users after login / registration.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
 
-        $this->setupTheme(config('cms.themes.user.theme'), config('cms.themes.user.layout'));
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => ['logout', 'login']]);
+        $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
     }
 
     /**
@@ -55,30 +51,10 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getLogin(Request $request)
+    public function showLoginForm()
     {
-        if (!User::roleExists($this->role) || $this->role == config('user.superuser_role', 'superuser')) {
-            throw new NotFoundHttpException();
-        }
 
-        $role = $this->role;
-
-        return $this->theme->of('public::user.login', compact('role'))->render();
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function logout()
-    {
-        User::logout();
-        event('user.logout');
-
-        return Redirect::to($this->loginPath);
+        return $this->theme->of('public::user.login')->render();
     }
 
     /**
@@ -86,15 +62,10 @@ class AuthController extends Controller
      *
      * @return Response
      */
-    public function getRegister(Request $request)
+    public function showRegistrationForm()
     {
-        if (!User::roleExists($this->role) || $this->role == config('user.superuser_role', 'superuser') || $this->role == 'admin') {
-            throw new NotFoundHttpException();
-        }
 
-        $role = $this->role;
-
-        return $this->theme->of('public::user.register', compact('role'))->render();
+        return $this->theme->of('public::user.register')->render();
     }
 
     /**

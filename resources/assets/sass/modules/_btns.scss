@@ -1,0 +1,67 @@
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: $styleci-primary;
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    color: #fff;
+    background-color: $styleci-dark-primary;
+}
+
+.btn-light {
+    border-radius: 0;
+    color: #333;
+    background-color: #fff;
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+    color: #333;
+    background-color: darken($styleci-light, 6.5%);
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    i {
+        margin-top: 4px;
+    }
+}
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+    i {
+        margin-top: 6px;
+    }
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+    i {
+        margin-top: 6px;
+    }
+}
+
+.btn-float {
+    box-shadow: 0 3px 3px rgba(0,0,0,.3);
+    margin-top: -50px;
+}

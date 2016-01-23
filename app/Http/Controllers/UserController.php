@@ -12,9 +12,9 @@ class UserController extends Controller
     public function __construct()
     {
         $request = App::make(\Illuminate\Http\Request::class);
-        $role = $request->route('role');
-        $this->middleware('auth.role:'.$role);
-        $this->setupTheme(config('cms.themes.user.theme'), config('cms.themes.user.layout'));
+        $this->middleware('web');
+        $this->middleware('auth.role:admin');
+        $this->setupTheme(config('theme.themes.user.theme'), config('theme.themes.user.layout'));
     }
 
     /**

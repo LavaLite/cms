@@ -4,19 +4,19 @@
             <div class="profile-content">
                 <h1>Login</h1>
                 <hr>
-                {!!Former::vertical_open()
+                {!!Form::vertical_open()
                 ->id('contact')
                 ->method('POST')
                 ->class('white-row')!!}
 
-                {!! Former::email('email')
+                {!! Form::email('email')
                 -> label(trans('user::user.label.email'))
                 -> placeholder(trans('user::user.placeholder.email'))!!}
-                {!! Former::password('password')
+                {!! Form::password('password')
                 -> label(trans('user::user.label.password'))
                 -> placeholder(trans('user::user.placeholder.password'))!!}
-                {!! Former::checkbox('rememberme', 'Remember me ')->inline()!!}
-                {!! Former::submit(trans('user::user.signin'), array('class' => 'btn btn-primary pull-right'))!!}
+                {!! Form::checkbox('rememberme', 'Remember me ')->inline()!!}
+                {!! Form::submit(trans('user::user.signin'), array('class' => 'btn btn-primary pull-right'))!!}
                 <br>
                 <br>
                 <div class="row">
@@ -27,9 +27,9 @@
                         <a href='#' ><i class="fa fa-linkedin"> </i></a>
                     </div>
                 </div>
-                {!! Former::close() !!}
-                Forgot password? <a href="/password/{{ $role }}/email"> Click to reset </a> <br>
-                Don't have an account yet? <a href="/auth/{{ $role }}/register"> Click to create one </a>
+                {!! Form::close() !!}
+                Forgot password? <a href="/password/reset"> Click to reset </a> <br>
+                Don't have an account yet? <a href="/register"> Click to create one </a>
             </div>
         </div>
     </div>

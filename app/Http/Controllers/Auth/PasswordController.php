@@ -4,9 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use User;
 
 class PasswordController extends Controller
 {
@@ -23,25 +20,37 @@ class PasswordController extends Controller
 
     use ResetsPasswords;
 
-    /*
-     *
-     */
-    protected $redirectTo = '/user';
-
-    /**
-     * Store user role.
-     */
-    protected $role = 'user';
-
     /**
      * Create a new password controller instance.
+     *
+     * @return void
      */
-    public function __construct(Request $request)
+    public function __construct()
     {
         $this->middleware('guest');
-        $this->role = $request->route('role');
-        $this->redirectPath = $this->role . '/home';
-        $this->setupTheme(config('cms.themes.public.theme'), config('cms.themes.public.layout'));
+        $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
+    }
+
+
+    /**
+     * Display the password reset view for the given token.
+     *
+     * If no token is present, display the link request form.
+     *
+     * @param  string|null  $token
+     * @return \Illuminate\Http\Response
+     */
+    public function showResetForm($token = null)
+    {
+        if (is_null($token)) {
+            return $this->getEmail();
+        }
+
+        if (view()->exists('public::user.reset')) {
+            return $this->theme->of('public::user.reset', compact('token'))->render();
+        }
+
+        return $this->theme->of('auth.reset', compact('token'))->render();
     }
 
     /**
@@ -49,34 +58,12 @@ class PasswordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getEmail(Request $request)
+    public function showLinkRequestForm()
     {
-        if (!User::roleExists($this->role)) {
-            throw new NotFoundHttpException();
+        if (view()->exists('public::user.password')) {
+            return $this->theme->of('public::user.password')->render();
         }
 
-        $role = $this->role;
-
-        return $this->theme->of('public::user.password', compact('role'))->render();
-    }
-
-    /**
-     * Display the password reset view for the given token.
-     *
-     * @param string $token
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getReset($role, $token = null)
-    {
-        if (!User::roleExists($role)) {
-            throw new NotFoundHttpException();
-        }
-
-        if (is_null($token)) {
-            throw new NotFoundHttpException();
-        }
-
-        return $this->theme->of('public::user.reset', compact('token', 'role'))->render();
+        return $this->theme->of('auth.password')->render();
     }
 }

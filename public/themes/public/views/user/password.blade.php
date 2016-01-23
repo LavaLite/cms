@@ -23,7 +23,7 @@
                     <!-- /.col -->
                 </div>
                 {!!Former::Close()!!}
-                <a href="/auth/{{ $role }}/login">Back to login</a><br>
+                <a href="/login">Back to login</a><br>
             </div>
         </div>
     </div>

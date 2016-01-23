@@ -27,28 +27,40 @@ return [
 */
 'views' => ['page' => 'Default'],
 
-'permissions' => ['page.view' => 'View', 'page.create' => 'Create', 'page.edit' => 'Edit', 'page.delete' => 'Delete'],
 
 'image' => [
-                        'xs' => ['width' => '60',     'height' => '45'],
-                        'sm' => ['width' => '100',    'height' => '75'],
-                        'md' => ['width' => '460',    'height' => '345'],
-                        'lg' => ['width' => '800',    'height' => '600'],
-                        'xl' => ['width' => '1000',   'height' => '750'],
-                    ],
+            'xs'            => ['width' => '60',     'height' => '45',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'sm'            => ['width' => '160',    'height' => '75',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'md'            => ['width' => '460',    'height' => '345', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'lg'            => ['width' => '800',    'height' => '600', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'xl'            => ['width' => '1000',   'height' => '750', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            ],
 
+// Modale variables for page module.
 'page' => [
-                        'table'    => 'pages',
-                        'model'    => 'Lavalite\Page\Models\Page',
-                        'fillable' => ['name', 'slug', 'order', 'view', 'compiler', 'status', 'upload_folder',
-                                                 'heading', 'title', 'content', 'keyword', 'description', 'abstract', ],
-                        'listfields' => ['id', 'name', 'category_id', 'slug', 'order', 'status', 'heading', 'title',
-                                                'abstract', 'compiler', 'view', ],
-                        'translatable'  => ['heading', 'content', 'title', 'keyword', 'description', 'images'],
-                        'upload-folder' => '/uploads/page',
-                        'uploadable'    => [
-                                                    'single'   => ['banner'],
-                                                    'multiple' => ['images'],
-                                                ],
-                ],
+                'model'         => 'Lavalite\Page\Models\Page',
+                'table'         => 'pages',
+                'primaryKey'    => 'id',
+                'hidden'        => [],
+                'visible'       => [],
+                'guarded'       => ['*'],
+                'slugs'         => ['slug' => 'name'],
+                'dates'         => ['deleted_at'],
+                'appends'       => ['eid'],
+                'fillable'      => ['heading', 'title', 'name', 'slug', 'order', 'view', 'compiler', 'status', 'upload_folder', 'content', 'keyword', 'description', 'abstract'],
+                'listfields'    => ['id', 'name', 'category_id', 'slug', 'order', 'status', 'heading', 'title', 'abstract', 'compiler', 'view'],
+                'uploadfolder'  => '/uploads/page',
+                'uploads'       => [
+                                        'single'   => ['banner'],
+                                        'multiple' => ['images'],
+                                   ],
+                'casts'         => [
+                                        'banner' => 'array',
+                                        'images' => 'array',
+                                   ],
+                'encrypt'       => ['id'],
+                'translate'     => ['name', 'heading', 'content', 'title', 'keyword', 'description'],
+                'revision'     => ['name', 'title'],
+                'perPage'       => '20',
+           ],
 ];

@@ -7,12 +7,13 @@ use Response;
 class AdminController extends Controller
 {
     /**
-     * Create a new password controller instance.
+     * Create a new admin controller instance.
      */
     public function __construct()
     {
+        $this->middleware('web');
         $this->middleware('auth.role:admin');
-        $this->setupTheme(config('cms.themes.admin.theme'), config('cms.themes.admin.layout'));
+        $this->setupTheme(config('theme.themes.admin.theme'), config('theme.themes.admin.layout'));
     }
 
     /**

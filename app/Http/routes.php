@@ -2,54 +2,51 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Routes File
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
+| Here is where you will register all of the routes in an application.
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
 */
 
-// Public routs.
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This route group applies the "web" middleware group to every route
+| it contains. The "web" middleware group is defined in your HTTP
+| kernel and includes session state, CSRF protection, and more.
+|
+*/
+
+// Home page for the website.
 Route::get('/', 'PublicController@home');
 
-//********* Admin routs. *********//
-Route::get('admin', 'AdminController@home');
-Route::get('admin/profile', 'AdminController@profile');
-Route::get('admin/lock', 'AdminController@lock');
-Route::get('admin/masters', 'AdminController@masters');
-Route::get('admin/reports', 'AdminController@reports');
+// Dashboard for administartor
 
-// Authentication routes for admin...
-Route::get('auth/admin/login', 'Auth\AdminAuthController@getLogin');
-Route::post('auth/admin/login', 'Auth\AdminAuthController@postLogin');
-Route::get('auth/admin/logout', 'Auth\AdminAuthController@getLogout');
+// User routes
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
 
-// Password reset link request routes for admin...
-Route::get('password/admin/email', 'Auth\AdminPasswordController@getEmail');
-Route::post('password/admin/email', 'Auth\AdminPasswordController@postEmail');
+    Route::get('/home', 'UserController@home');
 
-// Password reset routes for admin...
-Route::get('password/admin/reset/{token}', 'Auth\AdminPasswordController@getReset');
-Route::post('password/admin/reset', 'Auth\AdminPasswordController@postReset');
+    Route::get('/admin', 'AdminController@home');
+    // Routes for facades testing
+    Route::get('facade/test', function (\Illuminate\Http\Request $request) {
+        return \Trans::to('en/admin/page/page');
+    });
+});
 
-//********* User routs. *********//
-Route::get('{role}/home', 'UserController@home');
 
-// Authentication routes for users...
-Route::get('auth/{role}/login', 'Auth\AuthController@getLogin');
-Route::post('auth/{role}/login', 'Auth\AuthController@postLogin');
-Route::get('auth/{role}/logout', 'Auth\AuthController@getLogout');
+// Routes for facades testing
+Route::get('test/crypt', function () {
 
-// Registration routes...
-Route::get('auth/{role}/register', 'Auth\AuthController@getRegister');
-Route::post('auth/{role}/register', 'Auth\AuthController@postRegister');
+});
 
-// Password reset link request routes for users...
-Route::get('password/{role}/email', 'Auth\PasswordController@getEmail');
-Route::post('password/{role}/email', 'Auth\PasswordController@postEmail');
-
-// Password reset routes for users...
-Route::get('password/{role}/reset/{token}', 'Auth\PasswordController@getReset');
-Route::post('password/{role}/reset', 'Auth\PasswordController@postReset');
+// Routes for facades testing
+Route::get('test/decrypt', function () {
+    return strlen('eyJpdiI6IkI2R0Yxc2tNR0hGdEtpVWR6ZzA3OEE9PSIsInZhbHVlIjoiSUxadEF5b3BZMEZYWU02cnRRcGxqdHFrM29tbzk4cXh6M1RVbkxFTXNUUXVHTmhEXC9qQVc1VWltVWlDayswQ0QiLCJtYWMiOiJkYzdmYzBiNzM3ZjM4M2E3Mzg3Mzg2YzZkYjZhNWFmZTE2ZTg0ZWMyN2MwYmY3NDc0MmFlZTdlODFiMjgxN2FlIn0=');
+});

@@ -1,37 +1,38 @@
 {
     "name": "lavalite/cms",
-    "description": "The Lavalite CMS based on laravel.",
+    "description": "The Lavalite - CMS based on laravel.",
     "keywords": ["framework", "laravel", "lavalite", "cms"],
     "license": "MIT",
     "type": "cms",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.*",
-        "anahkiasen/former": "4.0.*@dev",
-        "teepluss/theme": "dev-master",
-        "lavalite/menu": "dev-master",
-        "lavalite/filer": "dev-master",
-        "lavalite/page": "dev-master",
-        "lavalite/settings": "dev-master",
-        "lavalite/task": "dev-master",
-        "lavalite/message": "dev-master",
-        "lavalite/calendar": "dev-master",
-        "lavalite/user": "dev-master"
+        "laravel/framework": "5.2.*",
+        "laravel/socialite": "2.0.*",
+        "hashids/hashids": "1.0.5",
+        "anahkiasen/former": "4.0.*",
+        "intervention/imagecache": "2.2.*",
+        "league/fractal": "^0.13.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1"
+        "symfony/css-selector": "2.8.*|3.0.*",
+        "symfony/dom-crawler": "2.8.*|3.0.*"
     },
     "autoload": {
         "classmap": [
             "database",
-            "workbench"
+            "packages",
+            "framework/src"
         ],
         "psr-4": {
-            "App\\": "app/"
-        }
+            "App\\": "app/",
+            "Litepie\\": "framework/src"
+        },
+        "files": [
+            "framework/src/Litepie/Foundation/helpers.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [

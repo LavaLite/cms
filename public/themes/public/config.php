@@ -58,20 +58,10 @@ return [
             //You may use this event to set up your assets.
 
             //You may use this event to set up your assets.
-            $theme->asset()->add('bootstrap', 'packages/bootstrap/css/bootstrap.min.css');
-            $theme->asset()->usePath()->add('lavalite', 'css/theme.css');
-            $theme->asset()->add('fontawsome', 'packages/font-awesome/css/font-awesome.min.css');
-            $theme->asset()->add('swal', 'packages/sweetalert/css/sweetalert.css');
+            $theme->asset()->usepath()->add('bootstrap', 'css/lavalite.css');
+
             $theme->asset()->add('jquery', 'packages/jquery/js/jquery.min.js');
             $theme->asset()->add('bootstrap', 'packages/bootstrap/js/bootstrap.min.js');
-            $theme->asset()->add('summernote', 'packages/summernote/css/summernote.css');
-
-            $theme->asset()->container('footer')->usePath()->add('lavalite', 'js/theme.js');
-            $theme->asset()->container('footer')->add('swal', 'packages/sweetalert/js/sweetalert.min.js');
-            $theme->asset()->container('footer')->add('moment', 'packages/moment/js/moment-with-locales.min.js');
-            $theme->asset()->container('footer')->add('summernote', 'packages/summernote/js/summernote.min.js');
-            $theme->asset()->container('footer')->add('datetimepicker', 'packages/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js');
-            $theme->asset()->container('footer')->usePath()->add('script', 'js/script.js');
         },
 
         // Listen on event before render a layout,

@@ -3,26 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\Auth;
 
 class RoleAuthenticate
 {
-    /**
-     * The Guard implementation.
-     *
-     * @var Guard
-     */
-    protected $auth;
-
-    /**
-     * Create a new filter instance.
-     *
-     * @param Guard $auth
-     */
-    public function __construct(Guard $auth)
-    {
-        $this->auth = $auth;
-    }
 
     /**
      * Handle an incoming request.
@@ -32,16 +16,16 @@ class RoleAuthenticate
      *
      * @return mixed
      */
-    public function handle($request, Closure $next, $role)
+    public function handle($request, Closure $next, $role, $guard = null)
     {
-        if ($this->auth->check() && $this->auth->user()->is($role)) {
+        if (Auth::guard($guard)->check() && Auth::guard($guard)->user()->is($role)) {
             return $next($request);
         }
 
         if ($request->ajax()) {
             return response('Unauthorized.', 401);
         } else {
-            return redirect()->guest("auth/$role/login");
+            return redirect()->guest("/login");
         }
     }
 }
