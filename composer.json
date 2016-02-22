@@ -12,7 +12,7 @@
         "lavalite/settings": "dev-master",
         "lavalite/task": "dev-master",
         "lavalite/message": "dev-master",
-        "lavalite/calendar": "dev-master",
+        "lavalite/calendar": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
