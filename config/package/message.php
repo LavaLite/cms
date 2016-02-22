@@ -33,7 +33,7 @@ return [
                 'visible'       => [],
                 'guarded'       => ['*'],
                 'slugs'         => [],
-                'dates'         => ['deleted_at','created_at','updated_at'],
+                'dates'         => ['deleted_at', 'created_at', 'updated_at'],
                 'appends'       => ['eid'],
                 'fillable'      => ['user_id', 'status', 'sub_status',  'from',  'to',  'subject',  'message',  'read',  'type'],
                 'listfields'    => ['id', 'status', 'sub_status',  'from',  'to',  'subject',  'message',  'read',  'type'],
@@ -47,8 +47,6 @@ return [
                 'encrypt'       => ['id'],
                 'perPage'       => '20',
 
-
            ],
-
 
 ];

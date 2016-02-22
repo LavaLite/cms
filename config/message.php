@@ -27,13 +27,13 @@ return [
 'view'      => base_path('resources/views/message'),
 
 'message' => [
-                    'Name'          => 'Message',
-                    'name'          => 'message',
-                    'table'         => 'messages',
-                    'model'         => 'Lavalite\Message\Models\Message',
-                    'permissions'   => ['admin'     => ['view', 'create', 'edit', 'delete']],
+                    'Name'              => 'Message',
+                    'name'              => 'message',
+                    'table'             => 'messages',
+                    'model'             => 'Lavalite\Message\Models\Message',
+                    'permissions'       => ['admin'     => ['view', 'create', 'edit', 'delete']],
                     'fillable'          => ['user_id', 'status',  'from',  'to',  'subject',  'message',  'read',  'type'],
-                    'listfields'        => ['id', 'status',  'from',  'to',  'subject',  'message',  'read',  'type'],    
+                    'listfields'        => ['id', 'status',  'from',  'to',  'subject',  'message',  'read',  'type'],
                     'translatable'      => ['status',  'from',  'to',  'subject',  'message',  'read',  'type'],
                     'upload-folder'     => '/uploads/message/message',
                     'uploadable'        => [
@@ -42,4 +42,3 @@ return [
                                             ],
                 ],
 ];
-

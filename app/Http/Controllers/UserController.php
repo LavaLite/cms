@@ -2,13 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Redirect;
-use Request;
-use App;
-
 class UserController extends WebCurdController
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -24,5 +19,4 @@ class UserController extends WebCurdController
     {
         return $this->theme->of('public::welcome')->render();
     }
-
 }

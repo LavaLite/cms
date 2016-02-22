@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class RoleAuthenticate
 {
-
     /**
      * Handle an incoming request.
      *
@@ -25,7 +24,7 @@ class RoleAuthenticate
         if ($request->ajax()) {
             return response('Unauthorized.', 401);
         } else {
-            return redirect()->guest("/login");
+            return redirect()->guest('/login');
         }
     }
 }

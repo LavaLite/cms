@@ -43,7 +43,7 @@ return [
                                                 'multiple'  => [],
                                             ],
                     'casts'             => [
-                                            'files' => 'array',
+                                            'files'  => 'array',
                                             'images' => 'array',
                                             ],
                     'revision'          => [],

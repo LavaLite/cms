@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use AuthenticateUser;
-use User;
-use Validator;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Request;
 use Socialite;
 use Theme;
-
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use User;
+use Validator;
 
 class AuthController extends Controller
 {
@@ -31,7 +29,6 @@ class AuthController extends Controller
     /**
      * Default role to be assigned for newely created user.
      */
-
     protected $role = 'user';
 
     /**
@@ -39,7 +36,6 @@ class AuthController extends Controller
      *
      * @var string
      */
-
     protected $redirectTo = '/home';
 
     /**
@@ -131,7 +127,5 @@ class AuthController extends Controller
     public function handleProviderCallback($provider)
     {
         $user = Socialite::driver($provider)->user();
-
     }
-
 }

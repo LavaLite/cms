@@ -18,7 +18,6 @@ return [
 
 'views' => ['page' => 'Default'],
 
-
 'image' => [
             'xs'            => ['width' => '60',     'height' => '45',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
             'sm'            => ['width' => '160',    'height' => '75',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
@@ -26,7 +25,7 @@ return [
             'lg'            => ['width' => '800',    'height' => '600', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
             'xl'            => ['width' => '1000',   'height' => '750', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
             ],
-            
+
 // Modale variables for task module.
 'task' => [
                 'model'         => 'Lavalite\Task\Models\Task',

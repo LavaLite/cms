@@ -31,18 +31,17 @@ class PasswordController extends Controller
         $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
     }
 
-
     /**
      * Display the password reset view for the given token.
      *
      * If no token is present, display the link request form.
      *
-     * @param  string|null  $token
+     * @param string|null $token
+     *
      * @return \Illuminate\Http\Response
      */
     public function showResetForm($token = null)
     {
-
         if (is_null($token)) {
             return $this->getEmail();
         }
@@ -61,12 +60,12 @@ class PasswordController extends Controller
     }
 
      /**
-     * Display the form to request a password reset link.
-     *
-     * @return \Illuminate\Http\Response
-     */
+      * Display the form to request a password reset link.
+      *
+      * @return \Illuminate\Http\Response
+      */
      public function getEmail()
-    {
-        return $this->theme->of('public::user.password')->render();
-    }
+     {
+         return $this->theme->of('public::user.password')->render();
+     }
 }

@@ -1,20 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 use Response;
 
 class WebCurdController extends Controller
 {
-
     /*
      * Store response datas
      */
     protected $response;
 
     /**
-     *Store modal repositiry
+     *Store modal repositiry.
      */
     protected $repository;
 
@@ -33,14 +32,18 @@ class WebCurdController extends Controller
      */
     public function respond(Request $request)
     {
-        if($request->wantsJson())
+        if ($request->wantsJson()) {
             return $this->respondJson();
+        }
 
-        if($request->ajax())
+        if ($request->ajax()) {
             return $this->respondAjax();
+        }
 
-        if(empty($this->responseRedirect) && !is_null($this->responseView))
+        if (empty($this->responseRedirect) && !is_null($this->responseView)) {
             return $this->respondTheme();
+        }
+
         return $this->respondRedirect();
     }
 
@@ -53,11 +56,11 @@ class WebCurdController extends Controller
     {
         return Response::json(
                 [
-                    'data' => $this->responseData,
-                    'message' => $this->responseMessage,
-                    'code' => $this->responseCode,
-                    'meta' => $this->responseMeta,
-                    'redirect' => $this->responseRedirect
+                    'data'     => $this->responseData,
+                    'message'  => $this->responseMessage,
+                    'code'     => $this->responseCode,
+                    'meta'     => $this->responseMeta,
+                    'redirect' => $this->responseRedirect,
                 ]
             );
     }
@@ -95,9 +98,11 @@ class WebCurdController extends Controller
     }
 
     /**
-     * Set vari
+     * Set vari.
+     *
      * @param type $name
      * @param type $value
+     *
      * @return type
      */
     public function __set($name, $value)
@@ -111,7 +116,6 @@ class WebCurdController extends Controller
             return $this->response[$name];
         }
 
-        return null;
+        return;
     }
-
 }

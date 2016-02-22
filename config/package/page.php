@@ -27,7 +27,6 @@ return [
 */
 'views' => ['page' => 'Default'],
 
-
 'image' => [
             'xs'            => ['width' => '60',     'height' => '45',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
             'sm'            => ['width' => '160',    'height' => '75',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
@@ -60,7 +59,7 @@ return [
                                         'images' => 'array',
                                    ],
                 'encrypt'       => ['id'],
-                'revision'     => ['name', 'title'],
+                'revision'      => ['name', 'title'],
                 'perPage'       => '20',
            ],
 ];

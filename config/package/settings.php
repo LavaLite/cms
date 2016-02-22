@@ -34,8 +34,8 @@ return [
                 'slugs'         => [],
                 'dates'         => ['deleted_at'],
                 'appends'       => ['eid'],
-                'fillable'      =>  ['id', 'user_id', 'skey', 'name', 'value', 'type'],
-                'listfields'    =>  ['id', 'user_id', 'skey', 'name', 'value', 'type'],
+                'fillable'      => ['id', 'user_id', 'skey', 'name', 'value', 'type'],
+                'listfields'    => ['id', 'user_id', 'skey', 'name', 'value', 'type'],
                 // 'translate'  =>  ['id', 'user_id', 'skey', 'name', 'value', 'type'],
                 'uploadfolder'  => '/uploads/settings/setting',
                 'uploads'       => [
@@ -47,7 +47,6 @@ return [
                 'revision'      => ['name'],
                 'perPage'       => '20',
 
-
-           ],              
+           ],
 
 ];

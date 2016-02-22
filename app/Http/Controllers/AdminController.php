@@ -2,20 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Redirect;
-use Request;
-use App;
-
 class AdminController extends WebCurdController
 {
-
-
     public function __construct()
     {
         parent::__construct();
         $this->middleware('auth.role:admin');
         $this->setupTheme(config('theme.themes.admin.theme'), config('theme.themes.admin.layout'));
     }
+
     /**
      * Show admin dashboard.
      *
@@ -67,8 +62,4 @@ class AdminController extends WebCurdController
     {
         return $this->theme->of('admin::general.reports')->render();
     }
-
-
-
-
 }

@@ -124,15 +124,14 @@ return [
 
     ],
 
-
     /*
     |--------------------------------------------------------------------------
     | Repository Pagination Limit Default
     |--------------------------------------------------------------------------
     |
     */
-    'pagination'=>[
-        'limit'=>15
+    'pagination' => [
+        'limit' => 15,
     ],
 
     /*
@@ -147,11 +146,11 @@ return [
     JsonApiSerializer
 
     */
-    'fractal'=>[
-        'params'=>[
-            'include'=>'include'
+    'fractal' => [
+        'params' => [
+            'include' => 'include',
         ],
-        'serializer' => League\Fractal\Serializer\DataArraySerializer::class
+        'serializer' => League\Fractal\Serializer\DataArraySerializer::class,
     ],
 
     /*
@@ -160,7 +159,7 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'cache'=>[
+    'cache' => [
         /*
          |--------------------------------------------------------------------------
          | Cache Status
@@ -189,7 +188,7 @@ return [
           | Instance of Illuminate\Contracts\Cache\Repository
           |
           */
-        'repository'=> 'cache',
+        'repository' => 'cache',
 
         /*
           |--------------------------------------------------------------------------
@@ -220,10 +219,10 @@ return [
               |
               */
             'on' => [
-                'create'=>true,
-                'update'=>true,
-                'delete'=>true,
-            ]
+                'create' => true,
+                'update' => true,
+                'delete' => true,
+            ],
         ],
 
         'params'    => [
@@ -236,7 +235,7 @@ return [
               | Ex: http://lavalite.local/?search=lorem&skipCache=true
               |
               */
-            'skipCache'=>'skipCache'
+            'skipCache' => 'skipCache',
         ],
 
         /*
@@ -254,10 +253,10 @@ return [
        |
        | 'except'  =>['find'],
        */
-        'allowed'=>[
-            'only'  =>null,
-            'except'=>null
-        ]
+        'allowed' => [
+            'only'   => null,
+            'except' => null,
+        ],
     ],
 
     /*
@@ -268,7 +267,7 @@ return [
     | Settings of request parameters names that will be used by Criteria
     |
     */
-    'criteria'=>[
+    'criteria' => [
         /*
         |--------------------------------------------------------------------------
         | Accepted Conditions
@@ -284,8 +283,8 @@ return [
         | $query->where('foo','like','bar')
         |
         */
-        'acceptedConditions'=>[
-            '=','like'
+        'acceptedConditions' => [
+            '=', 'like',
         ],
         /*
         |--------------------------------------------------------------------------
@@ -319,13 +318,13 @@ return [
         |   http://lavalite.local/?search=lorem&orderBy=id&sortedBy=desc
         |
         */
-        'params'=>[
-            'search'        =>'search',
-            'searchFields'  =>'searchFields',
-            'filter'        =>'filter',
-            'orderBy'       =>'orderBy',
-            'sortedBy'      =>'sortedBy',
-            'with'          =>'with'
-        ]
+        'params' => [
+            'search'        => 'search',
+            'searchFields'  => 'searchFields',
+            'filter'        => 'filter',
+            'orderBy'       => 'orderBy',
+            'sortedBy'      => 'sortedBy',
+            'with'          => 'with',
+        ],
     ],
 ];

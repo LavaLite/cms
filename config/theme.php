@@ -12,7 +12,6 @@ return [
     |
     */
 
-
     'themes'    => [
         'admin'  => ['theme' => 'admin',     'layout' => 'default'],
         'public' => ['theme' => 'public',    'layout' => 'default'],

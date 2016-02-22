@@ -3,20 +3,20 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Contracts\Auth\Guard;  
 
 class Authenticate
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     * @param string|null              $guard
+     *
      * @return mixed
      */
-
     private $socialite;
     private $auth;
     private $users;
@@ -30,9 +30,7 @@ class Authenticate
                 return redirect()->guest('login');
             }
         }
-       
+
         return $next($request);
     }
-
-      
 }
