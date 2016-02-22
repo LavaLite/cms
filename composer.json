@@ -29,10 +29,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Litepie\\": "framework/src"
         },
         "files": [
-            "framework/src/Litepie/Foundation/helpers.php"
         ]
     },
     "autoload-dev": {
