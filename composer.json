@@ -28,7 +28,7 @@
             "framework/src"
         ],
         "psr-4": {
-            "App\\": "app/",
+            "App\\": "app/"
         },
         "files": [
         ]
