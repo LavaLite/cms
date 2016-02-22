@@ -27,6 +27,7 @@ class PublicController extends Controller
     public function home()
     {
         $this->theme->layout('home');
+
         return $this->theme->of('public::home', compact('page'))->render();
     }
 }

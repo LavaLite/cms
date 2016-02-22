@@ -148,8 +148,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-
-
         /*
          * Laravel Socialite Service Providers...
          */
@@ -166,7 +164,6 @@ return [
         Litepie\Hashids\HashidsServiceProvider::class,
         Litepie\User\UserServiceProvider::class,
         Litepie\Menu\MenuServiceProvider::class,
-
 
         /*
          * Lavalite package Service Providers...
@@ -232,7 +229,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
-        'AuthenticateUser'     =>App\AuthenticateUser::class,
+        'AuthenticateUser'     => App\AuthenticateUser::class,
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 

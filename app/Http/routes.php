@@ -22,7 +22,6 @@
 |
 */
 
-
 // Dashboard for administartor
 
 // User routes
@@ -42,6 +41,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get(Trans::setLocale().'admin/reports', 'AdminController@reports');
 });
 
-Route::get('/test', function(){
+Route::get('/test', function () {
     return  \Menu::menu('admin', 'menu.admin');
 });

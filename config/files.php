@@ -43,11 +43,11 @@ return [
 
     'allowed_types_check'      => false,
 
-    'allowed_types'      => ['image/png','image/gif','image/jpg','image/jpeg'],
+    'allowed_types'      => ['image/png', 'image/gif', 'image/jpg', 'image/jpeg'],
 
     'allowed_extensions_check'      => true,
 
-    'allowed_extensions' => ['png','gif','jpg','jpeg','pdf','doc','docx','xls','xlsx','mp3','txt','zip','bmp','jpeg'], // Case insensitive
+    'allowed_extensions' => ['png', 'gif', 'jpg', 'jpeg', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'mp3', 'txt', 'zip', 'bmp', 'jpeg'], // Case insensitive
 
     // Max upload size - In BYTES. 1GB = 1073741824 bytes, 10 MB = 10485760, 1 MB = 1048576
     'max_upload_size' => 5242880, // Converter - http://www.beesky.com/newsite/bit_byte.htm
@@ -70,9 +70,9 @@ return [
 
     // Must be in the upload list as well.
     // Must also be supported by invention. http://intervention.olivervogel.net/image/formats/image
-    'image_types'      => ['image/png','image/gif','image/jpg','image/jpeg'],
+    'image_types'      => ['image/png', 'image/gif', 'image/jpg', 'image/jpeg'],
 
-    'image_extensions' => ['png','gif','jpg','jpeg'], // Case insensitive
+    'image_extensions' => ['png', 'gif', 'jpg', 'jpeg'], // Case insensitive
 
     'image_resize_on_upload' => true,
 

@@ -15,7 +15,7 @@ return [
 * Modules .
 */
 'modules'   => ['calendar'],
-'image' => [
+'image'     => [
             'xs'            => ['width' => '60',     'height' => '45',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
             'sm'            => ['width' => '160',    'height' => '75',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
             'md'            => ['width' => '460',    'height' => '345', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
@@ -25,19 +25,19 @@ return [
 
 // Modale variables for calendar module.
 'calendar' => [
-                'model'         => 'Lavalite\Calendar\Models\Calendar',
-                'table'         => 'calendars',
-                'primaryKey'    => 'id',
-                'hidden'        => [],
-                'visible'       => [],
-                'guarded'       => ['*'],
-                'slugs'         => [],
-                'dates'         => ['deleted_at'],
-                'appends'       => ['id'],
+                'model'             => 'Lavalite\Calendar\Models\Calendar',
+                'table'             => 'calendars',
+                'primaryKey'        => 'id',
+                'hidden'            => [],
+                'visible'           => [],
+                'guarded'           => ['*'],
+                'slugs'             => [],
+                'dates'             => ['deleted_at'],
+                'appends'           => ['id'],
                 'fillable'          => ['user_id', 'category_id', 'status', 'start', 'end', 'location', 'color', 'title', 'details', 'created_by', 'created_at', 'updated_at', 'deleted_at'],
                 'listfields'        => ['id', 'user_id', 'category_id', 'status', 'start', 'end', 'location', 'color', 'title', 'details', 'created_by', 'created_at', 'updated_at', 'deleted_at'],
-                'uploadfolder'  => '/uploads/calendar/calendar',
-                'uploads'       => [
+                'uploadfolder'      => '/uploads/calendar/calendar',
+                'uploads'           => [
                                         'single'   => [],
                                         'multiple' => [],
                                    ],
@@ -47,6 +47,5 @@ return [
                 'translate'     => [],
                 'perPage'       => '20',
            ],
-
 
 ];

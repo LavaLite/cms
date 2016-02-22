@@ -53,7 +53,7 @@ return [
                     'fillable'      => ['name', 'permissions'],
                     'listfields'    => ['name'],
                     'casts'         => [
-                                        'permissions'   => 'array'
+                                        'permissions'   => 'array',
                                        ],
                     'translate'     => ['name'],
                     'perPage'       => '20',
@@ -77,7 +77,7 @@ return [
                                             'multiple' => [],
                                         ],
                     'casts'         => [
-                                        'permissions'   => 'array'
+                                        'permissions'   => 'array',
                                        ],
                     'perPage'       => '20',
             ],
@@ -92,10 +92,10 @@ return [
                     'slugs'         => [],
                     'dates'         => ['deleted_at'],
                     'appends'       => ['eid'],
-                    'fillable'      => ['user_id','provider','provider_id'],
-                    'listfields'    => ['id', 'user_id','provider','provider_id'],
+                    'fillable'      => ['user_id', 'provider', 'provider_id'],
+                    'listfields'    => ['id', 'user_id', 'provider', 'provider_id'],
                     'casts'         => [
-                                        'permissions'   => 'array'
+                                        'permissions'   => 'array',
                                        ],
                     'translate'     => [],
                     'perPage'       => '20',

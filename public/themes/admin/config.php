@@ -50,7 +50,6 @@ return [
             $theme->asset()->usepath()->add('bootstrap', 'css/theme.css');
             $theme->asset()->usepath()->add('skin', 'css/skins/skin-red.css');
             $theme->asset()->add('icheck', 'packages/icheck/css/icheck/square/blue.css');
-            
 
             $theme->asset()->add('jquery', 'packages/jquery/js/jquery.min.js');
             $theme->asset()->container('footer')->add('scripts', 'js/admin.js');
