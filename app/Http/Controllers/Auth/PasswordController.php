@@ -42,15 +42,12 @@ class PasswordController extends Controller
      */
     public function showResetForm($token = null)
     {
+
         if (is_null($token)) {
             return $this->getEmail();
         }
 
-        if (view()->exists('public::user.reset')) {
-            return $this->theme->of('public::user.reset', compact('token'))->render();
-        }
-
-        return $this->theme->of('auth.reset', compact('token'))->render();
+        return $this->theme->of('public::user.reset', compact('token'))->render();
     }
 
     /**
@@ -60,10 +57,16 @@ class PasswordController extends Controller
      */
     public function showLinkRequestForm()
     {
-        if (view()->exists('public::user.password')) {
-            return $this->theme->of('public::user.password')->render();
-        }
+        return $this->theme->of('public::user.password')->render();
+    }
 
-        return $this->theme->of('auth.password')->render();
+     /**
+     * Display the form to request a password reset link.
+     *
+     * @return \Illuminate\Http\Response
+     */
+     public function getEmail()
+    {
+        return $this->theme->of('public::user.password')->render();
     }
 }

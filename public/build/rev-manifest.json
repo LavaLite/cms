@@ -1,5 +1,6 @@
 {
-  "dist/css/app.css": "dist/css/app-95c5baffc3.css",
-  "dist/js/app.js": "dist/js/app-0ea8a16fca.js",
-  "dist/js/vendor.js": "dist/js/vendor-62728c883e.js"
+  "css/vendor_admin.css": "css/vendor_admin-51af3b8a8d.css",
+  "css/vendor_public.css": "css/vendor_public-31358e38a6.css",
+  "js/vendor_admin.js": "js/vendor_admin-f4c643f319.js",
+  "js/vendor_public.js": "js/vendor_public-f48b32e141.js"
 }

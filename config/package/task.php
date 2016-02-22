@@ -14,8 +14,19 @@ return [
 /*
 * Modules .
 */
-'modules'   => [],
+'modules'   => ['task'],
 
+'views' => ['page' => 'Default'],
+
+
+'image' => [
+            'xs'            => ['width' => '60',     'height' => '45',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'sm'            => ['width' => '160',    'height' => '75',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'md'            => ['width' => '460',    'height' => '345', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'lg'            => ['width' => '800',    'height' => '600', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'xl'            => ['width' => '1000',   'height' => '750', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            ],
+            
 // Modale variables for task module.
 'task' => [
                 'model'         => 'Lavalite\Task\Models\Task',
@@ -24,18 +35,17 @@ return [
                 'hidden'        => [],
                 'visible'       => [],
                 'guarded'       => ['*'],
-                'slugs'         => ['slug' => 'name'],
+                'slugs'         => [],
                 'dates'         => ['deleted_at'],
-                'appends'       => ['id'],
-                'fillable'      => ['task', 'start', 'end'],
-                'listfields'    => ['task', 'start', 'end'],
+                'appends'       => ['eid'],
+                'fillable'      => ['user_id',  'start',  'end', 'task',  'status'],
+                'listfields'    => ['id', 'user_id',  'start',  'end', 'task',  'status'],
                 'uploadfolder'  => '/uploads/task',
                 'uploads'       => [
                                         'single'   => [],
                                         'multiple' => [],
                                    ],
-                'casts'         => [
-                                   ],
+                'casts'         => [],
                 'encrypt'       => ['id'],
                 'translate'     => [],
                 'perPage'       => '20',

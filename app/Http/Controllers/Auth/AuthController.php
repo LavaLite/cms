@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use AuthenticateUser;
 use User;
 use Validator;
+use Request;
+use Socialite;
+use Theme;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -26,6 +31,7 @@ class AuthController extends Controller
     /**
      * Default role to be assigned for newely created user.
      */
+
     protected $role = 'user';
 
     /**
@@ -33,6 +39,7 @@ class AuthController extends Controller
      *
      * @var string
      */
+
     protected $redirectTo = '/home';
 
     /**
@@ -53,7 +60,6 @@ class AuthController extends Controller
      */
     public function showLoginForm()
     {
-
         return $this->theme->of('public::user.login')->render();
     }
 
@@ -64,7 +70,6 @@ class AuthController extends Controller
      */
     public function showRegistrationForm()
     {
-
         return $this->theme->of('public::user.register')->render();
     }
 
@@ -102,10 +107,31 @@ class AuthController extends Controller
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-
         $role = User::findRole($this->role);
         $user->attachRole($role);
 
         return $user;
     }
+
+    /**
+     * Redirect the user to the provider authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    /**
+     * Obtain the user information from provider.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback($provider)
+    {
+        $user = Socialite::driver($provider)->user();
+
+    }
+
 }

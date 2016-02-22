@@ -58,17 +58,24 @@ return [
             //You may use this event to set up your assets.
 
             //You may use this event to set up your assets.
-            $theme->asset()->usepath()->add('bootstrap', 'css/lavalite.css');
+
+            $theme->asset()->usepath()->add('styles', 'css/style.css');
 
             $theme->asset()->add('jquery', 'packages/jquery/js/jquery.min.js');
-            $theme->asset()->add('bootstrap', 'packages/bootstrap/js/bootstrap.min.js');
         },
 
         // Listen on event before render a layout,
         // this should call to assign style, script for a layout.
         'beforeRenderLayout' => [
 
-            'blank' => function ($theme) {
+            'default' => function ($theme) {
+            },
+
+            'user' => function ($theme) {
+            },
+
+            'home' => function ($theme) {
+                $theme->asset()->add('ionicons', 'packages/ionicons/css/ionicons.min.css');
             },
 
         ],

@@ -148,9 +148,17 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
+
+        /*
+         * Laravel Socialite Service Providers...
+         */
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
         /*
          * Lavalite Framework Service Providers...
          */
+
         Litepie\Form\FormServiceProvider::class,
         Litepie\Theme\ThemeServiceProvider::class,
         Litepie\Trans\TransServiceProvider::class,
@@ -159,6 +167,7 @@ return [
         Litepie\User\UserServiceProvider::class,
         Litepie\Menu\MenuServiceProvider::class,
 
+
         /*
          * Lavalite package Service Providers...
          */
@@ -166,6 +175,8 @@ return [
         Lavalite\Message\Providers\MessageServiceProvider::class,
         Lavalite\Calendar\Providers\CalendarServiceProvider::class,
         Lavalite\Task\Providers\TaskServiceProvider::class,
+        Lavalite\Settings\Providers\SettingsServiceProvider::class,
+        Lavalite\Package\Providers\PackageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -220,6 +231,10 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        'AuthenticateUser'     =>App\AuthenticateUser::class,
+
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
         'Form'      => Litepie\Support\Facades\Form::class,
         'Theme'     => Litepie\Support\Facades\Theme::class,

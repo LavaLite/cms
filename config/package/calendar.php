@@ -14,7 +14,14 @@ return [
 /*
 * Modules .
 */
-'modules'   => [],
+'modules'   => ['calendar'],
+'image' => [
+            'xs'            => ['width' => '60',     'height' => '45',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'sm'            => ['width' => '160',    'height' => '75',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'md'            => ['width' => '460',    'height' => '345', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'lg'            => ['width' => '800',    'height' => '600', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'xl'            => ['width' => '1000',   'height' => '750', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            ],
 
 // Modale variables for calendar module.
 'calendar' => [
@@ -24,12 +31,12 @@ return [
                 'hidden'        => [],
                 'visible'       => [],
                 'guarded'       => ['*'],
-                'slugs'         => ['slug' => 'name'],
+                'slugs'         => [],
                 'dates'         => ['deleted_at'],
                 'appends'       => ['id'],
-                'fillable'      => ['calendar', 'start', 'end'],
-                'listfields'    => ['calendar', 'start', 'end'],
-                'uploadfolder'  => '/uploads/calendar',
+                'fillable'          => ['user_id', 'category_id', 'status', 'start', 'end', 'location', 'color', 'title', 'details', 'created_by', 'created_at', 'updated_at', 'deleted_at'],
+                'listfields'        => ['id', 'user_id', 'category_id', 'status', 'start', 'end', 'location', 'color', 'title', 'details', 'created_by', 'created_at', 'updated_at', 'deleted_at'],
+                'uploadfolder'  => '/uploads/calendar/calendar',
                 'uploads'       => [
                                         'single'   => [],
                                         'multiple' => [],
@@ -40,4 +47,6 @@ return [
                 'translate'     => [],
                 'perPage'       => '20',
            ],
+
+
 ];

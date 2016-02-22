@@ -4,7 +4,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        {!!Former::vertical_open()!!}
+        {!!Form::vertical_open()!!}
         {!! csrf_field() !!}
         @if (Session::has('status'))
         <div class="alert alert-info">
@@ -16,7 +16,7 @@
         <br />
         @endif
         <div class="form-group has-feedback">
-            {!!Former::text('email', '')!!}
+            {!!Form::text('email', '')!!}
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="row">
@@ -26,7 +26,7 @@
             </div>
             <!-- /.col -->
         </div>
-        {!!Former::Close()!!}
+        {!!Form::Close()!!}
         <a href="{!! URL::to('/auth/admin/login') !!}">Back to login</a><br>
     </div>
     <!-- /.login-box-body -->

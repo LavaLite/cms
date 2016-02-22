@@ -5,8 +5,9 @@
         <title>{{ Theme::getTitle() }}</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link href="{{ asset('dist/css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset(elixir('css/vendor_public.css')) }}" rel="stylesheet">
         {!! Theme::asset()->styles() !!}
+        {!! Theme::asset()->scripts() !!}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,7 +24,8 @@
     {!! Theme::content() !!}
     </div>
     {!! Theme::partial('footer') !!}
-    <link href="{{ elixir('dist/js/vendor.js') }}" rel="stylesheet">
+    <script src="{{ asset(elixir('js/vendor_public.js')) }}"></script>
+    <script src="{{ asset('js/public.js') }}"></script>
     {!! Theme::asset()->container('footer')->scripts() !!}
 </body>
 </html>

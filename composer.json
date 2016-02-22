@@ -7,11 +7,12 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "laravel/socialite": "2.0.*",
-        "hashids/hashids": "1.0.5",
-        "anahkiasen/former": "4.0.*",
-        "intervention/imagecache": "2.2.*",
-        "league/fractal": "^0.13.0"
+        "litepie/framework": "dev-master",
+        "lavalite/page": "dev-master",
+        "lavalite/settings": "dev-master",
+        "lavalite/task": "dev-master",
+        "lavalite/message": "dev-master",
+        "lavalite/calendar": "dev-master",
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

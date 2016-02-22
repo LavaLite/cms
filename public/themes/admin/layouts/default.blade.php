@@ -7,8 +7,9 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
-        {!! Theme::asset()->styles() !!}
-        {!! Theme::asset()->scripts() !!}
+<link href="{{ asset(elixir('css/vendor_admin.css')) }}" rel="stylesheet">
+{!! Theme::asset()->styles() !!}
+{!! Theme::asset()->scripts() !!}
     </head>
     <body class="sidebar-mini skin-red">
         <div class="wrapper">
@@ -17,8 +18,9 @@
             {!! Theme::content() !!}
             {!! Theme::partial('right') !!}
             {!! Theme::partial('footer') !!}
-            {!! Theme::asset()->container('footer')->scripts() !!}
-            {!! Theme::asset()->container('extra')->scripts() !!}
         </div>
     </body>
+{!! Theme::asset()->container('footer')->scripts() !!}
+<script src="{{ asset(elixir('js/vendor_admin.js')) }}"></script>
+{!! Theme::asset()->container('extra')->scripts() !!}
 </html>

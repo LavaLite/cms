@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Response;
+use Redirect;
+use Request;
+use App;
 
-class AdminController extends Controller
+class AdminController extends WebCurdController
 {
-    /**
-     * Create a new admin controller instance.
-     */
+
+
     public function __construct()
     {
-        $this->middleware('web');
+        parent::__construct();
         $this->middleware('auth.role:admin');
         $this->setupTheme(config('theme.themes.admin.theme'), config('theme.themes.admin.layout'));
     }
-
     /**
      * Show admin dashboard.
      *
@@ -68,27 +68,7 @@ class AdminController extends Controller
         return $this->theme->of('admin::general.reports')->render();
     }
 
-    /**
-     * Return success message.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function error($message, $status = 400)
-    {
-        return Response::json(['message' => $message, 'type' => 'error', 'title' => trans('messages.type.error')], $status);
-    }
 
-    /**
-     * Return error message.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function success($message, $status = 201)
-    {
-        return Response::json(['message' => $message, 'type' => 'success', 'title' => trans('messages.type.success')], $status);
-    }
+
+
 }

@@ -12,48 +12,72 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss', 'public/dist/css/app.css')
+    mix
+        .styles([
+            './vendor/bower_components/bootstrap/dist/css/bootstrap.min.css',
+            './vendor/bower_components/font-awesome/css/font-awesome.min.css',
+            './vendor/bower_components/datatables-bootstrap3-plugin/media/css/datatables-bootstrap3.min.css',
+            './vendor/bower_components/toastr/toastr.min.css',
+            './vendor/bower_components/dropzone/dist/dropzone.css',
+            './vendor/bower_components/sweetalert/dist/sweetalert.css',
+            './vendor/bower_components/summernote/dist/summernote.css',
+            ], './public/css/vendor_admin.css', './public/css')
 
         .scripts([
-            'resources/assets/js/app.js',
-        ], 'public/dist/js/app.js', './')
+            './vendor/bower_components/jquery-ui/jquery-ui.js',
+            './vendor/bower_components/bootstrap/dist/js/bootstrap.js',
+            './vendor/bower_components/DataTables/media/js/jquery.dataTables.js',
+            './vendor/bower_components/datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.js',
+            './vendor/bower_components/jquery-validation/dist/jquery.validate.js',
+            './vendor/bower_components/moment/min/moment-with-locales.min.js',
+            './vendor/bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
+            './vendor/bower_components/toastr/toastr.js',
+            './vendor/bower_components/iCheck/icheck.min.js',
+            './vendor/bower_components/Sortable/Sortable.js',
+            './vendor/bower_components/sweetalert/dist/sweetalert-dev.js',
+            './vendor/bower_components/dropzone/dist/dropzone.js',
+            './vendor/bower_components/summernote/dist/summernote.js',
+        ], './public/js/vendor_admin.js', './public/js')
+
+        .styles([
+            './vendor/bower_components/bootstrap/dist/css/bootstrap.min.css',
+            './vendor/bower_components/summernote/dist/summernote.css',
+            './vendor/bower_components/sweetalert/dist/sweetalert.css',
+            './vendor/bower_components/toastr/toastr.min.css',
+            './vendor/bower_components/font-awesome/css/font-awesome.min.css',
+            ], './public/css/vendor_public.css', './public/css')
 
         .scripts([
-            'vendor/bower_components/jquery/dist/jquery.js',
-            'vendor/bower_components/jquery-ui/jquery-ui.js',
-            'vendor/bower_components/bootstrap/dist/js/bootstrap.js',
-            'vendor/bower_components/summernote/dist/summernote.js',
-            'vendor/bower_components/DataTables/media/js/jquery.dataTables.js',
-            'vendor/bower_components/datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.js',
-            'vendor/bower_components/jquery-validation/dist/jquery.validate.js',
-            'vendor/bower_components/moment/min/moment-with-locales.min.js',
-            'vendor/bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
-            'vendor/bower_components/toastr/toastr.js',
-            'vendor/bower_components/sweetalert/dist/sweetalert-dev.js',
-            'vendor/bower_components/dropzone/dist/dropzone.js',
-        ], 'public/dist/js/vendor.js', './')
+            './vendor/bower_components/bootstrap/dist/js/bootstrap.js',
+            './vendor/bower_components/iCheck/icheck.min.js',
+            './vendor/bower_components/sweetalert/dist/sweetalert-dev.js',
+            './vendor/bower_components/jquery-validation/dist/jquery.validate.js',
+            './vendor/bower_components/moment/min/moment-with-locales.min.js',
+            './vendor/bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
+            './vendor/bower_components/toastr/toastr.js',
+            './vendor/bower_components/summernote/dist/summernote.js',
+        ], './public/js/vendor_public.js', './public/js')
 
-        .scripts([
-            'vendor/bower_components/dropzone/dist/dropzone.css',
-        ],  'public/dist/js/vendor.css', './')
+        .version(["public/css/vendor_admin.css", "public/js/vendor_admin.js", "public/css/vendor_public.css", "public/js/vendor_public.js"])
 
-        .version(['public/dist/css/app.css', 'public/dist/js/app.js', 'public/dist/js/vendor.js'])
+        .copy('./vendor/bower_components/font-awesome/fonts', './public/build/fonts')
 
-        .copy('vendor/bower_components/font-awesome/fonts',                                                            'public/fonts')
+        .copy('./vendor/bower_components/DataTables/media/images', './public/packages/data-tables/images')
 
-        .copy('vendor/bower_components/DataTables/media/css/jquery.dataTables.min.css',                                'public/packages/data-tables/css/jquery.dataTables.min.css')
-        .copy('vendor/bower_components/DataTables/media/images',                                                       'public/packages/data-tables/images')
+        .copy('./vendor/bower_components/iCheck/skins', './public/packages/icheck/css/icheck')
 
-    	.copy('vendor/bower_components/iCheck/icheck.min.js',                                                          'public/packages/icheck/js/icheck.min.js')
-        .copy('vendor/bower_components/iCheck/skins',                                                                  'public/packages/icheck/css/icheck')
+        .copy('./vendor/bower_components/fullcalendar/dist/fullcalendar.min.css', './public/packages/fullcalendar/fullcalendar.min.css')
+        .copy('./vendor/bower_components/fullcalendar/dist/fullcalendar.min.js', './public/packages/fullcalendar/fullcalendar.min.js')
+        .copy('./vendor/bower_components/fullcalendar/lang', './public/packages/fullcalendar/lang')
 
-        .copy('vendor/bower_components/fullcalendar/dist/fullcalendar.min.css',                                        'public/packages/fullcalendar/fullcalendar.min.css')
-        .copy('vendor/bower_components/fullcalendar/dist/fullcalendar.min.js',                                         'public/packages/fullcalendar/fullcalendar.min.js')
-        .copy('vendor/bower_components/fullcalendar/lang',                                                             'public/packages/fullcalendar/lang')
+        .copy('./vendor/bower_components/nestable2/jquery.nestable.css', './public/packages/nestable/jquery.nestable.css')
+        .copy('./vendor/bower_components/nestable2/jquery.nestable.js', './public/packages/nestable/jquery.nestable.js')
 
-        .copy('vendor/bower_components/nestable2/jquery.nestable.css',                                                 'public/packages/nestable/jquery.nestable.css')
-        .copy('vendor/bower_components/nestable2/jquery.nestable.js',                                                  'public/packages/nestable/jquery.nestable.js')
+        .copy('vendor/bower_components/jquery/dist/jquery.min.js', 'public/packages/jquery/js/jquery.min.js')
+        .copy('vendor/bower_components/jquery/dist/jquery.min.map', 'public/packages/jquery/js/jquery.min.map')
 
-        .copy('vendor/bower_components/Sortable/Sortable.min.js',                                                      'public/packages/sortable/sortable.min.js')
+        .copy('vendor/bower_components/ionicons/css/ionicons.min.css', 'public/packages/ionicons/css/ionicons.min.css')
+        .copy('vendor/bower_components/ionicons/fonts', 'public/packages/ionicons/fonts')
+
     	;
 });

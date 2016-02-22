@@ -6,25 +6,25 @@
                 <div class="profile-content">
                     <h1>Register</h1>
                     <hr>
-                    {!!Former::vertical_open()
+                    {!!Form::vertical_open()
                     ->id('contact')
                     ->method('POST')
                     ->class('white-row')!!}
 
-                    {!! Former::text('name')
+                    {!! Form::text('name')
                     -> label(trans('user::user.label.name'))
                     -> placeholder(trans('user::user.placeholder.name'))!!}
-                    {!! Former::email('email')
+                    {!! Form::email('email')
                     -> label(trans('user::user.label.email'))
                     -> placeholder(trans('user::user.placeholder.email'))!!}
-                    {!! Former::password('password')
+                    {!! Form::password('password')
                     -> label(trans('user::user.label.password'))
                     -> placeholder(trans('user::user.placeholder.password'))!!}
-                    {!! Former::submit(trans('user::user.signin'))!!}
+                    {!! Form::submit(trans('user::user.signin'))!!}
                     <br>
                     <br>
 
-                    {!! Former::close() !!}
+                    {!! Form::close() !!}
                     Already have an account ! <a href="/login"> Click to login </a>
                 </div>
             </div>

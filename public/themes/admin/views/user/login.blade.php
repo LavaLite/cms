@@ -11,26 +11,30 @@
             @endforeach
     </div>
 @endif
-    {!!Former::vertical_open()!!}
+    {!!Form::vertical_open()
+            ->id('login')
+            ->method('POST')
+            ->action('/login')
+            ->class('white-row')!!}
       <div class="form-group has-feedback">
-        {!!Former::text('email')->raw()!!}
+        {!!Form::text('email')->raw()!!}
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        {!!Former::password('password')->raw()!!}
+        {!!Form::password('password')->raw()!!}
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
         <div class="col-xs-8">
 
-              {!! Former::checkbox('rememberme', 'Remember me ')->inline()!!}
+              {!! Form::checkbox('rememberme', 'Remember me ')->inline()!!}
 
         </div><!-- /.col -->
         <div class="col-xs-4">
           <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div><!-- /.col -->
       </div>
-    {!!Former::Close()!!}
+    {!!Form::Close()!!}
 
     <a href="{!! URL::to('password/admin/email') !!}">I forgot my password</a><br>
   </div><!-- /.login-box-body -->

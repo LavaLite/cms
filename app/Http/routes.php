@@ -22,31 +22,26 @@
 |
 */
 
-// Home page for the website.
-Route::get('/', 'PublicController@home');
 
 // Dashboard for administartor
 
 // User routes
 Route::group(['middleware' => 'web'], function () {
-    Route::auth();
+    // Home page for the website.
+    Route::get('/', 'PublicController@home');
 
+    Route::auth();
+    Route::get('login/{provider}', 'Auth\AuthController@redirectToProvider');
+    Route::get('login/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
     Route::get('/home', 'UserController@home');
 
-    Route::get('/admin', 'AdminController@home');
-    // Routes for facades testing
-    Route::get('facade/test', function (\Illuminate\Http\Request $request) {
-        return \Trans::to('en/admin/page/page');
-    });
+    Route::get(Trans::setLocale().'/admin', 'AdminController@home');
+    Route::get(Trans::setLocale().'admin/profile', 'AdminController@profile');
+    Route::get(Trans::setLocale().'admin/lock', 'AdminController@lock');
+    Route::get(Trans::setLocale().'admin/masters', 'AdminController@masters');
+    Route::get(Trans::setLocale().'admin/reports', 'AdminController@reports');
 });
 
-
-// Routes for facades testing
-Route::get('test/crypt', function () {
-
-});
-
-// Routes for facades testing
-Route::get('test/decrypt', function () {
-    return strlen('eyJpdiI6IkI2R0Yxc2tNR0hGdEtpVWR6ZzA3OEE9PSIsInZhbHVlIjoiSUxadEF5b3BZMEZYWU02cnRRcGxqdHFrM29tbzk4cXh6M1RVbkxFTXNUUXVHTmhEXC9qQVc1VWltVWlDayswQ0QiLCJtYWMiOiJkYzdmYzBiNzM3ZjM4M2E3Mzg3Mzg2YzZkYjZhNWFmZTE2ZTg0ZWMyN2MwYmY3NDc0MmFlZTdlODFiMjgxN2FlIn0=');
+Route::get('/test', function(){
+    return  \Menu::menu('admin', 'menu.admin');
 });

@@ -25,6 +25,7 @@
         "jquery-validation" : "*",
         "eonasdan-bootstrap-datetimepicker":"",
         "toastr":"*",
+        "ionicons":"*",
 
         "DataTables":"*",
         "fullcalendar":"*",

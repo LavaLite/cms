@@ -33,10 +33,10 @@ return [
                     'guarded'       => ['*'],
                     'slugs'         => ['slug' => 'name'],
                     'dates'         => ['deleted_at'],
-                    'appends'       => ['eid'],
+                    'appends'       => [''],
                     'fillable'      => ['name', 'slug'],
-                    'listfields'    => ['id', 'name', 'slug'],
-                    'translate'     => ['name'],
+                    'listfields'    => ['name', 'slug'],
+                    'translate'     => [],
                     'perPage'       => '20',
 
                 ],
@@ -47,11 +47,11 @@ return [
                     'hidden'        => [],
                     'visible'       => [],
                     'guarded'       => ['*'],
-                    'slugs'         => ['slug' => 'name'],
+                    'slugs'         => [],
                     'dates'         => ['deleted_at'],
-                    'appends'       => ['eid'],
-                    'fillable'      => ['name', 'slug'],
-                    'listfields'    => ['id', 'name', 'slug'],
+                    'appends'       => [''],
+                    'fillable'      => ['name', 'permissions'],
+                    'listfields'    => ['name'],
                     'casts'         => [
                                         'permissions'   => 'array'
                                        ],
@@ -66,10 +66,10 @@ return [
                     'hidden'        => ['password', 'remember_token'],
                     'visible'       => [],
                     'guarded'       => ['*'],
-                    'slugs'         => ['slug' => 'name'],
+                    'slugs'         => [],
                     'dates'         => ['deleted_at'],
                     'appends'       => ['eid'],
-                    'fillable'      => ['reporting_id', 'name', 'email', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'web'],
+                    'fillable'      => ['reporting_id', 'name', 'email', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'permissions', 'street', 'city', 'district', 'state', 'country', 'web'],
                     'listfields'    => ['id', 'reporting_id', 'name', 'email', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'web'],
                     'uploadfolder'  => '/uploads/users',
                     'uploadable'    => [
@@ -79,6 +79,25 @@ return [
                     'casts'         => [
                                         'permissions'   => 'array'
                                        ],
+                    'perPage'       => '20',
+            ],
+
+'user_social'       => [
+                    'model'         => 'Litepie\User\Models\UserSocial',
+                    'table'         => 'user_social',
+                    'primaryKey'    => 'id',
+                    'hidden'        => [],
+                    'visible'       => [],
+                    'guarded'       => ['*'],
+                    'slugs'         => [],
+                    'dates'         => ['deleted_at'],
+                    'appends'       => ['eid'],
+                    'fillable'      => ['user_id','provider','provider_id'],
+                    'listfields'    => ['id', 'user_id','provider','provider_id'],
+                    'casts'         => [
+                                        'permissions'   => 'array'
+                                       ],
+                    'translate'     => [],
                     'perPage'       => '20',
             ],
 ];

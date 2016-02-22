@@ -12,6 +12,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    /*
+     * Store theme
+     */
+    public $theme;
+
     /* Setup theme for the controller.
      *
      */

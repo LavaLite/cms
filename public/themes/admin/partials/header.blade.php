@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="/admin" class="logo">
+    <a href="{{ Trans::to('admin') }}" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini">{!!trans('cms.name.short')!!}</span>
     <!-- logo for regular state and mobile devices -->
@@ -65,10 +65,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="/admin/profile" class="btn btn-default btn-flat">Profile</a>
+                                <a href="{{ URL::to('admin/profile') }}" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="/auth/admin/logout" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="{{ URL::to('logout') }}" class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>

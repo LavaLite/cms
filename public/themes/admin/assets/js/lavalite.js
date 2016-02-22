@@ -1,6 +1,3 @@
-
-va = true;
-
 $(function () {
     jQuery.validator.setDefaults({
         debug: true,
@@ -31,18 +28,6 @@ $(function () {
             startView: 'day'
     }).prop('type','text');
 
-    $('a').click(function(event){
-        target = $(this).data('target');
-        if (target == undefined) return;
-
-        $('#'+target).load($(this).attr('href'), function( response, status, xhr ) {
-          if ( status == "error" ) {
-            app.message(xhr, false);
-          }
-        });
-        event.preventDefault();
-    });
-
     toastr.options = {
       "closeButton": true,
       "debug": false,
@@ -62,15 +47,43 @@ $(function () {
     };
 
     $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
     });
 
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
+    });
+
+    $('body').on('click', '[data-action]', function(e) {
+        e.preventDefault();
+
+        var $tag = $(this);
+
+        if ($tag.data('action') == 'CREATE')
+            return app.create($tag.data('form'), $tag.data('load-to'), $tag.data('datatable'));
+
+        if ($tag.data('action') == 'UPDATE')
+            return app.update($tag.data('form'), $tag.data('load-to'), $tag.data('datatable'));
+
+        if ($tag.data('action') == 'DELETE'){
+            return app.delete($tag.data('href'), $tag.data('load-to'), $tag.data('datatable'));
+        }
+        if ($tag.data('action') == 'REQUEST')
+            return app.makeRequest($tag.data('method'), $tag.data('href'));
+
+        app.load($tag.data('load-to'), $tag.data('href'));
+    });
+
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' // optional
+        });
     });
 });
 
@@ -84,7 +97,6 @@ $( document ).ajaxComplete(function() {
             sendFile(files[0], url, $(this));
         }
     });
-
 
     $('input[type="date"]').datetimepicker({
         format: "yyyy-mm-dd",
@@ -112,14 +124,8 @@ $( document ).ajaxComplete(function() {
     });
 });
 
-$('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
-    });
-});
 
+/*
 $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
     app.message(jqxhr);
 });
@@ -127,7 +133,6 @@ $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
 $( document ).ajaxSuccess(function( event, xhr, settings ) {
     app.message(xhr);
 });
-
 function sendFile(file, url, editor) {
     var data = new FormData();
     data.append("file", file);
@@ -146,9 +151,151 @@ function sendFile(file, url, editor) {
         }
     });
 }
+*/
 
 var app = {
-    'message': function(info){
+
+    'create' : function(forms, tag, datatable) {
+        var form = $(forms);
+
+        if(form.valid() == false) {
+            toastr.error('Please enter valid information.', 'Error');
+            return false;
+        }
+
+        var formData = new FormData($(forms));
+        params   = form.serializeArray();
+
+        $.each(params, function(i, val) {
+            formData.append(val.name, val.value);
+        });
+
+        $.each($(forms + ' .html-editor'), function(i, val) {
+            formData.append(val.name, $('#'+val.id).code());
+        });
+
+        var url  = form.attr('action');
+
+        $.ajax( {
+            url: url,
+            type: 'POST',
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success:function(data, textStatus, jqXHR)
+            {
+                app.load(tag, data.redirect);
+                $(datatable).DataTable().ajax.reload( null, false );
+            }
+        });
+    },
+
+    'update' : function(forms, tag, datatable) {
+        var form = $(forms);
+
+        if(form.valid() == false) {
+            toastr.error('Please enter valid information.', 'Error');
+            return false;
+        }
+
+        var formData = new FormData($(forms));
+        params   = form.serializeArray();
+
+        $.each(params, function(i, val) {
+            formData.append(val.name, val.value);
+        });
+
+        $.each($(forms + ' .html-editor'), function(i, val) {
+            formData.append(val.name, $('#'+val.id).code());
+        });
+
+        var url  = form.attr('action');
+
+        $.ajax( {
+            url: url,
+            type: 'POST',
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success:function(data, textStatus, jqXHR)
+            {
+                app.load(tag, data.redirect);
+                $(datatable).DataTable().ajax.reload( null, false );
+            }
+        });
+    },
+
+    'delete' : function(target, tag, datatable) {
+        swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this data!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it!",
+            closeOnConfirm: false
+        }, function(){
+            var data = new FormData();
+            $.ajax({
+                url: target,
+                type: 'DELETE',
+                processData: false,
+                contentType: false,
+                dataType: 'json',
+                success:function(data, textStatus, jqXHR)
+                {
+                    swal("Deleted!", data.message, "success");
+                    app.load(tag, data.redirect);
+                    $(datatable).DataTable().ajax.reload( null, false );
+                },
+            });
+        });
+    },
+
+    'load' : function(tag, target) {
+        console.log(tag + ' ' + target);
+        $(tag).load(target);
+    },
+
+    'sendFile' : function(file, url, editor) {
+        var data = new FormData();
+        formData.append("file", file);
+        $.ajax({
+            data: data,
+            type: "POST",
+            url: url,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(objFile) {
+                editor.summernote('insertImage', objFile.folder+objFile.file);
+            },
+            error: function(jqXHR, textStatus, errorThrown)
+            {
+            }
+        });
+    },
+
+    'makeRequest' : function(method, target) {
+        $.ajax({
+            url: target,
+            type: method,
+            success:function(data, textStatus, jqXHR)
+            {
+                app.message(jqXHR);
+            },
+            error: function(jqXHR, textStatus, errorThrown)
+            {
+                app.message(jqXHR);
+            }
+        });
+    },
+
+    'message' : function(info){
 
         if (info.status == 200) {
             return true;
@@ -191,25 +338,7 @@ var app = {
         if (msgType != undefined)
             toastr[msgType](msgText, msgTitle);
 
-
         return true;
-
-    },
-
-    'delete' : function(url){
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: {_method: 'DELETE'},
-            success:function(data, textStatus, jqXHR)
-            {
-                app.message(jqXHR);
-            },
-            error: function(jqXHR, textStatus, errorThrown)
-            {
-                app.message(jqXHR);
-            }
-        });
-        e.preventDefault();
     }
 }
+

@@ -22,13 +22,11 @@ return [
                         'lg'        => ['width' => '800',    'height' => '600'],
                         'xl'        => ['width' => '1000',   'height' => '750'],
                     ],
-'view'      => base_path('resources/views/menu'),
 
 'menu'      => [
-                'name'          => 'Menu',
-                'table'         => 'menus',
-                'model'         => 'Litepie\Menu\Models\Menu',
-                'permissions'   => ['admin'     => ['view', 'create', 'edit', 'delete']],
+                'name'              => 'Menu',
+                'table'             => 'menus',
+                'model'             => 'Litepie\Menu\Models\Menu',
                 'fillable'          => ['parent_id', 'key', 'url', 'icon', 'permission', 'name', 'description', 'open', 'has_sub', 'order', 'status'],
                 'listfields'        => ['id', 'name', 'level', 'url','order', 'icon', 'status', 'has_sub','type','open','key'],
                 'upload-folder'     => 'uploads/menu',

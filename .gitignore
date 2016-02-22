@@ -1,4 +1,9 @@
 /vendor
 /node_modules
-composer.lock
+/public/storage
+Homestead.yaml
+Homestead.json
 .env
+composer.develop.json
+composer.lock
+framework

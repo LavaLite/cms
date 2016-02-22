@@ -16,20 +16,28 @@ return [
 */
 'modules'   => ['message'],
 
+'image' => [
+            'xs'            => ['width' => '60',     'height' => '45',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'sm'            => ['width' => '160',    'height' => '75',  'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'md'            => ['width' => '460',    'height' => '345', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'lg'            => ['width' => '800',    'height' => '600', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            'xl'            => ['width' => '1000',   'height' => '750', 'action' => 'resize', 'default' => 'images/noimage.jpg', 'watermark' => 'images/logo/default.png'],
+            ],
+
 // Modale variables for message module.
 'message' => [
-                'model'         => 'Lavalite\Messahe\Models\Messahe',
+                'model'         => 'Lavalite\Message\Models\Message',
                 'table'         => 'messages',
                 'primaryKey'    => 'id',
                 'hidden'        => [],
                 'visible'       => [],
                 'guarded'       => ['*'],
-                'slugs'         => ['slug' => 'name'],
-                'dates'         => ['deleted_at'],
-                'appends'       => ['id'],
-                'fillable'      => ['message', 'start', 'end'],
-                'listfields'    => ['message', 'start', 'end'],
-                'uploadfolder'  => '/uploads/message',
+                'slugs'         => [],
+                'dates'         => ['deleted_at','created_at','updated_at'],
+                'appends'       => ['eid'],
+                'fillable'      => ['user_id', 'status', 'sub_status',  'from',  'to',  'subject',  'message',  'read',  'type'],
+                'listfields'    => ['id', 'status', 'sub_status',  'from',  'to',  'subject',  'message',  'read',  'type'],
+                'uploadfolder'  => '/uploads/message/message',
                 'uploads'       => [
                                         'single'   => [],
                                         'multiple' => [],
@@ -37,7 +45,10 @@ return [
                 'casts'         => [
                                    ],
                 'encrypt'       => ['id'],
-                'translate'     => [],
                 'perPage'       => '20',
+
+
            ],
+
+
 ];

@@ -6,14 +6,12 @@ use Redirect;
 use Request;
 use App;
 
-class UserController extends Controller
+class UserController extends WebCurdController
 {
 
     public function __construct()
     {
-        $request = App::make(\Illuminate\Http\Request::class);
-        $this->middleware('web');
-        $this->middleware('auth.role:admin');
+        parent::__construct();
         $this->setupTheme(config('theme.themes.user.theme'), config('theme.themes.user.layout'));
     }
 
@@ -24,62 +22,7 @@ class UserController extends Controller
      */
     public function home()
     {
-        return $this->theme->of('public::user.dashboard')->render();
+        return $this->theme->of('public::welcome')->render();
     }
 
-    /**
-     * Return success message.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function error($message, $status = 400)
-    {
-        if (Request::ajax()) {
-            return json_encode(['redirect' => $this->getRedirectPath(), 'status' => 'error']);
-        }
-
-        return Redirect::to($this->getRedirectPath())->withInput()->with('error', $message);
-    }
-
-    /**
-     * Return error message.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function success($message, $status = 201)
-    {
-        if (Request::ajax()) {
-            return json_encode(['redirect' => $this->getRedirectPath(), 'status' => 'success']);
-        }
-
-        return Redirect::to($this->getRedirectPath())->withInput()->with('success', $message);
-    }
-
-    /**
-     * Return the redirect path.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function getRedirectPath()
-    {
-        return $this->redirectPath;
-    }
-
-    /**
-     * Return the redirect path.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function setRedirectPath($path)
-    {
-        $this->redirectPath = $path;
-    }
 }

@@ -5,7 +5,9 @@
                 <h1>Reset <small>Password</small></h1>
                 <hr>
 
-                {!!Former::vertical_open()!!}
+                {!!Form::vertical_open()
+                ->method('POST')
+                ->action('password/email')!!}
                 {!! csrf_field() !!}
                 @if (Session::has('status'))
                 <div class="alert alert-info">
@@ -14,7 +16,7 @@
                 @else
                 If you have forgotten your password - reset it.
                 @endif
-                {!!Former::text('email')!!}
+                {!!Form::text('email')!!}
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-xs-6">
@@ -22,7 +24,7 @@
                     </div>
                     <!-- /.col -->
                 </div>
-                {!!Former::Close()!!}
+                {!!Form::Close()!!}
                 <a href="/login">Back to login</a><br>
             </div>
         </div>

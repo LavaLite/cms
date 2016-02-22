@@ -49,6 +49,7 @@ return [
                 'appends'       => ['eid'],
                 'fillable'      => ['heading', 'title', 'name', 'slug', 'order', 'view', 'compiler', 'status', 'upload_folder', 'content', 'keyword', 'description', 'abstract'],
                 'listfields'    => ['id', 'name', 'category_id', 'slug', 'order', 'status', 'heading', 'title', 'abstract', 'compiler', 'view'],
+                'translate'     => ['name', 'heading', 'content', 'title', 'keyword', 'description'],
                 'uploadfolder'  => '/uploads/page',
                 'uploads'       => [
                                         'single'   => ['banner'],
@@ -59,7 +60,6 @@ return [
                                         'images' => 'array',
                                    ],
                 'encrypt'       => ['id'],
-                'translate'     => ['name', 'heading', 'content', 'title', 'keyword', 'description'],
                 'revision'     => ['name', 'title'],
                 'perPage'       => '20',
            ],
