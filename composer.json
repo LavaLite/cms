@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "litepie/framework": "dev-master",
+        "lavalite/framework": "dev-master",
         "lavalite/page": "dev-master",
         "lavalite/settings": "dev-master",
         "lavalite/task": "dev-master",
