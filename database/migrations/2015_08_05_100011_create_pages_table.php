@@ -22,7 +22,7 @@ class CreatePagesTable extends Migration
                 $table->integer('order')->nullable();
                 $table->mediumText('banner')->nullable();
                 $table->string('view', 20)->default('page');
-                $table->enum('compiler', ['php','blade','twif','none'])->default('none')->nullable();
+                $table->enum('compiler', ['php', 'blade', 'twif', 'none'])->default('none')->nullable();
                 $table->boolean('status')->default('1');
                 $table->string('upload_folder', 100)->nullable();
                 $table->text('heading')->nullable();

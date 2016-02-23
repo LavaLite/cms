@@ -1,17 +1,16 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 
 class CreateUsersTable extends Migration
 {
     /**
-         * Run the migrations.
-         *
-         * @return void
-         */
+          * Run the migrations.
+          *
+          * @return void
+          */
          public function up()
-         {        /**
+         {        /*
              * Table: users
              */
             Schema::create('users', function ($table) {
@@ -22,7 +21,7 @@ class CreateUsersTable extends Migration
                 $table->string('password', 100);
                 $table->boolean('active')->nullable();
                 $table->string('remember_token', 255)->nullable();
-                $table->enum('sex', ['', 'male','female'])->nullable();
+                $table->enum('sex', ['', 'male', 'female'])->nullable();
                 $table->date('dob')->nullable();
                 $table->string('designation', 50)->nullable();
                 $table->string('mobile', 100)->nullable();
@@ -41,11 +40,11 @@ class CreateUsersTable extends Migration
             });
          }
 
-        /**
-         * Reverse the migrations.
-         *
-         * @return void
-         */
+         /**
+          * Reverse the migrations.
+          *
+          * @return void
+          */
          public function down()
          {
              Schema::drop('users');
