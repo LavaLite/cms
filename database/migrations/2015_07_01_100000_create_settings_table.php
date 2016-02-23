@@ -21,7 +21,7 @@ class CreateSettingsTable extends Migration
                 $table->string('skey')->nullable();
                 $table->string('name')->nullable();
                 $table->string('value')->nullable();
-                $table->enum('type', ['System','Default','User'])->nullable();
+                $table->enum('type', ['System', 'Default', 'User'])->nullable();
                 $table->string('upload_folder', 100)->nullable();
                 $table->softDeletes();
                 $table->nullableTimestamps();

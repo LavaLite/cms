@@ -24,7 +24,7 @@ class CreateMenusTable extends Migration
                 $table->string('permission', 100)->nullable();
                 $table->text('name')->nullable();
                 $table->text('description')->nullable();
-                $table->enum('open', ['New','Same'])->default('Same')->nullable();
+                $table->enum('open', ['New', 'Same'])->default('Same')->nullable();
                 $table->boolean('has_sub')->nullable();
                 $table->integer('order')->nullable();
                 $table->string('uload_folder', 150)->nullable();

@@ -27,19 +27,19 @@ class SettingTableSeeder extends Seeder
         DB::table('permissions')->insert([
             [
                 'slug'          => 'settings.setting.view',
-                'name'  => 'View Setting',
+                'name'          => 'View Setting',
             ],
             [
                 'slug'          => 'settings.setting.create',
-                'name' => 'Create Setting',
+                'name'          => 'Create Setting',
             ],
             [
                 'slug'          => 'settings.setting.edit',
-                'name' => 'Update Setting',
+                'name'          => 'Update Setting',
             ],
             [
                 'slug'          => 'settings.setting.delete',
-                'name' => 'Delete Setting',
+                'name'          => 'Delete Setting',
             ],
         ]);
 

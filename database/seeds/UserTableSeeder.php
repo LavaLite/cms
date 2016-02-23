@@ -6,7 +6,6 @@ class UserTableSeeder extends Seeder
 {
     public function run()
     {
-
         DB::table('users')->insert([
 
             [
@@ -22,6 +21,5 @@ class UserTableSeeder extends Seeder
                 'created_at'  => '2015-09-15',
             ],
         ]);
-
     }
 }

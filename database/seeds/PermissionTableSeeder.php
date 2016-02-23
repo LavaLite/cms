@@ -1,6 +1,6 @@
 <?php
+
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
 
 class PermissionTableSeeder extends Seeder
 {
@@ -9,20 +9,20 @@ class PermissionTableSeeder extends Seeder
         DB::table('permissions')->insert([
             [
                 'slug'          => 'user.user.view',
-                'name'          => 'View user'
+                'name'          => 'View user',
             ],
             [
                 'slug'          => 'user.user.create',
-                'name'          => 'Create user'
+                'name'          => 'Create user',
             ],
             [
                 'slug'          => 'user.user.edit',
-                'name'          => 'Update user'
+                'name'          => 'Update user',
             ],
             [
                 'slug'          => 'user.user.delete',
-                'name'          => 'Delete user'
-            ]
+                'name'          => 'Delete user',
+            ],
 
         ]);
     }
