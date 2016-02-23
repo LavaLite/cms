@@ -23,19 +23,12 @@ Please check the system requirements before installing Lavalite.
     * `git clone git@github.com:LavaLite/cms.git`
     * From a command line open in the folder, run `composer install`.
   * Composer:
-    * `composer create-project LavaLite/cms your-project-name --prefer-dist`
-4. Publish migratins seeds config etc `php artisan vendor:publish`
-5. Enter your database details in `.env` file on root folder.
-6. Run `php artisan migrate` to setup your database.
-7. Execute below commands to seed your tables, before executing this commands run `composer dump-autoload` to load published table seeders to the class map.
-   - `php artisan db:seed --class=PageTableSeeder`
-   - `php artisan db:seed --class=MenuTableSeeder`
-   - `php artisan db:seed --class=RoleTableSeeder`
-   - `php artisan db:seed --class=PermissionTableSeeder`
-   - `php artisan db:seed --class=UserTableSeeder`
-8. You can contigure mail server details in `config/mail.php`.
-9. You can configure the site in the app/config folder before production.
-10. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
+    * `composer create-project LavaLite/cms your-project-name dev-master`
+2. Enter your database details in `.env` file on root folder.
+3. Run `php artisan migrate --seed` to setup your database.
+4. You can contigure mail server details in `config/mail.php`.
+5. You can configure the site in the config folder before production.
+6. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
 
 ####Permissions
@@ -56,8 +49,3 @@ http://laravel.com/docs/5.1/installation
 
 ### PHP Libraries
 * [laravel/laravel](https://github.com/laravel/laravel) - A PHP Framework For Web Artisans
-* [anahkiasen/former](https://github.com/Anahkiasen/former‎) - A powerful form builder
-* [teepluss/theme](https://github.com/teepluss/laravel4-theme) - Theme and asset management
-
-### Support
-If you wish to support this project, send money through paypal to info@lavalite.org
