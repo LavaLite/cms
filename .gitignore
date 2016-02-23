@@ -1,9 +1,9 @@
 .env
 /vendor
 /node_modules
-/public/storage
-Homestead.yaml
-Homestead.json
+/public/uploads
+/Homestead.yaml
+/Homestead.json
+/framework
 composer.develop.json
 composer.lock
-framework

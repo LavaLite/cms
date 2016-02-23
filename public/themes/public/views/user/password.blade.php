@@ -25,7 +25,7 @@
                     <!-- /.col -->
                 </div>
                 {!!Form::Close()!!}
-                <a href="/login">Back to login</a><br>
+                <a href="{{trans_url('/login')}}">Back to login</a><br>
             </div>
         </div>
     </div>

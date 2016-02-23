@@ -10,15 +10,15 @@
                 ->method('POST')
                 ->action('/login')
                 ->class('white-row')!!}
-                <label for="email" class="control-label" style="color:#333;">{!!trans('user::user.label.email')!!}</label>
+                <label for="email" class="control-label" style="color:#333;">{!!trans('user.user.label.email')!!}</label>
                 {!! Form::email('email','')
-                -> placeholder(trans('user::user.placeholder.email'))!!}
-                <label for="password" class="control-label" style="color:#333;">{!!trans('user::user.label.password')!!}</label>
+                -> placeholder(trans('user.user.placeholder.email'))!!}
+                <label for="password" class="control-label" style="color:#333;">{!!trans('user.user.label.password')!!}</label>
                 {!! Form::password('password','')
-                -> placeholder(trans('user::user.placeholder.password'))!!}
+                -> placeholder(trans('user.user.placeholder.password'))!!}
                 <label for="rememberme" class="control-label" style="color:#333;">Remember me</label>
                 {!! Form::checkbox('rememberme', '')->inline()!!}
-                {!! Form::submit(trans('user::user.signin'), array('class' => 'btn btn-primary pull-right'))!!}
+                {!! Form::submit(trans('user.signin'), array('class' => 'btn btn-primary pull-right'))!!}
                 <br>
                 <br>
                 <div class="row">
@@ -30,8 +30,8 @@
                     </div>
                 </div>
                 {!! Form::close() !!}
-                <font style="color:#333;">Forgot password?</font> <a href="/password/reset"> Click to reset </a> <br>
-                <font style="color:#333;">Don't have an account yet?</font> <a href="/register"> Click to create one </a>
+                <font style="color:#333;">Forgot password?</font> <a href="{{trans_url('/password/reset')}}"> Click to reset </a> <br>
+                <font style="color:#333;">Don't have an account yet?</font> <a href="{{trans_url('/register')}}"> Click to create one </a>
             </div>
         </div>
     </div>

@@ -14,18 +14,18 @@
                 {!! Form::hidden('token')->value($token) !!}
 
                 {!! Form::email('email')
-                -> label(trans('user::user.label.email'))
-                -> placeholder(trans('user::user.placeholder.email'))!!}
+                -> label(trans('User::user.label.email'))
+                -> placeholder(trans('User::user.placeholder.email'))!!}
 
                 {!! Form::password('password')
-                -> label(trans('user::user.label.password'))
-                -> placeholder(trans('user::user.placeholder.password'))!!}
+                -> label(trans('User::user.label.password'))
+                -> placeholder(trans('User::user.placeholder.password'))!!}
 
                 {!! Form::password('password_confirmation')
-                -> label(trans('user::user.label.password_confirmation'))
-                -> placeholder(trans('user::user.placeholder.password_confirmation'))!!}
+                -> label(trans('User::user.label.password_confirmation'))
+                -> placeholder(trans('User::user.placeholder.password_confirmation'))!!}
 
-                {!! Form::submit(trans('user::user.reset'))!!}
+                {!! Form::submit(trans('User::user.reset'))!!}
                 <br>
                 <br>
 

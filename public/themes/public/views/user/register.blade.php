@@ -12,20 +12,20 @@
                     ->class('white-row')!!}
 
                     {!! Form::text('name')
-                    -> label(trans('user::user.label.name'))
-                    -> placeholder(trans('user::user.placeholder.name'))!!}
+                    -> label(trans('user.user.label.name'))
+                    -> placeholder(trans('user.user.placeholder.name'))!!}
                     {!! Form::email('email')
-                    -> label(trans('user::user.label.email'))
-                    -> placeholder(trans('user::user.placeholder.email'))!!}
+                    -> label(trans('user.user.label.email'))
+                    -> placeholder(trans('user.user.placeholder.email'))!!}
                     {!! Form::password('password')
-                    -> label(trans('user::user.label.password'))
-                    -> placeholder(trans('user::user.placeholder.password'))!!}
-                    {!! Form::submit(trans('user::user.signin'))!!}
+                    -> label(trans('user.user.label.password'))
+                    -> placeholder(trans('user.user.placeholder.password'))!!}
+                    {!! Form::submit(trans('user.signin'))!!}
                     <br>
                     <br>
 
                     {!! Form::close() !!}
-                    Already have an account ! <a href="/login"> Click to login </a>
+                    Already have an account ! <a href="{{trans_url('/login')}}"> Click to login </a>
                 </div>
             </div>
         </div>

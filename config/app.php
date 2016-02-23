@@ -173,7 +173,6 @@ return [
         Lavalite\Calendar\Providers\CalendarServiceProvider::class,
         Lavalite\Task\Providers\TaskServiceProvider::class,
         Lavalite\Settings\Providers\SettingsServiceProvider::class,
-        Lavalite\Package\Providers\PackageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -232,20 +231,19 @@ return [
         'AuthenticateUser'     => App\AuthenticateUser::class,
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
         'Form'      => Litepie\Support\Facades\Form::class,
         'Theme'     => Litepie\Support\Facades\Theme::class,
         'Trans'     => Litepie\Support\Facades\Trans::class,
         'Hashids'   => Litepie\Support\Facades\Hashids::class,
         'Filer'     => Litepie\Support\Facades\Filer::class,
+        'User'      => Litepie\Support\Facades\User::class,
+        'Menu'      => Litepie\Support\Facades\Menu::class,
 
-        'Menu'     => Lavalite\Menu\Facades\Menu::class,
-        'Page'     => Lavalite\Page\Facades\Page::class,
-        'User'     => Lavalite\User\Facades\User::class,
-        'Settings' => Lavalite\Settings\Facades\Settings::class,
-        'Task'     => Lavalite\Task\Facades\Task::class,
-        'Calendar' => Lavalite\Calendar\Facades\Calendar::class,
-        'Message'  => Lavalite\Message\Facades\Message::class,
+        'Page'      => Lavalite\Page\Facades\Page::class,
+        'Settings'  => Lavalite\Settings\Facades\Settings::class,
+        'Task'      => Lavalite\Task\Facades\Task::class,
+        'Calendar'  => Lavalite\Calendar\Facades\Calendar::class,
+        'Message'   => Lavalite\Message\Facades\Message::class,
     ],
 
 ];
