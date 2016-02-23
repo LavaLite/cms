@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MessageTableSeeder::class);
         $this->call(TaskTableSeeder::class);
         $this->call(CalendarTableSeeder::class);
-        $this->call(SettingsTableSeeder::class);
+        $this->call(SettingTableSeeder::class);
 
         Model::reguard();
     }
