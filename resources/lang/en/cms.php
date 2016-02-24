@@ -14,8 +14,8 @@ return [
     'name.short'      => '<b>L</b>l',
     'admin.panel'     => 'Admin Panel',
     'dashboard'       => 'Dashboard',
-    'all.rights'      => "<strong>Copyright © 2014-2015 <a href='http://lavalite.org'>Lava lite</a>.</strong> All rights reserved.",
-    'version'         => '<b>Version</b> 5.1',
+    'all.rights'      => "<strong>Copyright © 2014-2016 <a href='http://lavalite.org' target='_blank'>Lava lite</a>.</strong> All rights reserved.",
+    'version'         => '<b>Version</b> 4.0',
 
     'add'            => 'Add',
     'back'           => 'Back',
