@@ -2,6 +2,8 @@
 
 This is an implementation of the backend of lavalite, which can be used for web based application and Content Management System based upon [Laravel 5.1](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
 
+## Documentation
+Visit [Wiki](https://github.com/LavaLite/cms/wiki) for documentation
 
 ## System Requirements
 
