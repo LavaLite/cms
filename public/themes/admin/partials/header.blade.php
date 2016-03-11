@@ -1,3 +1,17 @@
+<?php
+function humanTiming ($time)
+{
+$time = time() - $time; // to get the time since that moment
+$time = ($time<1)? 1 : $time;
+    $tokens = array ( 31536000 => 'year', 2592000 => 'month', 604800 => 'week', 86400 => 'day', 3600 => 'hour', 60 => 'minute', 1 => 'second');
+    foreach ($tokens as $unit =>
+    $text) {
+    if ($time < $unit) continue;
+    $numberOfUnits = floor($time / $unit);
+    return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+    }
+    }
+    ?>
 <header class="main-header">
     <!-- Logo -->
     <a href="{{ Trans::to('admin') }}" class="logo">
@@ -19,7 +33,7 @@
                 <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-envelope-o"></i>
-                  <span class="label label-success">4</span>
+                  <span class="label label-success"> {!!Message::count('Inbox')!!}</span>
                 </a>
                 {!! Message::display('drop') !!}
                 </li>
@@ -27,7 +41,7 @@
                 <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-calendar"></i>
-                  <span class="label label-warning">10</span>
+                  <span class="label label-warning">  {!!count(Calendar::latestEvents())!!}</span>
                 </a>
                 {!! Calendar::display('drop') !!}
                 </li>
@@ -35,7 +49,7 @@
                 <li class="dropdown tasks-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-flag-o"></i>
-                  <span class="label label-danger">9</span>
+                  <span class="label label-danger">  {!!count(Task::tasks())!!}</span>
                 </a>
                 {!! Task::display('drop') !!}
                 </li>
@@ -81,3 +95,29 @@
         </div>
     </nav>
 </header>
+<style type="text/css">
+    .img-circle{
+        width: 40px;
+        height: 40px;
+        margin: auto 10px auto auto; 
+    }
+    .dropdown-menu > li .menu > li > a > h4 {
+    padding: 0;
+    margin: 0 0 0 45px;
+    color: #444444;
+    font-size: 15px;
+    position: relative;
+}
+.dropdown-menu > li .menu > li > a > p {
+    margin: 0 0 0 45px;
+    font-size: 12px;
+    color: #888888;
+}
+.dropdown-menu > li .menu > li > a > h4 > small {
+    color: #999999;
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+</style>
