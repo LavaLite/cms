@@ -19,7 +19,7 @@ class CreateCalendarsTable extends Migration
         Schema::create('calendars', function ($table) {
             $table->increments('id');
             $table->string('category_id', 255)->nullable();
-            $table->enum('status', ['Draft','Both','Calendar'])->nullable();
+            $table->enum('status', ['Draft', 'Both', 'Calendar'])->nullable();
             $table->dateTime('start')->nullable();
             $table->dateTime('end')->nullable();
             $table->string('location', 255)->nullable();

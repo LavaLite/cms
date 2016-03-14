@@ -229,7 +229,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         'AuthenticateUser'     => App\AuthenticateUser::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Socialite'            => Laravel\Socialite\Facades\Socialite::class,
 
         'Captcha'   => Litepie\Support\Facades\Captcha::class,
         'Form'      => Litepie\Support\Facades\Form::class,

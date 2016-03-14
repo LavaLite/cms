@@ -65,7 +65,7 @@ class AuthController extends Controller
      *
      * @return Response
      */
-    public function showRegistrationForm($role = NULL)
+    public function showRegistrationForm($role = null)
     {
         $role = empty($role) ? $this->getDefaultRole() : $role;
 
@@ -86,9 +86,9 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name'     => 'required|max:255',
-            'email'    => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6',
+            'name'                 => 'required|max:255',
+            'email'                => 'required|email|max:255|unique:users',
+            'password'             => 'required|min:6',
             'g-recaptcha-response' => 'required|recaptcha',
         ]);
     }
@@ -102,7 +102,6 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-
         $role = empty($data['role']) ? $this->getDefaultRole() : $data['role'];
 
         if (!$this->isValidRole($role)) {
@@ -139,15 +138,14 @@ class AuthController extends Controller
     public function handleProviderCallback($provider)
     {
         $user = Socialite::driver($provider)->user();
-        return $this->theme->of('public::user.social', compact('user'))->render();
 
+        return $this->theme->of('public::user.social', compact('user'))->render();
     }
 
     /**
-     * Get the default role for a user
+     * Get the default role for a user.
      *
      * @return string
-     * 
      **/
     public function getDefaultRole()
     {
@@ -157,8 +155,7 @@ class AuthController extends Controller
     /**
      * Validate a given role.
      *
-     * @return boolean
-     * 
+     * @return bool
      **/
     public function isValidRole($role)
     {
