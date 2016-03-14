@@ -23,7 +23,7 @@
         "jquery.inputmask":"*",
         "summernote":"*",
         "jquery-validation" : "*",
-        "eonasdan-bootstrap-datetimepicker":"",
+        "pickadate":"*",
         "toastr":"*",
         "ionicons":"*",
 

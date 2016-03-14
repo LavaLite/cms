@@ -2,26 +2,32 @@
 <html class="lockscreen">
     <head>
         <meta charset="UTF-8">
-        <title>{{ Theme::getTitle() }}</title>
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ Theme::getTitle() }}</title>
+        <meta name="description" content="The Lavalite Content Management System">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="{{asset('apple-touch-icon.png')}}">
         <link href="{{ asset(elixir('css/vendor_public.css')) }}" rel="stylesheet">
+        
         {!! Theme::asset()->styles() !!}
         {!! Theme::asset()->scripts() !!}
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
     </head>
 
 <body class="user">
 
     {!! Theme::partial('header') !!}
     <div class="container">
-    {!! Theme::content() !!}
+        <div style="min-height:500px;">
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    {!! Theme::partial('user') !!}
+                </div>
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    {!! Theme::content() !!}
+                </div>
+            </div>
+        </div>
     </div>
     {!! Theme::partial('footer') !!}
     <script src="{{ asset(elixir('js/vendor_public.js')) }}"></script>

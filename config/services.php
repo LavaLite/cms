@@ -47,7 +47,7 @@ return [
         'redirect'      => env('FACEBOOK_CALLBACK_URL'),
     ],
 
-    'google-plus' => [
+    'google' => [
         'client_id'     => env('GOOGLEPLUS_CLIENT_ID'),
         'client_secret' => env('GOOGLEPLUS_CLIENT_SECRET'),
         'redirect'      => env('GOOGLEPLUS_CALLBACK_URL'),

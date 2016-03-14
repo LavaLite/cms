@@ -1,4 +1,4 @@
-.env
+*.env
 /vendor
 /node_modules
 /public/uploads
@@ -6,4 +6,5 @@
 /Homestead.json
 /framework
 composer.develop.json
+composer.develop.lock
 composer.lock

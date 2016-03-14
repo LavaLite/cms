@@ -8,7 +8,7 @@
                 {!!Form::vertical_open()
                 ->id('login')
                 ->method('POST')
-                ->action('/login')
+                ->action('login')
                 ->class('white-row')!!}
                 <label for="email" class="control-label" style="color:#333;">{!!trans('user.user.label.email')!!}</label>
                 {!! Form::email('email','')
@@ -25,7 +25,7 @@
                     <div class="col-md-12" >
                         <a href="{!!URL::to('/login/facebook')!!}" ><i class="fa fa-facebook fa-4"> </i></a> &nbsp;
                         <a href="{!!URL::to('/login/twitter')!!}" ><i class="fa fa-twitter fa-4"> </i></a> &nbsp;
-                        <a href="{!!URL::to('/login/google-plus')!!}" ><i class="fa fa-google-plus fa-4">  </i></a> &nbsp;
+                        <a href="{!!URL::to('/login/google')!!}" ><i class="fa fa-google-plus fa-4">  </i></a> &nbsp;
                         <a href="{!!URL::to('/login/linkedin')!!}" ><i class="fa fa-linkedin fa-4"> </i></a> &nbsp;
                     </div>
                 </div>

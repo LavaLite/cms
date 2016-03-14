@@ -85,6 +85,7 @@ $(function () {
           increaseArea: '20%' // optional
         });
     });
+    jQuery("time.timeago").timeago();
 });
 
 $( document ).ajaxComplete(function() {
@@ -252,6 +253,11 @@ var app = {
                     swal("Deleted!", data.message, "success");
                     app.load(tag, data.redirect);
                     $(datatable).DataTable().ajax.reload( null, false );
+                },
+                error:function(data, textStatus, jqXHR)
+                {
+                    console.log(data);
+                    swal("Delete failed!", data.message, "error");
                 },
             });
         });

@@ -8,18 +8,26 @@
                     <hr>
                     {!!Form::vertical_open()
                     ->id('contact')
+                    ->action('register')
                     ->method('POST')
                     ->class('white-row')!!}
 
                     {!! Form::text('name')
                     -> label(trans('user.user.label.name'))
                     -> placeholder(trans('user.user.placeholder.name'))!!}
+
                     {!! Form::email('email')
                     -> label(trans('user.user.label.email'))
                     -> placeholder(trans('user.user.placeholder.email'))!!}
+
                     {!! Form::password('password')
                     -> label(trans('user.user.label.password'))
                     -> placeholder(trans('user.user.placeholder.password'))!!}
+
+                    {!! Form::hidden('role')->value($role)!!}
+
+                    {!! Captcha::render() !!}
+
                     {!! Form::submit(trans('user.signin'))!!}
                     <br>
                     <br>

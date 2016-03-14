@@ -26,9 +26,9 @@ class User extends Authenticatable
      *
      * @param $name
      */
-    public function __construct()
+    public function __construct($attributes = [])
     {
-        parent::__construct();
+        parent::__construct($attributes);
         $config = config($this->config);
         foreach ($config as $key => $val) {
             if (property_exists(get_called_class(), $key)) {

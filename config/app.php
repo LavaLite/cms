@@ -229,15 +229,16 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         'AuthenticateUser'     => App\AuthenticateUser::class,
-
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
+        'Captcha'   => Litepie\Support\Facades\Captcha::class,
         'Form'      => Litepie\Support\Facades\Form::class,
+        'Filer'     => Litepie\Support\Facades\Filer::class,
+        'Hashids'   => Litepie\Support\Facades\Hashids::class,
+        'Menu'      => Litepie\Support\Facades\Menu::class,
         'Theme'     => Litepie\Support\Facades\Theme::class,
         'Trans'     => Litepie\Support\Facades\Trans::class,
-        'Hashids'   => Litepie\Support\Facades\Hashids::class,
-        'Filer'     => Litepie\Support\Facades\Filer::class,
         'User'      => Litepie\Support\Facades\User::class,
-        'Menu'      => Litepie\Support\Facades\Menu::class,
 
         'Page'      => Lavalite\Page\Facades\Page::class,
         'Settings'  => Lavalite\Settings\Facades\Settings::class,

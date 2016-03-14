@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Request;
 use Socialite;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Theme;
 use User;
 use Validator;
@@ -64,9 +65,15 @@ class AuthController extends Controller
      *
      * @return Response
      */
-    public function showRegistrationForm()
+    public function showRegistrationForm($role = NULL)
     {
-        return $this->theme->of('public::user.register')->render();
+        $role = empty($role) ? $this->getDefaultRole() : $role;
+
+        if (!$this->isValidRole($role)) {
+            throw new NotFoundHttpException();
+        }
+
+        return $this->theme->of('public::user.register', compact('role'))->render();
     }
 
     /**
@@ -82,6 +89,7 @@ class AuthController extends Controller
             'name'     => 'required|max:255',
             'email'    => 'required|email|max:255|unique:users',
             'password' => 'required|min:6',
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
     }
 
@@ -94,7 +102,10 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        if (!User::roleExists($this->role) || $this->role == config('user.superuser_role', 'superuser') || $this->role == 'admin') {
+
+        $role = empty($data['role']) ? $this->getDefaultRole() : $data['role'];
+
+        if (!$this->isValidRole($role)) {
             throw new NotFoundHttpException();
         }
 
@@ -103,7 +114,8 @@ class AuthController extends Controller
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-        $role = User::findRole($this->role);
+
+        $role = User::findRole($role);
         $user->attachRole($role);
 
         return $user;
@@ -127,5 +139,37 @@ class AuthController extends Controller
     public function handleProviderCallback($provider)
     {
         $user = Socialite::driver($provider)->user();
+        return $this->theme->of('public::user.social', compact('user'))->render();
+
+    }
+
+    /**
+     * Get the default role for a user
+     *
+     * @return string
+     * 
+     **/
+    public function getDefaultRole()
+    {
+        return config('user.default_role', $this->role);
+    }
+
+    /**
+     * Validate a given role.
+     *
+     * @return boolean
+     * 
+     **/
+    public function isValidRole($role)
+    {
+        if (!in_array($role, config('user.roles'))) {
+            return false;
+        }
+
+        if (!User::roleExists($role)) {
+            return false;
+        }
+
+        return true;
     }
 }

@@ -18,7 +18,9 @@ class CreateMessagesTable extends Migration
          */
         Schema::create('messages', function ($table) {
             $table->increments('id');
-            $table->enum('status', ['Draft','Inbox','Sent','Trash','Junk','Important','Promosions','Social'])->nullable();
+            $table->enum('status', ['Draft','Inbox','Sent','Trash','Junk','Important','Promosions','Social'])
+                  ->nullable();
+            $table->enum('star', ['Yes','No'])->nullable();
             $table->integer('from')->nullable();
             $table->integer('to')->nullable();
             $table->string('subject', 255)->nullable();

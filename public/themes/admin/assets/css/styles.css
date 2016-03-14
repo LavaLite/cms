@@ -196,3 +196,27 @@ box-shadow:1px 1px 0 rgba(255, 255, 255, 0.2) inset;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+.notification .img-circle{
+    width: 40px;
+    height: 40px;
+    margin: auto 10px auto auto; 
+}
+.notification> li .menu > li > a > h4 {
+padding: 0;
+margin: 0 0 0 45px;
+color: #444444;
+font-size: 15px;
+position: relative;
+}
+.notification> li .menu > li > a > p {
+    margin: 0 0 0 45px;
+    font-size: 12px;
+    color: #888888;
+}
+.notification> li .menu > li > a > h4 > small {
+    color: #999999;
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

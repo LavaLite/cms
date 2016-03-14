@@ -17,7 +17,7 @@ class RoleAuthenticate
      */
     public function handle($request, Closure $next, $role, $guard = null)
     {
-        if (Auth::guard($guard)->check() && Auth::guard($guard)->user()->is($role)) {
+        if (Auth::guard($guard)->check() && Auth::guard($guard)->user()->hasRoles($role)) {
             return $next($request);
         }
 
