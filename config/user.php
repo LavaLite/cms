@@ -17,7 +17,7 @@ return [
     | User's roles on public side
     |--------------------------------------------------------------------------
     |
-    | This array contains the roles which a user can be assigned while creating a 
+    | This array contains the roles which a user can be assigned while creating a
     | user form public side, donot include admin or superuser  role in thia array.
     |
     */
@@ -38,7 +38,7 @@ return [
     | Superuser role
     |--------------------------------------------------------------------------
     |
-    | Super user role name for a user, a super user can perform all functionalities 
+    | Super user role name for a user, a super user can perform all functionalities
     | on the website.
     |
     */
@@ -130,9 +130,9 @@ return [
                         'dates'         => ['deleted_at'],
                         'appends'       => ['eid'],
                         'fillable'      => ['reporting_id', 'name', 'email', 'sex', 'dob', 'designation', 'mobile', 'phone',
-                                            'address', 'permissions', 'street', 'city', 'district', 'state', 'country', 'web'],
-                        'listfields'    => ['id', 'reporting_id', 'name', 'email', 'sex', 'dob', 'designation', 'mobile', 'phone', 
-                                            'address', 'street', 'city', 'district', 'state', 'country', 'web'],
+                                            'address', 'permissions', 'street', 'city', 'district', 'state', 'country', 'web', ],
+                        'listfields'    => ['id', 'reporting_id', 'name', 'email', 'sex', 'dob', 'designation', 'mobile', 'phone',
+                                            'address', 'street', 'city', 'district', 'state', 'country', 'web', ],
                         'uploadfolder'  => '/uploads/users',
                         'uploadable'    => [
                                                 'single'   => ['photo'],

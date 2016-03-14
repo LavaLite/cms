@@ -9,9 +9,9 @@ return [
     |
     | Enter the routes name to enable dynamic imagecache manipulation.
     | This handle will define the first part of the URI:
-    | 
+    |
     | {route}/{template}/{filename}
-    | 
+    |
     | Examples: "images", "img/cache"
     |
     */
@@ -23,9 +23,9 @@ return [
     | Storage paths
     |--------------------------------------------------------------------------
     |
-    | The following paths will be searched for the image filename, submited 
-    | by URI. 
-    | 
+    | The following paths will be searched for the image filename, submited
+    | by URI.
+    |
     | Define as many directories as you like.
     |
     */
@@ -41,7 +41,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may specify your own manipulation filter templates.
-    | The keys of this array will define which templates 
+    | The keys of this array will define which templates
     | are available in the URI:
     |
     | {route}/{template}/{filename}

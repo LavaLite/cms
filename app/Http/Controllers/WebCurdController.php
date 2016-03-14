@@ -115,7 +115,5 @@ class WebCurdController extends Controller
         if (array_key_exists($name, $this->response)) {
             return $this->response[$name];
         }
-
-        return;
     }
 }

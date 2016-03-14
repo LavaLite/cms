@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Page;
 
-/**
- *
- */
 class PublicController extends Controller
 {
     /**
