@@ -1,13 +1,13 @@
-## Lavalite - Bootstrapper for Laravel 5 CMS or Application.
+## Lavalite - Bootstrapper for Laravel Content Management System.
 
-This is an implementation of the backend of lavalite, which can be used for web based application and Content Management System based upon [Laravel 5.1](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
+This is an implementation of Content Management System based on [Laravel 5.2](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
 
 ## Documentation
 Visit [Wiki](https://github.com/LavaLite/cms/wiki) for documentation
 
 ## System Requirements
 
-Lavalite is designed to run on a  machine with PHP 5.5 and MySQL 5.5.
+Lavalite is designed to run on a  machine with PHP 5.5.9 and MySQL 5.5.
 
 * PHP >= 5.5.9 with
     * OpenSSL PHP Extension
@@ -51,3 +51,10 @@ http://laravel.com/docs/5.1/installation
 
 ### PHP Libraries
 * [laravel/laravel](https://github.com/laravel/laravel) - A PHP Framework For Web Artisans
+
+### Javascript Libraries
+* Updating
+
+## License
+
+The Lavalite CMS is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
