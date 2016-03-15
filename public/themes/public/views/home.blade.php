@@ -46,7 +46,7 @@
                     <div class="feature">
                         <i class="ion ion-social-github-outline"></i>
                         <h6>Powered by Laravel 5.2</h6>
-                        <p>We have tried to make use of all featues of Laravel 5.2 which help you to develope the website with all resources vailable online. </p>
+                        <p>We have tried to make use of all features of Laravel 5.2 which help you to develop the website with all resources available online.​ ​ </p>
                     </div>
                 </div>
 
@@ -54,7 +54,7 @@
                     <div class="feature">
                         <i class="ion ion-ios-gear-outline"></i>
                         <h6>Configure to your project</h6>
-                        <p>Lavaliete helps yout to configure your laravel projects easly. It acts as a bootstraper for your laravel Content Management System</p>
+                        <p>Lavalite helps you to configure your Laravel projects easily. It acts as a bootstrapper for your Laravel Content Management System.</p>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@
                     <div class="feature">
                         <i class="ion ion-ios-checkmark-outline"></i>
                         <h6>Online package builder</h6>
-                        <p>The online package builder helps you to build lavalite packages easly, The downladed package with basic requred files help you to finish your projects quickly.</p>
+                        <p>The online package builder helps you to build Lavalite packages easily, The downloaded package with basic required files help you to finish your projects quickly.</p>
                     </div>
                 </div>
 
