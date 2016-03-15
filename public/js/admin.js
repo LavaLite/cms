@@ -14,18 +14,22 @@ $(function () {
         }
     });
 
-    $('input[type="date"]').datetimepicker({
-        format: "yyyy-mm-dd",
-        viewMode: 'months'
+    $('input[type="date"]').pickadate({
+        format: 'dd mmm, yyyy',
+        formatSubmit: 'yyyy-mm-dd',
+        hiddenSuffix: '',
+        selectMonths: true,
+        selectYears: true
+
     }).prop('type','text');
 
-    $('input[type="datetime"]').datetimepicker({
-        format: "yyyy-mm-dd hh:ii:00"
-    }).prop('type','text');
-
-    $('input[type="time"]').datetimepicker({
-            format: "hh:ii:00",
-            startView: 'day'
+    $('input[type="time"]').pickatime({
+        format: 'h:i A',
+        formatSubmit: 'HH:i:00',
+        hiddenSuffix: '',
+        interval: 10,
+        selectMonths: true,
+        selectYears: true
     }).prop('type','text');
 
     toastr.options = {
@@ -99,21 +103,19 @@ $( document ).ajaxComplete(function() {
         }
     });
 
-    $('input[type="date"]').datetimepicker({
-        format: "yyyy-mm-dd",
-        minView: 'month',
-        autoclose : true
+    $('input[type="date"]').pickadate({
+        format: 'dd mmm, yyyy',
+        formatSubmit: 'yyyy-mm-dd',
+        selectMonths: true,
+        selectYears: true
     }).prop('type','text');
 
-    $('input[type="datetime"]').datetimepicker({
-        format: "yyyy-mm-dd hh:ii:00",
-        autoclose : true
-    }).prop('type','text');
-
-    $('input[type="time"]').datetimepicker({
-            format: "hh:ii:00",
-            startView: 'day',
-            autoclose : true
+    $('input[type="time"]').pickatime({
+        format: 'h:i A',
+        formatSubmit: 'HH:i:00',
+        interval: 10,
+        selectMonths: true,
+        selectYears: true
     }).prop('type','text');
 
     $.AdminLTE.boxWidget.activate()
