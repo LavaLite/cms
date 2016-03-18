@@ -6,7 +6,7 @@
     "type": "cms",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.22",
+        "laravel/framework": "5.2.*",
         "lavalite/framework": "1.0.*",
         "lavalite/page": "4.0.*",
         "lavalite/settings": "4.0.*",
