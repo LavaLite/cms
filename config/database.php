@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'fetch' => PDO::FETCH_CLASS,
+    'fetch'       => PDO::FETCH_CLASS,
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default'     => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
             'prefix'   => '',
         ],
 
-        'mysql' => [
+        'mysql'  => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'forge'),
@@ -64,7 +64,7 @@ return [
             'strict'    => false,
         ],
 
-        'pgsql' => [
+        'pgsql'  => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'localhost'),
             'database' => env('DB_DATABASE', 'forge'),
@@ -98,7 +98,7 @@ return [
     |
     */
 
-    'migrations' => 'migrations',
+    'migrations'  => 'migrations',
 
     /*
     |--------------------------------------------------------------------------
@@ -111,7 +111,7 @@ return [
     |
     */
 
-    'redis' => [
+    'redis'       => [
 
         'cluster' => false,
 
@@ -130,7 +130,7 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'pagination' => [
+    'pagination'  => [
         'limit' => 15,
     ],
 
@@ -146,8 +146,8 @@ return [
     JsonApiSerializer
 
     */
-    'fractal' => [
-        'params' => [
+    'fractal'     => [
+        'params'     => [
             'include' => 'include',
         ],
         'serializer' => League\Fractal\Serializer\DataArraySerializer::class,
@@ -159,7 +159,7 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'cache' => [
+    'cache'       => [
         /*
          |--------------------------------------------------------------------------
          | Cache Status
@@ -168,7 +168,7 @@ return [
          | Enable or disable cache
          |
          */
-        'enabled'   => true,
+        'enabled'    => true,
 
         /*
          |--------------------------------------------------------------------------
@@ -178,9 +178,9 @@ return [
          | Time of expiration cache
          |
          */
-        'minutes'   => 30,
+        'minutes'    => 30,
 
-         /*
+        /*
           |--------------------------------------------------------------------------
           | Cache Repository
           |--------------------------------------------------------------------------
@@ -198,7 +198,7 @@ return [
           |
           |
           */
-        'clean'     => [
+        'clean'      => [
 
             /*
               |--------------------------------------------------------------------------
@@ -218,15 +218,15 @@ return [
               | delete : Clear Cache on delete Entry in repository
               |
               */
-            'on' => [
+            'on'      => [
                 'create' => true,
                 'update' => true,
                 'delete' => true,
             ],
         ],
 
-        'params'    => [
-              /*
+        'params'     => [
+            /*
               |--------------------------------------------------------------------------
               | Skip Cache Params
               |--------------------------------------------------------------------------
@@ -253,7 +253,7 @@ return [
        |
        | 'except'  =>['find'],
        */
-        'allowed' => [
+        'allowed'    => [
             'only'   => null,
             'except' => null,
         ],
@@ -267,7 +267,7 @@ return [
     | Settings of request parameters names that will be used by Criteria
     |
     */
-    'criteria' => [
+    'criteria'    => [
         /*
         |--------------------------------------------------------------------------
         | Accepted Conditions
@@ -284,7 +284,8 @@ return [
         |
         */
         'acceptedConditions' => [
-            '=', 'like',
+            '=', '>', '>=', '<', '<=', '!=', '<>', 'like', 'not like', 'between',
+            'not between', 'in', 'not in', 'null', 'not null',
         ],
         /*
         |--------------------------------------------------------------------------
@@ -318,13 +319,15 @@ return [
         |   http://lavalite.local/?search=lorem&orderBy=id&sortedBy=desc
         |
         */
-        'params' => [
-            'search'        => 'search',
-            'searchFields'  => 'searchFields',
-            'filter'        => 'filter',
-            'orderBy'       => 'orderBy',
-            'sortedBy'      => 'sortedBy',
-            'with'          => 'with',
+        'params'             => [
+            'search'       => 'search',
+            'searchFields' => 'searchFields',
+            'columns'      => 'columns',
+            'sortBy'       => 'sortBy',
+            'orderBy'      => 'orderBy',
+            'with'         => 'with',
         ],
+
+        'andWhere'           => true,
     ],
 ];

@@ -28,12 +28,12 @@ return [
     |
     */
 
-    'events' => [
+    'events'  => [
 
         // Before event inherit from package config and the theme that call before,
         // you can use this event to set meta, breadcrumb template or anything
         // you want inheriting.
-        'before' => function ($theme) {
+        'before'             => function ($theme) {
             // You can remove this line anytime.
             $theme->setTitle(trans('cms.name'));
 
@@ -42,19 +42,19 @@ return [
         // Listen on event before render a theme,
         // this event should call to assign some assets,
         // breadcrumb template.
-        'beforeRenderTheme' => function ($theme) {
+        'beforeRenderTheme'  => function ($theme) {
             //You may use this event to set up your assets.
 
             //You may use this event to set up your assets.
             $theme->asset()->usePath()->add('styles', 'css/styles.css');
             $theme->asset()->usepath()->add('bootstrap', 'css/theme.css');
             $theme->asset()->usepath()->add('skin', 'css/skins/skin-red.css');
-            $theme->asset()->add('icheck', 'packages/icheck/css/icheck/square/blue.css');
+            $theme->asset()->add('icheck', 'packages/icheck/skins/square/blue.css');
 
             $theme->asset()->add('jquery', 'packages/jquery/js/jquery.min.js');
             $theme->asset()->container('footer')->add('scripts', 'js/admin.js');
             $theme->asset()->container('footer')->usePath()->add('theme', 'js/theme.min.js');
-            $theme->asset()->container('footer')->add('icheck', 'packages/icheck/js/icheck.min.js');
+            $theme->asset()->container('footer')->add('icheck', 'packages/icheck/icheck.min.js');
         },
 
         // Listen on event before render a layout,

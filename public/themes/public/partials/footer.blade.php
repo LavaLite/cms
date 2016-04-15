@@ -2,7 +2,7 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-5 platform-links">
+                <div class="col-md-5 platform-links">
                     <ul class="footer-links">
                         <li><a href="{{URL::to('about-us.html')}}">About</a></li>
                         @if(Auth::check())
@@ -13,10 +13,10 @@
 
                     </ul>
                 </div>
-                <div class="col-sm-2 logo">
+                <div class="col-md-2 logo">
                     <a href="http://www.lavalite.org/"><img src="{{ asset('img/logo/sm-default.png') }}" height="28" alt="Lavalite"></a>
                 </div>
-                <div class="col-sm-5 social">
+                <div class="col-md-5 social">
                     <ul class="footer-links">
                         <li><a href="https://twitter.com/lavalitecms" target="_blank">Twitter</a></li>
                         <li><a href="https://github.com/LavaLite" target="_blank">GitHub</a></li>

@@ -7,6 +7,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Foundation\Validation\ValidationException;
+use Litepie\Support\Facades\Theme;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
@@ -34,6 +35,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
+
         return parent::report($e);
     }
 
@@ -47,6 +49,27 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+
         return parent::render($request, $e);
     }
+
+    /**
+     * Render the given HttpException.
+     *
+     * @param  \Symfony\Component\HttpKernel\Exception\HttpException  $e
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    protected function renderHttpException(HttpException $e)
+    {
+        $status = $e->getStatusCode();
+
+        if (view()->exists("public::errors.{$status}")) {
+            $theme = Theme::uses('public')->layout('default');
+            return $theme->of("public::errors.{$status}", ['exception' => $e])->render();
+        } else {
+            return $this->convertExceptionToResponse($e);
+        }
+
+    }
+
 }

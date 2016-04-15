@@ -42,6 +42,9 @@ elixir(function(mix) {
             './vendor/bower_components/sweetalert/dist/sweetalert-dev.js',
             './vendor/bower_components/dropzone/dist/dropzone.js',
             './vendor/bower_components/summernote/dist/summernote.js',
+            './vendor/bower_components/Sortable/Sortable.min.js',
+
+            './vendor/bower_components/jquery-timeago/jquery.timeago.js',
         ], './public/js/vendor_admin.js', './public/js')
 
         .styles([
@@ -49,6 +52,7 @@ elixir(function(mix) {
             './vendor/bower_components/summernote/dist/summernote.css',
             './vendor/bower_components/sweetalert/dist/sweetalert.css',
             './vendor/bower_components/toastr/toastr.min.css',
+            './vendor/bower_components/dropzone/dist/dropzone.css',
             './vendor/bower_components/pickadate/lib/themes/classic.css',
             './vendor/bower_components/pickadate/lib/themes/classic.time.css',
             './vendor/bower_components/pickadate/lib/themes/classic.date.css',
@@ -62,10 +66,13 @@ elixir(function(mix) {
             './vendor/bower_components/jquery-validation/dist/jquery.validate.js',
             './vendor/bower_components/moment/min/moment.min.js',
             './vendor/bower_components/toastr/toastr.js',
+            './vendor/bower_components/dropzone/dist/dropzone.js',
             './vendor/bower_components/pickadate/lib/picker.js',
             './vendor/bower_components/pickadate/lib/picker.time.js',
             './vendor/bower_components/pickadate/lib/picker.date.js',
             './vendor/bower_components/summernote/dist/summernote.js',
+            './vendor/bower_components/jquery-timeago/jquery.timeago.js',
+            './vendor/bower_components/Sortable/Sortable.min.js',
         ], './public/js/vendor_public.js', './public/js')
 
         .version(["public/css/vendor_admin.css", "public/js/vendor_admin.js", "public/css/vendor_public.css", "public/js/vendor_public.js"])
@@ -74,7 +81,8 @@ elixir(function(mix) {
 
         .copy('./vendor/bower_components/DataTables/media/images', './public/packages/data-tables/images')
 
-        .copy('./vendor/bower_components/iCheck/skins', './public/packages/icheck/css/icheck')
+        .copy('./vendor/bower_components/iCheck/icheck.min.js', './public/packages/icheck/icheck.min.js')
+        .copy('./vendor/bower_components/iCheck/skins', './public/packages/icheck/skins')
 
         .copy('./vendor/bower_components/fullcalendar/dist/fullcalendar.min.css', './public/packages/fullcalendar/fullcalendar.min.css')
         .copy('./vendor/bower_components/fullcalendar/dist/fullcalendar.min.js', './public/packages/fullcalendar/fullcalendar.min.js')

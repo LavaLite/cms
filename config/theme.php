@@ -12,10 +12,19 @@ return [
     |
     */
 
-    'themes'    => [
-        'admin'  => ['theme' => 'admin',     'layout' => 'default'],
-        'public' => ['theme' => 'public',    'layout' => 'default'],
-        'user'   => ['theme' => 'public',    'layout' => 'user'],
+    'themes'        => [
+        'admin'  => [
+            'theme'  => 'admin',
+            'layout' => 'default',
+        ],
+        'public' => [
+            'theme'  => 'public',
+            'layout' => 'default',
+        ],
+        'user'   => [
+            'theme'  => 'public',
+            'layout' => 'user',
+        ],
     ],
 
     /*
@@ -28,7 +37,7 @@ return [
     |
     */
 
-    'assetUrl' => '',
+    'assetUrl'      => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +49,7 @@ return [
     |
     */
 
-    'themeDefault' => 'public',
+    'themeDefault'  => 'public',
 
     /*
     |--------------------------------------------------------------------------
@@ -63,7 +72,7 @@ return [
     |
     */
 
-    'themeDir' => 'themes',
+    'themeDir'      => 'themes',
 
     /*
     |--------------------------------------------------------------------------
@@ -75,7 +84,7 @@ return [
     |
     */
 
-    'containerDir' => [
+    'containerDir'  => [
         'layout'  => 'layouts',
         'asset'   => 'assets',
         'partial' => 'partials',
@@ -92,7 +101,7 @@ return [
     |
     */
 
-    'namespaces' => [
+    'namespaces'    => [
         'widget' => 'App\Widgets',
     ],
 
@@ -106,7 +115,7 @@ return [
     |
     */
 
-    'events' => [
+    'events'        => [
 
         // Before all event, this event will effect for global.
         'before' => function ($theme) {
@@ -114,7 +123,7 @@ return [
         },
 
         // This event will fire as a global you can add any assets you want here.
-        'asset' => function ($asset) {
+        'asset'  => function ($asset) {
             // Preparing asset you need to serve after.
             $asset->cook('backbone', function ($asset) {
                 $asset->add('backbone', '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js');
@@ -136,7 +145,7 @@ return [
     |
     */
 
-    'engines' => [
+    'engines'       => [
 
         'twig' => [
 
@@ -160,7 +169,7 @@ return [
 
             // This is laravel alias to allow in twig compiler
             // The list all of methods is at /app/config/app.php
-            'hooks' => function ($twig) {
+            'hooks'  => function ($twig) {
                 // Example add funciton name "demo".
                 /*$function = new Twig_SimpleFunction('example', function()
                 {

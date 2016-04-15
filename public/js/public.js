@@ -14,6 +14,18 @@ $(function () {
         }
     });
 
+    $('.html-editor-mini').summernote({
+        height: "200px",
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+          ]
+      });
+
     $('input[type="date"]').pickadate({
         format: 'dd mmm, yyyy',
         formatSubmit: 'yyyy-mm-dd',

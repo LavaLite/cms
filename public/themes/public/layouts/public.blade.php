@@ -14,20 +14,11 @@
         {!! Theme::asset()->scripts() !!}
     </head>
 
-<body class="user">
+<body class="public">
 
     {!! Theme::partial('header') !!}
-    <div class="container-fluid content">
-        <div style="min-height:500px;">
-            <div class="row">
-                <div class="col-md-3 col-lg-3 menu">
-                    {!! Theme::partial('user') !!}
-                </div>
-                <div class="col-md-9 col-lg-9 body">
-                    {!! Theme::content() !!}
-                </div>
-            </div>
-        </div>
+    <div class="container content">
+    {!! Theme::content() !!}
     </div>
     {!! Theme::partial('footer') !!}
     <script src="{{ asset(elixir('js/vendor_public.js')) }}"></script>

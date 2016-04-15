@@ -7,6 +7,7 @@ class UserController extends WebCurdController
     public function __construct()
     {
         parent::__construct();
+        $this->middleware('auth.role:user|admin');
         $this->setupTheme(config('theme.themes.user.theme'), config('theme.themes.user.layout'));
     }
 
@@ -17,6 +18,7 @@ class UserController extends WebCurdController
      */
     public function home()
     {
-        return $this->theme->of('public::welcome')->render();
+        return $this->theme->of('user::user.welcome')->render();
     }
+
 }
