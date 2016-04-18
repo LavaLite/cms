@@ -1,51 +1,27 @@
 {
     "name": "LavaLite",
-    "version": "2.2",
+    "version": "4.1",
     "main": "",
     "ignore": [
-    ".jshintrc",
-    "**/*.txt"
     ],
     "dependencies": {
-        "bootstrap-sass": "~3.3.5",
-        "font-awesome":"*",
-        "jquery": "*",
-        "jquery-ui": "*",
-
-        "jquery-slimscroll":"*",
-        "chartjs":"*",
-        "morris.js":"*",
-        "peity":"*",
-
-        "eonasdan-bootstrap-datetimepicker":"*",
-        "mjolnic-bootstrap-colorpicker":"*",
-        "iCheck":"*",
-        "jquery.inputmask":"*",
-        "summernote":"*",
-        "jquery-validation" : "*",
-        "pickadate":"*",
-        "toastr":"*",
-        "ionicons":"*",
-
+        "bootstrap": "*",
         "DataTables":"*",
-        "fullcalendar":"*",
-        "jquery-knob":"*",
-        "pace":"*",
-        "dropzone":"*",
-
-        "FlexSlider" : "*",
-        "sweetalert" : "*",
-        "smoke.js" : "*",
-
-        "Sortable" : "*",
-        "nestable2" : "*",
         "datatables-bootstrap3-plugin" : "*",
-
-        "classie":"*",
-        "animate-sass": "~0.6.4",
-        "font-awesome": "~4.4.0",
-        "jquery-timeago": "~1.4.2",
-        "lodash": "~3.10.1",
-        "pusher": "~3.0.0"
+        "dropzone":"*",
+        "font-awesome":"*",
+        "fullcalendar":"*",
+        "iCheck":"*",
+        "ionicons":"*",
+        "jquery": "*",
+        "jquery-timeago": "*",
+        "jquery-ui": "*",
+        "jquery-validation" : "*",
+        "nestable-2" : "*",
+        "pickadate":"*",
+        "Sortable" : "*",
+        "summernote":"*",
+        "sweetalert" : "*",
+        "toastr":"*"
     }
 }

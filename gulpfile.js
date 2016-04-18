@@ -75,21 +75,22 @@ elixir(function(mix) {
             './vendor/bower_components/Sortable/Sortable.min.js',
         ], './public/js/vendor_public.js', './public/js')
 
-        .version(["public/css/vendor_admin.css", "public/js/vendor_admin.js", "public/css/vendor_public.css", "public/js/vendor_public.js"])
+        //.version(["public/css/vendor_admin.css", "public/js/vendor_admin.js", "public/css/vendor_public.css", "public/js/vendor_public.js"])
 
-        .copy('./vendor/bower_components/font-awesome/fonts', './public/build/fonts')
+        //.copy('./vendor/bower_components/font-awesome/fonts', './public/build/fonts')
+        .copy('./vendor/bower_components/font-awesome/fonts', './public/fonts')
 
         .copy('./vendor/bower_components/DataTables/media/images', './public/packages/data-tables/images')
 
         .copy('./vendor/bower_components/iCheck/icheck.min.js', './public/packages/icheck/icheck.min.js')
-        .copy('./vendor/bower_components/iCheck/skins', './public/packages/icheck/skins')
+        .copy('./vendor/bower_components/iCheck/skins/square/', './public/packages/icheck/skins/square/')
 
         .copy('./vendor/bower_components/fullcalendar/dist/fullcalendar.min.css', './public/packages/fullcalendar/fullcalendar.min.css')
         .copy('./vendor/bower_components/fullcalendar/dist/fullcalendar.min.js', './public/packages/fullcalendar/fullcalendar.min.js')
         .copy('./vendor/bower_components/fullcalendar/lang', './public/packages/fullcalendar/lang')
 
-        .copy('./vendor/bower_components/nestable2/jquery.nestable.css', './public/packages/nestable/jquery.nestable.css')
-        .copy('./vendor/bower_components/nestable2/jquery.nestable.js', './public/packages/nestable/jquery.nestable.js')
+        .copy('./vendor/bower_components/nestable-2/jquery.nestable.css', './public/packages/nestable/jquery.nestable.css')
+        .copy('./vendor/bower_components/nestable-2/jquery.nestable.js', './public/packages/nestable/jquery.nestable.js')
 
         .copy('vendor/bower_components/jquery/dist/jquery.min.js', 'public/packages/jquery/js/jquery.min.js')
         .copy('vendor/bower_components/jquery/dist/jquery.min.map', 'public/packages/jquery/js/jquery.min.map')

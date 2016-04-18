@@ -8,7 +8,7 @@
         <meta name="description" content="The Lavalite Content Management System">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="{{asset('apple-touch-icon.png')}}">
-        <link href="{{ asset(elixir('css/vendor_public.css')) }}" rel="stylesheet">
+        <link href="{{ asset('css/vendor_public.css') }}" rel="stylesheet">
 
         {!! Theme::asset()->styles() !!}
         {!! Theme::asset()->scripts() !!}
@@ -20,7 +20,7 @@
     {!! Theme::content() !!}
     </div>
     {!! Theme::partial('footer') !!}
-    <script src="{{ asset(elixir('js/vendor_public.js')) }}"></script>
+    <script src="{{ asset('js/vendor_public.js') }}"></script>
     <script src="{{ asset('js/public.js') }}"></script>
     {!! Theme::asset()->container('footer')->scripts() !!}
 </body>

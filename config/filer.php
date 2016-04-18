@@ -12,9 +12,9 @@ return [
      */
 
     'views'                    => [
-        'upload' => 'file.upload',
-        'show'   => 'file.show',
-        'edit'   => 'file.edit',
+        'upload' => 'filer::upload',
+        'show'   => 'filer::show',
+        'edit'   => 'filer::edit',
     ],
 
     /*
