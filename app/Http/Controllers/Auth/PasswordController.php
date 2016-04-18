@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ResetsPasswords;
+use Litepie\User\Traits\PasswordManager;
 
 class PasswordController extends Controller
 {
@@ -18,7 +18,7 @@ class PasswordController extends Controller
     |
     */
 
-    use ResetsPasswords;
+    use PasswordManager;
 
     /**
      * Create a new password controller instance.
@@ -31,41 +31,4 @@ class PasswordController extends Controller
         $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
     }
 
-    /**
-     * Display the password reset view for the given token.
-     *
-     * If no token is present, display the link request form.
-     *
-     * @param string|null $token
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showResetForm($token = null)
-    {
-        if (is_null($token)) {
-            return $this->getEmail();
-        }
-
-        return $this->theme->of('public::user.reset', compact('token'))->render();
-    }
-
-    /**
-     * Display the form to request a password reset link.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showLinkRequestForm()
-    {
-        return $this->theme->of('public::user.password')->render();
-    }
-
-     /**
-      * Display the form to request a password reset link.
-      *
-      * @return \Illuminate\Http\Response
-      */
-     public function getEmail()
-     {
-         return $this->theme->of('public::user.password')->render();
-     }
 }

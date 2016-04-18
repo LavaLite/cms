@@ -7,7 +7,7 @@ class AdminController extends WebCurdController
     public function __construct()
     {
         parent::__construct();
-        $this->middleware('auth.role:admin');
+        $this->middleware('auth.role:admin|superuser');
         $this->setupTheme(config('theme.themes.admin.theme'), config('theme.themes.admin.layout'));
     }
 

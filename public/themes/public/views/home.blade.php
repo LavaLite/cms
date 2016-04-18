@@ -5,12 +5,41 @@
                     <a class="navbar-brand" href="{{trans_url('/')}}"><img src="{{asset('img/logo/inverse.png')}}" alt="Lavalite" class="img-responsive"></a>
                     <ul class="nav navbar-nav  pull-right">
                     @if(Auth::check())
-                        <li><a href="{{ URL::to('/home') }}" class="login">{{ get_users('name') }}</a></li>
-                        <li><a href="{{ URL::to('/logout') }}" class="login">LOGOUT</a></li>
+                        <li>
+                            <a href="{{ trans_url('home') }}" class="login">
+                                <span class="hidden-xs">{{ get_users('name') }}</span>
+                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-user"></i></span>
+                            </a>
+                        </li>
+                        @is('admin')
+                        <li>
+                            <a href="{{ trans_url('admin') }}" class="login">
+                                <span class="hidden-xs">Admin</span>
+                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-cog"></i></span>
+                            </a>
+                        </li>
+                        @endis
+                        <li>
+                            <a href="{{ trans_url('logout') }}" class="login">
+                                <span class="hidden-xs">Logout</span>
+                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-sign-out"></i></span>
+                            </a>
+                        </li>
                     @else
-                        <li><a href="{{ URL::to('/login') }}" class="login">LOGIN</a></li>
+                        <li>
+                            <a href="{{ trans_url('register') }}" class="login">
+                                <span class="hidden-xs">Register</span>
+                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-user"></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ trans_url('login') }}" class="login">
+                                <span class="hidden-xs">Login</span>
+                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-sign-in"></i></span>
+                            </a>
+                        </li>
                     @endif
-                    </ul>
+                      </ul>
                  </div>
             </nav>
             <div class="container">

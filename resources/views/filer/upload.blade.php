@@ -1,6 +1,7 @@
 <div class="dropzone" id="{!!$field!!}"></div>
 
 <script type="text/javascript">
+$(function () {
     var drop = $("div#{!!$field!!}").dropzone({
         url: "{!! $path !!}",
         maxFiles: {!!$files!!},
@@ -10,7 +11,8 @@
             toastr.error('Files exceedes maximum size.', 'Error');
         },
         sending: function(file, xhr, formData) {
-            formData.append("_token", $('meta[name="csrf-token"]').attr('content')); // Laravel expect the token post value to be named _token by default
+            formData.append("_token", $('meta[name="csrf-token"]').attr('content'));
+            // Laravel expect the token post value to be named _token by default
         },
         init: function() {
             this.on("success", function(file, response) {
@@ -25,4 +27,5 @@
         }
 
     });
+});
 </script>

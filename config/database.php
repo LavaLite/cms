@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'fetch' => PDO::FETCH_CLASS,
+    'fetch'       => PDO::FETCH_CLASS,
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default'     => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
             'prefix'   => '',
         ],
 
-        'mysql' => [
+        'mysql'  => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'forge'),
@@ -64,7 +64,7 @@ return [
             'strict'    => false,
         ],
 
-        'pgsql' => [
+        'pgsql'  => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'localhost'),
             'database' => env('DB_DATABASE', 'forge'),
@@ -98,7 +98,7 @@ return [
     |
     */
 
-    'migrations' => 'migrations',
+    'migrations'  => 'migrations',
 
     /*
     |--------------------------------------------------------------------------
@@ -111,7 +111,7 @@ return [
     |
     */
 
-    'redis' => [
+    'redis'       => [
 
         'cluster' => false,
 
@@ -124,207 +124,208 @@ return [
 
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Repository Pagination Limit Default
-    |--------------------------------------------------------------------------
-    |
-    */
-    'pagination' => [
+    /**
+     *--------------------------------------------------------------------------
+     * Repository Pagination Limit Default
+     *--------------------------------------------------------------------------
+     *
+     */
+    'pagination'  => [
         'limit' => 15,
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Fractal Presenter Config
-    |--------------------------------------------------------------------------
-    |
+    /**
+     *--------------------------------------------------------------------------
+     * Fractal Presenter Config
+     *--------------------------------------------------------------------------
+     *
 
     Available serializers:
     ArraySerializer
     DataArraySerializer
     JsonApiSerializer
 
-    */
-    'fractal' => [
-        'params' => [
+     */
+    'fractal'     => [
+        'params'     => [
             'include' => 'include',
         ],
         'serializer' => League\Fractal\Serializer\DataArraySerializer::class,
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Cache Config
-    |--------------------------------------------------------------------------
-    |
-    */
-    'cache' => [
-        /*
-         |--------------------------------------------------------------------------
-         | Cache Status
-         |--------------------------------------------------------------------------
-         |
-         | Enable or disable cache
-         |
+    /**
+     *--------------------------------------------------------------------------
+     * Cache Config
+     *--------------------------------------------------------------------------
+     *
+     */
+    'cache'       => [
+        /**
+         *--------------------------------------------------------------------------
+         * Cache Status
+         *--------------------------------------------------------------------------
+         *
+         * Enable or disable cache
+         *
          */
-        'enabled'   => true,
+        'enabled'    => true,
 
-        /*
-         |--------------------------------------------------------------------------
-         | Cache Minutes
-         |--------------------------------------------------------------------------
-         |
-         | Time of expiration cache
-         |
+        /**
+         *--------------------------------------------------------------------------
+         * Cache Minutes
+         *--------------------------------------------------------------------------
+         *
+         * Time of expiration cache
+         *
          */
-        'minutes'   => 30,
+        'minutes'    => 30,
 
-         /*
-          |--------------------------------------------------------------------------
-          | Cache Repository
-          |--------------------------------------------------------------------------
-          |
-          | Instance of Illuminate\Contracts\Cache\Repository
-          |
-          */
+        /**
+         *--------------------------------------------------------------------------
+         * Cache Repository
+         *--------------------------------------------------------------------------
+         *
+         * Instance of Illuminate\Contracts\Cache\Repository
+         *
+         */
         'repository' => 'cache',
 
-        /*
-          |--------------------------------------------------------------------------
-          | Cache Clean Listener
-          |--------------------------------------------------------------------------
-          |
-          |
-          |
-          */
-        'clean'     => [
+        /**
+         *--------------------------------------------------------------------------
+         * Cache Clean Listener
+         *--------------------------------------------------------------------------
+         *
+         *
+         *
+         */
+        'clean'      => [
 
-            /*
-              |--------------------------------------------------------------------------
-              | Enable clear cache on repository changes
-              |--------------------------------------------------------------------------
-              |
-              */
+            /**
+             *--------------------------------------------------------------------------
+             * Enable clear cache on repository changes
+             *--------------------------------------------------------------------------
+             *
+             */
             'enabled' => true,
 
-            /*
-              |--------------------------------------------------------------------------
-              | Actions in Repository
-              |--------------------------------------------------------------------------
-              |
-              | create : Clear Cache on create Entry in repository
-              | update : Clear Cache on update Entry in repository
-              | delete : Clear Cache on delete Entry in repository
-              |
-              */
-            'on' => [
+            /**
+             *--------------------------------------------------------------------------
+             * Actions in Repository
+             *--------------------------------------------------------------------------
+             *
+             * create : Clear Cache on create Entry in repository
+             * update : Clear Cache on update Entry in repository
+             * delete : Clear Cache on delete Entry in repository
+             *
+             */
+            'on'      => [
                 'create' => true,
                 'update' => true,
                 'delete' => true,
             ],
         ],
 
-        'params'    => [
-              /*
-              |--------------------------------------------------------------------------
-              | Skip Cache Params
-              |--------------------------------------------------------------------------
-              |
-              |
-              | Ex: http://lavalite.local/?search=lorem&skipCache=true
-              |
-              */
+        'params'     => [
+            /**
+             *--------------------------------------------------------------------------
+             * Skip Cache Params
+             *--------------------------------------------------------------------------
+             *
+             *
+             * Ex: http://lavalite.org/?search=lorem&skipCache=true
+             *
+             */
             'skipCache' => 'skipCache',
         ],
 
-        /*
-       |--------------------------------------------------------------------------
-       | Methods Allowed
-       |--------------------------------------------------------------------------
-       |
-       | methods cacheable : all, paginate, find, findByField, findWhere, getByCriteria
-       |
-       | Ex:
-       |
-       | 'only'  =>['all','paginate'],
-       |
-       | or
-       |
-       | 'except'  =>['find'],
-       */
-        'allowed' => [
+        /**
+         *--------------------------------------------------------------------------
+         * Methods Allowed
+         *--------------------------------------------------------------------------
+         *
+         * methods cacheable : all, paginate, find, findByField, findWhere, getByCriteria
+         *
+         * Ex:
+         *
+         * 'only'  =>['all','paginate'],
+         *
+         * or
+         *
+         * 'except'  =>['find'],
+         */
+        'allowed'    => [
             'only'   => null,
             'except' => null,
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Criteria Config
-    |--------------------------------------------------------------------------
-    |
-    | Settings of request parameters names that will be used by Criteria
-    |
-    */
-    'criteria' => [
-        /*
-        |--------------------------------------------------------------------------
-        | Accepted Conditions
-        |--------------------------------------------------------------------------
-        |
-        | Conditions accepted in consultations where the Criteria
-        |
-        | Ex:
-        |
-        | 'acceptedConditions'=>['=','like']
-        |
-        | $query->where('foo','=','bar')
-        | $query->where('foo','like','bar')
-        |
-        */
+    /**
+     *--------------------------------------------------------------------------
+     * Criteria Config
+     *--------------------------------------------------------------------------
+     *
+     * Settings of request parameters names that will be used by Criteria
+     *
+     */
+    'criteria'    => [
+        /**
+         *--------------------------------------------------------------------------
+         * Accepted Conditions
+         *--------------------------------------------------------------------------
+         *
+         * Conditions accepted in consultations where the Criteria
+         *
+         * Ex:
+         *
+         * 'acceptedConditions'=>['=','like']
+         *
+         * $query->where('foo','=','bar')
+         * $query->where('foo','like','bar')
+         *
+         */
         'acceptedConditions' => [
-            '=', 'like',
+            '=', '>', '>=', '<', '<=', '!=', '<>', 'like', 'not like', 'between',
+            'not between', 'in', 'not in', 'null', 'not null',
         ],
-        /*
-        |--------------------------------------------------------------------------
-        | Request Params
-        |--------------------------------------------------------------------------
-        |
-        | Request parameters that will be used to filter the query in the repository
-        |
-        | Params :
-        |
-        | - search : Searched value
-        |   Ex: http://lavalite.local/?search=lorem
-        |
-        | - searchFields : Fields in which research should be carried out
-        |   Ex:
-        |    http://lavalite.local/?search=lorem&searchFields=name;email
-        |    http://lavalite.local/?search=lorem&searchFields=name:like;email
-        |    http://lavalite.local/?search=lorem&searchFields=name:like
-        |
-        | - filter : Fields that must be returned to the response object
-        |   Ex:
-        |   http://lavalite.local/?search=lorem&filter=id,name
-        |
-        | - orderBy : Order By
-        |   Ex:
-        |   http://lavalite.local/?search=lorem&orderBy=id
-        |
-        | - sortedBy : Sort
-        |   Ex:
-        |   http://lavalite.local/?search=lorem&orderBy=id&sortedBy=asc
-        |   http://lavalite.local/?search=lorem&orderBy=id&sortedBy=desc
-        |
-        */
-        'params' => [
-            'search'        => 'search',
-            'searchFields'  => 'searchFields',
-            'filter'        => 'filter',
-            'orderBy'       => 'orderBy',
-            'sortedBy'      => 'sortedBy',
-            'with'          => 'with',
+        /**
+         *--------------------------------------------------------------------------
+         * Request Params
+         *--------------------------------------------------------------------------
+         *
+         * Request parameters that will be used to filter the query in the repository
+         *
+         * Params :
+         *
+         * - search : Searched value
+         *   Ex: http://lavalite.org/?search=lorem
+         *
+         * - searchFields : Fields in which research should be carried out
+         *   Ex:
+         *    http://lavalite.org/?search=lorem&searchFields=name;email
+         *    http://lavalite.org/?search=lorem&searchFields=name:like;email
+         *    http://lavalite.org/?search=lorem&searchFields=name:like
+         *
+         * - filter : Fields that must be returned to the response object
+         *   Ex:
+         *   http://lavalite.org/?search=lorem&columns=id,name
+         *
+         * - sortBy : Order By
+         *   Ex:
+         *   http://lavalite.org/?search=lorem&sortBy=id
+         *
+         * - sortOrder : Sort
+         *   Ex:
+         *   http://lavalite.org/?search=lorem&sortBy=id&sortOrder=asc
+         *   http://lavalite.org/?search=lorem&sortBy=id&sortOrder=desc
+         *
+         */
+        'params'             => [
+            'search'       => 'search',
+            'searchFields' => 'searchFields',
+            'columns'      => 'columns',
+            'sortBy'       => 'sortBy',
+            'sortOrder'    => 'sortOrder',
+            'with'         => 'with',
         ],
     ],
 ];

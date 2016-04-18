@@ -7,23 +7,34 @@ $(function () {
         }
     });
 
+    $('.html-editor-mini').summernote({
+        height: "200px",
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+          ]
+    });
+    
     $('.html-editor').summernote({
         height: "200px",
         onImageUpload: function(files, editor, welEditable) {
-            sendFile(files[0], editor, welEditable);
+            app.sendFile(files[0], editor, welEditable);
         }
     });
 
-    $('input[type="date"]').pickadate({
+    $('input .pickadate').pickadate({
         format: 'dd mmm, yyyy',
         formatSubmit: 'yyyy-mm-dd',
         hiddenSuffix: '',
         selectMonths: true,
         selectYears: true
-
     }).prop('type','text');
 
-    $('input[type="time"]').pickatime({
+    $('input .pickatime').pickatime({
         format: 'h:i A',
         formatSubmit: 'HH:i:00',
         hiddenSuffix: '',
@@ -55,13 +66,13 @@ $(function () {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-/*
+
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
-*/
+
     $('body').on('click', '[data-action]', function(e) {
         e.preventDefault();
 
@@ -89,6 +100,7 @@ $(function () {
           increaseArea: '20%' // optional
         });
     });
+
     jQuery("time.timeago").timeago();
 });
 
@@ -99,33 +111,46 @@ $( document ).ajaxComplete(function() {
         height: "200px",
         onImageUpload: function(files) {
             url = $(this).data('upload');
-            sendFile(files[0], url, $(this));
+            app.sendFile(files[0], url, $(this));
         }
     });
 
-    $('input[type="date"]').pickadate({
+    $('.html-editor-mini').summernote({
+        height: "200px",
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+          ]
+    });
+
+    $('input .pickadate').pickadate({
         format: 'dd mmm, yyyy',
         formatSubmit: 'yyyy-mm-dd',
+        hiddenSuffix: '',
         selectMonths: true,
         selectYears: true
     }).prop('type','text');
 
-    $('input[type="time"]').pickatime({
+    $('input .pickatime').pickatime({
         format: 'h:i A',
         formatSubmit: 'HH:i:00',
+        hiddenSuffix: '',
         interval: 10,
         selectMonths: true,
         selectYears: true
     }).prop('type','text');
 
     $.AdminLTE.boxWidget.activate()
-/*
+
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
-*/
 });
 
 
@@ -136,26 +161,7 @@ $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
 $( document ).ajaxSuccess(function( event, xhr, settings ) {
     app.message(xhr);
 });
-/*
-function sendFile(file, url, editor) {
-    var data = new FormData();
-    data.append("file", file);
-    $.ajax({
-        data: data,
-        type: "POST",
-        url: url,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function(objFile) {
-            editor.summernote('insertImage', objFile.folder+objFile.file);
-        },
-        error: function(jqXHR, textStatus, errorThrown)
-        {
-        }
-    });
-}
-*/
+
 
 var app = {
 
@@ -272,7 +278,7 @@ var app = {
 
     'sendFile' : function(file, url, editor) {
         var data = new FormData();
-        formData.append("file", file);
+        data.append("file", file);
         $.ajax({
             data: data,
             type: "POST",
