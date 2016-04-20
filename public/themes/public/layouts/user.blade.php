@@ -14,24 +14,24 @@
         {!! Theme::asset()->scripts() !!}
     </head>
 
-<body class="user">
+    <body class="user">
 
-    {!! Theme::partial('header') !!}
-    <div class="container-fluid content">
-        <div style="min-height:500px;">
-            <div class="row">
-                <div class="col-md-3 col-lg-3 menu">
-                    {!! Theme::partial('user') !!}
-                </div>
-                <div class="col-md-9 col-lg-9 body">
-                    {!! Theme::content() !!}
+        {!! Theme::partial('header') !!}
+        <div class="container-fluid content">
+            <div style="min-height:500px;">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 menu">
+                        {!! Theme::partial('user') !!}
+                    </div>
+                    <div class="col-md-9 col-lg-9 body">
+                        {!! Theme::content() !!}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    {!! Theme::partial('footer') !!}
-    <script src="{{ asset('js/vendor_public.js') }}"></script>
-    <script src="{{ asset('js/public.js') }}"></script>
-    {!! Theme::asset()->container('footer')->scripts() !!}
-</body>
+        {!! Theme::partial('footer') !!}
+        <script src="{{ asset('js/vendor_public.js') }}"></script>
+        <script src="{{ asset('js/public.js') }}"></script>
+        {!! Theme::asset()->container('footer')->scripts() !!}
+    </body>
 </html>
