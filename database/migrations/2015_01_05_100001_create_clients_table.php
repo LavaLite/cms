@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
         /*
          * Table: users
          */
-        Schema::create('users', function ($table) {
+        Schema::create('clients', function ($table) {
             $table->increments('id')->unsigned();
             $table->integer('reporting_to')->nullable()->default(0);
             $table->string('name', 100)->nullable();

@@ -2,8 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Litepie\User\Traits\Auth\UserManager;
+
 class AdminController extends WebCurdController
 {
+    use UserManager;
+
+    /**
+     * The authentication guard that should be used.
+     *
+     * @var string
+     */
+    protected $guard = 'admin';
+
     public function __construct()
     {
         parent::__construct();
@@ -18,7 +29,7 @@ class AdminController extends WebCurdController
      */
     public function home()
     {
-        return $this->theme->of('admin::user.home')->render();
+        return $this->theme->of($this->getView('home'))->render();
     }
 
     /**
@@ -28,7 +39,7 @@ class AdminController extends WebCurdController
      */
     public function profile()
     {
-        return $this->theme->of('admin::user.profile')->render();
+        return $this->theme->of($this->getView('profile'))->render();
     }
 
     /**
@@ -40,7 +51,7 @@ class AdminController extends WebCurdController
     {
         $this->theme->layout('blank');
 
-        return $this->theme->of('admin::user.lock')->render();
+        return $this->theme->of($this->getView('lock'))->render();
     }
 
     /**
@@ -50,7 +61,7 @@ class AdminController extends WebCurdController
      */
     public function masters()
     {
-        return $this->theme->of('admin::general.masters')->render();
+        return $this->theme->of($this->getView('masters'))->render();
     }
 
     /**
@@ -60,6 +71,6 @@ class AdminController extends WebCurdController
      */
     public function reports()
     {
-        return $this->theme->of('admin::general.reports')->render();
+        return $this->theme->of($this->getView('reports'))->render();
     }
 }

@@ -16,12 +16,12 @@
 
     <body class="user">
 
-        {!! Theme::partial('header') !!}
+        {!! Theme::partial('client.header') !!}
         <div class="container-fluid content">
             <div style="min-height:500px;">
                 <div class="row">
                     <div class="col-md-3 col-lg-3 menu">
-                        {!! Theme::partial('aside') !!}
+                        {!! Theme::partial('client.aside') !!}
                     </div>
                     <div class="col-md-9 col-lg-9 body">
                         {!! Theme::content() !!}
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        {!! Theme::partial('footer') !!}
+        {!! Theme::partial('client.footer') !!}
         <script src="{{ asset('js/vendor_public.js') }}"></script>
         <script src="{{ asset('js/public.js') }}"></script>
         {!! Theme::asset()->container('footer')->scripts() !!}

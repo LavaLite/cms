@@ -35,6 +35,16 @@ return [
 
     /*
      *--------------------------------------------------------------------------
+     * Request Params
+     *--------------------------------------------------------------------------
+     *
+     * Request parameters that will be used determine type of user
+     *
+     */
+    'params'           => ['type' => 'role'],
+
+    /*
+     *--------------------------------------------------------------------------
      * Superuser role
      *--------------------------------------------------------------------------
      *
@@ -53,22 +63,6 @@ return [
      *
      */
     'verify_email'     => true,
-
-    /*
-     *--------------------------------------------------------------------------
-     * Image sizes
-     *--------------------------------------------------------------------------
-     *
-     * Size of image which can be used in this package.
-     *
-     */
-    'image'            => [
-        'xs' => ['width' => '60', 'height' => '45'],
-        'sm' => ['width' => '100', 'height' => '75'],
-        'md' => ['width' => '460', 'height' => '345'],
-        'lg' => ['width' => '800', 'height' => '600'],
-        'xl' => ['width' => '1000', 'height' => '750'],
-    ],
 
     /*
      *--------------------------------------------------------------------------
@@ -155,28 +149,33 @@ return [
 
     /*
      *--------------------------------------------------------------------------
-     * Social login module
+     * User module
      *--------------------------------------------------------------------------
      *
-     * Configuration for the social login module.
+     * Configuration for the user module.
      *
      */
-    'user_social'      => [
-        'model'      => 'Litepie\User\Models\UserSocial',
-        'table'      => 'user_social',
-        'primaryKey' => 'id',
-        'hidden'     => [],
-        'visible'    => [],
-        'guarded'    => ['*'],
-        'slugs'      => [],
-        'dates'      => ['deleted_at'],
-        'appends'    => ['eid'],
-        'fillable'   => ['user_id', 'provider', 'provider_id'],
-        'listfields' => ['id', 'user_id', 'provider', 'provider_id'],
-        'casts'      => [
+    'client'           => [
+        'model'        => 'App\Client',
+        'table'        => 'clients',
+        'primaryKey'   => 'id',
+        'hidden'       => ['password', 'remember_token'],
+        'visible'      => [],
+        'guarded'      => ['*'],
+        'slugs'        => [],
+        'dates'        => ['deleted_at'],
+        'appends'      => ['eid'],
+        'fillable'     => ['reporting_id', 'name', 'email', 'sex', 'dob', 'status', 'designation', 'mobile', 'phone',
+            'address', 'permissions', 'street', 'city', 'district', 'state', 'country', 'web'],
+        'listfields'   => ['id', 'reporting_id', 'name', 'email', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'web'],
+        'uploadfolder' => '/uploads/users',
+        'uploadable'   => [
+            'single'   => ['photo'],
+            'multiple' => [],
+        ],
+        'casts'        => [
             'permissions' => 'array',
         ],
-        'translate'  => [],
-        'perPage'    => '20',
+        'perPage'      => '20',
     ],
 ];
