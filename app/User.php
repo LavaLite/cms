@@ -14,12 +14,12 @@ class User extends Authenticatable
 {
     use CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger;
 
-     /**
-      * Configuartion for the model.
-      *
-      * @var array
-      */
-     protected $config = 'user.user';
+    /**
+     * Configuartion for the model.
+     *
+     * @var array
+     */
+    protected $config = 'user.user';
 
     /**
      * Initialiaze page modal.
@@ -28,12 +28,17 @@ class User extends Authenticatable
      */
     public function __construct($attributes = [])
     {
-        parent::__construct($attributes);
         $config = config($this->config);
+
         foreach ($config as $key => $val) {
+
             if (property_exists(get_called_class(), $key)) {
                 $this->$key = $val;
             }
+
         }
+
+        parent::__construct($attributes);
     }
+
 }

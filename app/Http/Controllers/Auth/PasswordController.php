@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Litepie\User\Traits\PasswordManager;
+use Litepie\User\Traits\Auth\PasswordManager;
 
 class PasswordController extends Controller
 {

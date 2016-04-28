@@ -27,7 +27,6 @@ class Client extends Authenticatable
      */
     public function __construct($attributes = [])
     {
-        parent::__construct($attributes);
         $config = config($this->config);
 
         foreach ($config as $key => $val) {
@@ -37,6 +36,8 @@ class Client extends Authenticatable
             }
 
         }
+
+        parent::__construct($attributes);
 
     }
 
