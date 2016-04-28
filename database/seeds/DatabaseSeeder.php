@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TaskTableSeeder::class);
         $this->call(CalendarTableSeeder::class);
         $this->call(SettingTableSeeder::class);
+        $this->call(ClientTableSeeder::class);
 
         Model::reguard();
     }

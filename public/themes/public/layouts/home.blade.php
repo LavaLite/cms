@@ -14,13 +14,11 @@
         {!! Theme::asset()->scripts() !!}
     </head>
 
-<body class="home">
-
-
-    {!! Theme::content() !!}
-    {!! Theme::partial('footer') !!}
-    <script src="{{ asset('js/vendor_public.js') }}"></script>
-    <script src="{{ asset('js/public.js') }}"></script>
-    {!! Theme::asset()->container('footer')->scripts() !!}
-</body>
-</ht
+    <body class="home">
+        {!! Theme::content() !!}
+        {!! Theme::partial('footer') !!}
+        <script src="{{ asset('js/vendor_public.js') }}"></script>
+        <script src="{{ asset('js/public.js') }}"></script>
+        {!! Theme::asset()->container('footer')->scripts() !!}
+    </body>
+</html>

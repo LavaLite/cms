@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Litepie\User\Traits\Auth\UserManager;
 
-class UserController extends Controller
+class ClientController extends Controller
 {
     use UserManager;
 
@@ -13,13 +13,13 @@ class UserController extends Controller
      *
      * @var string
      */
-    protected $guard = 'user';
+    protected $guard = 'client.web';
 
     public function __construct()
     {
         $this->middleware('web');
-        $this->middleware('auth');
-        $this->setupTheme(config('theme.themes.user.theme'), config('theme.themes.user.layout'));
+        $this->middleware('auth:client.web');
+        $this->setupTheme(config('theme.themes.client.theme'), config('theme.themes.client.layout'));
     }
 
 }

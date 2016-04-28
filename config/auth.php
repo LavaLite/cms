@@ -11,11 +11,12 @@ return [
     | reset options for your application. You may change these defaults
     | as required, but they're a perfect start for most applications.
     |
-    */
+     */
 
-    'defaults' => [
+    'defaults'  => [
         'guard'     => 'web',
         'passwords' => 'users',
+        'guards'    => ['user', 'admin'],
     ],
 
     /*
@@ -33,17 +34,29 @@ return [
     |
     | Supported: "session", "token"
     |
-    */
+     */
 
-    'guards' => [
-        'web' => [
+    'guards'    => [
+        'web'    => [
             'driver'   => 'session',
             'provider' => 'users',
         ],
 
-        'api' => [
+        'api'    => [
             'driver'   => 'token',
             'provider' => 'users',
+        ],
+
+        'client' => [
+            'web' => [
+                'driver'   => 'session',
+                'provider' => 'clients',
+            ],
+
+            'api' => [
+                'driver'   => 'token',
+                'provider' => 'clients',
+            ],
         ],
     ],
 
@@ -62,12 +75,19 @@ return [
     |
     | Supported: "database", "eloquent"
     |
-    */
+     */
 
     'providers' => [
-        'users' => [
+        'users'   => [
             'driver' => 'eloquent',
             'model'  => App\User::class,
+            'table'  => 'users',
+        ],
+
+        'clients' => [
+            'driver' => 'eloquent',
+            'model'  => App\Client::class,
+            'table'  => 'clients',
         ],
 
         // 'users' => [
@@ -93,11 +113,18 @@ return [
     | considered valid. This security feature keeps tokens short-lived so
     | they have less time to be guessed. You may change this as needed.
     |
-    */
+     */
 
     'passwords' => [
-        'users' => [
+        'users'   => [
             'provider' => 'users',
+            'email'    => 'auth.emails.password',
+            'table'    => 'password_resets',
+            'expire'   => 60,
+        ],
+
+        'clients' => [
+            'provider' => 'clients',
             'email'    => 'auth.emails.password',
             'table'    => 'password_resets',
             'expire'   => 60,

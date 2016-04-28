@@ -13,15 +13,15 @@
         {!! Theme::asset()->styles() !!}
         {!! Theme::asset()->scripts() !!}
     </head>
-<body class="default">
+    <body class="default">
 
-    {!! Theme::partial('header') !!}
-    <div class="container content">
-    {!! Theme::content() !!}
-    </div>
-    {!! Theme::partial('footer') !!}
-    <script src="{{ asset('js/vendor_public.js') }}"></script>
-    <script src="{{ asset('js/public.js') }}"></script>
-    {!! Theme::asset()->container('footer')->scripts() !!}
-</body>
+        {!! Theme::partial('header') !!}
+        <div class="container content">
+        {!! Theme::content() !!}
+        </div>
+        {!! Theme::partial('footer') !!}
+        <script src="{{ asset('js/vendor_public.js') }}"></script>
+        <script src="{{ asset('js/public.js') }}"></script>
+        {!! Theme::asset()->container('footer')->scripts() !!}
+    </body>
 </html>

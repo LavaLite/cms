@@ -10,7 +10,7 @@ return [
     | Themes used for the website.
     | eg. admin, public, user etc.
     |
-    */
+     */
 
     'themes'        => [
         'admin'  => [
@@ -25,6 +25,10 @@ return [
             'theme'  => 'public',
             'layout' => 'user',
         ],
+        'client' => [
+            'theme'  => 'public',
+            'layout' => 'client',
+        ],
     ],
 
     /*
@@ -35,7 +39,7 @@ return [
     | The path to asset, this config can be cdn host.
     | eg. http://cdn.domain.com
     |
-    */
+     */
 
     'assetUrl'      => '',
 
@@ -47,7 +51,7 @@ return [
     | If you don't set a theme when using a "Theme" class the default theme
     | will replace automatically.
     |
-    */
+     */
 
     'themeDefault'  => 'public',
 
@@ -59,7 +63,7 @@ return [
     | If you don't set a layout when using a "Theme" class the default layout
     | will replace automatically.
     |
-    */
+     */
 
     'layoutDefault' => 'default',
 
@@ -70,7 +74,7 @@ return [
     |
     | The root path contains themes collections.
     |
-    */
+     */
 
     'themeDir'      => 'themes',
 
@@ -82,7 +86,7 @@ return [
     | Inside a theme path we need to set up directories to
     | keep "layouts", "assets" and "partials".
     |
-    */
+     */
 
     'containerDir'  => [
         'layout'  => 'layouts',
@@ -99,7 +103,7 @@ return [
     |
     | Class namespace.
     |
-    */
+     */
 
     'namespaces'    => [
         'widget' => 'App\Widgets',
@@ -113,7 +117,7 @@ return [
     | You can hook a theme when event fired on activities
     | this is cool feature to set up a title, meta, default styles and scripts.
     |
-    */
+     */
 
     'events'        => [
 
@@ -143,7 +147,7 @@ return [
     |
     | Config for compiler engines.
     |
-    */
+     */
 
     'engines'       => [
 
@@ -173,9 +177,9 @@ return [
                 // Example add funciton name "demo".
                 /*$function = new Twig_SimpleFunction('example', function()
                 {
-                    $args = func_get_args();
+                $args = func_get_args();
 
-                    return "Example" . print_r($args, true);
+                return "Example" . print_r($args, true);
                 });
 
                 $twig->addFunction($function);*/

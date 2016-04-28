@@ -47,6 +47,7 @@ class Kernel extends HttpKernel
         'auth.role'       => \Litepie\User\Http\Middleware\VerifyRole::class,
         'auth.permission' => \Litepie\User\Http\Middleware\VerifyPermission::class,
         'auth.active'     => \Litepie\User\Http\Middleware\VerifyLogin::class,
+
         'auth'            => \App\Http\Middleware\Authenticate::class,
         'auth.basic'      => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest'           => \App\Http\Middleware\RedirectIfAuthenticated::class,

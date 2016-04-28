@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Litepie\User\Traits\RegisterAndLogin;
+use Illuminate\Support\Facades\Request;
+use Litepie\User\Traits\Auth\RegisterAndLogin;
 
 class AuthController extends Controller
 {
@@ -28,13 +29,23 @@ class AuthController extends Controller
     protected $redirectTo = '/home';
 
     /**
+     * The authentication guard that should be used.
+     *
+     * @var string
+     */
+    protected $guard = null;
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => ['logout', 'verify', 'sendVerification']]);
+        $guard = Request::input(config('user.params.type'), null);
+        $this->setGuard($guard);
+        $this->middleware('web');
+        $this->middleware('guest:' . $guard, ['except' => ['logout', 'verify', 'sendVerification']]);
         $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
     }
 }

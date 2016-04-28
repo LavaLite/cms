@@ -28,12 +28,12 @@ return [
     |
     */
 
-    'events' => [
+    'events'  => [
 
         // Before event inherit from package config and the theme that call before,
         // you can use this event to set meta, breadcrumb template or anything
         // you want inheriting.
-        'before' => function ($theme) {
+        'before'             => function ($theme) {
             // You can remove this line anytime.
             $theme->setTitle(trans('cms.name'));
 
@@ -54,7 +54,7 @@ return [
         // Listen on event before render a theme,
         // this event should call to assign some assets,
         // breadcrumb template.
-        'beforeRenderTheme' => function ($theme) {
+        'beforeRenderTheme'  => function ($theme) {
             //You may use this event to set up your assets.
 
             //You may use this event to set up your assets.
@@ -71,10 +71,13 @@ return [
             'default' => function ($theme) {
             },
 
-            'user' => function ($theme) {
+            'user'    => function ($theme) {
             },
 
-            'home' => function ($theme) {
+            'public'  => function ($theme) {
+            },
+
+            'home'    => function ($theme) {
                 $theme->asset()->add('ionicons', 'packages/ionicons/css/ionicons.min.css');
             },
 
