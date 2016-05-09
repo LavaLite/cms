@@ -4,21 +4,13 @@
                 <div class="container">
                     <a class="navbar-brand" href="{{trans_url('/')}}"><img src="{{asset('img/logo/inverse.png')}}" alt="Lavalite" class="img-responsive"></a>
                     <ul class="nav navbar-nav  pull-right">
-                    @if(Auth::check())
+                    @if(Auth::guard('user.web')->check())
                         <li>
                             <a href="{{ trans_url('home') }}" class="login">
                                 <span class="hidden-xs">{{ get_users('name') }}</span>
                                 <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-user"></i></span>
                             </a>
                         </li>
-                        @is('admin')
-                        <li>
-                            <a href="{{ trans_url('admin') }}" class="login">
-                                <span class="hidden-xs">Admin</span>
-                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-cog"></i></span>
-                            </a>
-                        </li>
-                        @endis
                         <li>
                             <a href="{{ trans_url('logout') }}" class="login">
                                 <span class="hidden-xs">Logout</span>

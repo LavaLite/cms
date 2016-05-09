@@ -26,7 +26,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'home';
 
     /**
      * The authentication guard that should be used.
@@ -44,8 +44,9 @@ class AuthController extends Controller
     {
         $guard = Request::input(config('user.params.type'), null);
         $this->setGuard($guard);
+        $this->setRedirectTo();
         $this->middleware('web');
         $this->middleware('guest:' . $guard, ['except' => ['logout', 'verify', 'sendVerification']]);
-        $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
+        $this->setTheme();
     }
 }

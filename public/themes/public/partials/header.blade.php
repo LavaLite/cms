@@ -16,14 +16,6 @@
                                 <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-user"></i></span>
                             </a>
                         </li>
-                        @is('admin')
-                        <li>
-                            <a href="{{ trans_url('admin') }}">
-                                <span class="hidden-xs">Admin</span>
-                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-cog"></i></span>
-                            </a>
-                        </li>
-                        @endis
                         <li>
                             <a href="{{ trans_url('logout') }}">
                                 <span class="hidden-xs">Logout</span>
