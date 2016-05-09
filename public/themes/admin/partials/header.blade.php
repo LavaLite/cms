@@ -42,16 +42,16 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="{!!User::users('picture')!!}" class="user-image" alt="User Image"/>
-                    <span class="hidden-xs">{!!User::users('name')!!}</span>
+                    <img src="{!!user('admin.web')->picture!!}" class="user-image" alt="User Image"/>
+                    <span class="hidden-xs">{!!user('admin.web')->name!!}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="{!!User::users('picture')!!}" class="img-circle" alt="User Image" />
+                            <img src="{!!user('admin.web')->picture!!}" class="img-circle" alt="User Image" />
                             <p>
-                            {!!User::users('name')!!} - {!!User::users('designation')!!}
-                            <small>Member since {!!User::users('joined')!!}</small>
+                            {!!user('admin.web')->name!!} - {!!user('admin.web')->designation!!}
+                            <small>Member since {!!user('admin.web')->joined!!}</small>
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -68,7 +68,7 @@
                                 <a href="{{ URL::to('admin/profile') }}" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="{{ URL::to('logout') }}" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="{{ URL::to('logout') }}?role=admin.web" class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>

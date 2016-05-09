@@ -13,12 +13,20 @@ class AdminController extends WebCurdController
      *
      * @var string
      */
-    protected $guard = 'admin';
+    protected $guard = 'admin.web';
+
+    /**
+     * The home page route of admin.
+     *
+     * @var string
+     */
+    protected $home = 'admin';
 
     public function __construct()
     {
         parent::__construct();
-        $this->middleware('auth.role:admin|superuser');
+        $this->middleware('web');
+        $this->middleware('auth:admin.web');
         $this->setupTheme(config('theme.themes.admin.theme'), config('theme.themes.admin.layout'));
     }
 

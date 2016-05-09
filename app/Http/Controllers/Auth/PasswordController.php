@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Litepie\User\Traits\Auth\PasswordManager;
+use Request;
 
 class PasswordController extends Controller
 {
@@ -21,14 +22,34 @@ class PasswordController extends Controller
     use PasswordManager;
 
     /**
+     * The password broker that should be used.
+     *
+     * @var string
+     */
+    protected $broker = 'user';
+
+    /**
+     * The password broker that should be used.
+     *
+     * @var string
+     */
+    protected $guard = 'user.web';
+
+    /**
      * Create a new password controller instance.
      *
      * @return void
      */
     public function __construct()
     {
+        $guard = Request::input(config('user.params.type'), null);
+        $this->setGuard($guard);
+        $this->setRedirectTo();
+        $this->setPasswordBroker();
+        //dd($this->broker);
         $this->middleware('guest');
         $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
+        $this->setTheme();
     }
 
 }

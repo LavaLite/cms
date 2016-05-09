@@ -5,9 +5,6 @@
             <li class="presentation"> <a href="{{ trans_url('home') }}"><i class="fa fa-tachometer fa-fw"></i> Dashboard </a></li>
             <li class="presentation"><a href="{{ trans_url('/profile') }}"><i class="fa fa-user  fa-fw"></i> Profile </a></li>
             <li class="presentation"><a href="{{ trans_url('/password') }}"><i class="fa fa-key  fa-fw"></i> Password </a></li>
-            @is('admin')
-            <li class="presentation"><a href="{{ trans_url('/admin') }}"><i class="fa fa-cog  fa-fw"></i> Manage site </a></li>
-            @endis
             <li class="presentation"><a href="{{ trans_url('/logout') }}"><i class="fa fa-sign-out  fa-fw"></i> Logout </a></li>
         </ul>
     </div>

@@ -3,9 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Litepie\Database\Model;
 use Litepie\Database\Traits\Slugger;
+use Litepie\Foundation\Auth\User as Authenticatable;
 use Litepie\Hashids\Traits\Hashids;
 use Litepie\User\Traits\Users\UserProfile;
 

@@ -22,10 +22,10 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
 
             if (is_null($guard)) {
-                return redirect('/home');
+                return redirect('home');
             }
 
-            return redirect($guard);
+            return redirect(current(explode(".", $guard)));
         }
 
         return $next($request);

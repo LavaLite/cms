@@ -13,6 +13,7 @@ class PublicController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('web');
         $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
     }
 

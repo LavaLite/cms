@@ -14,9 +14,8 @@ return [
      */
 
     'defaults'  => [
-        'guard'     => 'web',
-        'passwords' => 'users',
-        'guards'    => ['user', 'admin'],
+        'guard'     => 'user.web',
+        'passwords' => 'user',
     ],
 
     /*
@@ -37,14 +36,29 @@ return [
      */
 
     'guards'    => [
-        'web'    => [
-            'driver'   => 'session',
-            'provider' => 'users',
+
+        'user'   => [
+            'web' => [
+                'driver'   => 'session',
+                'provider' => 'users',
+            ],
+
+            'api' => [
+                'driver'   => 'token',
+                'provider' => 'users',
+            ],
         ],
 
-        'api'    => [
-            'driver'   => 'token',
-            'provider' => 'users',
+        'admin'  => [
+            'web' => [
+                'driver'   => 'session',
+                'provider' => 'users',
+            ],
+
+            'api' => [
+                'driver'   => 'token',
+                'provider' => 'users',
+            ],
         ],
 
         'client' => [
@@ -116,16 +130,23 @@ return [
      */
 
     'passwords' => [
-        'users'   => [
+        'user'   => [
             'provider' => 'users',
-            'email'    => 'auth.emails.password',
+            'email'    => 'user::public.default.emails.password',
             'table'    => 'password_resets',
             'expire'   => 60,
         ],
 
-        'clients' => [
+        'admin'  => [
+            'provider' => 'users',
+            'email'    => 'user::public.admin.emails.password',
+            'table'    => 'password_resets',
+            'expire'   => 60,
+        ],
+
+        'client' => [
             'provider' => 'clients',
-            'email'    => 'auth.emails.password',
+            'email'    => 'user::public.default.emails.password',
             'table'    => 'password_resets',
             'expire'   => 60,
         ],
