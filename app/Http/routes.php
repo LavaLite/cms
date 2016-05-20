@@ -28,15 +28,15 @@
 Route::group(['middleware' => 'web'], function () {
 
     // Home page for the website.
-    Route::get('/', 'PublicController@home');
-    Route::get('/home', 'UserController@home');
+    Route::get('/', 'PublicWebController@home');
+    Route::get('/home', 'UserWebController@home');
 
-    Route::get('/client', 'ClientController@home');
+    Route::get('/client', 'ClientWebController@home');
 
-    Route::get('client/profile', 'ClientController@getProfile');
-    Route::post('client/profile', 'ClientController@postProfile');
-    Route::get('client/password', 'ClientController@getPassword');
-    Route::post('client/password', 'ClientController@postPassword');
+    Route::get('client/profile', 'ClientWebController@getProfile');
+    Route::post('client/profile', 'ClientWebController@postProfile');
+    Route::get('client/password', 'ClientWebController@getPassword');
+    Route::post('client/password', 'ClientWebController@postPassword');
 
     Route::auth();
 });
