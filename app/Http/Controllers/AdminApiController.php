@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Litepie\User\Traits\Auth\UserManager;
 
-class AdminController extends WebCurdController
+class AdminApiController extends Controller
 {
     use UserManager;
 
@@ -13,20 +13,12 @@ class AdminController extends WebCurdController
      *
      * @var string
      */
-    protected $guard = 'admin.web';
-
-    /**
-     * The home page route of admin.
-     *
-     * @var string
-     */
-    protected $home = 'admin';
+    protected $guard = 'admin.api';
 
     public function __construct()
     {
-        parent::__construct();
-        $this->middleware('web');
-        $this->middleware('auth:admin.web');
+        $this->middleware('api');
+        $this->middleware('jwt.auth:admin.api');
         $this->setupTheme(config('theme.themes.admin.theme'), config('theme.themes.admin.layout'));
     }
 

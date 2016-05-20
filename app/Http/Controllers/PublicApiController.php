@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Page;
 
-class PublicController extends Controller
+class PublicApiController extends Controller
 {
     /**
      * Initialize public controller.
@@ -13,8 +13,7 @@ class PublicController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('web');
-        $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
+        $this->middleware('api');
     }
 
     /**

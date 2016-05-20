@@ -3,13 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Litepie\Contracts\User\JWTSubject;
 use Litepie\Database\Model;
 use Litepie\Database\Traits\Slugger;
 use Litepie\Foundation\Auth\User as Authenticatable;
 use Litepie\Hashids\Traits\Hashids;
 use Litepie\User\Traits\Users\UserProfile;
 
-class Client extends Authenticatable
+class Client extends Authenticatable implements JWTSubject
 {
     use UserProfile, SoftDeletes, Hashids, Slugger;
 
@@ -39,6 +40,16 @@ class Client extends Authenticatable
 
         parent::__construct($attributes);
 
+    }
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 
 }

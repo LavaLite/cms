@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Litepie\User\Traits\Auth\UserManager;
 
-class ClientController extends Controller
+class ClientWebController extends Controller
 {
     use UserManager;
 
@@ -14,6 +14,13 @@ class ClientController extends Controller
      * @var string
      */
     protected $guard = 'client.web';
+
+    /**
+     * The home page route of client.
+     *
+     * @var string
+     */
+    protected $home = 'client';
 
     public function __construct()
     {

@@ -1,7 +1,6 @@
 <?php
 
-
-class ExampleTest extends TestCase
+class TestHomePage extends TestCase
 {
     /**
      * A basic functional test example.
@@ -11,6 +10,6 @@ class ExampleTest extends TestCase
     public function testBasicExample()
     {
         $this->visit('/')
-             ->see('Lavalite');
+            ->see('Lavalite');
     }
 }

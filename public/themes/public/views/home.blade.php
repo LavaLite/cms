@@ -4,7 +4,7 @@
                 <div class="container">
                     <a class="navbar-brand" href="{{trans_url('/')}}"><img src="{{asset('img/logo/inverse.png')}}" alt="Lavalite" class="img-responsive"></a>
                     <ul class="nav navbar-nav  pull-right">
-                    @if(Auth::guard('user.web')->check())
+                    @if(Auth::guard()->check())
                         <li>
                             <a href="{{ trans_url('home') }}" class="login">
                                 <span class="hidden-xs">{{ get_users('name') }}</span>

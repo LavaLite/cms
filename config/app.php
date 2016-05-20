@@ -149,11 +149,6 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Laravel Socialite Service Providers...
-         */
-        Laravel\Socialite\SocialiteServiceProvider::class,
-
-        /*
          * Lavalite Framework Service Providers...
          */
 
@@ -173,6 +168,8 @@ return [
         Lavalite\Calendar\Providers\CalendarServiceProvider::class,
         Lavalite\Task\Providers\TaskServiceProvider::class,
         Lavalite\Settings\Providers\SettingsServiceProvider::class,
+
+        Lavalite\Package\Providers\PackageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -245,6 +242,7 @@ return [
         'Task'             => Lavalite\Task\Facades\Task::class,
         'Calendar'         => Lavalite\Calendar\Facades\Calendar::class,
         'Message'          => Lavalite\Message\Facades\Message::class,
+        'Package'          => Lavalite\Package\Facades\Package::class,
     ],
 
 ];
