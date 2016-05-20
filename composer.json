@@ -7,12 +7,12 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "lavalite/framework": "1.1.*",
-        "lavalite/page": "4.0.*",
-        "lavalite/settings": "4.0.*",
-        "lavalite/task": "4.0.*",
-        "lavalite/message": "4.0.*",
-        "lavalite/calendar": "4.0.*"
+        "lavalite/framework": "1.2.*",
+        "lavalite/page": "4.1.*",
+        "lavalite/settings": "4.1.*",
+        "lavalite/task": "4.1.*",
+        "lavalite/message": "4.1.*",
+        "lavalite/calendar": "4.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
