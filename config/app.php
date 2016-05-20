@@ -169,8 +169,6 @@ return [
         Lavalite\Task\Providers\TaskServiceProvider::class,
         Lavalite\Settings\Providers\SettingsServiceProvider::class,
 
-        Lavalite\Package\Providers\PackageServiceProvider::class,
-
         /*
          * Application Service Providers...
          */
