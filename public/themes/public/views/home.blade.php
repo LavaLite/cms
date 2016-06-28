@@ -7,7 +7,7 @@
                     @if(Auth::guard()->check())
                         <li>
                             <a href="{{ trans_url('home') }}" class="login">
-                                <span class="hidden-xs">{{ get_users('name') }}</span>
+                                <span class="hidden-xs">{{ users('name') }}</span>
                                 <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-user"></i></span>
                             </a>
                         </li>
