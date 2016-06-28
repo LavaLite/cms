@@ -10,17 +10,14 @@
                         @else
                             <li><a href="{{ trans_url('login') }}" class="login"  target="_blank">Login</a></li>
                         @endif
-
                     </ul>
                 </div>
                 <div class="col-md-2 logo">
                     <a href="http://www.lavalite.org/"><img src="{{ asset('img/logo/sm-default.png') }}" height="28" alt="Lavalite"></a>
                 </div>
                 <div class="col-md-5 social">
-                    <ul class="footer-links">
-                        <li><a href="https://twitter.com/lavalitecms" target="_blank">Twitter</a></li>
-                        <li><a href="https://github.com/LavaLite" target="_blank">GitHub</a></li>
-                        <li><a href="https://www.facebook.com/lavalite/" target="_blank">Facebook</a></li>
+                    <ul class="footer-links pull-right">
+                        {!!Menu::menu('footer')!!}
                     </ul>
                 </div>
             </div>

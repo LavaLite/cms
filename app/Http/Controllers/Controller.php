@@ -6,7 +6,6 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-use League\Fractal;
 use Theme;
 
 class Controller extends BaseController
@@ -29,11 +28,9 @@ class Controller extends BaseController
     /* Setup theme for the controller.
      *
      */
-    public function itemPresenter($model, $transformer)
+    protected function getGuard()
     {
-        $resource = new Fractal\Resource\Item($model, $transformer);
-        $fractal  = new Fractal\Manager();
-        return $fractal->createData($resource)->toArray();
+        (property_exists($this, 'guard')) ? $this->guard : null;
     }
 
     // somewhere in your controller

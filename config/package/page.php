@@ -45,7 +45,6 @@ return [
         'guarded'      => ['*'],
         'slugs'        => ['slug' => 'name'],
         'dates'        => ['deleted_at'],
-        'appends'      => ['eid'],
         'fillable'     => ['heading', 'title', 'name', 'slug', 'order', 'view', 'compiler', 'status', 'upload_folder', 'content', 'keyword', 'description', 'abstract'],
         'listfields'   => ['id', 'name', 'category_id', 'slug', 'order', 'status', 'heading', 'title', 'abstract', 'compiler', 'view'],
         'translate'    => ['name', 'heading', 'content', 'title', 'keyword', 'description'],
