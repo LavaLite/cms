@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "lavalite/framework": "1.2.*",
+        "lavalite/framework": "dev-master",
         "lavalite/page": "4.1.*",
         "lavalite/settings": "4.1.*",
         "lavalite/task": "4.1.*",
