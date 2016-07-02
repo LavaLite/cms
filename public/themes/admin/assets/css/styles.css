@@ -16,13 +16,30 @@
     color: #FFF !important;
 }
 
-#main-list tbody tr:hover.selected td,
-#main-list tbody tr:hover td {
+.data-table tbody tr:hover.selected td,
+.data-table tbody tr:hover td {
     background-color: #FFEFD4;
     cursor: pointer;
 }
-#main-list tbody tr.selected td {
+.data-table tbody tr.selected td {
     background-color: #FFEFC6 !important;
+}
+.data-table thead.list_head {
+    background-color: #1570A6 !important;
+    color:white;
+}
+
+.data-table thead.search_bar {
+    background-color: #3E92C4 !important;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.data-table thead.search_bar input, 
+.data-table thead.search_bar select{
+    height: 26px;
+    padding: 2px 4px;
+    width: 100%;
 }
 
 .smoke-base .dialog-inner {

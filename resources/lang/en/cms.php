@@ -7,15 +7,15 @@ return [
     | Label language files for All Module
     |--------------------------------------------------------------------------
     |
-    */
+     */
 
     'name'          => 'Lava Lite',
     'name.html'     => '<b>Lava</b>lite',
     'name.short'    => '<b>L</b>l',
     'admin.panel'   => 'Admin Panel',
     'dashboard'     => 'Dashboard',
-    'all.rights'    => "<strong>Copyright © 2014-2016 <a href='http://lavalite.org' target='_blank'>Lava lite</a>.</strong> All rights reserved.",
-    'version'       => '<b>Version</b> 4.0',
+    'all.rights'    => "<strong>Copyright © 2014-2016 <a href='http://lavalite.org' target='_blank'>Lavalite</a>.</strong> All rights reserved.",
+    'version'       => '<b>Version</b> Develop',
 
     'add'           => 'Add',
     'back'          => 'Back',

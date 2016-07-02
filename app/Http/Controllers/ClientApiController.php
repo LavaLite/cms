@@ -20,6 +20,7 @@ class ClientApiController extends Controller
         $this->middleware('api');
         $this->middleware('auth.jwt:client.api');
         $this->setupTheme(config('theme.themes.client.theme'), config('theme.themes.client.layout'));
+        parent::__construct();
     }
 
 }

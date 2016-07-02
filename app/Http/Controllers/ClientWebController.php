@@ -27,6 +27,7 @@ class ClientWebController extends Controller
         $this->middleware('web');
         $this->middleware('auth:client.web');
         $this->setupTheme(config('theme.themes.client.theme'), config('theme.themes.client.layout'));
+        parent::__construct();
     }
 
 }

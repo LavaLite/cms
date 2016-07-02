@@ -294,6 +294,36 @@ var app = {
             }
         });
     },
+    
+    'dataTable' : function(aoData) {
+            var iSortBy = jQuery.grep(aoData, function(n , i){
+                console.log(n);
+                return (n.name == 'iSortCol_0');
+            });
+
+            sSortBy = jQuery.grep(aoData, function(n , i){
+                return (n.name == 'mDataProp_' + iSortBy[0].value);
+            });
+            aoData.push( { 'name' : 'sortBy', 'value' : sSortBy[0].value } );
+
+            iSortOrder = jQuery.grep(aoData, function(n , i){
+                return (n.name == 'sSortDir_0');
+            });
+            aoData.push( { 'name' : 'sortOrder', 'value' : iSortOrder[0].value } );
+
+            page = jQuery.grep(aoData, function(n , i){
+                return (n.name == 'iDisplayStart');
+            });
+            page = page[0].value;
+
+            pageLimit = jQuery.grep(aoData, function(n , i){
+                return (n.name == 'iDisplayLength');
+            });
+            pageLimit = pageLimit[0].value;
+
+            aoData.push( { 'name' : 'page', 'value' : (page/pageLimit)+1 } );
+            aoData.push( { 'name' : 'pageLimit', 'value' : pageLimit } );
+    },
 
     'makeRequest' : function(method, target) {
         $.ajax({

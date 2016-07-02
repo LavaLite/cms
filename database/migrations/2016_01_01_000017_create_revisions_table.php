@@ -9,13 +9,14 @@ class CreateRevisionsTable extends Migration
     {
         Schema::create('revisions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('user_type')->nullable()->index();
             $table->integer('user_id')->unsigned()->nullable()->index();
             $table->string('field')->nullable()->index();
             $table->string('cast')->nullable();
             $table->text('old_value')->nullable();
             $table->text('new_value')->nullable();
-            $table->string('revision_type');
-            $table->integer('revision_id');
+            $table->string('revision_type')->nullable()->index();
+            $table->integer('revision_id')->unsigned()->nullable()->index();
             $table->timestamps();
             $table->index(['revision_id', 'revision_type']);
         });
