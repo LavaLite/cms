@@ -9,7 +9,7 @@ return [
     |
      */
 
-    'name'          => 'Lava Lite',
+    'name'          => 'Lavalite',
     'name.html'     => '<b>Lava</b>lite',
     'name.short'    => '<b>L</b>l',
     'admin.panel'   => 'Admin Panel',

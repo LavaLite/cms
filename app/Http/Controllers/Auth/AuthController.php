@@ -46,7 +46,7 @@ class AuthController extends Controller
         $this->setGuard($guard);
         $this->setRedirectTo();
         $this->middleware('web');
-        $this->middleware('guest:' . $guard, ['except' => ['logout', 'verify', 'sendVerification']]);
+        $this->middleware('guest:' . $guard, ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
         $this->setTheme();
     }
 }

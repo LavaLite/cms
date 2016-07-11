@@ -67,13 +67,13 @@ $(function () {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
+/*
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
-
+*/
     $('body').on('click', '[data-action]', function(e) {
         e.preventDefault();
 
@@ -86,7 +86,7 @@ $(function () {
             return app.update($tag.data('form'), $tag.data('load-to'), $tag.data('datatable'));
 
         if ($tag.data('action') == 'DELETE'){
-            return app.delete($tag.data('href'), $tag.data('load-to'), $tag.data('datatable'));
+            return app.delete($tag.data('href'), $tag.data('load-to'), $tag.data('datatable'), $tag.data('remove'));
         }
         if ($tag.data('action') == 'REQUEST')
             return app.makeRequest($tag.data('method'), $tag.data('href'));
@@ -255,7 +255,7 @@ var app = {
         });
     },
 
-    'delete' : function(target, tag, datatable) {
+    'delete' : function(target, tag, datatable, remove) {
         swal({
             title: "Are you sure?",
             text: "You will not be able to recover this data!",
@@ -277,6 +277,7 @@ var app = {
                     swal("Deleted!", data.message, "success");
                     app.load(tag, data.redirect);
                     $(datatable).DataTable().ajax.reload( null, false );
+                    $("#"+remove).hide();
                 },
             });
         });

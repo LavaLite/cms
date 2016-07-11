@@ -19,9 +19,11 @@
         "jquery-validation" : "*",
         "nestable-2" : "*",
         "pickadate":"*",
+        "simple-line-icons":"*",
         "Sortable" : "*",
         "summernote":"*",
         "sweetalert" : "*",
-        "toastr":"*"
+        "toastr":"*",
+        "waves":"*"
     }
 }

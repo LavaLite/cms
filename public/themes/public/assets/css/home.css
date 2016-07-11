@@ -1,245 +1,321 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100);
-.control-label sup {
-  color: red;
+/* ==========================================================================
+[Master Stylesheet]
+
+Project: Lavalite
+Version: 4.2.0
+Author: Renfos Technologies
+Author  URl: www.renfos.com
+Primary use: Default
+
+========================================================================== */
+
+@import url("http://fonts.googleapis.com/css?family=Pacifico");
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic");
+
+/* ========== GENERAL STYLES ========== */
+
+body {
+    font-size: 13px;
+    color: #222;
+    background-color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
-.title {
-    font-family: 'Lato';
-    font-size: 96px;
-}
-.sub-title {
-    font-family: 'Lato';
-    font-size: 46px;
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
-.navbar-nav > .user-menu > .dropdown-menu > .user-body a {
-    color: #FFF !important;
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+body.home .head {
+    background: 0 0;
+    background-size: cover;
+    overflow: hidden;
 }
 
-.data-table tbody tr:hover.selected td,
-.data-table tbody tr:hover td {
-    background-color: #FFEFD4;
-    cursor: pointer;
-}
-.data-table tbody tr.selected td {
-    background-color: #FFEFC6 !important;
-}
-.data-table thead.list_head {
-    background-color: #1570A6 !important;
-    color:white;
+body.home .head .overlay {
+    padding: 0;
 }
 
-.data-table thead.search_bar {
-    background-color: #3E92C4 !important;
-    padding-left: 5px;
-    padding-right: 5px;
+body.home .overlay {
+    background-image: linear-gradient(to right, #ef2728 0, #f8a086 100%);
 }
 
-.data-table thead.search_bar input, 
-.data-table thead.search_bar select{
-    height: 26px;
-    padding: 2px 4px;
+body.home .head .navbar.navbar-default {
+    background-color: transparent;
+    border: none;
+    padding-top: 10px;
+}
+
+body.home .intro-well {
+    text-align: center;
+    padding-top: 70px;
+}
+
+body.home .intro-well h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 62px;
+    line-height: 62px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    clear: both;
+    display: block;
+}
+
+body.home .head .navbar.navbar-default .navbar-links>li>a {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+body.home .intro-well h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 32px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 35px;
+    clear: both;
+    display: block;
+}
+
+body.home .intro-well h1 small {
+    color: #FFF;
+}
+
+body.home .head .ui-screen img {
+    bottom: -100px;
+    position: relative;
+}
+
+body.user, body.default {
+    background-color: #fafafa;
+    background-repeat: no-repeat;
+}
+
+body.user .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
     width: 100%;
 }
 
-.smoke-base .dialog-inner {
-    overflow-y: scroll;
-    max-height: 500px;
-}
-.error {
-    border:red 1px solid !important;
-}
-
-/*Nestable lists*/
-.dd { position: relative; display: block; margin: 0; padding: 0;  list-style: none; font-size: 13px; line-height: 20px; }
-.dd-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; }
-.dd-list .dd-list { padding-left: 30px; }
-.dd-collapsed .dd-list { display: none; }
-.dd-item,
-.dd-empty,
-.dd-placeholder { display: block; position: relative; margin: 0; padding: 0; min-height: 20px; font-size: 13px; line-height: 20px; }
-.dd-handle { cursor:default;display: block; margin: 5px 0; padding: 7px 10px; color: #333; text-decoration: none; border: 1px solid #ddd;
-background: #fff;
+nav .login {
+    color: #FFF !important;
+    font-size: 14px;
+    border: 1px solid #FFF;
+    border-radius: 26px;
+    padding: 0 1.4em;
+    line-height: 40px;
+    margin-top: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-.dd-handle:hover { color: #FFF; background: #4D90FD; border-color:#f39c12; }
-
-.dd-item > button { color:#555;font-family: FontAwesome;display: block; position: relative; cursor: pointer; float: left; width: 25px; height: 20px; margin: 8px 2px; padding: 0; text-indent: 100%; white-space: nowrap; overflow: hidden; border: 0; background: transparent; font-size: 10px; line-height: 1; text-align: center; }
-.dd-item > button:before {  display: block; position: absolute; width: 100%; text-align: center; text-indent: 0; }
-.dd-item > button[data-action="collapse"]:before { }
-.dd-placeholder,
-.dd-empty { margin: 5px 0; padding: 0; min-height: 30px; background: #FFF; border: 1px dashed #b6bcbf; box-sizing: border-box; -moz-box-sizing: border-box; }
-.dd-empty { border: 1px dashed #bbb; min-height: 100px; background-color: #e5e5e5;
-background-image: -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
--webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-background-image: -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
--moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-background-image: linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-background-size: 60px 60px;
-background-position: 0 0, 30px 30px;
-}
-.dd-dragel { position: absolute; pointer-events: none; z-index: 9999; }
-.dd-dragel > .dd-item .dd-handle { margin-top: 0; }
-.dd-dragel .dd-handle {
--webkit-box-shadow: 2px 4px 6px 0 rgba(0,0,0,.1);
-box-shadow: 2px 4px 6px 0 rgba(0,0,0,.1);
+.public .content, .default .content, .user .content {
+    min-height: 600px;
 }
 
-.dd3-content {
-display: block;
-margin: 5px 0;
-padding: 7px 10px 7px 40px; color: #333; text-decoration: none;
-background: none repeat scroll 0 0 #FFFFFF;
-border: 1px solid #DDDDDD;
-color: #333333;
-}
-.dd3-content:hover { background: #fff; }
-.dd3-content a { color: #F39C12; }
-.dd-dragel > .dd3-item > .dd3-content { margin: 0; }
-.dd3-item > button { margin-left: 35px; }
-.dd3-handle { position: absolute;
-margin: 0; left: 0; top: 0;
-cursor: all-scroll;
-width: 34px;
-text-indent: 100%;
-white-space: nowrap;
-overflow: hidden;
-border: 1px solid #f39c12;
-background: #f39c12;
-height:36px;
-box-shadow:1px 1px 0 rgba(255, 255, 255, 0.2) inset;
-}
-.dd3-handle:before { content: '≡'; display: block; position: absolute; left: 0; top: 5px; width: 100%; text-align: center; text-indent: 0; color: #fff; font-size: 20px; font-weight: normal; }
-.dd3-handle:hover { background: #f39c12; }
-
-.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
-
-  margin-left: 0px;
+.wraper{
+  padding: 100px 0;
+  background-color: #fafafa;
 }
 
-.ibox {
-  clear: both;
-  margin-bottom: 25px;
-  margin-top: 0;
+.features {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.features-header {
+    margin-bottom: 60px;
+}
+.features {
+    text-align: center;
+}
+.feature i {
+    font-size: 5em;
+    margin-bottom: 15px;
+}
+.feature h6 {
+    font-size: 18px;
+}
+.feature p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+.features-header h2 {
+    font-weight: 100;
+    font-size: 35px;
+}
+
+
+.footer-logo img {
+  margin-bottom: -21px;
+}
+.footer {
+  background-color: #4c5667;
+  border-top: 2px solid #ea453e;
+}
+
+.footer .copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+.footer .copyright p {
+    line-height: 6;
+    margin-bottom: 0;
+}
+
+.footer .social {
+  padding-top: 25px;
+}
+.footer .social a {
+  font-size: 16px;
+  color: #fff;
+  padding-right: 10px;
+}
+.footer .navs {
+  padding-top: 25px;
+  text-align: right;
+}
+.footer .navs a {
+  color: #fff;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #795548;
+    border-color: #795548;
+}
+
+
+.header .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #fff;
+  border: none;
+  border-bottom: 2px solid rgba(189, 189, 189, 0.25);
+}
+.header .navbar-nav>li>a {
+  line-height: 39px;
+}
+.header .navbar-nav>li.active>a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  background-color: #ea453e;
+  height: 2px;
+  width: 100%;
+  left: 0;
+}
+.my-account-block ul>li>a .menu-account-img {
+  height: 40px;
+  width: 40px;
+  border: 2px solid #ea453e;
+}
+.my-account-block ul {
+  margin: 0;
   padding: 0;
 }
-.ibox.collapsed .ibox-content {
-  display: none;
+.my-account-block ul>li {
+  list-style: none;
 }
-.ibox.collapsed .fa.fa-chevron-up:before {
-  content: "\f078";
+.my-account-block ul .dropdown-menu {
+    right: 0;
+    left: auto;
 }
-.ibox.collapsed .fa.fa-chevron-down:before {
-  content: "\f077";
+.my-account-block ul>li>a {
+  padding: 15px;
+  line-height: 33px;
 }
-.ibox:after,
-.ibox:before {
-  display: table;
+.my-account-block ul>li.open>a {
+    background-image: -webkit-linear-gradient(top,#dbdbdb 0,#e2e2e2 100%);
+    background-image: -o-linear-gradient(top,#dbdbdb 0,#e2e2e2 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#dbdbdb),to(#e2e2e2));
+    background-image: linear-gradient(to bottom,#dbdbdb 0,#e2e2e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdbdbdb', endColorstr='#ffe2e2e2', GradientType=0);
+    background-repeat: repeat-x;
+    -webkit-box-shadow: inset 0 3px 9px rgba(0,0,0,.075);
+    box-shadow: inset 0 3px 9px rgba(0,0,0,.075);
 }
-.ibox-title {
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-top-colors: none;
-  background-color: #ffffff;
-  border-color: #e7eaec;
-  border-image: none;
-  border-style: solid solid none;
-  border-width: 3px 0 0;
-  color: inherit;
-  margin-bottom: 0;
-  padding: 14px 15px 7px;
-  min-height: 48px;
+.my-account-block ul>li>.dropdown-menu {
+  margin: 0;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin-top: -5px;
 }
-.ibox-content {
-  background-color: #ffffff;
-  color: inherit;
-  padding: 15px 20px 20px 20px;
-  border-color: #e7eaec;
-  border-image: none;
-  border-style: solid solid none;
-  border-width: 1px 0px;
+.my-account-block .dropdown-menu>li>a {
+    display: block;
+    padding: 10px 10px;
+    clear: both;
+    font-weight: 600;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 12px;
 }
-.ibox-footer {
-  color: inherit;
-  border-top: 1px solid #e7eaec;
-  font-size: 90%;
-  background: #ffffff;
-  padding: 10px 15px;
+.my-account-block .dropdown-menu>li>a:hover {
+  color: #fff;
+  background-color: #ea453e;
+}
+.my-account-block .dropdown-menu>li>a i {
+  width: 25px;
+}
+.my-account-block {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+.header .navbar-header {
+  min-height: 70px;
+}
+.header .navbar-toggle {
+    margin-top: 18px;
+    margin-right: 15px;
+    border-radius: 0px;
+    border: none;
+    background-color: transparent;
+}
+.header .navbar-default .navbar-toggle .icon-bar {
+    background-color: #ea453e;
 }
 
-/* AGILE BOARD */
-.sortable-list {
-  padding: 10px 0;
-}
-.agile-list {
-  list-style: none;
-  margin: 0;
-}
-.agile-list li {
-  background: #FAFAFB;
-  border: 1px solid #e7eaec;
-  margin: 0px 0 10px 0;
-  padding: 10px;
-  border-radius: 2px;
-}
-.agile-list li:hover {
-  cursor: pointer;
-  background: #fff;
-}
-.agile-list li.warning-element {
-  border-left: 3px solid #f8ac59;
-}
-.agile-list li.danger-element {
-  border-left: 3px solid #ed5565;
-}
-.agile-list li.info-element {
-  border-left: 3px solid #1c84c6;
-}
-.agile-list li.success-element {
-  border-left: 3px solid #1ab394;
-}
-.agile-detail {
-  margin-top: 5px;
-  font-size: 12px;
-}
-.dropzone {
-    min-height: 150px;
-    border: 1px dashed rgba(0,0,0,0.3);
-    background: white;
-    padding: 20px 20px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-.notification .img-circle{
-    width: 40px;
-    height: 40px;
-    margin: auto 10px auto auto; 
-}
-.notification> li .menu > li > a > h4 {
-padding: 0;
-margin: 0 0 0 45px;
-color: #444444;
-font-size: 15px;
-position: relative;
-}
-.notification> li .menu > li > a > p {
-    margin: 0 0 0 45px;
-    font-size: 12px;
-    color: #888888;
-}
-.notification> li .menu > li > a > h4 > small {
-    color: #999999;
-    font-size: 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+/* ===========
+   Helper classes
+ =============*/
+
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+Author's custom styles
+========================================================================== */
 
 * {
   outline: none !important;
@@ -398,10 +474,6 @@ a:focus {
 }
 .badge-inverse {
   background-color: #4c5667;
-}
-.f-12 {
-  font-size: 12px;
-  line-height: 20px;
 }
 .p-0 {
   padding: 0px !important;
@@ -1025,160 +1097,4 @@ a:focus {
 }
 .radio-inverse input[type="radio"]:checked + label::after {
   background-color: #4c5667;
-}
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden {
-    display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after,
-    *:first-letter,
-    *:first-line {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
 }

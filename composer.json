@@ -8,11 +8,11 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "lavalite/framework": "dev-master",
-        "lavalite/page": "dev-master",
-        "lavalite/settings": "dev-master",
-        "lavalite/task": "dev-master",
-        "lavalite/message": "dev-master",
-        "lavalite/calendar": "dev-master"
+        "lavalite/page": "4.1.*",
+        "lavalite/settings": "4.1.*",
+        "lavalite/task": "4.1.*",
+        "lavalite/message": "4.1.*",
+        "lavalite/calendar": "4.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -38,11 +38,11 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ],
         "post-update-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ],
         "post-root-package-install": [

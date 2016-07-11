@@ -14,7 +14,7 @@ return [
     'default'       => [
         'theme'  => 'public',
         'layout' => 'default',
-        'blank'  => 'blank',
+        'auth'   => 'auth',
     ],
 
     /*
@@ -31,12 +31,12 @@ return [
         'admin'  => [
             'theme'  => 'admin',
             'layout' => 'default',
-            'blank'  => 'blank',
+            'auth'   => 'auth',
         ],
         'public' => [
             'theme'  => 'public',
             'layout' => 'default',
-            'blank'  => 'blank',
+            'auth'   => 'auth',
         ],
         'user'   => [
             'theme'  => 'public',

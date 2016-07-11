@@ -67,12 +67,13 @@ $(function () {
         }
     });
 
+/*
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
-
+*/
     $('body').on('click', '[data-action]', function(e) {
         e.preventDefault();
 
@@ -146,11 +147,7 @@ $( document ).ajaxComplete(function() {
 
     $.AdminLTE.boxWidget.activate()
 
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
-    });
+
 });
 
 
@@ -173,7 +170,7 @@ var app = {
             return false;
         }
 
-        var formData = new FormData($(forms));
+        var formData = new FormData();
         params   = form.serializeArray();
 
         $.each(params, function(i, val) {

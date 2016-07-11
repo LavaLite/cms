@@ -2,12 +2,12 @@
         <div class="overlay force-height-full">
             <nav class="navbar navbar-default navbar-static-top">
                 <div class="container">
-                    <a class="navbar-brand" href="{{trans_url('/')}}"><img src="{{asset('img/logo/inverse.png')}}" alt="Lavalite" class="img-responsive"></a>
+                    <a class="navbar-brand" href="{{trans_url('/')}}"><img src="{{theme_asset('img/logo/white.svg')}}" alt="Lavalite" class="img-responsive"></a>
                     <ul class="nav navbar-nav  pull-right">
-                    @if(Auth::guard()->check())
+                    @if(user_check())
                         <li>
                             <a href="{{ trans_url('home') }}" class="login">
-                                <span class="hidden-xs">{{ get_users('name') }}</span>
+                                <span class="hidden-xs">{{ users('name') }}</span>
                                 <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-user"></i></span>
                             </a>
                         </li>
@@ -39,9 +39,9 @@
                     <div class="col-md-12">
                         <h1> <small> Bootstrapper for Laravel</small> </h1>
                         <h2>Content Management System.</h2>
-                        <a class="btn btn-primary" href="http://www.lavalite.org/package" target="_blabk"><li class="fa fa-cubes fa-lg"></li>&nbsp;&nbsp;Packages</a>
-                        <a class="btn btn-primary" href="https://github.com/LavaLite/cms/wiki" target="_blabk"><li class="fa fa-book fa-lg"></li>&nbsp;&nbsp;Documentation</a>
-                        <a class="btn btn-primary" href="https://github.com/LavaLite/cms/archive/master.zip" target="_blabk"><li class="fa fa-download fa-lg"></li>&nbsp;&nbsp;Download</a>
+                        <a class="btn btn-warning btn-lg" href="http://www.lavalite.org/package" target="_blabk"><li class="fa fa-cubes fa-lg"></li>&nbsp;&nbsp;Packages</a>
+                        <a class="btn btn-warning btn-lg" href="https://github.com/LavaLite/cms/wiki" target="_blabk"><li class="fa fa-book fa-lg"></li>&nbsp;&nbsp;Documentation</a>
+                        <a class="btn btn-warning btn-lg" href="https://github.com/LavaLite/cms/archive/master.zip" target="_blabk"><li class="fa fa-download fa-lg"></li>&nbsp;&nbsp;Download</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <img src="{{ URL::to('img/ui-screen.png') }}" alt="" class="img-responsive" style=" margin: 0 auto;margin-top: 100px;" />
+                        <img src="{{ theme_asset('img/ui-screen.png') }}" alt="" class="img-responsive" style=" margin: 0 auto;margin-top: 100px;" />
                     </div>
                 </div>
             </div>

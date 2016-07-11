@@ -49,7 +49,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-
         return parent::render($request, $e);
     }
 
@@ -64,7 +63,7 @@ class Handler extends ExceptionHandler
         $status = $e->getStatusCode();
 
         if (view()->exists("public::errors.{$status}")) {
-            $theme = Theme::uses('public')->layout('default');
+            $theme = Theme::uses('public')->layout('error');
             return $theme->of("public::errors.{$status}", ['exception' => $e])->render();
         } else {
             return $this->convertExceptionToResponse($e);

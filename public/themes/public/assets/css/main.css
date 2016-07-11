@@ -1,242 +1,92 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100);
-.control-label sup {
-  color: red;
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+body {
+    color: #3e4a56;
+    font-size: 13px;
+    line-height: 1.4;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.5px;
 }
 
-.title {
-    font-family: 'Lato';
-    font-size: 96px;
-}
-.sub-title {
-    font-family: 'Lato';
-    font-size: 46px;
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
-.navbar-nav > .user-menu > .dropdown-menu > .user-body a {
-    color: #FFF !important;
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
-.data-table tbody tr:hover.selected td,
-.data-table tbody tr:hover td {
-    background-color: #FFEFD4;
-    cursor: pointer;
-}
-.data-table tbody tr.selected td {
-    background-color: #FFEFC6 !important;
-}
-.data-table thead.list_head {
-    background-color: #1570A6 !important;
-    color:white;
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
-.data-table thead.search_bar {
-    background-color: #3E92C4 !important;
-    padding-left: 5px;
-    padding-right: 5px;
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
 }
 
-.data-table thead.search_bar input, 
-.data-table thead.search_bar select{
-    height: 26px;
-    padding: 2px 4px;
-    width: 100%;
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
-.smoke-base .dialog-inner {
-    overflow-y: scroll;
-    max-height: 500px;
-}
-.error {
-    border:red 1px solid !important;
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
 }
 
-/*Nestable lists*/
-.dd { position: relative; display: block; margin: 0; padding: 0;  list-style: none; font-size: 13px; line-height: 20px; }
-.dd-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; }
-.dd-list .dd-list { padding-left: 30px; }
-.dd-collapsed .dd-list { display: none; }
-.dd-item,
-.dd-empty,
-.dd-placeholder { display: block; position: relative; margin: 0; padding: 0; min-height: 20px; font-size: 13px; line-height: 20px; }
-.dd-handle { cursor:default;display: block; margin: 5px 0; padding: 7px 10px; color: #333; text-decoration: none; border: 1px solid #ddd;
-background: #fff;
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
-.dd-handle:hover { color: #FFF; background: #4D90FD; border-color:#f39c12; }
-
-.dd-item > button { color:#555;font-family: FontAwesome;display: block; position: relative; cursor: pointer; float: left; width: 25px; height: 20px; margin: 8px 2px; padding: 0; text-indent: 100%; white-space: nowrap; overflow: hidden; border: 0; background: transparent; font-size: 10px; line-height: 1; text-align: center; }
-.dd-item > button:before {  display: block; position: absolute; width: 100%; text-align: center; text-indent: 0; }
-.dd-item > button[data-action="collapse"]:before { }
-.dd-placeholder,
-.dd-empty { margin: 5px 0; padding: 0; min-height: 30px; background: #FFF; border: 1px dashed #b6bcbf; box-sizing: border-box; -moz-box-sizing: border-box; }
-.dd-empty { border: 1px dashed #bbb; min-height: 100px; background-color: #e5e5e5;
-background-image: -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
--webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-background-image: -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
--moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-background-image: linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-background-size: 60px 60px;
-background-position: 0 0, 30px 30px;
-}
-.dd-dragel { position: absolute; pointer-events: none; z-index: 9999; }
-.dd-dragel > .dd-item .dd-handle { margin-top: 0; }
-.dd-dragel .dd-handle {
--webkit-box-shadow: 2px 4px 6px 0 rgba(0,0,0,.1);
-box-shadow: 2px 4px 6px 0 rgba(0,0,0,.1);
-}
-
-.dd3-content {
-display: block;
-margin: 5px 0;
-padding: 7px 10px 7px 40px; color: #333; text-decoration: none;
-background: none repeat scroll 0 0 #FFFFFF;
-border: 1px solid #DDDDDD;
-color: #333333;
-}
-.dd3-content:hover { background: #fff; }
-.dd3-content a { color: #F39C12; }
-.dd-dragel > .dd3-item > .dd3-content { margin: 0; }
-.dd3-item > button { margin-left: 35px; }
-.dd3-handle { position: absolute;
-margin: 0; left: 0; top: 0;
-cursor: all-scroll;
-width: 34px;
-text-indent: 100%;
-white-space: nowrap;
-overflow: hidden;
-border: 1px solid #f39c12;
-background: #f39c12;
-height:36px;
-box-shadow:1px 1px 0 rgba(255, 255, 255, 0.2) inset;
-}
-.dd3-handle:before { content: '≡'; display: block; position: absolute; left: 0; top: 5px; width: 100%; text-align: center; text-indent: 0; color: #fff; font-size: 20px; font-weight: normal; }
-.dd3-handle:hover { background: #f39c12; }
-
-.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
-
-  margin-left: 0px;
-}
-
-.ibox {
-  clear: both;
-  margin-bottom: 25px;
-  margin-top: 0;
-  padding: 0;
-}
-.ibox.collapsed .ibox-content {
-  display: none;
-}
-.ibox.collapsed .fa.fa-chevron-up:before {
-  content: "\f078";
-}
-.ibox.collapsed .fa.fa-chevron-down:before {
-  content: "\f077";
-}
-.ibox:after,
-.ibox:before {
-  display: table;
-}
-.ibox-title {
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-top-colors: none;
-  background-color: #ffffff;
-  border-color: #e7eaec;
-  border-image: none;
-  border-style: solid solid none;
-  border-width: 3px 0 0;
-  color: inherit;
-  margin-bottom: 0;
-  padding: 14px 15px 7px;
-  min-height: 48px;
-}
-.ibox-content {
-  background-color: #ffffff;
-  color: inherit;
-  padding: 15px 20px 20px 20px;
-  border-color: #e7eaec;
-  border-image: none;
-  border-style: solid solid none;
-  border-width: 1px 0px;
-}
-.ibox-footer {
-  color: inherit;
-  border-top: 1px solid #e7eaec;
-  font-size: 90%;
-  background: #ffffff;
-  padding: 10px 15px;
-}
-
-/* AGILE BOARD */
-.sortable-list {
-  padding: 10px 0;
-}
-.agile-list {
-  list-style: none;
-  margin: 0;
-}
-.agile-list li {
-  background: #FAFAFB;
-  border: 1px solid #e7eaec;
-  margin: 0px 0 10px 0;
-  padding: 10px;
-  border-radius: 2px;
-}
-.agile-list li:hover {
-  cursor: pointer;
-  background: #fff;
-}
-.agile-list li.warning-element {
-  border-left: 3px solid #f8ac59;
-}
-.agile-list li.danger-element {
-  border-left: 3px solid #ed5565;
-}
-.agile-list li.info-element {
-  border-left: 3px solid #1c84c6;
-}
-.agile-list li.success-element {
-  border-left: 3px solid #1ab394;
-}
-.agile-detail {
-  margin-top: 5px;
-  font-size: 12px;
-}
-.dropzone {
-    min-height: 150px;
-    border: 1px dashed rgba(0,0,0,0.3);
-    background: white;
-    padding: 20px 20px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-.notification .img-circle{
-    width: 40px;
-    height: 40px;
-    margin: auto 10px auto auto; 
-}
-.notification> li .menu > li > a > h4 {
-padding: 0;
-margin: 0 0 0 45px;
-color: #444444;
-font-size: 15px;
-position: relative;
-}
-.notification> li .menu > li > a > p {
-    margin: 0 0 0 45px;
-    font-size: 12px;
-    color: #888888;
-}
-.notification> li .menu > li > a > h4 > small {
-    color: #999999;
-    font-size: 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */

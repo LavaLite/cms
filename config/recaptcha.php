@@ -4,6 +4,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Enable recaptcha
+    |--------------------------------------------------------------------------
+    |
+    | Want to enable recaptcha while registration
+     */
+    'enable'      => false,
+
+    /*
+    |--------------------------------------------------------------------------
     | API Keys
     |--------------------------------------------------------------------------
     |
@@ -12,9 +21,9 @@ return [
     | In version 2 of reCAPTCHA, public_key is the Site key,
     | and private_key is the Secret key.
     |
-    */
-    'public_key'     => env('RECAPTCHA_PUBLIC_KEY', ''),
-    'private_key'    => env('RECAPTCHA_PRIVATE_KEY', ''),
+     */
+    'public_key'  => env('RECAPTCHA_PUBLIC_KEY', ''),
+    'private_key' => env('RECAPTCHA_PRIVATE_KEY', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -23,7 +32,7 @@ return [
     |
     | Set a template to use if you don't want to use the standard one.
     |
-    */
+     */
     'template'    => '',
 
     /*
@@ -34,7 +43,7 @@ return [
     | Determine how to call out to get response; values are 'curl' or 'native'.
     | Only applies to v2.
     |
-    */
+     */
     'driver'      => 'curl',
 
     /*
@@ -44,7 +53,7 @@ return [
     |
     | Various options for the driver
     |
-    */
+     */
     'options'     => [
 
         'curl_timeout' => 1,
@@ -58,7 +67,7 @@ return [
     |
     | Set which version of ReCaptcha to use.
     |
-    */
+     */
 
     'version'     => 2,
 

@@ -1,0 +1,149 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="176px" height="36px" viewBox="0 0 176 36" enable-background="new 0 0 176 36" xml:space="preserve">
+<g>
+  <g>
+    <polygon id="path0" fill="#7266ba" points="0.691,0.761 3.983,3.318 3.979,27.525 3.979,31.409 0.691,28.866    "/>
+    <polygon id="path1" fill="#7266ba" points="5.022,4.1 8.314,6.655 8.312,30.862 23.101,23.533 23.101,18.139 26.393,20.701 26.393,25.613 
+      8.312,34.747 5.022,32.204     "/>
+    <polygon  id="path2" fill="#7266ba" points="9.332,25.409 18.792,20.86 18.792,14.787 22.083,17.343 22.083,22.939 9.332,29.239    "/>
+  </g>
+  <g>
+    <path  id="path3" fill="#7266ba" d="M39.566,0.854v32.493H50.02v1.308H38.08v-33.8H39.566z"/>
+    <path  id="path4" fill="#7266ba" d="M73.855,14.372v20.282h-1.442v-5.048c-0.84,1.713-2.103,3.065-3.785,4.057s-3.484,1.487-5.407,1.487
+      c-2.944,0-5.467-1.044-7.57-3.132c-2.103-2.088-3.154-4.589-3.154-7.502c0-2.914,1.052-5.443,3.154-7.509
+      c2.103-2.088,4.626-3.131,7.57-3.131c1.922,0,3.762,0.511,5.52,1.532c1.756,1.021,2.981,2.373,3.671,4.042v-5.078H73.855z
+       M53.939,24.561c0,2.523,0.923,4.71,2.771,6.557s4.04,2.771,6.579,2.771c2.539,0,4.708-0.924,6.51-2.771
+      c1.803-1.847,2.705-4.04,2.705-6.579c0-2.537-0.91-4.736-2.727-6.607c-1.817-1.861-3.987-2.793-6.51-2.793
+      c-2.523,0-4.708,0.939-6.556,2.816C54.863,19.839,53.939,22.038,53.939,24.561z"/>
+    <path  id="path5" fill="#7266ba" d="M96.322,14.372h1.307l-9.941,20.867L77.684,14.372h1.578l8.561,17.805L96.322,14.372z"/>
+    <path  id="path6" fill="#7266ba" d="M121.689,14.372v20.282h-1.441v-5.048c-0.841,1.713-2.104,3.065-3.785,4.057
+      c-1.683,0.991-3.485,1.487-5.406,1.487c-2.945,0-5.468-1.044-7.57-3.132s-3.154-4.589-3.154-7.502
+      c0-2.914,1.052-5.443,3.154-7.509c2.103-2.088,4.625-3.131,7.57-3.131c1.921,0,3.762,0.511,5.519,1.532
+      c1.758,1.021,2.981,2.373,3.673,4.042v-5.078H121.689z M101.773,24.561c0,2.523,0.924,4.71,2.771,6.557s4.04,2.771,6.578,2.771
+      c2.539,0,4.71-0.924,6.512-2.771s2.703-4.04,2.703-6.579c0-2.537-0.908-4.736-2.726-6.607c-1.817-1.861-3.988-2.793-6.512-2.793
+      c-2.522,0-4.708,0.939-6.556,2.816C102.697,19.839,101.773,22.038,101.773,24.561z"/>
+    <path  id="path7" fill="#7266ba" d="M134.801,33.799v1.261c-2.133,0-3.95-0.713-5.452-2.141c-1.502-1.426-2.252-3.251-2.252-5.475V0.854h1.441
+      v26.59c0,1.833,0.608,3.35,1.825,4.551C131.579,33.197,133.059,33.799,134.801,33.799z"/>
+    <path  id="path8" fill="#7266ba" d="M139.712,9.461c-0.871,0-1.307-0.406-1.307-1.217c0-0.811,0.436-1.216,1.307-1.216
+      s1.307,0.405,1.307,1.216C141.019,9.055,140.583,9.461,139.712,9.461z M140.433,14.417v20.238h-1.441V14.417H140.433z"/>
+    <path  id="path9" fill="#7266ba" d="M153.681,33.663v1.262c-2.134,0-3.951-0.713-5.452-2.141c-1.503-1.427-2.253-3.252-2.253-5.474V6.217
+      h1.441v8.2h6.218v1.262h-6.218v11.632c0,1.832,0.609,3.349,1.825,4.55C150.459,33.062,151.938,33.663,153.681,33.663z"/>
+    <path  id="path10" fill="#7266ba" d="M167.423,35.194h-0.406c-2.854,0-5.338-1.073-7.456-3.221c-2.118-2.148-3.177-4.648-3.177-7.503
+      c0-2.853,1.051-5.353,3.154-7.417c2.102-2.087,4.7-3.132,7.794-3.132s5.753,1.232,7.977,3.694L161.16,31.59
+      c1.952,1.562,3.83,2.344,5.631,2.344c1.804,0,3.418-0.412,4.845-1.239c1.427-0.825,2.605-1.93,3.537-3.312v2.297
+      C173.04,34.023,170.456,35.194,167.423,35.194z M166.95,15.183c-2.389,0-4.507,0.924-6.354,2.771
+      c-1.847,1.855-2.77,3.98-2.77,6.381c0,2.404,0.794,4.507,2.387,6.309l13.112-13.028C171.463,15.994,169.338,15.183,166.95,15.183z
+      "/>
+  </g>
+</g>
+	<animate 
+           xlink:href="#path0"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="0s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path1"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="0.2s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path2"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="0.4s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path3"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="0.6s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path4"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="0.8s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path5"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="1s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path6"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="1.2s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path7"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="1.4s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path8"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="1.6s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path9"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="1.8s"
+           fill="freeze"
+           id="changeColor"/>
+    <animate 
+           xlink:href="#path10"
+           attributeName="fill"
+           from="#7266ba"
+           to="#DF4C3C" 
+           dur="5s"
+           repeatCount="once"
+           begin="2s"
+           fill="freeze"
+           id="changeColor"/>
+</svg>

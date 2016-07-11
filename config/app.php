@@ -26,7 +26,7 @@ return [
     |
      */
 
-    'debug'           => env('APP_DEBUG', true),
+    'debug'           => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
      */
 
-    'url'             => 'http://localhost',
+    'url'             => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -110,6 +110,8 @@ return [
 
     'log'             => env('APP_LOG', 'single'),
 
+    'log_level'       => env('APP_LOG_LEVEL', 'debug'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -149,6 +151,14 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Application Service Providers...
+         */
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+
+        /*
          * Lavalite Framework Service Providers...
          */
 
@@ -168,16 +178,6 @@ return [
         Lavalite\Calendar\Providers\CalendarServiceProvider::class,
         Lavalite\Task\Providers\TaskServiceProvider::class,
         Lavalite\Settings\Providers\SettingsServiceProvider::class,
-
-        Lavalite\Package\Providers\PackageServiceProvider::class,
-
-        /*
-         * Application Service Providers...
-         */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
 
     ],
 
@@ -242,7 +242,7 @@ return [
         'Task'             => Lavalite\Task\Facades\Task::class,
         'Calendar'         => Lavalite\Calendar\Facades\Calendar::class,
         'Message'          => Lavalite\Message\Facades\Message::class,
-        'Package'          => Lavalite\Package\Facades\Package::class,
+
     ],
 
 ];

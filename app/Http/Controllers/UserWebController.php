@@ -26,6 +26,7 @@ class UserWebController extends Controller
     {
         $this->middleware('web');
         $this->middleware('auth:web');
+        $this->middleware('auth.active:web');
         $this->setupTheme(config('theme.themes.user.theme'), config('theme.themes.user.layout'));
         parent::__construct();
     }

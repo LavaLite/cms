@@ -1,46 +1,40 @@
- <div id="wrap">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div id="navbar">
-                <ul class="nav navbar-links pull-right" id="js-buttons">
-                        <li>
-                            <a href="{{ trans_url('client') }}">
-                                <span class="hidden-xs">Client</span>
-                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-user"></i></span>
-                            </a>
-                        </li>
-                    @if(Auth::check())
-                        <li>
-                            <a href="{{ trans_url('home') }}">
-                                <span class="hidden-xs">{{ get_users('name') }}</span>
-                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-user"></i></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ trans_url('logout') }}">
-                                <span class="hidden-xs">Logout</span>
-                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-sign-out"></i></span>
-                            </a>
-                        </li>
-                    @else
-                        <li>
-                            <a href="{{ trans_url('register') }}">
-                                <span class="hidden-xs">Register</span>
-                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-user"></i></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ trans_url('login') }}">
-                                <span class="hidden-xs">Login</span>
-                                <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-sign-in"></i></span>
-                            </a>
-                        </li>
-                    @endif
-                </ul>
-            </div>
-            <div class="navbar-header">
-             <a class="navbar-brand" href="{{ trans_url('/') }}"> <img src="{{ asset('img/logo/default.png') }}" alt="Lavalite"> </a>
-            </div>
+<header class="header">
+    <nav class="navbar navbar-default  navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{trans_url('/')}}"><img src="{{theme_asset('img/logo/logo.svg')}}" alt=""></a>
         </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right" style="padding-right: 80px;">
+            <li class="active"><a href="{{trans_url('/about-us.html')}}">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">News</a></li>
+    @if(!user_check())
+            <li><a href="{{trans_url('/login')}}">Login</a></li>
+            <li><a href="{{trans_url('/register')}}">Register</a></li>
+    @endif
+          </ul>
+        </div>
+    @if(user_check())
+        <div class="my-account-block">
+          <ul>
+            <li class="dropdown my-account">
+              <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{{users('picture')}}" class="img-resopnsive img-circle menu-account-img" alt=""></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{trans_url('profile')}}"><i class="ion ion-android-person"></i>Profile</a></li>
+                <li><a href="{{trans_url('password')}}"><i class="ion ion-android-settings"></i>Settings</a></li>
+                <li><a href="{{trans_url('logout')}}"><i class="ion ion-android-exit"></i>Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    @endif
+      </div>
     </nav>
-</div>
+</header>

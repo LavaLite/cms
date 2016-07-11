@@ -62,7 +62,7 @@ return [
      * Verify email of a user before redirectiong to dashboard.
      *
      */
-    'verify_email'     => false,
+    'verify_email'     => true,
 
     /*
      *--------------------------------------------------------------------------

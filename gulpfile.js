@@ -16,6 +16,7 @@ elixir(function(mix) {
         .styles([
             './vendor/bower_components/bootstrap/dist/css/bootstrap.min.css',
             './vendor/bower_components/font-awesome/css/font-awesome.min.css',
+            './vendor/bower_components/simple-line-icons/css/simple-line-icons.css',
             './vendor/bower_components/datatables-bootstrap3-plugin/media/css/datatables-bootstrap3.min.css',
             './vendor/bower_components/pickadate/lib/themes/classic.css',
             './vendor/bower_components/pickadate/lib/themes/classic.time.css',
@@ -24,6 +25,8 @@ elixir(function(mix) {
             './vendor/bower_components/dropzone/dist/dropzone.css',
             './vendor/bower_components/sweetalert/dist/sweetalert.css',
             './vendor/bower_components/summernote/dist/summernote.css',
+            './vendor/bower_components/ionicons/css/ionicons.min.css',
+            './vendor/bower_components/waves/dist/waves.css',
             ], './public/css/vendor_admin.css', './public/css')
 
         .scripts([
@@ -37,11 +40,11 @@ elixir(function(mix) {
             './vendor/bower_components/pickadate/lib/picker.time.js',
             './vendor/bower_components/pickadate/lib/picker.date.js',
             './vendor/bower_components/toastr/toastr.js',
-            './vendor/bower_components/iCheck/icheck.min.js',
             './vendor/bower_components/Sortable/Sortable.js',
             './vendor/bower_components/sweetalert/dist/sweetalert-dev.js',
             './vendor/bower_components/dropzone/dist/dropzone.js',
             './vendor/bower_components/summernote/dist/summernote.js',
+            './vendor/bower_components/waves/dist/waves.js',
             './vendor/bower_components/Sortable/Sortable.min.js',
 
             './vendor/bower_components/jquery-timeago/jquery.timeago.js',
@@ -53,20 +56,23 @@ elixir(function(mix) {
             './vendor/bower_components/sweetalert/dist/sweetalert.css',
             './vendor/bower_components/toastr/toastr.min.css',
             './vendor/bower_components/dropzone/dist/dropzone.css',
+            './vendor/bower_components/waves/dist/waves.css',
             './vendor/bower_components/pickadate/lib/themes/classic.css',
             './vendor/bower_components/pickadate/lib/themes/classic.time.css',
             './vendor/bower_components/pickadate/lib/themes/classic.date.css',
             './vendor/bower_components/font-awesome/css/font-awesome.min.css',
+            './vendor/bower_components/ionicons/css/ionicons.min.css',
+            './vendor/bower_components/simple-line-icons/css/simple-line-icons.css',
             ], './public/css/vendor_public.css', './public/css')
 
         .scripts([
             './vendor/bower_components/bootstrap/dist/js/bootstrap.js',
-            './vendor/bower_components/iCheck/icheck.min.js',
             './vendor/bower_components/sweetalert/dist/sweetalert-dev.js',
             './vendor/bower_components/jquery-validation/dist/jquery.validate.js',
             './vendor/bower_components/moment/min/moment.min.js',
             './vendor/bower_components/toastr/toastr.js',
             './vendor/bower_components/dropzone/dist/dropzone.js',
+            './vendor/bower_components/waves/dist/waves.js',
             './vendor/bower_components/pickadate/lib/picker.js',
             './vendor/bower_components/pickadate/lib/picker.time.js',
             './vendor/bower_components/pickadate/lib/picker.date.js',
@@ -78,12 +84,11 @@ elixir(function(mix) {
         //.version(["public/css/vendor_admin.css", "public/js/vendor_admin.js", "public/css/vendor_public.css", "public/js/vendor_public.js"])
 
         //.copy('./vendor/bower_components/font-awesome/fonts', './public/build/fonts')
+        .copy('./vendor/bower_components/ionicons/fonts', './public/fonts')
         .copy('./vendor/bower_components/font-awesome/fonts', './public/fonts')
+        .copy('./vendor/bower_components/simple-line-icons/fonts', './public/fonts')
 
         .copy('./vendor/bower_components/DataTables/media/images', './public/packages/data-tables/images')
-
-        .copy('./vendor/bower_components/iCheck/icheck.min.js', './public/packages/icheck/icheck.min.js')
-        .copy('./vendor/bower_components/iCheck/skins/square/', './public/packages/icheck/skins/square/')
 
         .copy('./vendor/bower_components/fullcalendar/dist/fullcalendar.min.css', './public/packages/fullcalendar/fullcalendar.min.css')
         .copy('./vendor/bower_components/fullcalendar/dist/fullcalendar.min.js', './public/packages/fullcalendar/fullcalendar.min.js')
@@ -94,9 +99,6 @@ elixir(function(mix) {
 
         .copy('vendor/bower_components/jquery/dist/jquery.min.js', 'public/packages/jquery/js/jquery.min.js')
         .copy('vendor/bower_components/jquery/dist/jquery.min.map', 'public/packages/jquery/js/jquery.min.map')
-
-        .copy('vendor/bower_components/ionicons/css/ionicons.min.css', 'public/packages/ionicons/css/ionicons.min.css')
-        .copy('vendor/bower_components/ionicons/fonts', 'public/packages/ionicons/fonts')
 
     	;
 });

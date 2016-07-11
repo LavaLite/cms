@@ -46,9 +46,7 @@ class PasswordController extends Controller
         $this->setGuard($guard);
         $this->setRedirectTo();
         $this->setPasswordBroker();
-        //dd($this->broker);
         $this->middleware('guest');
-        $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
         $this->setTheme();
     }
 

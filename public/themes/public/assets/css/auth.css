@@ -1,0 +1,152 @@
+html {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+body.auth {
+   background: #f5f5f5;
+   display: table-cell;
+   vertical-align: middle;
+}
+body.auth .wrapper-page {
+    width: 360px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+body.auth .wrapper-page .form-control {
+    height: 40px;
+    padding-left: 35px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    -o-transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+}
+body.auth .wrapper-page .form-control-feedback {
+    left: 15px;
+    top: 3px;
+    color: rgba(76, 86, 103, 0.4);
+    font-size: 20px;
+    line-height: 32px;
+    z-index: 999;
+}
+body.auth .widget-icon i {
+    float: left;
+    font-size: 61px;
+}
+body.auth .widget-icon .wid-icon-info {
+    margin-left: 80px;
+}
+body.auth .logo-lg {
+    font-size: 28px !important;
+    color: #ea453e !important;
+    font-weight: 700;
+    letter-spacing: .02em;
+    line-height: 70px;
+    text-transform: uppercase;
+}
+body.auth .wrapper-page .form-control:focus + i {
+    color: #ea453e;
+}
+body.auth .lock-screen h4 {
+  font-size: 19px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+body.auth .lock-screen h4 span {
+  font-weight: 300;
+}
+body.auth .lock-screen .btn {
+  height: 40px;
+}
+body.auth .user-thumb img {
+    height: 88px;
+    margin: 0px auto;
+    width: 88px;
+}
+body.auth .lock-wraper h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+body.auth .lock-wraper hr {
+    width: 60%;
+    margin: 20px auto;
+    background-color: #ea453e;
+    border: none;
+    height: 2px;
+}
+body.auth .mail-wraper .email-top-logo {
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+}
+body.auth .mail-wraper h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+body.auth .mail-wraper h2 span {
+    font-weight: 300;
+}
+body.auth .wrapper-page .social-links {
+    margin-top: 50px;
+}
+body.auth .wrapper-page .social-links h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+body.auth .wrapper-page .social-links h3 span {
+    font-weight: 300;
+    font-size: 14px;
+    position: relative;
+    display: block;
+}
+body.auth .wrapper-page .social-links h3 span::after {
+    content: "";
+    background-color: #ddd;
+    width: 100px;
+    height: 1px;
+    position: absolute;
+    left: 25px;
+    top: 7px;
+}
+body.auth .wrapper-page .social-links h3 span::before {
+    content: "";
+    background-color: #ddd;
+    width: 100px;
+    height: 1px;
+    position: absolute;
+    right: 25px;
+    top: 7px;
+}
+body.auth .wrapper-page .social-links h3 span.register::after {
+    left: 20px;
+}
+body.auth .wrapper-page .social-links h3 span.register::before {
+    right: 20px;
+}
+body.auth .wrapper-page .social-links a {
+    font-size: 15px;
+    padding: 0 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 27px;
+}
+/* body.auth .mail-wraper .mail-wraper-content {
+    padding: 80px 80px;
+} */
+body.auth .mail-wraper {
+    width: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+@media only screen and (max-width: 375px) {
+    body.auth .wrapper-page {
+        width: 270px;
+    }
+}
