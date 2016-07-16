@@ -68,7 +68,7 @@ return [
     'suspended'             => 'المستخدم موقوف لـ :minutes دقائق.',
     'unbanned'              => 'تم فك الحظر عن المستخدم.',
     'unsuspended'           => 'تم فط الحظر.',
-    'updated'               => 'jحديث البروفايل',
+    'updated'               => 'تحديث البروفايل',
     'user'                  => 'مستخدم',
     'user'                  => [
     'options'          => [
