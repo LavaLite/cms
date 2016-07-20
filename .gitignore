@@ -1,4 +1,5 @@
 *.env
+._*
 /vendor
 /node_modules
 /public/uploads

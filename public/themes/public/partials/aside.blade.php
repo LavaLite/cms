@@ -9,13 +9,9 @@
             </div>
         </div>
     </div>
+            {!!Menu::menu('user')!!}
     <div class="dashboard-side-nav m-t-5">
         <ul>
             <li class="active"><a href="{{ trans_url('home') }}"><i class="icon-game-controller"></i><span>Dashboard</span></a></li>
-            <!-- <li><a href="update-profile.html"><span>Update Profile</span></a></li>
-            <li><a href="change-password.html"><span>Change Password</span></a></li> -->
-            <li><a href="#"><i class="icon-speech"></i><span>Blogs</span></a></li>
-            <li><a href="#"><i class="icon-picture"></i><span>Gallery</span></a></li>
-            <li><a href="#"><i class="icon-book-open"></i><span>News</span></a></li>
         </ul>
     </div>

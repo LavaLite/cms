@@ -14,9 +14,9 @@ return [
     |
     | Examples: "images", "img/cache"
     |
-    */
+     */
 
-    'route' => null,
+    'route'     => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -28,9 +28,9 @@ return [
     |
     | Define as many directories as you like.
     |
-    */
+     */
 
-    'paths' => [
+    'paths'     => [
         public_path('upload'),
         public_path('images'),
     ],
@@ -49,7 +49,7 @@ return [
     | The values of this array will define which filter class
     | will be applied, by its fully qualified name.
     |
-    */
+     */
 
     'templates' => [
         'small'  => 'Intervention\Image\Templates\Small',
@@ -64,8 +64,8 @@ return [
     |
     | Lifetime in minutes of the images handled by the imagecache route.
     |
-    */
+     */
 
-    'lifetime' => 43200,
+    'lifetime'  => 43200,
 
 ];

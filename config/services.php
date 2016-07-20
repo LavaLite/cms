@@ -12,30 +12,30 @@ return [
     | default location for this type of information, allowing packages
     | to have a conventional place to find your various credentials.
     |
-    */
+     */
 
-    'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+    'mailgun'  => [
+        'domain' => 'sandbox826ebcc25a4348148fb3c08df326dd24.mailgun.org',
+        'secret' => 'key-81e20b075b539e6516bf97ba54562177',
     ],
 
     'mandrill' => [
         'secret' => env('MANDRILL_SECRET'),
     ],
 
-    'ses' => [
+    'ses'      => [
         'key'    => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
         'region' => 'us-east-1',
     ],
 
-    'stripe' => [
+    'stripe'   => [
         'model'  => App\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
 
-    'twitter' => [
+    'twitter'  => [
         'client_id'     => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
         'redirect'      => env('TWITTER_CALLBACK_URL'),
@@ -47,7 +47,7 @@ return [
         'redirect'      => env('FACEBOOK_CALLBACK_URL'),
     ],
 
-    'google' => [
+    'google'   => [
         'client_id'     => env('GOOGLEPLUS_CLIENT_ID'),
         'client_secret' => env('GOOGLEPLUS_CLIENT_SECRET'),
         'redirect'      => env('GOOGLEPLUS_CALLBACK_URL'),

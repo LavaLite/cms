@@ -62,7 +62,7 @@ return [
      * Verify email of a user before redirectiong to dashboard.
      *
      */
-    'verify_email'     => true,
+    'verify_email'     => false,
 
     /*
      *--------------------------------------------------------------------------
@@ -132,7 +132,6 @@ return [
         'guarded'      => ['*'],
         'slugs'        => [],
         'dates'        => ['deleted_at'],
-        'appends'      => ['eid'],
         'fillable'     => ['reporting_id', 'name', 'email', 'password', 'sex', 'dob', 'status', 'designation', 'api_token', 'mobile', 'phone',
             'address', 'permissions', 'street', 'city', 'district', 'state', 'country', 'web'],
         'listfields'   => ['id', 'reporting_id', 'name', 'email', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'web'],
@@ -164,7 +163,6 @@ return [
         'guarded'      => ['*'],
         'slugs'        => [],
         'dates'        => ['deleted_at'],
-        'appends'      => ['eid'],
         'fillable'     => ['reporting_id', 'name', 'email', 'password', 'sex', 'dob', 'status', 'designation', 'api_token', 'mobile', 'phone',
             'address', 'permissions', 'street', 'city', 'district', 'state', 'country', 'web'],
         'listfields'   => ['id', 'reporting_id', 'name', 'email', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'web'],

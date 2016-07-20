@@ -12,9 +12,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right" style="padding-right: 80px;">
-            <li class="active"><a href="{{trans_url('/about-us.html')}}">About Us</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">News</a></li>
+            {!!Menu::menu('main')!!}
     @if(!user_check())
             <li><a href="{{trans_url('/login')}}">Login</a></li>
             <li><a href="{{trans_url('/register')}}">Register</a></li>

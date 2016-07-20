@@ -16,11 +16,9 @@
     <body class="default">
 
         {!! Theme::partial('header') !!}
-        <div class="wraper">
-            <div class="container content">
+
             {!! Theme::content() !!}
-            </div>
-        </div>
+
         {!! Theme::partial('footer') !!}
         <script src="{{ asset('js/vendor_public.js') }}"></script>
         <script src="{{ asset('js/public.js') }}"></script>

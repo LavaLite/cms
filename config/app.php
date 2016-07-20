@@ -179,6 +179,19 @@ return [
         Lavalite\Task\Providers\TaskServiceProvider::class,
         Lavalite\Settings\Providers\SettingsServiceProvider::class,
 
+        Litecms\News\Providers\NewsServiceProvider::class,
+        Litecms\Testimonial\Providers\TestimonialServiceProvider::class,
+        Litecms\Blog\Providers\BlogServiceProvider::class,
+        Litecms\Gallery\Providers\GalleryServiceProvider::class,
+        Litecms\Team\Providers\TeamServiceProvider::class,
+        Litecms\Forum\Providers\ForumServiceProvider::class,
+        Litecms\Block\Providers\BlockServiceProvider::class,
+        Litecms\Contact\Providers\ContactServiceProvider::class,
+        Litecms\Portfolio\Providers\PortfolioServiceProvider::class,
+        Litecms\Faq\Providers\FaqServiceProvider::class,
+        Litecms\Career\Providers\CareerServiceProvider::class,
+        Litecms\PriceList\Providers\PriceListServiceProvider::class,
+
     ],
 
     /*
@@ -242,6 +255,19 @@ return [
         'Task'             => Lavalite\Task\Facades\Task::class,
         'Calendar'         => Lavalite\Calendar\Facades\Calendar::class,
         'Message'          => Lavalite\Message\Facades\Message::class,
+
+        'News'             => Litecms\News\Facades\News::class,
+        'Testimonial'      => Litecms\Testimonial\Facades\Testimonial::class,
+        'Blog'             => Litecms\Blog\Facades\Blog::class,
+        'Gallery'          => Litecms\Gallery\Facades\Gallery::class,
+        'Team'             => Litecms\Team\Facades\Team::class,
+        'Forum'            => Litecms\Forum\Facades\Forum::class,
+        'Block'            => Litecms\Block\Facades\Block::class,
+        'Contact'          => Litecms\Contact\Facades\Contact::class,
+        'Portfolio'        => Litecms\Portfolio\Facades\Portfolio::class,
+        'Faq'              => Litecms\Faq\Facades\Faq::class,
+        'Career'           => Litecms\Career\Facades\Career::class,
+        'PriceList'        => Litecms\PriceList\Facades\PriceList::class,
 
     ],
 
