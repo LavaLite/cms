@@ -25,7 +25,7 @@
         "litecms/portfolio": "dev-master",
         "litecms/faq": "dev-master",
         "litecms/career": "dev-master",
-        "litecms/pricelist": "dev-master",
+        "litecms/pricelist": "dev-master"
 
     },
     "require-dev": {
