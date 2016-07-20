@@ -3,7 +3,7 @@
 This is an implementation of Content Management System based on [Laravel 5.2](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
 
 ## Documentation
-Visit [Wiki](https://github.com/LavaLite/cms/wiki) for documentation
+Visit [Readme](https://lavalite.readme.io) for documentation
 
 ## System Requirements
 
