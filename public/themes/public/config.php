@@ -74,6 +74,8 @@ return [
 
             'user'    => function ($theme) {
                 $theme->asset()->usepath()->add('user', 'css/user.css');
+                $theme->asset()->add('fullcalendar-css', 'packages/fullcalendar/fullcalendar.min.css');
+                $theme->asset()->container('footer')->add('fullcalendar-js', 'packages/fullcalendar/fullcalendar.min.js');
             },
 
             'public'  => function ($theme) {

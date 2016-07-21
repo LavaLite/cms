@@ -35,5 +35,8 @@
         <script src="{{ asset('js/vendor_public.js') }}"></script>
         <script src="{{ asset('js/public.js') }}"></script>
         {!! Theme::asset()->container('footer')->scripts() !!}
+        <script type="text/javascript">
+            Waves.init();
+        </script>
     </body>
 </html>

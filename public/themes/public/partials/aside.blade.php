@@ -9,9 +9,9 @@
             </div>
         </div>
     </div>
-            {!!Menu::menu('user')!!}
     <div class="dashboard-side-nav m-t-5">
         <ul>
             <li class="active"><a href="{{ trans_url('home') }}"><i class="icon-game-controller"></i><span>Dashboard</span></a></li>
         </ul>
     </div>
+            {!!Menu::menu('user')!!}
