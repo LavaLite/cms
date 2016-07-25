@@ -13,20 +13,21 @@ class AdminWebController extends Controller
      *
      * @var string
      */
-    protected $guard = 'admin.web';
+    public $guard = 'admin.web';
 
     /**
      * The home page route of admin.
      *
      * @var string
      */
-    protected $home = 'admin';
+    public $home = 'admin';
 
     public function __construct()
     {
         $this->middleware('web');
         $this->middleware('auth:admin.web');
         $this->setupTheme(config('theme.themes.admin.theme'), config('theme.themes.admin.layout'));
+        parent::__construct();
     }
 
     /**

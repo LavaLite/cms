@@ -12,7 +12,7 @@ return [
     |
     | [Notice] assets cannot inherit.
     |
-    */
+     */
 
     'inherit' => null, //default
 
@@ -26,7 +26,7 @@ return [
     |
     | [Notice] these event can be override by package config.
     |
-    */
+     */
 
     'events'  => [
 
@@ -59,7 +59,7 @@ return [
 
             //You may use this event to set up your assets.
 
-            $theme->asset()->usepath()->add('styles', 'css/style.css');
+            $theme->asset()->usepath()->add('main', 'css/main.css');
 
             $theme->asset()->add('jquery', 'packages/jquery/js/jquery.min.js');
         },
@@ -69,16 +69,25 @@ return [
         'beforeRenderLayout' => [
 
             'default' => function ($theme) {
+                $theme->asset()->usepath()->add('default', 'css/default.css');
             },
 
             'user'    => function ($theme) {
+                $theme->asset()->usepath()->add('user', 'css/user.css');
+                $theme->asset()->add('fullcalendar-css', 'packages/fullcalendar/fullcalendar.min.css');
+                $theme->asset()->container('footer')->add('fullcalendar-js', 'packages/fullcalendar/fullcalendar.min.js');
             },
 
             'public'  => function ($theme) {
+                $theme->asset()->usepath()->add('public', 'css/public.css');
+            },
+
+            'auth'    => function ($theme) {
+                $theme->asset()->usepath()->add('auth', 'css/auth.css');
             },
 
             'home'    => function ($theme) {
-                $theme->asset()->add('ionicons', 'packages/ionicons/css/ionicons.min.css');
+                $theme->asset()->usepath()->add('home', 'css/home.css');
             },
 
         ],

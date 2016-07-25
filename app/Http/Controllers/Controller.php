@@ -25,6 +25,16 @@ class Controller extends BaseController
         $this->theme = Theme::uses($theme)->layout($layout);
     }
 
+    /**
+     * Initialize public controller.
+     *
+     * @return null
+     */
+    public function __construct()
+    {
+        config(['auth.guard' => $this->getGuard()]);
+    }
+
     /* Setup theme for the controller.
      *
      */

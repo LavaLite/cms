@@ -20,6 +20,7 @@ class UserApiController extends Controller
         $this->middleware('api');
         $this->middleware('jwt.auth:api');
         $this->setupTheme(config('theme.themes.user.theme'), config('theme.themes.user.layout'));
+        parent::__construct();
     }
 
 }

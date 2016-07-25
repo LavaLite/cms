@@ -1,0 +1,443 @@
+/* ==========================================================================
+[Master Stylesheet]
+
+Project: Lavalite
+Version: 4.2.0
+Author: Renfos Technologies
+Author  URl: www.renfos.com
+Primary use: Default
+
+========================================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+
+/* ========== GENERAL STYLES ========== */
+
+body {
+    font-size: 13px;
+    color: #222;
+    background-color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+body.home .head {
+    background: 0 0;
+    background-size: cover;
+    overflow: hidden;
+}
+
+body.home .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+body.home .head .overlay {
+    padding: 0;
+}
+
+body.home .overlay {
+    background-image: linear-gradient(to right, #ef2728 0, #f8a086 100%);
+}
+
+body.home .head .navbar.navbar-default {
+    background-color: transparent;
+    border: none;
+    padding-top: 10px;
+}
+
+body.home .intro-well {
+    text-align: center;
+    padding-top: 70px;
+}
+
+body.home .intro-well h1 {
+    font-size: 62px;
+    line-height: 62px;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    clear: both;
+    display: block;
+}
+
+body.home .head .navbar.navbar-default .navbar-links>li>a {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+body.home .intro-well h2 {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 32px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 35px;
+    clear: both;
+    display: block;
+}
+
+body.home .intro-well h1 small {
+    color: #FFF;
+    font-size: 60px;
+    font-weight: 100;
+}
+
+body.home .head .ui-screen img {
+    bottom: -100px;
+    position: relative;
+}
+
+body.user, body.default {
+    background-color: #fafafa;
+    background-repeat: no-repeat;
+}
+
+body.user .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+nav .navbar-nav  {
+  margin-top: 9px;
+}
+nav .login {
+    color: #FFF !important;
+    font-size: 14px;
+    border: 2px solid #FFF;
+    border-radius: 26px;
+    padding: 10px 20px !important;
+    line-height: 20px;
+    margin-top: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+nav .pages a {
+    color: #FFF !important;
+    font-size: 14px;
+    border: 2px solid #FFF;
+    border-radius: 26px;
+    padding: 10px 20px;
+    line-height: 20px;
+    margin-top: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.dropdown-menu {
+    padding: 0 0;
+    background-color: #f46e5f;
+    border: 2px solid #fff;
+    border-radius: 10px !important;
+    overflow: hidden;
+    margin-top: 5px !important;
+}
+.dropdown-menu>li>a {
+    display: block;
+    padding: 10px 15px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #fff !important;
+    white-space: nowrap;
+    border-radius: 0 !important;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 11px;
+    border: none;
+}
+.dropdown-menu>li>a:hover {
+  color: #ef5350 !important;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #eee;
+    border-color: #ffffff;
+}
+.public .content, .default .content, .user .content {
+    min-height: 600px;
+}
+
+.wraper{
+  padding: 100px 0;
+  background-color: #fafafa;
+}
+
+.features {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.features-header {
+    margin-bottom: 60px;
+}
+.features {
+    text-align: center;
+}
+.feature i {
+    font-size: 5em;
+    margin-bottom: 15px;
+}
+.feature h6 {
+    font-size: 18px;
+}
+.feature p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+.features-header h2 {
+    font-weight: 300;
+    font-size: 35px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #795548;
+    border-color: #795548;
+}
+
+
+.header .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #fff;
+  border: none;
+  border-bottom: 2px solid rgba(189, 189, 189, 0.25);
+}
+.header .navbar-nav>li>a {
+  line-height: 39px;
+}
+.header .navbar-nav>li.active>a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  background-color: #ea453e;
+  height: 2px;
+  width: 100%;
+  left: 0;
+}
+.my-account-block ul>li>a .menu-account-img {
+  height: 40px;
+  width: 40px;
+  border: 2px solid #ea453e;
+}
+.my-account-block ul {
+  margin: 0;
+  padding: 0;
+}
+.my-account-block ul>li {
+  list-style: none;
+}
+.my-account-block ul .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+.my-account-block ul>li>a {
+  padding: 15px;
+  line-height: 33px;
+}
+.my-account-block ul>li.open>a {
+    background-image: -webkit-linear-gradient(top,#dbdbdb 0,#e2e2e2 100%);
+    background-image: -o-linear-gradient(top,#dbdbdb 0,#e2e2e2 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#dbdbdb),to(#e2e2e2));
+    background-image: linear-gradient(to bottom,#dbdbdb 0,#e2e2e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdbdbdb', endColorstr='#ffe2e2e2', GradientType=0);
+    background-repeat: repeat-x;
+    -webkit-box-shadow: inset 0 3px 9px rgba(0,0,0,.075);
+    box-shadow: inset 0 3px 9px rgba(0,0,0,.075);
+}
+.my-account-block ul>li>.dropdown-menu {
+  margin: 0;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin-top: -5px;
+}
+.my-account-block .dropdown-menu>li>a {
+    display: block;
+    padding: 10px 10px;
+    clear: both;
+    font-weight: 600;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.my-account-block .dropdown-menu>li>a:hover {
+  color: #fff;
+  background-color: #ea453e;
+}
+.my-account-block .dropdown-menu>li>a i {
+  width: 25px;
+}
+.my-account-block {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+.header .navbar-header {
+  min-height: 70px;
+}
+.header .navbar-toggle {
+    margin-top: 18px;
+    margin-right: 15px;
+    border-radius: 0px;
+    border: none;
+    background-color: transparent;
+}
+.header .navbar-default .navbar-toggle .icon-bar {
+    background-color: #ea453e;
+}
+
+body.home footer.footer .footer-links {
+  background-color: #4c5667;
+  border-top: 2px solid #ea453e;
+}
+body.home footer.footer .footer-links .copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+body.home footer.footer .footer-links .copyright p {
+    line-height: 6;
+    margin-bottom: 0;
+}
+body.home footer.footer .footer-logo {
+  background-color: #fff;
+}
+body.home footer.footer  .footer-logo img {
+  margin-bottom: -21px;
+  text-align: center;
+}
+body.home footer.footer .footer-links .social-links {
+  padding-top: 25px;
+}
+body.home footer.footer .footer-links .social-links a {
+  font-size: 16px;
+  color: #fff;
+  padding: 0 5px;
+}
+body.home footer.footer .footer-links .footer-navs {
+  padding-top: 25px;
+  text-align: right;
+}
+body.home footer.footer .footer-links .footer-navs a {
+  color: #fff;
+  font-size: 12px;
+  padding: 0 5px;
+}
+@media only screen and (max-width: 768px) {
+    body.home .footer .footer-links .social-links {
+        text-align: center;
+    }
+    body.home .footer .footer-links .footer-navs {
+        text-align: center !important;
+        padding-top: 0 !important;
+        padding-bottom: 20px;
+    }
+    body.home .footer .footer-links .copyright p {
+        line-height: 4;
+    }
+    body.home .nav>li {
+        position: relative;
+        display: block;
+        float: left;
+    }
+    body.home .intro-well h1 small {
+      font-size: 50px;
+    }
+    body.home .intro-well a.btn.btn-purple {
+      margin-bottom: 5px;
+    }
+    .navbar-nav .open .dropdown-menu {
+          position: absolute;
+          float: left: ;
+          width: auto;
+          background-color: #f46e5f;
+          border: 2px solid #fff;
+          border-radius: 10px !important;
+          -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+          box-shadow: 0 6px 12px rgba(0,0,0,.175);
+          left: auto;
+          right: 0;
+      }
+      .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+        background-color: #fff;
+      }
+      .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        padding: 10px 15px;
+      }
+}
+@media only screen and (max-width: 500px) {
+    body.home .navbar-brand {
+        width: 161px;
+    }
+}
+@media only screen and (max-width: 375px) {
+      body.home .navbar-brand {
+        width: 161px;
+    }
+    body.home .navbar-nav {
+       margin-top: 0;
+    }
+    body.home .intro-well h1 small {
+       font-size: 35px;
+    }
+    body.home .intro-well h2 {
+      font-size: 15px;
+    }
+    body.home .intro-well {
+      padding-top: 0;
+    }
+    nav .pages a {
+          width: 35px;
+          height: 35px;
+          padding: 9px 9px;
+          line-height: 14px;
+    }
+    nav .login {
+      width: 35px;
+      height: 35px;
+      padding: 4px 9px !important;
+      margin-left: 0;
+    }
+    body.home .intro-well h1 small {
+        font-weight: 300;
+    }
+}
+

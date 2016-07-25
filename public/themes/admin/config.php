@@ -12,7 +12,7 @@ return [
     |
     | [Notice] assets cannot inherit.
     |
-    */
+     */
 
     'inherit' => null, //default
 
@@ -26,7 +26,7 @@ return [
     |
     | [Notice] these event can be override by package config.
     |
-    */
+     */
 
     'events'  => [
 
@@ -49,12 +49,10 @@ return [
             $theme->asset()->usePath()->add('styles', 'css/styles.css');
             $theme->asset()->usepath()->add('bootstrap', 'css/theme.css');
             $theme->asset()->usepath()->add('skin', 'css/skins/skin-red.css');
-            $theme->asset()->add('icheck', 'packages/icheck/skins/square/blue.css');
 
             $theme->asset()->add('jquery', 'packages/jquery/js/jquery.min.js');
             $theme->asset()->container('footer')->add('scripts', 'js/admin.js');
             $theme->asset()->container('footer')->usePath()->add('theme', 'js/theme.min.js');
-            $theme->asset()->container('footer')->add('icheck', 'packages/icheck/icheck.min.js');
         },
 
         // Listen on event before render a layout,

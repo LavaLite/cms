@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="lockscreen">
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,7 +17,7 @@
     <body class="public">
 
         {!! Theme::partial('header') !!}
-        <div class="container content">
+        <div class="container content wraper">
         {!! Theme::content() !!}
         </div>
         {!! Theme::partial('footer') !!}
