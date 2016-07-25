@@ -27,7 +27,10 @@ Please check the system requirements before installing Lavalite.
   * Composer:
     * `composer create-project LavaLite/cms --prefer-dist website`
 2. Enter your database details in `.env` file on root folder.
-3. Run `php artisan migrate --seed` to setup your database.
+3. Publish and seed
+  * `php artisan vendor:publish`  to publish package files.
+    After publishing run `composer dumpautoload` to update class map.
+  * `php artisan migrate --seed` to setup your database.
 4. You can contigure mail server details in `config/mail.php`.
 5. You can configure the site in the config folder before production.
 6. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
