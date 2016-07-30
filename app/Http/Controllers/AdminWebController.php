@@ -37,6 +37,8 @@ class AdminWebController extends Controller
      */
     public function home()
     {
+        $this->theme->asset()->add('fullcalendar-css', 'packages/fullcalendar/fullcalendar.min.css');
+        $this->theme->asset()->container('extra')->add('fullcalendar-js', 'packages/fullcalendar/fullcalendar.min.js');
         return $this->theme->of($this->getView('home'))->render();
     }
 

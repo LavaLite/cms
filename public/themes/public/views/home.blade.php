@@ -9,12 +9,20 @@
                                     <span class="hidden-xs">Pages <i class="ion ion-ios-arrow-down"></i></span>
                                     <span class="hidden-sm hidden-md hidden-lg"><i class="fa fa-bars"></i></span>
                                 </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blogs</a></li>
-                                <li><a href="#">News</a></li>
-                              </ul>
+                                <ul class="dropdown-menu">
+                                    <li><a href="blocks">Blocks</a></li>
+                                    <li><a href="blogs">Blog</a></li>
+                                    <li><a href="careers/job">Jobs</a></li>
+                                    <li><a href="contacts">Contacts</a></li>
+                                    <li><a href="faq">Faqs</a></li>
+                                    <li><a href="forums">Forum</a></li>
+                                    <li><a href="galleries">Gallery</a></li>
+                                    <li><a href="news">News</a></li>
+                                    <li><a href="portfolio">Portfolios</a></li>
+                                    <li><a href="pricelists">PriceLists</a></li>
+                                    <li><a href="teams">Team</a></li>
+                                    <li><a href="testimonials">Testimonial</a></li>
+                                </ul>
                             </li>
                     @if(user_check())
                         <li>
