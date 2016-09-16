@@ -25,23 +25,33 @@
     background-color: #FFEFC6 !important;
 }
 .data-table thead.list_head {
-    background-color: #1570A6 !important;
+    background-color: #dd4b39 !important;
     color:white;
 }
 
 .data-table thead.search_bar {
-    background-color: #3E92C4 !important;
+    background-color: #f47536 !important;
     padding-left: 5px;
     padding-right: 5px;
 }
-
+.data-table td, 
+.data-table th {
+    padding: 2px 2px;
+    border-top: 1px solid #dd4b39;
+}
+.data-table tr.odd {
+    background-color: #F8F8F8;
+}
 .data-table thead.search_bar input, 
 .data-table thead.search_bar select{
     height: 26px;
     padding: 2px 4px;
     width: 100%;
 }
-
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: #dd4b39;
+    border-color: #dd4b39;
+}
 .smoke-base .dialog-inner {
     overflow-y: scroll;
     max-height: 500px;

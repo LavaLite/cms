@@ -28,12 +28,6 @@ class PasswordController extends Controller
      */
     protected $broker = 'user';
 
-    /**
-     * The password broker that should be used.
-     *
-     * @var string
-     */
-    protected $guard = 'user.web';
 
     /**
      * Create a new password controller instance.
@@ -42,7 +36,7 @@ class PasswordController extends Controller
      */
     public function __construct()
     {
-        $guard = Request::input(config('user.params.type'), null);
+        $guard = $this->getGuard();
         $this->setGuard($guard);
         $this->setRedirectTo();
         $this->setPasswordBroker();

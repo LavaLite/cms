@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Theme;
+use Request;
 
 class Controller extends BaseController
 {
@@ -16,14 +17,6 @@ class Controller extends BaseController
      * Store theme
      */
     public $theme;
-
-    /* Setup theme for the controller.
-     *
-     */
-    public function setupTheme($theme = 'default', $layout = 'default')
-    {
-        $this->theme = Theme::uses($theme)->layout($layout);
-    }
 
     /**
      * Initialize public controller.
@@ -38,12 +31,27 @@ class Controller extends BaseController
     /* Setup theme for the controller.
      *
      */
-    protected function getGuard()
+    public function setupTheme($theme = 'default', $layout = 'default')
     {
-        (property_exists($this, 'guard')) ? $this->guard : null;
+        $this->theme = Theme::uses($theme)->layout($layout);
     }
 
-    // somewhere in your controller
+    /**
+     * Return authguard for the controller.
+     *
+     * @return type
+     *
+     */
+    protected function getGuard()
+    {
+        if (!property_exists($this, 'guard')) return null;
+        $route = Request::route('guard');
+        return config("auth.routes.$route.{$this->guard}.guard");
+    }
+
+    /**
+     * Somewhere in your controller.
+     */
     public function getAuthenticatedUser()
     {
         try {

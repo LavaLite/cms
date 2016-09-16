@@ -25,8 +25,8 @@ class UserWebController extends Controller
     public function __construct()
     {
         $this->middleware('web');
-        $this->middleware('auth:web');
-        $this->middleware('auth.active:web');
+        $this->middleware('auth:'.$this->getGuard());
+        $this->middleware('auth.active:'.$this->getGuard());
         $this->setupTheme(config('theme.themes.user.theme'), config('theme.themes.user.layout'));
         parent::__construct();
     }

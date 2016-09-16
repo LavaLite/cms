@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
 use Litepie\User\Traits\Auth\RegisterAndLogin;
 
 class AuthController extends Controller
@@ -42,9 +41,8 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $guard = Request::input(config('user.params.type'), null);
-        $this->setGuard($guard);
         $this->setRedirectTo();
+        $guard = $this->getGuard();
         $this->middleware('web');
         $this->middleware('guest:' . $guard, ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
         $this->setTheme();

@@ -11,18 +11,16 @@
 |
  */
 
-Route::group(['middleware' => 'web'], function () {
+Route::group(['middleware' => 'web', 'prefix' => trans_setlocale()], function () {
 
     // Home page for the website.
-    Route::get(trans_setlocale() . '/', 'PublicWebController@home');
-    Route::get(trans_setlocale() . '/home', 'UserWebController@home');
+    Route::get('/', 'PublicWebController@home');
+    Route::get('/home', 'UserWebController@home');
 
-    Route::get(trans_setlocale() . '/client', 'ClientWebController@home');
+    Route::get('/client', 'ClientWebController@home');
 
-    Route::get(trans_setlocale() . '/client/profile', 'ClientWebController@getProfile');
-    Route::post(trans_setlocale() . '/client/profile', 'ClientWebController@postProfile');
-    Route::get(trans_setlocale() . '/client/password', 'ClientWebController@getPassword');
-    Route::post(trans_setlocale() . '/client/password', 'ClientWebController@postPassword');
-
-    Route::auth();
+	Route::group(['prefix' => '{guard?}'], function () {
+		Route::auth();
+	});
+	Route::auth();
 });

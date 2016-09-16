@@ -8,11 +8,12 @@ use Litepie\Database\Model;
 use Litepie\Database\Traits\Slugger;
 use Litepie\Foundation\Auth\User as Authenticatable;
 use Litepie\Hashids\Traits\Hashids;
-use Litepie\User\Traits\Users\UserProfile;
+use Litepie\User\Traits\Acl\CheckPermission;
+use Litepie\User\Traits\User  as UserProfile;
 
 class Client extends Authenticatable implements JWTSubject
 {
-    use UserProfile, SoftDeletes, Hashids, Slugger;
+    use CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger;
 
     /**
      * Configuartion for the model.

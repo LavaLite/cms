@@ -46,8 +46,8 @@ return [
             //You may use this event to set up your assets.
 
             //You may use this event to set up your assets.
-            $theme->asset()->usePath()->add('styles', 'css/styles.css');
             $theme->asset()->usepath()->add('bootstrap', 'css/theme.css');
+            $theme->asset()->usePath()->add('styles', 'css/styles.css');
             $theme->asset()->usepath()->add('skin', 'css/skins/skin-red.css');
 
             $theme->asset()->add('jquery', 'packages/jquery/js/jquery.min.js');

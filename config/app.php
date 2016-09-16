@@ -191,7 +191,6 @@ return [
         Litecms\Faq\Providers\FaqServiceProvider::class,
         Litecms\Career\Providers\CareerServiceProvider::class,
         Litecms\PriceList\Providers\PriceListServiceProvider::class,
-
     ],
 
     /*
