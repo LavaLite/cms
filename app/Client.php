@@ -3,24 +3,27 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Litepie\Contracts\User\JWTSubject;
+use Illuminate\Notifications\Notifiable;
 use Litepie\Database\Model;
 use Litepie\Database\Traits\Slugger;
 use Litepie\Foundation\Auth\User as Authenticatable;
 use Litepie\Hashids\Traits\Hashids;
+use Litepie\Filer\Traits\Filer;
+use Litepie\Repository\Traits\PresentableTrait;
 use Litepie\User\Traits\Acl\CheckPermission;
-use Litepie\User\Traits\User  as UserProfile;
+use Litepie\User\Traits\User as UserProfile;
+use Litepie\User\Contracts\UserPolicy;
 
-class Client extends Authenticatable implements JWTSubject
+
+class Client extends Authenticatable implements UserPolicy
 {
-    use CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger;
-
+    use Filer,Notifiable, CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger, PresentableTrait;
     /**
      * Configuartion for the model.
      *
      * @var array
      */
-    protected $config = 'user.client';
+    protected $config = 'litepie.user.client';
 
     /**
      * Initialiaze page modal.
@@ -40,17 +43,11 @@ class Client extends Authenticatable implements JWTSubject
         }
 
         parent::__construct($attributes);
-
     }
 
-    public function getJWTIdentifier()
+    public function messages()
     {
-        return $this->getKey();
-    }
-
-    public function getJWTCustomClaims()
-    {
-        return [];
+        return $this->morphMany('\Litepie\Message\Models\Message', 'user');
     }
 
 }

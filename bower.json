@@ -6,8 +6,10 @@
     ],
     "dependencies": {
         "bootstrap": "*",
+        "bootstrap-material-design" : "0.5.10",
         "DataTables":"*",
         "datatables-bootstrap3-plugin" : "*",
+        "datetimepicker":"*",
         "dropzone":"*",
         "font-awesome":"*",
         "fullcalendar":"*",
@@ -17,13 +19,23 @@
         "jquery-timeago": "*",
         "jquery-ui": "*",
         "jquery-validation" : "*",
+        "jstree" : "*",
         "nestable-2" : "*",
-        "pickadate":"*",
         "simple-line-icons":"*",
         "Sortable" : "*",
         "summernote":"*",
         "sweetalert" : "*",
         "toastr":"*",
-        "waves":"*"
+        "waves":"*",
+        "normalize.css":"*",
+        "cropper":"*",
+        "pixeden-stroke-7-icon":"*",
+        "bootstrap-select":"*",
+        "bootstrap-switch":"*",
+        "modernizer":"*",
+        "material-icons":"*",
+        "select2":"*",
+        "bootstrap-datepicker":"*"
+
     }
 }

@@ -13,6 +13,10 @@ return [
     */
 
     'themes'        => [
+        'default'   => [
+            'theme'  => 'user',
+            'layout' => 'default',
+        ],
         'admin'  => [
             'theme'  => 'admin',
             'layout' => 'default',
@@ -22,11 +26,13 @@ return [
             'layout' => 'default',
         ],
         'user'   => [
-            'theme'  => 'public',
-            'layout' => 'user',
+            'theme'  => 'user',
+            'layout' => 'default',
         ],
+
     ],
 
+    
     /*
     |--------------------------------------------------------------------------
     | Asset url path
