@@ -15,9 +15,7 @@ return [
         'created' => ':Module has been added successfully.',
         'updated' => ':Module has been updated successfully.',
         'deleted' => ':Module has been deleted successfully.',
-        'create'  => ':Module has been added successfully.',
-        'update'  => ':Module has been updated successfully.',
-        'delete'  => ':Module has been deleted successfully.',
+        'changed' => ':Module has been  :status.',
     ],
 
     'error'         => [

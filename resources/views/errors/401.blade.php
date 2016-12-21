@@ -1,2 +1,0 @@
-Unautorizeds
-{{ dd($exception) }}

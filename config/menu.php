@@ -4,7 +4,7 @@ return [
 /*
  * Provider .
  */
-    'provider' => 'lavalite',
+    'provider' => 'litepie',
 /*
  * Package .
  */

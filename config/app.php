@@ -4,6 +4,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Name
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of your application. This value is used when the
+    | framework needs to place the application's name in a notification or
+    | any other location as required by the application or its packages.
+     */
+
+    'name'            => 'My Application',
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
@@ -140,6 +152,7 @@ return [
         Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
+        Illuminate\Notifications\NotificationServiceProvider::class,
         Illuminate\Pagination\PaginationServiceProvider::class,
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
@@ -151,9 +164,15 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Package Service Providers...
+         */
+        //
+
+        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
@@ -161,36 +180,36 @@ return [
         /*
          * Lavalite Framework Service Providers...
          */
-
+        Litepie\Block\BlockServiceProvider::class,
+        Litepie\Calendar\CalendarServiceProvider::class,
+        Litepie\Contact\ContactServiceProvider::class,
+        Litepie\Filer\FilerServiceProvider::class,
         Litepie\Form\FormServiceProvider::class,
+        Litepie\Hashids\HashidsServiceProvider::class,
+        Litepie\Menu\MenuServiceProvider::class,
+        Litepie\Message\MessageServiceProvider::class,
+        Litepie\News\NewsServiceProvider::class,
+        Litepie\Page\PageServiceProvider::class,
+        Litepie\Revision\RevisionServiceProvider::class,
+        Litepie\Settings\SettingsServiceProvider::class,
+        Litepie\Task\TaskServiceProvider::class,
         Litepie\Theme\ThemeServiceProvider::class,
         Litepie\Trans\TransServiceProvider::class,
-        Litepie\Filer\FilerServiceProvider::class,
-        Litepie\Hashids\HashidsServiceProvider::class,
         Litepie\User\UserServiceProvider::class,
-        Litepie\Menu\MenuServiceProvider::class,
+        Litepie\Workflow\WorkflowServiceProvider::class,
 
         /*
-         * Lavalite package Service Providers...
+         * Cms package Service Providers...
          */
-        Lavalite\Page\Providers\PageServiceProvider::class,
-        Lavalite\Message\Providers\MessageServiceProvider::class,
-        Lavalite\Calendar\Providers\CalendarServiceProvider::class,
-        Lavalite\Task\Providers\TaskServiceProvider::class,
-        Lavalite\Settings\Providers\SettingsServiceProvider::class,
-
-        Litecms\News\Providers\NewsServiceProvider::class,
-        Litecms\Testimonial\Providers\TestimonialServiceProvider::class,
-        Litecms\Blog\Providers\BlogServiceProvider::class,
-        Litecms\Gallery\Providers\GalleryServiceProvider::class,
-        Litecms\Team\Providers\TeamServiceProvider::class,
-        Litecms\Forum\Providers\ForumServiceProvider::class,
-        Litecms\Block\Providers\BlockServiceProvider::class,
-        Litecms\Contact\Providers\ContactServiceProvider::class,
-        Litecms\Portfolio\Providers\PortfolioServiceProvider::class,
-        Litecms\Faq\Providers\FaqServiceProvider::class,
-        Litecms\Career\Providers\CareerServiceProvider::class,
-        Litecms\PriceList\Providers\PriceListServiceProvider::class,
+        // Litecms\Blog\Providers\BlogServiceProvider::class,
+        // Litecms\Career\Providers\CareerServiceProvider::class,
+        // Litecms\Faq\Providers\FaqServiceProvider::class,
+        // Litecms\Forum\Providers\ForumServiceProvider::class,
+        // Litecms\Gallery\Providers\GalleryServiceProvider::class,
+        // Litecms\Portfolio\Providers\PortfolioServiceProvider::class,
+        // Litecms\PriceList\Providers\PriceListServiceProvider::class,
+        // Litecms\Team\Providers\TeamServiceProvider::class,
+        // Litecms\Testimonial\Providers\TestimonialServiceProvider::class,
 
     ],
 
@@ -207,67 +226,69 @@ return [
 
     'aliases'         => [
 
-        'App'              => Illuminate\Support\Facades\App::class,
-        'Artisan'          => Illuminate\Support\Facades\Artisan::class,
-        'Auth'             => Illuminate\Support\Facades\Auth::class,
-        'Blade'            => Illuminate\Support\Facades\Blade::class,
-        'Cache'            => Illuminate\Support\Facades\Cache::class,
-        'Config'           => Illuminate\Support\Facades\Config::class,
-        'Cookie'           => Illuminate\Support\Facades\Cookie::class,
-        'Crypt'            => Illuminate\Support\Facades\Crypt::class,
-        'DB'               => Illuminate\Support\Facades\DB::class,
-        'Eloquent'         => Illuminate\Database\Eloquent\Model::class,
-        'Event'            => Illuminate\Support\Facades\Event::class,
-        'File'             => Illuminate\Support\Facades\File::class,
-        'Gate'             => Illuminate\Support\Facades\Gate::class,
-        'Hash'             => Illuminate\Support\Facades\Hash::class,
-        'Lang'             => Illuminate\Support\Facades\Lang::class,
-        'Log'              => Illuminate\Support\Facades\Log::class,
-        'Mail'             => Illuminate\Support\Facades\Mail::class,
-        'Password'         => Illuminate\Support\Facades\Password::class,
-        'Queue'            => Illuminate\Support\Facades\Queue::class,
-        'Redirect'         => Illuminate\Support\Facades\Redirect::class,
-        'Redis'            => Illuminate\Support\Facades\Redis::class,
-        'Request'          => Illuminate\Support\Facades\Request::class,
-        'Response'         => Illuminate\Support\Facades\Response::class,
-        'Route'            => Illuminate\Support\Facades\Route::class,
-        'Schema'           => Illuminate\Support\Facades\Schema::class,
-        'Session'          => Illuminate\Support\Facades\Session::class,
-        'Storage'          => Illuminate\Support\Facades\Storage::class,
-        'URL'              => Illuminate\Support\Facades\URL::class,
-        'Validator'        => Illuminate\Support\Facades\Validator::class,
-        'View'             => Illuminate\Support\Facades\View::class,
+        'App'          => Illuminate\Support\Facades\App::class,
+        'Artisan'      => Illuminate\Support\Facades\Artisan::class,
+        'Auth'         => Illuminate\Support\Facades\Auth::class,
+        'Blade'        => Illuminate\Support\Facades\Blade::class,
+        'Cache'        => Illuminate\Support\Facades\Cache::class,
+        'Config'       => Illuminate\Support\Facades\Config::class,
+        'Cookie'       => Illuminate\Support\Facades\Cookie::class,
+        'Crypt'        => Illuminate\Support\Facades\Crypt::class,
+        'DB'           => Illuminate\Support\Facades\DB::class,
+        'Eloquent'     => Illuminate\Database\Eloquent\Model::class,
+        'Event'        => Illuminate\Support\Facades\Event::class,
+        'File'         => Illuminate\Support\Facades\File::class,
+        'Gate'         => Illuminate\Support\Facades\Gate::class,
+        'Hash'         => Illuminate\Support\Facades\Hash::class,
+        'Lang'         => Illuminate\Support\Facades\Lang::class,
+        'Log'          => Illuminate\Support\Facades\Log::class,
+        'Mail'         => Illuminate\Support\Facades\Mail::class,
+        'Notification' => Illuminate\Support\Facades\Notification::class,
+        'Password'     => Illuminate\Support\Facades\Password::class,
+        'Queue'        => Illuminate\Support\Facades\Queue::class,
+        'Redirect'     => Illuminate\Support\Facades\Redirect::class,
+        'Redis'        => Illuminate\Support\Facades\Redis::class,
+        'Request'      => Illuminate\Support\Facades\Request::class,
+        'Response'     => Illuminate\Support\Facades\Response::class,
+        'Route'        => Illuminate\Support\Facades\Route::class,
+        'Schema'       => Illuminate\Support\Facades\Schema::class,
+        'Session'      => Illuminate\Support\Facades\Session::class,
+        'Storage'      => Illuminate\Support\Facades\Storage::class,
+        'URL'          => Illuminate\Support\Facades\URL::class,
+        'Validator'    => Illuminate\Support\Facades\Validator::class,
+        'View'         => Illuminate\Support\Facades\View::class,
 
-        'AuthenticateUser' => App\AuthenticateUser::class,
-        'Socialite'        => Laravel\Socialite\Facades\Socialite::class,
+        'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
 
-        'Captcha'          => Litepie\Support\Facades\Captcha::class,
-        'Form'             => Litepie\Support\Facades\Form::class,
-        'Filer'            => Litepie\Support\Facades\Filer::class,
-        'Hashids'          => Litepie\Support\Facades\Hashids::class,
-        'Menu'             => Litepie\Support\Facades\Menu::class,
-        'Theme'            => Litepie\Support\Facades\Theme::class,
-        'Trans'            => Litepie\Support\Facades\Trans::class,
-        'User'             => Litepie\Support\Facades\User::class,
+        'Captcha'      => Litepie\Support\Facades\Captcha::class,
+        'Form'         => Litepie\Support\Facades\Form::class,
+        'Filer'        => Litepie\Support\Facades\Filer::class,
+        'Hashids'      => Litepie\Support\Facades\Hashids::class,
+        'Menu'         => Litepie\Support\Facades\Menu::class,
+        'Theme'        => Litepie\Support\Facades\Theme::class,
+        'Trans'        => Litepie\Support\Facades\Trans::class,
+        'User'         => Litepie\Support\Facades\User::class,
+        'Workflow'     => Litepie\Support\Facades\Workflow::class,
 
-        'Page'             => Lavalite\Page\Facades\Page::class,
-        'Settings'         => Lavalite\Settings\Facades\Settings::class,
-        'Task'             => Lavalite\Task\Facades\Task::class,
-        'Calendar'         => Lavalite\Calendar\Facades\Calendar::class,
-        'Message'          => Lavalite\Message\Facades\Message::class,
+        'Block'        => Litepie\Block\Facades\Block::class,
+        'Calendar'     => Litepie\Calendar\Facades\Calendar::class,
+        'Contact'      => Litepie\Contact\Facades\Contact::class,
+        'Message'      => Litepie\Message\Facades\Message::class,
+        'News'         => Litepie\News\Facades\News::class,
+        'Page'         => Litepie\Page\Facades\Page::class,
+        'Settings'     => Litepie\Settings\Facades\Settings::class,
+        'Task'         => Litepie\Task\Facades\Task::class,
 
-        'News'             => Litecms\News\Facades\News::class,
-        'Testimonial'      => Litecms\Testimonial\Facades\Testimonial::class,
-        'Blog'             => Litecms\Blog\Facades\Blog::class,
-        'Gallery'          => Litecms\Gallery\Facades\Gallery::class,
-        'Team'             => Litecms\Team\Facades\Team::class,
-        'Forum'            => Litecms\Forum\Facades\Forum::class,
-        'Block'            => Litecms\Block\Facades\Block::class,
-        'Contact'          => Litecms\Contact\Facades\Contact::class,
-        'Portfolio'        => Litecms\Portfolio\Facades\Portfolio::class,
-        'Faq'              => Litecms\Faq\Facades\Faq::class,
-        'Career'           => Litecms\Career\Facades\Career::class,
-        'PriceList'        => Litecms\PriceList\Facades\PriceList::class,
+        // 'Blog'         => Litecms\Blog\Facades\Blog::class,
+        // 'Career'       => Litecms\Career\Facades\Career::class,
+        // 'Contact'      => Litecms\Contact\Facades\Contact::class,
+        // 'Faq'          => Litecms\Faq\Facades\Faq::class,
+        // 'Forum'        => Litecms\Forum\Facades\Forum::class,
+        // 'Gallery'      => Litecms\Gallery\Facades\Gallery::class,
+        // 'Portfolio'    => Litecms\Portfolio\Facades\Portfolio::class,
+        // 'PriceList'    => Litecms\PriceList\Facades\PriceList::class,
+        // 'Team'         => Litecms\Team\Facades\Team::class,
+        // 'Testimonial'  => Litecms\Testimonial\Facades\Testimonial::class,
 
     ],
 

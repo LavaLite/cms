@@ -44,7 +44,7 @@ return [
         ],
 
         'api'    => [
-            'driver'   => 'jwt-auth',
+            'driver'   => 'token',
             'provider' => 'users',
         ],
 
@@ -55,7 +55,7 @@ return [
             ],
 
             'api' => [
-                'driver'   => 'jwt-auth',
+                'driver'   => 'token',
                 'provider' => 'users',
             ],
 
@@ -68,7 +68,7 @@ return [
             ],
 
             'api' => [
-                'driver'   => 'jwt-auth',
+                'driver'   => 'token',
                 'provider' => 'clients',
             ],
 
@@ -133,24 +133,68 @@ return [
     'passwords' => [
         'user'   => [
             'provider' => 'users',
-            'email'    => 'user::public.default.emails.password',
+            'email'    => 'user::user.default.emails.password',
             'table'    => 'password_resets',
             'expire'   => 60,
         ],
 
         'admin'  => [
             'provider' => 'users',
-            'email'    => 'user::public.admin.emails.password',
+            'email'    => 'user::user.admin.emails.password',
             'table'    => 'password_resets',
             'expire'   => 60,
         ],
 
         'client' => [
             'provider' => 'clients',
-            'email'    => 'user::public.default.emails.password',
+            'email'    => 'user::user.default.emails.password',
             'table'    => 'password_resets',
             'expire'   => 60,
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Route bindings
+    |--------------------------------------------------------------------------
+    |
+    | Here you can list the relation with the route to the guard
+    |
+     */
+
+    'routes'    => [
+        'user'   => [
+            'web' => [
+                'guard'  => 'web',
+                'broker' => 'user',
+                'home'   => 'home',
+            ],
+            'api' => [
+                'broker' => 'user',
+                'guard'  => 'api',
+            ],
+        ],
+        'client' => [
+            'web' => [
+                'guard'  => 'client.web',
+                'broker' => 'client',
+                'home'   => 'client',
+            ],
+            'api' => [
+                'guard'  => 'api',
+                'broker' => 'client',
+            ],
+        ],
+        'admin'  => [
+            'web' => [
+                'guard'  => 'admin.web',
+                'broker' => 'admin',
+                'home'   => 'admin',
+            ],
+            'api' => [
+                'guard'  => 'api',
+                'broker' => 'admin',
+            ],
+        ],
+    ],
 ];

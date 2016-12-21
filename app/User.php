@@ -3,30 +3,34 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Litepie\Contracts\User\JWTSubject;
+use Illuminate\Notifications\Notifiable;
 use Litepie\Database\Model;
 use Litepie\Database\Traits\Slugger;
 use Litepie\Foundation\Auth\User as Authenticatable;
 use Litepie\Hashids\Traits\Hashids;
-use Litepie\User\Traits\CheckPermission;
-use Litepie\User\Traits\Users\UserProfile;
+use Litepie\Filer\Traits\Filer;
+use Litepie\Repository\Traits\PresentableTrait;
+use Litepie\User\Traits\Acl\CheckPermission;
+use Litepie\User\Traits\User as UserProfile;
+use Litepie\User\Contracts\UserPolicy;
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable implements UserPolicy
 {
-    use CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger;
+    use Filer,Notifiable, CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger, PresentableTrait;
 
     /**
      * Configuartion for the model.
      *
      * @var array
      */
-    protected $config = 'user.user';
+    protected $config = 'litepie.user.user';
 
     /**
      * Initialiaze page modal.
      *
-     * @param $name
+     * @var attributes
      */
+
     public function __construct($attributes = [])
     {
         $config = config($this->config);
@@ -42,14 +46,19 @@ class User extends Authenticatable implements JWTSubject
         parent::__construct($attributes);
     }
 
-    public function getJWTIdentifier()
+    public function getDobAttribute($val)
     {
-        return $this->getKey();
+
+        if ($val == '0000-00-00' || empty($val)) {
+            return '';
+        }
+        return format_date(($val));
     }
 
-    public function getJWTCustomClaims()
+    public function messages()
     {
-        return [];
+        return $this->morphMany('\Litepie\Message\Models\Message', 'user');
     }
+
 
 }

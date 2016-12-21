@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Theme;
+use Request;
 
 class Controller extends BaseController
 {
@@ -17,6 +18,17 @@ class Controller extends BaseController
      */
     public $theme;
 
+    /**
+     * Initialize public controller.
+     *
+     * @return null
+     */
+    public function __construct()
+    {
+        config(['auth.guard' => $this->getGuard()]);
+        $this->setGuard();
+    }
+
     /* Setup theme for the controller.
      *
      */
@@ -26,24 +38,33 @@ class Controller extends BaseController
     }
 
     /**
-     * Initialize public controller.
+     * Return authguard for the controller.
      *
-     * @return null
-     */
-    public function __construct()
-    {
-        config(['auth.guard' => $this->getGuard()]);
-    }
-
-    /* Setup theme for the controller.
+     * @return type
      *
      */
     protected function getGuard()
     {
-        (property_exists($this, 'guard')) ? $this->guard : null;
+        if (!property_exists($this, 'guard')) return null;
+        $route = Request::route('guard');
+        return config("auth.routes.$route.{$this->guard}.guard");
     }
 
-    // somewhere in your controller
+    /**
+     * Get the model for the current guard.
+     *
+     * @return Response
+     */
+    function getAuthModel()
+    {
+        if (!property_exists($this, 'guard')) return null;
+        
+        $provider = config("auth.guards.{$this->guard}.provider", 'users');
+        return config("auth.providers.$provider.model", App\User::class);
+    }
+    /**
+     * Somewhere in your controller.
+     */
     public function getAuthenticatedUser()
     {
         try {
@@ -69,5 +90,30 @@ class Controller extends BaseController
         // the token is valid and we have found the user via the sub claim
         return response()->json(compact('user'));
     }
+    /**
+     * Return authguardroute for the controller.
+     *
+     * @return type
+     *
+     */
+    protected function getGuardRoute()
+    {
+        if (!property_exists($this, 'guard') || $this->guard =='web') return 'user';
+
+        return current(explode(".", $this->guard));
+    } 
+
+    /**
+     * Return authguardroute for the controller.
+     *
+     * @return type
+     *
+     */
+    protected function setGuard()
+    {
+        putenv('guard='. $this->getGuard());
+        putenv('auth.guard='.$this->getGuardRoute());
+        putenv('auth.model='.$this->getAuthModel());
+    } 
 
 }

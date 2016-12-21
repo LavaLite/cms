@@ -10,10 +10,9 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \Closure                 $next
-     * @param string|null              $guard
-     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @param  string|null  $guard
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)
@@ -22,13 +21,12 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
 
             if (is_null($guard)) {
-                return redirect('home');
+                return redirect()->intended('home');
             }
 
-            return redirect(current(explode(".", $guard)));
+            return redirect()->intended(current(explode(".", $guard)));
         }
 
         return $next($request);
     }
-
 }
