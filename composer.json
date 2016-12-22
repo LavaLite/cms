@@ -34,7 +34,7 @@
     "minimum-stability" : "dev", 
     "scripts": {
         "post-create-project-cmd": [
-            "php artisan lavalite:install"
+            "php artisan lavalite:install",
             "php artisan key:generate"
         ],
         "post-install-cmd": [
