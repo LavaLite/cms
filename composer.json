@@ -31,7 +31,6 @@
             "tests/TestCase.php"
         ]
     },
-    "minimum-stability" : "dev", 
     "scripts": {
         "post-create-project-cmd": [
             "php artisan lavalite:install",
