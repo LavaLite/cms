@@ -31,11 +31,10 @@
             "tests/TestCase.php"
         ]
     },
+    "minimum-stability" : "dev", 
     "scripts": {
-        "post-root-package-install": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
         "post-create-project-cmd": [
+            "php artisan lavalite:install",
             "php artisan key:generate"
         ],
         "post-install-cmd": [
@@ -48,6 +47,6 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dev"
     }
 }
