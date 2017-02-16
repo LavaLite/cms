@@ -28,7 +28,7 @@ Please check the system requirements before installing Lavalite.
     * `composer create-project LavaLite/cms --prefer-dist website`
 2. Run the install command to get you started:
    `php artisan lavalite:install`
-4. You can contigure mail server details in `config/mail.php`.
+4. You can configure mail server details in `config/mail.php`.
 5. You can configure the site in the config folder before production.
 6. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
