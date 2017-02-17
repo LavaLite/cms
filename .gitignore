@@ -6,10 +6,10 @@
 /public/uploads
 /public/themes/*
 /.idea
+/framework
 Homestead.json
 Homestead.yaml
 
-/framework
 composer.develop.json
 composer.develop.lock
 composer.lock
