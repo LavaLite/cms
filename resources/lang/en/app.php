@@ -14,7 +14,7 @@ return [
     'name.short'    => '<b>L</b>l',
     'admin.panel'   => 'Admin Panel',
     'dashboard'     => 'Dashboard',
-    'all.rights'    => "<strong>Copyright © 2014-2016 <a href='http://lavalite.org' target='_blank'>Lavalite</a>.</strong> All rights reserved.",
+    'all.rights'    => "<strong>Copyright &copy; ".date('Y')." <a href='http://lavalite.org' target='_blank'>Lavalite</a>.</strong> All rights reserved.",
     'version'       => '<b>Version</b> Develop',
 
     'add'           => 'Add',
