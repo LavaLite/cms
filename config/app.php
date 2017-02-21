@@ -180,12 +180,15 @@ return [
         /*
          * Lavalite Framework Service Providers...
          */
+        Litepie\Alert\AlertServiceProvider::class,
         Litepie\Block\BlockServiceProvider::class,
+        Litepie\Blog\BlogServiceProvider::class,
         Litepie\Calendar\CalendarServiceProvider::class,
         Litepie\Contact\ContactServiceProvider::class,
         Litepie\Filer\FilerServiceProvider::class,
         Litepie\Form\FormServiceProvider::class,
         Litepie\Hashids\HashidsServiceProvider::class,
+        Litepie\Install\InstallServiceProvider::class,
         Litepie\Menu\MenuServiceProvider::class,
         Litepie\Message\MessageServiceProvider::class,
         Litepie\News\NewsServiceProvider::class,
@@ -197,20 +200,6 @@ return [
         Litepie\Trans\TransServiceProvider::class,
         Litepie\User\UserServiceProvider::class,
         Litepie\Workflow\WorkflowServiceProvider::class,
-
-        /*
-         * Cms package Service Providers...
-         */
-        // Litecms\Blog\Providers\BlogServiceProvider::class,
-        // Litecms\Career\Providers\CareerServiceProvider::class,
-        // Litecms\Faq\Providers\FaqServiceProvider::class,
-        // Litecms\Forum\Providers\ForumServiceProvider::class,
-        // Litecms\Gallery\Providers\GalleryServiceProvider::class,
-        // Litecms\Portfolio\Providers\PortfolioServiceProvider::class,
-        // Litecms\PriceList\Providers\PriceListServiceProvider::class,
-        // Litecms\Team\Providers\TeamServiceProvider::class,
-        // Litecms\Testimonial\Providers\TestimonialServiceProvider::class,
-
     ],
 
     /*
@@ -260,35 +249,26 @@ return [
 
         'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
 
+        'Alert'        => Litepie\Support\Facades\Alert::class,
+        'Block'        => Litepie\Support\Facades\Block::class,
+        'Blog'         => Litepie\Support\Facades\Blog::class,
+        'Calendar'     => Litepie\Support\Facades\Calendar::class,
         'Captcha'      => Litepie\Support\Facades\Captcha::class,
-        'Form'         => Litepie\Support\Facades\Form::class,
+        'Contact'      => Litepie\Support\Facades\Contact::class,
         'Filer'        => Litepie\Support\Facades\Filer::class,
+        'Form'         => Litepie\Support\Facades\Form::class,
         'Hashids'      => Litepie\Support\Facades\Hashids::class,
         'Menu'         => Litepie\Support\Facades\Menu::class,
+        'Message'      => Litepie\Support\Facades\Message::class,
+        'News'         => Litepie\Support\Facades\News::class,
+        'Page'         => Litepie\Support\Facades\Page::class,
+        'Revision'     => Litepie\Support\Facades\Revision::class,
+        'Settings'     => Litepie\Support\Facades\Settings::class,
+        'Task'         => Litepie\Support\Facades\Task::class,
         'Theme'        => Litepie\Support\Facades\Theme::class,
         'Trans'        => Litepie\Support\Facades\Trans::class,
         'User'         => Litepie\Support\Facades\User::class,
         'Workflow'     => Litepie\Support\Facades\Workflow::class,
-
-        'Block'        => Litepie\Block\Facades\Block::class,
-        'Calendar'     => Litepie\Calendar\Facades\Calendar::class,
-        'Contact'      => Litepie\Contact\Facades\Contact::class,
-        'Message'      => Litepie\Message\Facades\Message::class,
-        'News'         => Litepie\News\Facades\News::class,
-        'Page'         => Litepie\Page\Facades\Page::class,
-        'Settings'     => Litepie\Settings\Facades\Settings::class,
-        'Task'         => Litepie\Task\Facades\Task::class,
-
-        // 'Blog'         => Litecms\Blog\Facades\Blog::class,
-        // 'Career'       => Litecms\Career\Facades\Career::class,
-        // 'Contact'      => Litecms\Contact\Facades\Contact::class,
-        // 'Faq'          => Litecms\Faq\Facades\Faq::class,
-        // 'Forum'        => Litecms\Forum\Facades\Forum::class,
-        // 'Gallery'      => Litecms\Gallery\Facades\Gallery::class,
-        // 'Portfolio'    => Litecms\Portfolio\Facades\Portfolio::class,
-        // 'PriceList'    => Litecms\PriceList\Facades\PriceList::class,
-        // 'Team'         => Litecms\Team\Facades\Team::class,
-        // 'Testimonial'  => Litecms\Testimonial\Facades\Testimonial::class,
 
     ],
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Litepie\User\Traits\Auth\ResetsPasswords;
+use Litepie\User\Traits\Auth\ResetsPassword;
 
 class ResetPasswordController extends Controller
 {
@@ -18,7 +18,7 @@ class ResetPasswordController extends Controller
     |
     */
 
-    use ResetsPasswords;
+    use ResetsPassword;
 
     /**
      * Create a new controller instance.
