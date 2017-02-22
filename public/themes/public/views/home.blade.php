@@ -11,63 +11,13 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="">
-                                        <a href="blocks">
-                                            Blocks
-                                        </a>
-                                    </li>
-                                    <li class="">
                                         <a href="blogs">
                                             Blog
                                         </a>
                                     </li>
-                                    <li class="">
-                                        <a href="careers/job">
-                                            Jobs
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="contacts">
-                                            Contacts
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="faq">
-                                            Faqs
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="forums">
-                                            Forum
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="galleries">
-                                            Gallery
-                                        </a>
-                                    </li>
-                                    <li class="active">
+                                    <li>
                                         <a href="news">
                                             News
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="portfolio">
-                                            Portfolios
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="pricelists">
-                                            PriceLists
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="teams">
-                                            Team
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="testimonials">
-                                            Testimonial
                                         </a>
                                     </li>
                                 </ul>
@@ -134,8 +84,8 @@
                 <div class="col-md-4">
                     <div class="feature">
                         <i class="ion ion-social-github-outline"></i>
-                        <h6>Powered by Laravel 5.2</h6>
-                        <p>We have tried to make use of all features of Laravel 5.2 which help you to develop the website with all resources available online.​ ​ </p>
+                        <h6>Powered by Laravel 5.4</h6>
+                        <p>We have tried to make use of all features of Laravel 5.4 which help you to develop the website with all resources available online.​ ​ </p>
                     </div>
                 </div>
 
@@ -154,7 +104,6 @@
                         <p>The online package builder helps you to build Lavalite packages easily, The downloaded package with basic required files help you to finish your projects quickly.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
