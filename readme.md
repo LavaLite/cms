@@ -1,13 +1,13 @@
-## Lavalite - Bootstrapper for Laravel Content Management System.
+## Lavalite - Bootstrapper for Laravel 5 CMS or Application.
 
-This is an implementation of Content Management System based on [Laravel 5.2](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
+*Version Beta
 
-## Documentation
-Visit [Readme](https://lavalite.readme.io) for documentation
+This is an implementation of the backend of lavalite, which can be used for web based application and Content Management System based upon [Laravel 5.1](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
+
 
 ## System Requirements
 
-Lavalite is designed to run on a  machine with PHP 5.5.9 and MySQL 5.5.
+Lavalite is designed to run on a  machine with PHP 5.5 and MySQL 5.5.
 
 * PHP >= 5.5.9 with
     * OpenSSL PHP Extension
@@ -25,12 +25,19 @@ Please check the system requirements before installing Lavalite.
     * `git clone git@github.com:LavaLite/cms.git`
     * From a command line open in the folder, run `composer install`.
   * Composer:
-    * `composer create-project LavaLite/cms --prefer-dist website`
-2. Run the install command to get you started:
-   `php artisan lavalite:install`
-4. You can configure mail server details in `config/mail.php`.
-5. You can configure the site in the config folder before production.
-6. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
+    * `composer create-project LavaLite/cms your-project-name 3.0`
+4. Publish migratins seeds config etc `php artisan vendor:publish`
+5. Enter your database details in `.env` file on root folder.
+6. Run `php artisan migrate` to setup your database.
+7. Execute below commands to seed your tables, before executing this commands run `composer dump-autoload` to load published table seeders to the class map.
+   - `php artisan db:seed --class=PageTableSeeder`
+   - `php artisan db:seed --class=MenuTableSeeder`
+   - `php artisan db:seed --class=RoleTableSeeder`
+   - `php artisan db:seed --class=PermissionTableSeeder`
+   - `php artisan db:seed --class=UserTableSeeder`
+8. You can contigure mail server details in `config/mail.php`.
+9. You can configure the site in the app/config folder before production.
+10. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
 
 ####Permissions
@@ -40,7 +47,7 @@ http://laravel.com/docs/5.1/installation
 
 ## Admin login details
 - Url: sites-public-url/admin
-- You can login with the superuser password provided at he time of installation.
+- Superuser : superuser@superuser.com - superuser@superuser
 
 ## Demo
 - Public [http://demo.lavalite.org](http://demo.lavalite.org)
@@ -51,10 +58,8 @@ http://laravel.com/docs/5.1/installation
 
 ### PHP Libraries
 * [laravel/laravel](https://github.com/laravel/laravel) - A PHP Framework For Web Artisans
+* [anahkiasen/former](https://github.com/Anahkiasen/former‎) - A powerful form builder
+* [teepluss/theme](https://github.com/teepluss/laravel4-theme) - Theme and asset management
 
-### Javascript Libraries
-* Updating
-
-## License
-
-The Lavalite CMS is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+### Support
+If you wish to support this project, send money through paypal to info@lavalite.org
