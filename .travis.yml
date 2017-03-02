@@ -4,6 +4,9 @@ php:
   - 5.6
   - 7.0
 
+services:
+  - mysql
+  
 before_script:
  # - mkdir bootstrap/cache
   #- mkdir storage
