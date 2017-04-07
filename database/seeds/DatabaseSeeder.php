@@ -20,11 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ClientTableSeeder::class);
 
         $this->call(BlockTableSeeder::class);
-        $this->call(BlogTableSeeder::class);
         $this->call(CalendarTableSeeder::class);
         $this->call(ContactTableSeeder::class);
         $this->call(MessageTableSeeder::class);
-        $this->call(NewsTableSeeder::class);
         $this->call(NotificationTableSeeder::class);
         $this->call(PageTableSeeder::class);
         $this->call(SettingTableSeeder::class);

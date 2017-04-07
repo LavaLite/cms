@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.4.*",
-        "lavalite/framework": "2.1.*",
+        "lavalite/framework": "dev-master",
         "lavalite/theme" : "dev-master",
         "litecms/contact": "dev-master",
         "litecms/block": "dev-master",
