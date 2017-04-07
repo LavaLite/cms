@@ -38,7 +38,6 @@ elixir(function(mix) {
             './vendor/bower_components/moment/min/moment.min.js',
             './vendor/bower_components/datetimepicker/build/jquery.datetimepicker.full.js',
             './vendor/bower_components/toastr/toastr.js',
-            './vendor/bower_components/Sortable/Sortable.js',
             './vendor/bower_components/sweetalert/dist/sweetalert-dev.js',
             './vendor/bower_components/dropzone/dist/dropzone.js',
             './vendor/bower_components/summernote/dist/summernote.js',
@@ -51,7 +50,6 @@ elixir(function(mix) {
         .styles([
             './vendor/bower_components/normalize.css/normalize.css',
             './vendor/bower_components/bootstrap/dist/css/bootstrap.min.css',            
-            './vendor/bower_components/datetimepicker/build/jquery.datetimepicker.min.css',
             './vendor/bower_components/font-awesome/css/font-awesome.min.css',
             './vendor/bower_components/ionicons/css/ionicons.min.css',
             './vendor/bower_components/material-icons/css/material-icons.min.css',
@@ -95,14 +93,23 @@ elixir(function(mix) {
             './vendor/bower_components/bootstrap/dist/css/bootstrap.min.css',        
             './vendor/bower_components/toastr/toastr.min.css',
             './vendor/bower_components/font-awesome/css/font-awesome.min.css',
+            './vendor/bower_components/toastr/toastr.min.css',
+            './vendor/bower_components/dropzone/dist/dropzone.css',
             './vendor/bower_components/ionicons/css/ionicons.min.css',
+            './vendor/bower_components/datetimepicker/build/jquery.datetimepicker.min.css',
+            './vendor/bower_components/summernote/dist/summernote.css',
             './vendor/bower_components/simple-line-icons/css/simple-line-icons.css',
             ], './public/themes/public/assets/css/vendor.css')
 
         .scripts([
             './vendor/bower_components/bootstrap/dist/js/bootstrap.js',
             './vendor/bower_components/jquery-validation/dist/jquery.validate.js',
+            './vendor/bower_components/dropzone/dist/dropzone.js',
+            './vendor/bower_components/summernote/dist/summernote.js',
+            './vendor/bower_components/toastr/toastr.js',
+            './vendor/bower_components/datetimepicker/build/jquery.datetimepicker.full.js',
             './vendor/bower_components/jquery-timeago/jquery.timeago.js',
+            './vendor/bower_components/Sortable/Sortable.js',
         ],  './public/themes/public/assets/js/vendor.js')
 
         

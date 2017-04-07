@@ -25,7 +25,7 @@ class ClientController extends Controller
     public function __construct()
     {
         $this->middleware('auth:client.web');
-        $this->setupTheme("user", "default");
+        $this->setupTheme("public", "default");
         parent::__construct();
     }
 

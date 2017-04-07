@@ -10,14 +10,12 @@ class UserController extends Controller
 
     /**
      * The authentication guard that should be used.
-     *
      * @var string
      */
     protected $guard = 'web';
 
     /**
      * The home page route of user.
-     *
      * @var string
      */
     protected $home = 'home';

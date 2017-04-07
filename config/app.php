@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
      */
 
-    'name'            => 'My Application',
+    'name'            => ' My Application',
 
     /*
     |--------------------------------------------------------------------------
@@ -181,18 +181,13 @@ return [
          * Lavalite Framework Service Providers...
          */
         Litepie\Alert\AlertServiceProvider::class,
-        Litepie\Block\BlockServiceProvider::class,
-        Litepie\Blog\BlogServiceProvider::class,
         Litepie\Calendar\CalendarServiceProvider::class,
-        Litepie\Contact\ContactServiceProvider::class,
         Litepie\Filer\FilerServiceProvider::class,
         Litepie\Form\FormServiceProvider::class,
         Litepie\Hashids\HashidsServiceProvider::class,
         Litepie\Install\InstallServiceProvider::class,
         Litepie\Menu\MenuServiceProvider::class,
         Litepie\Message\MessageServiceProvider::class,
-        Litepie\News\NewsServiceProvider::class,
-        Litepie\Page\PageServiceProvider::class,
         Litepie\Revision\RevisionServiceProvider::class,
         Litepie\Settings\SettingsServiceProvider::class,
         Litepie\Task\TaskServiceProvider::class,
@@ -200,6 +195,13 @@ return [
         Litepie\Trans\TransServiceProvider::class,
         Litepie\User\UserServiceProvider::class,
         Litepie\Workflow\WorkflowServiceProvider::class,
+
+        /*
+         * Cms package Service Providers...
+         */
+        Litecms\Block\BlockServiceProvider::class,
+        Litecms\Contact\ContactServiceProvider::class,
+        Litecms\Page\PageServiceProvider::class,
     ],
 
     /*
@@ -250,18 +252,13 @@ return [
         'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
 
         'Alert'        => Litepie\Support\Facades\Alert::class,
-        'Block'        => Litepie\Support\Facades\Block::class,
-        'Blog'         => Litepie\Support\Facades\Blog::class,
         'Calendar'     => Litepie\Support\Facades\Calendar::class,
         'Captcha'      => Litepie\Support\Facades\Captcha::class,
-        'Contact'      => Litepie\Support\Facades\Contact::class,
         'Filer'        => Litepie\Support\Facades\Filer::class,
         'Form'         => Litepie\Support\Facades\Form::class,
         'Hashids'      => Litepie\Support\Facades\Hashids::class,
         'Menu'         => Litepie\Support\Facades\Menu::class,
         'Message'      => Litepie\Support\Facades\Message::class,
-        'News'         => Litepie\Support\Facades\News::class,
-        'Page'         => Litepie\Support\Facades\Page::class,
         'Revision'     => Litepie\Support\Facades\Revision::class,
         'Settings'     => Litepie\Support\Facades\Settings::class,
         'Task'         => Litepie\Support\Facades\Task::class,
@@ -270,6 +267,9 @@ return [
         'User'         => Litepie\Support\Facades\User::class,
         'Workflow'     => Litepie\Support\Facades\Workflow::class,
 
+        'Block'        => Litecms\Block\Facades\Block::class,
+        'Contact'      => Litecms\Contact\Facades\Contact::class,
+        'Page'         => Litecms\Page\Facades\Page::class,
     ],
 
 ];

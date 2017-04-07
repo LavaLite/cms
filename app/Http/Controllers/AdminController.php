@@ -36,6 +36,8 @@ class AdminController extends Controller
      */
     public function home()
     {
+        $this->theme->prependTitle('Dashboard - ');
+
         $this->theme->asset()->usepath()->add('fullcalendar-css', 'packages/fullcalendar/fullcalendar.min.css');
         $this->theme->asset()->container('extra')->usepath()->add('fullcalendar-js', 'packages/fullcalendar/fullcalendar.min.js');
         return $this->theme->of($this->getView('home'))->render();

@@ -26,7 +26,7 @@ class PublicController extends Controller
     public function home(Request $request)
     {
         $this->theme->layout('home');
-
+        $this->theme->prependTitle('Home');
         return $this->theme->of('public::home', compact('page'))->render();
     }    
     /**
