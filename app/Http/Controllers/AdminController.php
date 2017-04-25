@@ -44,22 +44,6 @@ class AdminController extends Controller
     }
 
     /**
-     * Show admin dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getProfile()
-    {       
-        $this->theme->asset()->usepath()->add('fullcalendar-css', 'packages/fullcalendar/fullcalendar.min.css');
-
-        $this->theme->asset()->container('extra')->usepath()->add('fullcalendar-js', 'packages/fullcalendar/fullcalendar.min.js');
-        
-        
-        return $this->theme->of($this->getView('profile'))->render();
-        
-    }
-
-    /**
      * Show locked screen.
      *
      * @return \Illuminate\Http\Response
