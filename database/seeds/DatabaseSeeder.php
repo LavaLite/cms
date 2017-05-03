@@ -14,21 +14,22 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(MenuTableSeeder::class);
-        $this->call(PermissionTableSeeder::class);
-        $this->call(RoleTableSeeder::class);
-        $this->call(ClientTableSeeder::class);
+        $this->call(Litepie\\MenuTableSeeder::class);
+        $this->call(Litepie\\PermissionTableSeeder::class);
+        $this->call(Litepie\\RoleTableSeeder::class);
+        $this->call(Litepie\\ClientTableSeeder::class);
 
-        $this->call(BlockTableSeeder::class);
-        $this->call(CalendarTableSeeder::class);
-        $this->call(ContactTableSeeder::class);
-        $this->call(MessageTableSeeder::class);
-        $this->call(NotificationTableSeeder::class);
-        $this->call(PageTableSeeder::class);
-        $this->call(SettingTableSeeder::class);
-        $this->call(TaskTableSeeder::class);
-        $this->call(TeamTableSeeder::class);
-        $this->call(UserTableSeeder::class);
+        $this->call(Litepie\\CalendarTableSeeder::class);
+        $this->call(Litepie\\MessageTableSeeder::class);
+        $this->call(Litepie\\NotificationTableSeeder::class);
+        $this->call(Litepie\\SettingTableSeeder::class);
+        $this->call(Litepie\\TaskTableSeeder::class);
+        $this->call(Litepie\\TeamTableSeeder::class);
+        $this->call(Litepie\\UserTableSeeder::class);
+
+        $this->call(Litecms\\BlockTableSeeder::class);
+        $this->call(Litecms\\ContactTableSeeder::class);
+        $this->call(Litecms\\PageTableSeeder::class);
 
         Model::reguard();
     }
