@@ -58,3 +58,9 @@ http://laravel.com/docs/5.1/installation
 ## License
 
 The Lavalite CMS is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Support 
+
+Make a donation to support the work of the Open Source Initiative.
+
+[DONATE](https://www.paypal.me/renfos)
