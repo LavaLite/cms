@@ -26,6 +26,7 @@ elixir(function(mix) {
             './vendor/bower_components/sweetalert/dist/sweetalert.css',
             './vendor/bower_components/summernote/dist/summernote.css',
             './vendor/bower_components/ionicons/css/ionicons.min.css',
+            './vendor/bower_components/select2/dist/css/select2.min.css',
             './vendor/bower_components/waves/dist/waves.css',
             ], './public/themes/admin/assets/css/vendor.css')
 
@@ -43,6 +44,7 @@ elixir(function(mix) {
             './vendor/bower_components/summernote/dist/summernote.js',
             './vendor/bower_components/waves/dist/waves.js',
             './vendor/bower_components/Sortable/Sortable.min.js',
+            './vendor/bower_components/select2/dist/js/select2.min.js',
             './vendor/bower_components/jquery-timeago/jquery.timeago.js',
         ], './public/themes/admin/assets/js/vendor.js')
 
@@ -64,6 +66,7 @@ elixir(function(mix) {
             './vendor/bower_components/dropzone/dist/dropzone.css',
             './vendor/bower_components/sweetalert/dist/sweetalert.css',
             './vendor/bower_components/summernote/dist/summernote.css',
+            './vendor/bower_components/select2/dist/css/select2.min.css',
             './vendor/bower_components/waves/dist/waves.css',
             ], './public/themes/user/assets/css/vendor.css')
 
@@ -85,6 +88,7 @@ elixir(function(mix) {
             './vendor/bower_components/bootstrap-material-design/dist/js/material.min.js',
             './vendor/bower_components/bootstrap-material-design/dist/js/ripples.js',
             './vendor/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
+            './vendor/bower_components/select2/dist/js/select2.min.js',
             './vendor/bower_components/Sortable/Sortable.js',
         ], './public/themes/user/assets/js/vendor.js')
 

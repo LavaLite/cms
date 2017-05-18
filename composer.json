@@ -17,7 +17,8 @@
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.0"
+        "phpunit/phpunit": "~5.0",
+        "barryvdh/laravel-debugbar": "~1.8"
     },
     "autoload": {
         "classmap": [

@@ -164,10 +164,10 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
+         * Thirdparty Service Providers...
          */
         //
-
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -197,11 +197,11 @@ return [
         Litepie\Workflow\WorkflowServiceProvider::class,
 
         /*
-         * Cms package Service Providers...
+         * LiteCms package Service Providers...
          */
         Litecms\Block\BlockServiceProvider::class,
         Litecms\Contact\ContactServiceProvider::class,
-        Litecms\Page\PageServiceProvider::class,
+        Litecms\Page\PageServiceProvider::class
     ],
 
     /*

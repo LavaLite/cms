@@ -16,7 +16,7 @@ use Litepie\User\Contracts\UserPolicy;
 
 class User extends Authenticatable implements UserPolicy
 {
-    use Filer,Notifiable, CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger, PresentableTrait;
+    use Filer, Notifiable, CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger, PresentableTrait;
 
     /**
      * Configuartion for the model.
