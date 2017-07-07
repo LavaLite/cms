@@ -1,5 +1,7 @@
 ## Lavalite - Bootstrapper for Laravel Content Management System.
 
+[![Join the chat at https://gitter.im/LavaLite/cms](https://badges.gitter.im/LavaLite/cms.svg)](https://gitter.im/LavaLite/cms?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is an implementation of Content Management System based on [Laravel 5.2](http://laravel.com/) and [Twitter Bootstrap 3](http://getbootstrap.com/)
 
 ## Documentation
