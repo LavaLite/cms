@@ -21,9 +21,9 @@ return [
         'delete' => ':Module cannot be updated.',
     ],
     'unprocessable' => 'Unprocessable entry.',
-    'areyousure'    => 'Are you sure?',
+    'areyousure'    => 'Etes-vous sur ?',
     'type'          => [
-        'success' => 'Success',
-        'error'   => 'Error',
+        'success' => 'Succès',
+        'error'   => 'Erreur',
     ],
 ];
