@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Litepie\Database\Model;
 use Litepie\Database\Traits\Slugger;
+use Litepie\Filer\Traits\Filer;
 use Litepie\Foundation\Auth\User as Authenticatable;
 use Litepie\Hashids\Traits\Hashids;
-use Litepie\Filer\Traits\Filer;
 use Litepie\Repository\Traits\PresentableTrait;
-use Litepie\User\Traits\Acl\CheckPermission;
-use Litepie\User\Traits\User as UserProfile;
+use Litepie\Roles\Traits\HasRoleAndPermission;
 use Litepie\User\Contracts\UserPolicy;
-
+use Litepie\User\Traits\User as UserProfile;
 
 class Client extends Authenticatable implements UserPolicy
 {
-    use Filer,Notifiable, CheckPermission, UserProfile, SoftDeletes, Hashids, Slugger, PresentableTrait;
+    use Filer, Notifiable, HasRoleAndPermission, UserProfile,
+    SoftDeletes, Hashids, Slugger, PresentableTrait;
     /**
      * Configuartion for the model.
      *

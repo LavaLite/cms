@@ -13,7 +13,7 @@ return [
     |
      */
 
-    'defaults'  => [
+    'defaults'     => [
         'api'       => 'api',
         'guard'     => 'web',
         'passwords' => 'user',
@@ -36,16 +36,18 @@ return [
     |
      */
 
-    'guards'    => [
+    'guards'       => [
 
-        'web'    => [
-            'driver'   => 'session',
-            'provider' => 'users',
-        ],
+        'user'   => [
+            'web' => [
+                'driver'   => 'session',
+                'provider' => 'users',
+            ],
 
-        'api'    => [
-            'driver'   => 'token',
-            'provider' => 'users',
+            'api' => [
+                'driver'   => 'token',
+                'provider' => 'users',
+            ],
         ],
 
         'admin'  => [
@@ -92,7 +94,7 @@ return [
     |
      */
 
-    'providers' => [
+    'providers'    => [
         'users'   => [
             'driver' => 'eloquent',
             'model'  => App\User::class,
@@ -130,24 +132,21 @@ return [
     |
      */
 
-    'passwords' => [
+    'passwords'    => [
         'user'   => [
             'provider' => 'users',
-            'email'    => 'user::user.default.emails.password',
             'table'    => 'password_resets',
             'expire'   => 60,
         ],
 
         'admin'  => [
             'provider' => 'users',
-            'email'    => 'user::user.admin.emails.password',
             'table'    => 'password_resets',
             'expire'   => 60,
         ],
 
         'client' => [
             'provider' => 'clients',
-            'email'    => 'user::user.default.emails.password',
             'table'    => 'password_resets',
             'expire'   => 60,
         ],
@@ -155,46 +154,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Route bindings
+    | Guards which can be registered online.
     |--------------------------------------------------------------------------
     |
-    | Here you can list the relation with the route to the guard
+    | Here you can list the guards which can be registered by public user.
     |
      */
 
-    'routes'    => [
-        'user'   => [
-            'web' => [
-                'guard'  => 'web',
-                'broker' => 'user',
-                'home'   => 'home',
-            ],
-            'api' => [
-                'broker' => 'user',
-                'guard'  => 'api',
-            ],
-        ],
-        'client' => [
-            'web' => [
-                'guard'  => 'client.web',
-                'broker' => 'client',
-                'home'   => 'client',
-            ],
-            'api' => [
-                'guard'  => 'api',
-                'broker' => 'client',
-            ],
-        ],
-        'admin'  => [
-            'web' => [
-                'guard'  => 'admin.web',
-                'broker' => 'admin',
-                'home'   => 'admin',
-            ],
-            'api' => [
-                'guard'  => 'api',
-                'broker' => 'admin',
-            ],
-        ],
+    'registrable' => [
+        'user'   => true,
+        'client' => true,
+        'admin'  => false,
     ],
 ];

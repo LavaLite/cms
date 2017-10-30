@@ -29,7 +29,7 @@ return [
     */
 
     'providers' => [
-        //
+        Litepie\Calendar\CalendarServiceProvider::class,
     ],
 
 ];

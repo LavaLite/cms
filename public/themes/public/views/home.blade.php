@@ -36,6 +36,7 @@
             <section class="features">
                 <div class="container">
                     {!!Block::display('features')!!}
+                </div>
             </section>
         </div>
 

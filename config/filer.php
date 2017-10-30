@@ -11,7 +11,8 @@ return [
     |
      */
 
-    'views'                    => [
+    'views' =>
+    [
         'upload' => 'filer::upload',
         'show'   => 'filer::show',
         'edit'   => 'filer::edit',
@@ -51,11 +52,11 @@ return [
     'allowed_extensions'       => ['png', 'gif', 'jpg', 'jpeg', 'doc',
         'docx', 'pdf', 'xls', 'xlsx', 'mp3', 'txt', 'zip', 'bmp', 'jpeg'], // Case insensitive
 
-                                           // Max upload size - In BYTES. 1GB = 1073741824 bytes, 10 MB = 10485760, 1 MB = 1048576
+    // Max upload size - In BYTES. 1GB = 1073741824 bytes, 10 MB = 10485760, 1 MB = 1048576
     'max_upload_size'          => 5242880, // Converter - http://www.beesky.com/newsite/bit_byte.htm
 
-                                        // [True] will change all uploaded file names to an obfuscated name. (Example_Image.jpg becomes Example_Image_p4n8wfnt8nwh5gc7ynwn8gtu4se8u.jpg)
-                                        // [False] attempts to leaves the filename as is.
+    // [True] will change all uploaded file names to an obfuscated name. (Example_Image.jpg becomes Example_Image_p4n8wfnt8nwh5gc7ynwn8gtu4se8u.jpg)
+    // [False] attempts to leaves the filename as is.
     'obfuscate_filenames'      => true, // True/False
 
     /*

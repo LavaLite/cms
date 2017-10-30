@@ -1,37 +1,76 @@
 <?php
 
 return [
-/*
- * Provider .
- */
-    'provider' => 'litepie',
-/*
- * Package .
- */
-    'package'  => 'menu',
-/*
- * Modules .
- */
-    'modules'  => ['menu'],
+
+    /**
+     * Provider.
+     */
+    'provider'  => 'litepie',
+
+    /*
+     * Package.
+     */
+    'package'   => 'menu',
+
+    /*
+     * Modules.
+     */
+    'modules'   => ['menu'],
 
     'image'    => [
-        'xs' => ['width' => '60', 'height' => '45', 'default' => ''],
-        'sm' => ['width' => '160', 'height' => '75'],
-        'md' => ['width' => '460', 'height' => '345'],
-        'lg' => ['width' => '800', 'height' => '600'],
-        'xl' => ['width' => '1000', 'height' => '750'],
+
+        'sm' => [
+            'width'     => '140',
+            'height'    => '140',
+            'action'    => 'fit',
+            'watermark' => 'img/logo/default.png',
+        ],
+
+        'md' => [
+            'width'     => '370',
+            'height'    => '420',
+            'action'    => 'fit',
+            'watermark' => 'img/logo/default.png',
+        ],
+
+        'lg' => [
+            'width'     => '780',
+            'height'    => '497',
+            'action'    => 'fit',
+            'watermark' => 'img/logo/default.png',
+        ],
+        'xl' => [
+            'width'     => '800',
+            'height'    => '530',
+            'action'    => 'fit',
+            'watermark' => 'img/logo/default.png',
+        ],
+
     ],
 
-    'menu'     => [
-        'name'          => 'Menu',
-        'table'         => 'menus',
-        'model'         => 'Litepie\Menu\Models\Menu',
-        'fillable'      => ['parent_id', 'key', 'url', 'icon', 'permission', 'name', 'description', 'target', 'has_sub', 'order', 'status'],
-        'listfields'    => ['id', 'name', 'level', 'url', 'order', 'icon', 'status', 'has_sub', 'type', 'target', 'key'],
-        'upload-folder' => 'uploads/menu',
-        'uploadable'    => [
-            'single'   => [],
-            'multiple' => [],
+    
+    'menu'       => [
+        'model'             => 'Litepie\Menu\Models\Menu',
+        'table'             => 'menus',
+        'hidden'            => [],
+        'visible'           => [],
+        'guarded'           => ['*'],
+        'slugs'             => ['slug' => 'name'],
+        'dates'             => ['deleted_at'],
+        'appends'           => [],
+        'fillable'          => ['user_id', 'parent_id',  'key',  'url',  'icon',  'permission',  'role',  'name',  'description',  'target',  'order',  'uload_folder'],
+        'translate'         => ['parent_id',  'key',  'url',  'icon',  'permission',  'role',  'name',  'description',  'target',  'order',  'uload_folder'],
+        'upload_folder'     => 'menu/menu',
+        'uploads'           => [],
+        'casts'         => [
+            'role' => 'array',
         ],
+        'revision'          => [],
+        'perPage'           => '20',
+        'search'        => [
+            'name'  => 'like',
+            'status',
+        ],
+
     ],
 ];

@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Litepie\NotificationTableSeeder::class);
         $this->call(Litepie\SettingTableSeeder::class);
         $this->call(Litepie\TaskTableSeeder::class);
-        $this->call(Litepie\TeamTableSeeder::class);
+        //$this->call(Litepie\TeamTableSeeder::class);
         $this->call(Litepie\UserTableSeeder::class);
 
         $this->call(Litecms\BlockTableSeeder::class);

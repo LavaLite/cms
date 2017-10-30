@@ -13,8 +13,9 @@
 
 Route::get('/', 'PublicController@home');
 
-Route::group(['prefix' => '{guard?}'], function () {
+Route::group(['prefix' => set_route_guard('web')], function () {
     Auth::routes();
+    Route::get('/', 'ResourceController@home');
 });
 
-Auth::routes();
+

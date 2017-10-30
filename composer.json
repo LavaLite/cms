@@ -6,15 +6,17 @@
     "type": "cms",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.4.*",
+        "fideloper/proxy": "~3.3",
+        "laravel/framework": "5.5.*",
+        "laravel/tinker": "~1.0",
         "lavalite/framework": "2.2.*",
-        "lavalite/theme" : "2.0.*",
-        "litecms/contact": "2.0.*",
+        "lavalite/theme": "2.0.*",
         "litecms/block": "2.0.*",
-        "litecms/page": "2.0.*",
-        "composer/installers": "1.0.*@dev"
+        "litecms/contact": "2.0.*",
+        "litecms/page": "2.0.*"
     },
     "require-dev": {
+        "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.0",
@@ -53,6 +55,9 @@
     },
     "config": {
         "preferred-install": "dist",
-        "sort-packages": true
-    }
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

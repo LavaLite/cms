@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use Validator;
 use App\Http\Controllers\Controller;
+use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\Auth\RegistersUsers;
+use Litepie\User\Traits\RoutesAndGuards;
+use App\Http\Response\Auth\Response as AuthResponse;
 
 class RegisterController extends Controller
 {
@@ -18,16 +19,9 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
-
-    use RegistersUsers;
-
-    /**
-     * Where to redirect users after login / registration.
-     *
-     * @var string
      */
-    protected $redirectTo = '/home';
+
+    use RegistersUsers, RoutesAndGuards, ThemeAndViews;
 
     /**
      * Create a new controller instance.
@@ -36,10 +30,10 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        $this->response   = resolve(AuthResponse::class);
         $this->setRedirectTo();
         $this->setTheme();
         $this->middleware('guest');
     }
-
 
 }

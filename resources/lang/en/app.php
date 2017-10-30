@@ -49,6 +49,7 @@ return [
     'profile'       => 'Profile',
     'publish'       => 'Published',
     'request'       => 'Request',
+    'reports'       => 'Reports',
     'reset'         => 'Reset',
     'save'          => 'Save',
     'search'        => 'Search',

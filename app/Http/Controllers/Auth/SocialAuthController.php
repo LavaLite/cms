@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Litepie\User\Traits\Auth\SocialAuthentication;
+use Litepie\User\Traits\RoutesAndGuards;
+use App\Http\Response\Auth\Response as AuthResponse;
 
 class SocialAuthController extends Controller
 {
@@ -16,16 +18,8 @@ class SocialAuthController extends Controller
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
-    */
-
-    use SocialAuthentication;
-
-    /**
-     * Where to redirect users after login / registration.
-     *
-     * @var string
      */
-    protected $redirectTo = '/home';
+    use SocialAuthentication, RoutesAndGuards;
 
     /**
      * Create a new controller instance.
@@ -34,8 +28,8 @@ class SocialAuthController extends Controller
      */
     public function __construct()
     {
+        $this->response   = resolve(AuthResponse::class);
         $this->setRedirectTo();
-        $this->setTheme();
         $this->middleware('guest', ['except' => 'logout']);
     }
 }

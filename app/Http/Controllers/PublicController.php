@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
 
-use Page;
+use Litepie\Theme\ThemeAndViews;
+use Litepie\User\Traits\RoutesAndGuards;
+use App\Http\Response\PublicResponse;
 
 class PublicController extends Controller
 {
+    use ThemeAndViews, RoutesAndGuards;
+
     /**
      * Initialize public controller.
      *
@@ -14,43 +17,21 @@ class PublicController extends Controller
      */
     public function __construct()
     {
-        $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
-        parent::__construct();
+        $this->response = app(PublicResponse::class);
+        $this->setTheme('public');
     }
 
+
     /**
-     * Display homepage.
+     * Show dashboard for each user.
      *
-     * @return response
+     * @return \Illuminate\Http\Response
      */
-    public function home(Request $request)
+    public function home()
     {
-        $this->theme->layout('home');
-        $this->theme->prependTitle('Home');
-        return $this->theme->of('public::home', compact('page'))->render();
-    }    
-    /**
-     * Display homepage.
-     *
-     * @return response
-     */
-    public function picture(Request $request)
-    {   
-        $item = $request->all();
-        $file = $item['cropping'];
-        if(!empty($file)) {
-          
-            $file       = str_replace('data:image/png;base64,', '', $file);
-            $img        = str_replace(' ', '+', $file);
-            $data       = base64_decode($img);
-            $path       = public_path() . "/uploads/profile/test.png";
-            $success    = file_put_contents($path, $data);
-            if ($success) {
-                echo "success";
-            }
-        }    
-
-       
-
+        return $this->response->title('Home')
+            ->view('home')
+            ->output();
     }
+
 }

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Litepie\User\Traits\RoutesAndGuards;
+use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\Auth\ResetsPassword;
+use App\Http\Response\Auth\Response as AuthResponse;
 
 class ResetPasswordController extends Controller
 {
@@ -16,9 +19,8 @@ class ResetPasswordController extends Controller
     | and uses a simple trait to include this behavior. You're free to
     | explore this trait and override any methods you wish to tweak.
     |
-    */
-
-    use ResetsPassword;
+     */
+    use RoutesAndGuards, ThemeAndViews, ResetsPassword;
 
     /**
      * Create a new controller instance.
@@ -27,6 +29,7 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
+        $this->response   = resolve(AuthResponse::class);
         $this->setTheme();
         $this->middleware('guest');
     }
