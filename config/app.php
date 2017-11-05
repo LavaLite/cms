@@ -205,7 +205,6 @@ return [
         Litecms\Contact\ContactServiceProvider::class,
         Litecms\Page\PageServiceProvider::class,
 
-        Lavalite\Example\Providers\ExampleServiceProvider::class
     ],
 
     /*
