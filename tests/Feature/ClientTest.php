@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\User;
+use App\Client;
 use Tests\TestCase;
 
 class ClientTest extends TestCase
@@ -14,9 +14,8 @@ class ClientTest extends TestCase
      */
     public function testClientWithoutLogin()
     {
-        $response = $this->get('client');
-
-        $response->assertStatus(302);
+        $response = $this->get('client')
+            ->assertStatus(404);
     }
 
     /**
@@ -26,10 +25,9 @@ class ClientTest extends TestCase
      */
     public function testClientAfterLogin()
     {
-        $user = User::find(1);
+        $client = Client::find(1);
 
-        $response = $this->actingAs($user, 'client.web')
-            ->get('/client')
-            ->assertStatus(200);
+        $response = $this->actingAs($client, 'client.web')
+            ->get('client');
     }
 }

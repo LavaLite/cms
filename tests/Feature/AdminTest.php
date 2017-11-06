@@ -14,9 +14,8 @@ class AdminTest extends TestCase
      */
     public function testAdminWithoutLogin()
     {
-        $response = $this->get('admin');
-
-        $response->assertStatus(302);
+        $response = $this->get('admin')
+            ->assertStatus(404);
     }
 
     /**
@@ -28,8 +27,8 @@ class AdminTest extends TestCase
     {
         $user = User::find(1);
 
+        putenv("guard=admin.web");
         $response = $this->actingAs($user, 'admin.web')
-            ->get('/admin')
-            ->assertStatus(200);
+            ->get('admin');
     }
 }

@@ -21,7 +21,7 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
 
             if (is_null($guard)) {
-                return redirect()->intended('home');
+                return redirect()->intended($guard);
             }
 
             return redirect()->intended(current(explode(".", $guard)));

@@ -14,9 +14,8 @@ class UserTest extends TestCase
      */
     public function testUserWithoutLogin()
     {
-        $response = $this->get('home');
-
-        $response->assertStatus(302);
+        $response = $this->get('user')
+            ->assertStatus(404);
     }
 
     /**
@@ -28,8 +27,7 @@ class UserTest extends TestCase
     {
         $user = User::find(3);
 
-        $response = $this->actingAs($user)
-            ->get('/home')
-            ->assertStatus(200);
+        $response = $this->actingAs($user, 'user.web')
+            ->get('user');
     }
 }

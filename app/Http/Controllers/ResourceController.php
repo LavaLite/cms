@@ -19,9 +19,8 @@ class ResourceController extends BaseController
      */
     public function __construct()
     {
-
-        if (!empty(getenv('guard')) && getenv('guard') != 'web') {
-            $this->middleware('auth:' . $this->getGuard());
+        if (!empty(app('auth')->getDefaultDriver())) {
+            $this->middleware('auth:' . app('auth')->getDefaultDriver());
         }
         $this->response = app(ResourceResponse::class);
         $this->setTheme();
