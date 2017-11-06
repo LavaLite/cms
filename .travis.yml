@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 5.6
   - 7.0
 
 services:
@@ -23,7 +22,8 @@ before_script:
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
-  - php artisan vendor:publish
+  - php artisan vendor:publish  --tag=config
+  - php artisan vendor:publish  --tag=public
   - php artisan optimize
   - php artisan migrate --seed
 
