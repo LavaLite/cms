@@ -2,7 +2,7 @@
 
 namespace App\Http\Response;
 
-use Litepie\http\Response as LitepieResponse;
+use Litepie\Http\Response as LitepieResponse;
 
 abstract class Response extends LitepieResponse
 {

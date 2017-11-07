@@ -16,8 +16,7 @@ use Litepie\User\Traits\User as UserProfile;
 
 class Client extends Authenticatable implements UserPolicy
 {
-    use Filer, Notifiable, HasRoleAndPermission, UserProfile,
-    SoftDeletes, Hashids, Slugger, PresentableTrait;
+    use Filer, Notifiable, HasRoleAndPermission, UserProfile, SoftDeletes, Hashids, Slugger, PresentableTrait;
     /**
      * Configuartion for the model.
      *

@@ -2,9 +2,9 @@
 
 namespace App\Http\Response\Auth;
 
-use App\Http\Response\Response;
+use App\Http\Response\Response as BaseResponse;
 
-class Response extends Response
+class Response extends BaseResponse
 {
 
 }

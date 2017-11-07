@@ -10,8 +10,8 @@ use Litepie\Filer\Traits\Filer;
 use Litepie\Foundation\Auth\User as Authenticatable;
 use Litepie\Hashids\Traits\Hashids;
 use Litepie\Repository\Traits\PresentableTrait;
-use Litepie\User\Contracts\UserPolicy;
 use Litepie\Roles\Traits\HasRoleAndPermission;
+use Litepie\User\Contracts\UserPolicy;
 use Litepie\User\Traits\User as UserProfile;
 
 class User extends Authenticatable implements UserPolicy
