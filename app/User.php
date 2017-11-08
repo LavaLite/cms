@@ -23,7 +23,7 @@ class User extends Authenticatable implements UserPolicy
      *
      * @var array
      */
-    protected $config = 'litepie.user.user';
+    protected $config = 'users.user.model';
 
     /**
      * Initialiaze page modal.

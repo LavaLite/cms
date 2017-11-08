@@ -22,7 +22,7 @@ class Client extends Authenticatable implements UserPolicy
      *
      * @var array
      */
-    protected $config = 'litepie.user.client';
+    protected $config = 'users.client.model';
 
     /**
      * Initialiaze page modal.
