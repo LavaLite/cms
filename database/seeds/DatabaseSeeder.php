@@ -15,8 +15,9 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(Litepie\MenuTableSeeder::class);
-        $this->call(Litepie\PermissionTableSeeder::class);
+        $this->call(Litepie\UserTableSeeder::class);
         $this->call(Litepie\RoleTableSeeder::class);
+        $this->call(Litepie\PermissionTableSeeder::class);
         $this->call(Litepie\ClientTableSeeder::class);
 
         $this->call(Litepie\CalendarTableSeeder::class);
@@ -24,8 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Litepie\NotificationTableSeeder::class);
         $this->call(Litepie\SettingTableSeeder::class);
         $this->call(Litepie\TaskTableSeeder::class);
-        //$this->call(Litepie\TeamTableSeeder::class);
-        $this->call(Litepie\UserTableSeeder::class);
 
         $this->call(Litecms\BlockTableSeeder::class);
         $this->call(Litecms\ContactTableSeeder::class);
