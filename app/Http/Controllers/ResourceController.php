@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller as BaseController;
 use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\RoutesAndGuards;
+use Litepie\User\Traits\UserPages;
 use App\Http\Response\ResourceResponse;
 
 
 class ResourceController extends BaseController
 {
-    use RoutesAndGuards, ThemeAndViews;
+    use RoutesAndGuards, ThemeAndViews, UserPages;
 
     /**
      * Initialize public controller.
@@ -21,6 +22,7 @@ class ResourceController extends BaseController
     {
         if (!empty(app('auth')->getDefaultDriver())) {
             $this->middleware('auth:' . app('auth')->getDefaultDriver());
+            $this->middleware('role:' . $this->getGuardRoute());
         }
         $this->response = app(ResourceResponse::class);
         $this->setTheme();

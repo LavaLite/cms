@@ -47,16 +47,18 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth.role'       => \Litepie\User\Http\Middleware\VerifyRole::class,
-        'auth.permission' => \Litepie\User\Http\Middleware\VerifyPermission::class,
-        'active'     => \Litepie\User\Http\Middleware\VerifyLogin::class,
 
-        'auth' => \App\Http\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'active'          => \Litepie\User\Http\Middleware\VerifyLogin::class,
+
+        'role'            => \Litepie\Roles\Middleware\VerifyRole::class,
+        'permission'      => \Litepie\Roles\Middleware\VerifyPermission::class,
+        'level'           => \Litepie\Roles\Middleware\VerifyLevel::class,
+
+        'auth'            => \App\Http\Middleware\Authenticate::class,
+        'auth.basic'      => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'        => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'             => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'           => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle'        => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }
-
