@@ -30,8 +30,8 @@ return [
             'view'   => 'user',
         ],
         'client'    => [
-            'theme'  => 'public',
-            'view'   => 'public',
+            'theme'  => 'client',
+            'view'   => 'client',
         ],
     ],
 

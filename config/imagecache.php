@@ -31,8 +31,7 @@ return array(
     */
     
     'paths' => array(
-        public_path('upload'),
-        public_path('images')
+        base_path(env('UPLOAD_FOLDER', 'storage/uploads')),
     ),
 
     /*
@@ -52,9 +51,11 @@ return array(
     */
    
     'templates' => array(
-        'small' => 'Intervention\Image\Templates\Small',
-        'medium' => 'Intervention\Image\Templates\Medium',
-        'large' => 'Intervention\Image\Templates\Large',
+        'xs' => 'Litepie\Filer\Templates\ExtraSmall',
+        'sm' => 'Litepie\Filer\Templates\Small',
+        'md' => 'Litepie\Filer\Templates\Medium',
+        'lg' => 'Litepie\Filer\Templates\Large',
+        'xl' => 'Litepie\Filer\Templates\ExtraLarge',
     ),
 
     /*

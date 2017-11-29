@@ -154,16 +154,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Guards which can be registered online.
+    | Register User
     |--------------------------------------------------------------------------
-    |
-    | Here you can list the guards which can be registered by public user.
-    |
+    | User with following roles are  allowed to register online.
+    | other user can be created by higher levele of users in the organization
+    | Second array contains roles to be attached while creating a user online
      */
 
-    'registrable' => [
-        'user'   => true,
-        'client' => true,
-        'admin'  => false,
+    'register'     => [
+        'allowed' => ['client'],
+        'roles'   => [
+            'client'      => null,
+            'user'      => ['user'],
+            'admin'     => ['admin'],
+            'superuser' => ['admin', 'superuser'],
+        ],
     ],
+
+    'verify_email' => false,
 ];

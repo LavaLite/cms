@@ -10,19 +10,20 @@ use Litepie\Filer\Traits\Filer;
 use Litepie\Foundation\Auth\User as Authenticatable;
 use Litepie\Hashids\Traits\Hashids;
 use Litepie\Repository\Traits\PresentableTrait;
-use Litepie\Roles\Traits\HasRoleAndPermission;
+use Litepie\Roles\Traits\CheckRoleAndPermission;
 use Litepie\User\Contracts\UserPolicy;
 use Litepie\User\Traits\User as UserProfile;
 
 class Client extends Authenticatable implements UserPolicy
 {
-    use Filer, Notifiable, HasRoleAndPermission, UserProfile, SoftDeletes, Hashids, Slugger, PresentableTrait;
+    use Filer, Notifiable, CheckRoleAndPermission, UserProfile, SoftDeletes, Hashids, Slugger, PresentableTrait;
     /**
      * Configuartion for the model.
      *
      * @var array
      */
     protected $config = 'users.client.model';
+
 
     /**
      * Initialiaze page modal.
@@ -41,12 +42,17 @@ class Client extends Authenticatable implements UserPolicy
 
         }
 
+        $this->setRole('client');
+
         parent::__construct($attributes);
     }
 
+    
     public function messages()
     {
         return $this->morphMany('\Litepie\Message\Models\Message', 'user');
     }
+
+    
 
 }

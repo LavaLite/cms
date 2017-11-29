@@ -5,104 +5,78 @@ return [
     /**
      * Provider.
      */
-    'provider'   => 'litepie',
+    'provider'  => 'litepie',
 
     /*
      * Package.
      */
-    'package'    => 'user',
+    'package'   => 'roles',
 
     /*
      * Modules.
      */
-    'modules'    => ['user', 'permission', 'role', 'team'],
-
-    'image'      => [
-
-        'sm'     => [
-            'width'     => '140',
-            'height'    => '140',
-            'action'    => 'fit',
-            'watermark' => 'img/logo/default.png',
-        ],
-
-        'md'     => [
-            'width'     => '370',
-            'height'    => '420',
-            'action'    => 'fit',
-            'watermark' => 'img/logo/default.png',
-        ],
-
-        'lg'     => [
-            'width'     => '780',
-            'height'    => '497',
-            'action'    => 'fit',
-            'watermark' => 'img/logo/default.png',
-        ],
-        'xl'     => [
-            'width'     => '800',
-            'height'    => '530',
-            'action'    => 'fit',
-            'watermark' => 'img/logo/default.png',
-        ],
-        'avatar' => [
-            'male'   => '',
-            'female' => '',
-        ],
-    ],
-
-    'permission' => [
-        'model' => [
-            'model'         => \Litepie\Roles\Models\Permission::class,
-            'table'         => 'permissions',
-            'presenter'     => \Litepie\Roles\Repositories\Presenter\PermissionItemPresenter::class,
-            'hidden'        => [],
-            'visible'       => [],
-            'guarded'       => ['*'],
-            'slugs'         => ['slug' => 'name'],
-            'dates'         => ['deleted_at'],
-            'appends'       => [],
-            'fillable'      => ['slug', 'name'],
-            'translate'     => [],
-            'upload-folder' => 'user/permission',
-            'uploads'       => [],
-            'casts'         => [],
-            'revision'      => [],
-            'perPage'       => '20',
-            'search'        => [
-                'name' => 'like',
-                'status',
-            ],
-        ],
-    ],
+    'modules'   => ['role', 'permission'],
 
     'role'       => [
         'model' => [
-            'model'         => \Litepie\Roles\Models\Role::class,
-            'table'         => 'roles',
-            'presenter'     => \Litepie\Roles\Repositories\Presenter\RoleItemPresenter::class,
-            'hidden'        => [],
-            'visible'       => [],
-            'guarded'       => ['*'],
-            'slugs'         => [],
-            'dates'         => ['deleted_at'],
-            'appends'       => [],
-            'fillable'      => ['key', 'name', 'permissions'],
-            'translate'     => [],
-
-            'upload-folder' => 'user/role',
-            'uploads'       => [],
-            'casts'         => [
-                'permissions' => 'array',
-            ],
-            'revision'      => [],
-            'perPage'       => '20',
+            'model'                 => \Litepie\Roles\Models\Role::class,
+            'table'                 => 'roles',
+            'presenter'             => \Litepie\Roles\Repositories\Presenter\RoleItemPresenter::class,
+            'hidden'                => [],
+            'visible'               => [],
+            'guarded'               => ['*'],
+            'slugs'                 => ['slug' => 'name'],
+            'dates'                 => ['deleted_at'],
+            'appends'               => [],
+            'fillable'              => ['name',  'slug',  'description',  'level'],
+            'translatables'         => [],
+            'upload_folder'         => 'roles/role',
+            'uploads'               => [],
+            'casts'                 => [],
+            'revision'              => [],
+            'perPage'               => '20',
             'search'        => [
-                'name'       => 'like',
-                'key'        => 'like',
-                'created_at' => 'like',
-                'updated_at' => 'like',
-            ],
+                'name'  => 'like',
+                'status',
+            ]
+        ],
+
+        'controller' => [
+            'provider'  => 'Litepie',
+            'package'   => 'Roles',
+            'module'    => 'Role',
+        ],
+
+    ],
+
+    'permission'       => [
+        'model' => [
+            'model'                 => \Litepie\Roles\Models\Permission::class,
+            'table'                 => 'permissions',
+            'presenter'             => \Litepie\Roles\Repositories\Presenter\PermissionItemPresenter::class,
+            'hidden'                => [],
+            'visible'               => [],
+            'guarded'               => ['*'],
+            'slugs'                 => ['slug' => 'name'],
+            'dates'                 => ['deleted_at'],
+            'appends'               => [],
+            'fillable'              => ['name',  'slug',  'description'],
+            'translatables'         => [],
+            'upload_folder'         => 'roles/permission',
+            'uploads'               => [],
+            'casts'                 => [],
+            'revision'              => [],
+            'perPage'               => '20',
+            'search'        => [
+                'name'  => 'like',
+                'status',
+            ]
+        ],
+
+        'controller' => [
+            'provider'  => 'Litepie',
+            'package'   => 'Roles',
+            'module'    => 'Permission',
         ],
 
     ],
@@ -129,7 +103,7 @@ return [
     |
      */
     'pretend'    => [
-        'enabled' => true,
+        'enabled' => false,
         'options' => [
             'is'      => true,
             'can'     => true,

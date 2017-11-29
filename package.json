@@ -13,6 +13,7 @@
   "dependencies": {
     "admin-lte": "^2.3.11",
     "axios": "^0.15.3",
+    "bootstrap": "^3.3.7",
     "bootstrap-daterangepicker": "^2.1.25",
     "bootstrap-material-design": "^0.5.10",
     "bootstrap-sass": "^3.3.7",
