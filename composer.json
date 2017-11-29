@@ -9,8 +9,8 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "lavalite/framework": "3.0.*",
-        "lavalite/theme": "3.0.*",
+        "lavalite/framework": "3.1.*",
+        "lavalite/theme": "3.1.*",
         "litecms/block": "3.0.*",
         "litecms/contact": "3.0.*",
         "litecms/page": "3.0.*"
