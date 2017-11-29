@@ -50,9 +50,9 @@ class Kernel extends HttpKernel
 
         'active'          => \Litepie\User\Http\Middleware\VerifyLogin::class,
 
-        'role'            => \Litepie\Roles\Middleware\VerifyRole::class,
-        'permission'      => \Litepie\Roles\Middleware\VerifyPermission::class,
-        'level'           => \Litepie\Roles\Middleware\VerifyLevel::class,
+        'role'            => \Litepie\Roles\Http\Middleware\VerifyRole::class,
+        'permission'      => \Litepie\Roles\Http\Middleware\VerifyPermission::class,
+        'level'           => \Litepie\Roles\Http\Middleware\VerifyLevel::class,
 
         'auth'            => \App\Http\Middleware\Authenticate::class,
         'auth.basic'      => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
