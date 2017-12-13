@@ -9,8 +9,6 @@ Visit [Documentation](http://lavalite.org/docs) section in the website
 
 ## System Requirements & Installation
 
-
-## Installation
 Visit [Installation](http://lavalite.org/docs/master/installation) section in the documentation for the details
 
 
