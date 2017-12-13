@@ -7,7 +7,7 @@ This is an implementation of Content Management System based on [Laravel 5.5](ht
 ![Screen](https://raw.githubusercontent.com/LavaLite/docs/master/images/lavalite.png "Dashboards")
 
 ## Documentation
-Visit [Documentation](https://lavalite.org/docs) for documentation
+Visit [Documentation](http://lavalite.org/docs) section in the website
 
 ## System Requirements & Installation
 
