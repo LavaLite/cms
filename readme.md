@@ -13,7 +13,7 @@ Visit [Documentation](https://lavalite.org/docs) for documentation
 
 
 ## Installation
-Visit [Instalation](http://lavalite.org/docs/master/installation) section in the documentation for the details
+Visit [Installation](http://lavalite.org/docs/master/installation) section in the documentation for the details
 
 
 ## Demo
