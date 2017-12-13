@@ -1,7 +1,5 @@
 # Lavalite
 
-Bootstrapper for Laravel Content Management System.
-
 This is an implementation of Content Management System based on [Laravel 5.5](http://laravel.com/)
 
 ![Screen](https://raw.githubusercontent.com/LavaLite/docs/master/images/lavalite.png "Dashboards")
