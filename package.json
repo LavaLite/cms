@@ -19,6 +19,7 @@
     "bootstrap-sass": "^3.3.7",
     "bootstrap-select": "^1.12.4",
     "bootstrap-switch": "^3.3.4",
+    "chart.js": "^2.7.1",
     "codemirror": "^5.30.0",
     "components-jqueryui": "^1.12.1",
     "cropper": "^2.1.0",

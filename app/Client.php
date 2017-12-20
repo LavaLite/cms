@@ -26,7 +26,7 @@ class Client extends Authenticatable implements UserPolicy
 
 
     /**
-     * Initialiaze page modal.
+     * Initialiaze client modal.
      *
      * @param $name
      */

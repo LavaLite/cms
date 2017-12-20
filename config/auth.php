@@ -164,10 +164,9 @@ return [
     'register'     => [
         'allowed' => ['client'],
         'roles'   => [
-            'client'      => null,
+            'client'    => null,
             'user'      => ['user'],
-            'admin'     => ['admin'],
-            'superuser' => ['admin', 'superuser'],
+            'admin'     => ['admin']
         ],
     ],
 

@@ -34,7 +34,9 @@ class UserController extends BaseController
      */
     public function home()
     {
-        return $this->response->title('Dashboard')
+        return $this->response
+            ->layout('user')
+            ->title('Dashboard')
             ->view('home')
             ->output();
     }
