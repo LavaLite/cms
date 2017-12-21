@@ -23,7 +23,7 @@ mix.setPublicPath('./public/themes/user/assets/dist');
 mix.js('./public/themes/user/assets/js/app.js', 'js')
    .sass('./public/themes/user/assets/sass/app.scss', 'css/styles.css');
 
-//compile user assets
+//compile client assets
 // mix.setPublicPath('./public/themes/client/assets/dist');
 // mix.js('./public/themes/client/assets/js/app.js', 'js')
 //    .sass('./public/themes/client/assets/sass/app.scss', 'css/styles.css');
