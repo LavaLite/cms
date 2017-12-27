@@ -13,10 +13,7 @@ Visit [Installation](http://lavalite.org/docs/master/installation) section in th
 
 
 ## Demo
-- Public [http://demo.lavalite.org](https://demo.lavalite.org)
-- Admin [http://demo.lavalite.org/admin](https://demo.lavalite.org/admin)
-- User name: superuser@superuser.com 
-- Password: superuser@superuser
+- Visit the demo page [https://lavalite.org/demo.html](https://lavalite.org/demo.html)
 
 
 ## License
