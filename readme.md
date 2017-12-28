@@ -13,7 +13,9 @@ Visit [Installation](http://lavalite.org/docs/master/installation) section in th
 
 
 ## Demo
-- Visit the demo page [https://lavalite.org/demo.html](https://lavalite.org/demo.html)
+Content Management System [https://lavalite.org/demo.html](https://lavalite.org/demo.html)
+
+Products [https://lavalite.org/products.html](https://lavalite.org/products.html)
 
 
 ## License
