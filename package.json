@@ -46,6 +46,7 @@
     "lodash": "^4.17.4",
     "material-icons": "^0.1.0",
     "materialize-css": "^0.100.2",
+    "mustache": "^2.3.0",
     "mz": "^2.6.0",
     "nestable": "^0.2.0",
     "normalize.css": "^7.0.0",
