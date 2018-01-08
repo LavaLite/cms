@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'password' => 'Uw paswoord moet uit minstens 6 caracters bestaan en overeenkomen met het patroon.',
+    'password' => 'Uw paswoord moet uit minstens 6 karakters bestaan en overeenkomen met het patroon.',
     'reset' => 'Uw paswoord is gereset!',
     'sent' => 'We hebben uw paswoord reset link versturd naar uw e-mail!',
     'token' => 'Dit paswoord reset token is ongeldig.',

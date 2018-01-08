@@ -20,7 +20,7 @@ return [
     'add' => 'Voeg toe',
     'addnew' => 'Voeg nieuw toe',
     'actions' => 'Acties',
-    'approve' => 'Bevestif',
+    'approve' => 'Bevestig',
     'archive' => 'Gearchiveerd',
     'unarchive' => 'Uit het archief gehaald',
     'back' => 'Terug',

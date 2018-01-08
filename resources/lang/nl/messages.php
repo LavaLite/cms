@@ -20,8 +20,8 @@ return [
 
     'error' => [
         'create' => ':Module kan niet aangemaakt worden.',
-        'update' => ':Module kan niet verwijderd worden.',
-        'delete' => ':Module kan niet geüpdated worden.',
+        'update' => ':Module kan niet geüpdated worden.',
+        'delete' => ':Module kan niet verwijderd worden.',
     ],
 
     'unprocessable' => 'Niet-verwerkbare entiteit.',
