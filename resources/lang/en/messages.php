@@ -20,8 +20,8 @@ return [
 
     'error'         => [
         'create' => ':Module cannot be created.',
-        'update' => ':Module cannot be deleted.',
-        'delete' => ':Module cannot be updated.',
+        'update' => ':Module cannot be updated.',
+        'delete' => ':Module cannot be deleted.',
     ],
 
     'unprocessable' => 'Unprocessable entry.',

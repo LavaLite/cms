@@ -22,8 +22,8 @@ return [
 
     'error'         => [
         'create' => ':Module ﻻ يمكن إضافته.',
-        'update' => ':Module ﻻ يمكن حذفه.',
-        'delete' => ':Module ﻻ يمكن تعديله.',
+        'update' => ':Module ﻻ يمكن تعديله.',
+        'delete' => ':Module ﻻ يمكن حذفه.',
     ],
 
     'unprocessable' => 'كيان ﻻ يمكن معالجته.',
