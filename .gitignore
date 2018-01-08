@@ -13,3 +13,12 @@ Homestead.yaml
 composer.develop.json
 composer.develop.lock
 composer.lock
+
+
+###
+### PhpStorm ###
+###
+.idea/
+*.iml
+# File-based project format:
+*.iws
