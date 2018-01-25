@@ -18,15 +18,11 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
 
-        if (Auth::guard($guard)->check()) {
-
-            if (is_null($guard)) {
-                return redirect()->intended($guard);
-            }
-
-            return redirect()->intended(current(explode(".", $guard)));
+        if (Auth::guard()->check()) {
+            return redirect()->intended(guard_url('/'));
         }
 
         return $next($request);
     }
+
 }

@@ -98,19 +98,12 @@ return [
         'users'   => [
             'driver' => 'eloquent',
             'model'  => App\User::class,
-            'table'  => 'users',
         ],
 
         'clients' => [
             'driver' => 'eloquent',
             'model'  => App\Client::class,
-            'table'  => 'clients',
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
@@ -170,5 +163,5 @@ return [
         ],
     ],
 
-    'verify_email' => false,
+    'verify_email' => true,
 ];

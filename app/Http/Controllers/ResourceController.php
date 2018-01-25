@@ -23,7 +23,9 @@ class ResourceController extends BaseController
         if (!empty(app('auth')->getDefaultDriver())) {
             $this->middleware('auth:' . app('auth')->getDefaultDriver());
             $this->middleware('role:' . $this->getGuardRoute());
+            $this->middleware('active');
         }
+        
         $this->response = app(ResourceResponse::class);
         $this->setTheme();
     }

@@ -4,7 +4,7 @@
 /vendor
 /node_modules
 /public/uploads
-/public/themes/*
+/public/themes
 /.idea
 /framework
 Homestead.json
@@ -13,3 +13,4 @@ Homestead.yaml
 composer.develop.json
 composer.develop.lock
 composer.lock
+package-lock.json
