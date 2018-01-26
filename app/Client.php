@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Litepie\User\Models\Client;
+use Litepie\User\Models\Client as BaseClient;
 
-class Client extends Client
+class Client extends BaseClient
 {
     /**
      * Configuartion for the model.

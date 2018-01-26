@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Litepie\User\Models\User;
+use Litepie\User\Models\User as BaseUser;
 
-class User extends User
+class User extends BaseUser
 {
     /**
      * Configuartion for the model.
