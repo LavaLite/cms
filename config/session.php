@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver'          => env('SESSION_DRIVER', 'file'),
+    'driver' => env('SESSION_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'lifetime'        => 120,
+    'lifetime' => env('SESSION_LIFETIME', 120),
 
     'expire_on_close' => false,
 
@@ -44,7 +44,7 @@ return [
     |
     */
 
-    'encrypt'         => false,
+    'encrypt' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ return [
     |
     */
 
-    'files'           => storage_path('framework/sessions'),
+    'files' => storage_path('framework/sessions'),
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'connection'      => null,
+    'connection' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,20 @@ return [
     |
     */
 
-    'table'           => 'sessions',
+    'table' => 'sessions',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Session Cache Store
+    |--------------------------------------------------------------------------
+    |
+    | When using the "apc" or "memcached" session drivers, you may specify a
+    | cache store that should be used for these sessions. This value must
+    | correspond with one of the application's configured cache stores.
+    |
+    */
+
+    'store' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +109,7 @@ return [
     |
     */
 
-    'lottery'         => [2, 100],
+    'lottery' => [2, 100],
 
     /*
     |--------------------------------------------------------------------------
@@ -109,7 +122,10 @@ return [
     |
     */
 
-    'cookie'          => 'laravel_session',
+    'cookie' => env(
+        'SESSION_COOKIE',
+        str_slug(env('APP_NAME', 'laravel'), '_').'_session'
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -122,7 +138,7 @@ return [
     |
     */
 
-    'path'            => '/',
+    'path' => '/',
 
     /*
     |--------------------------------------------------------------------------
@@ -135,7 +151,7 @@ return [
     |
     */
 
-    'domain'          => null,
+    'domain' => env('SESSION_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -148,6 +164,34 @@ return [
     |
     */
 
-    'secure'          => false,
+    'secure' => env('SESSION_SECURE_COOKIE', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | HTTP Access Only
+    |--------------------------------------------------------------------------
+    |
+    | Setting this value to true will prevent JavaScript from accessing the
+    | value of the cookie and the cookie will only be accessible through
+    | the HTTP protocol. You are free to modify this option if needed.
+    |
+    */
+
+    'http_only' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Same-Site Cookies
+    |--------------------------------------------------------------------------
+    |
+    | This option determines how your cookies behave when cross-site requests
+    | take place, and can be used to mitigate CSRF attacks. By default, we
+    | do not enable this as other CSRF protection services are in place.
+    |
+    | Supported: "lax", "strict"
+    |
+    */
+
+    'same_site' => null,
 
 ];

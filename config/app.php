@@ -11,6 +11,7 @@ return [
     | This value is the name of your application. This value is used when the
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
+    |
     */
 
     'name' => env('APP_NAME', 'Laravel'),
@@ -110,23 +111,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Logging Configuration
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the log settings for your application. Out of
-    | the box, Laravel uses the Monolog PHP logging library. This gives
-    | you a variety of powerful log handlers / formatters to utilize.
-    |
-    | Available Settings: "single", "daily", "syslog", "errorlog"
-    |
-    */
-
-    'log' => env('APP_LOG', 'single'),
-
-    'log_level' => env('APP_LOG_LEVEL', 'debug'),
-
-    /*
-    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |
@@ -136,8 +120,7 @@ return [
     |
     */
 
-
-    'providers'       => [
+    'providers' => [
 
         /*
          * Laravel Framework Service Providers...
@@ -166,44 +149,34 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Thirdparty Service Providers...
+         * Package Service Providers...
          */
-        //
         Barryvdh\Debugbar\ServiceProvider::class,
-        /*
-         * Application Service Providers...
-         */
-        App\Providers\AppServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-
-        /*
-         * Lavalite Framework Service Providers...
-         */
-        Litepie\Alerts\AlertsServiceProvider::class,
-        Litepie\Calendar\CalendarServiceProvider::class,
         Litepie\Filer\FilerServiceProvider::class,
         Litepie\Form\FormServiceProvider::class,
         Litepie\Hashids\HashidsServiceProvider::class,
         Litepie\Install\InstallServiceProvider::class,
         Litepie\Menu\MenuServiceProvider::class,
         Litepie\Message\MessageServiceProvider::class,
-        Litepie\Revision\RevisionServiceProvider::class,
         Litepie\Roles\RolesServiceProvider::class,
         Litepie\Settings\SettingsServiceProvider::class,
-        Litepie\Task\TaskServiceProvider::class,
         Litepie\Theme\ThemeServiceProvider::class,
         Litepie\Trans\TransServiceProvider::class,
         Litepie\User\UserServiceProvider::class,
         Litepie\Workflow\WorkflowServiceProvider::class,
-        /*
-         * LiteCms package Service Providers...
-         */
         Litecms\Block\BlockServiceProvider::class,
         Litecms\Contact\ContactServiceProvider::class,
         Litecms\Page\PageServiceProvider::class,
+        Litecms\Example\Providers\ExampleServiceProvider::class,
+        
+        /*
+         * Application Service Providers...
+         */
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 
@@ -216,9 +189,9 @@ return [
     | is started. However, feel free to register as many as you wish as
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
-     */
+    */
 
-    'aliases'         => [
+    'aliases' => [
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
@@ -256,7 +229,7 @@ return [
 
         'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
 
-        'Alerts'        => Litepie\Support\Facades\Alerts::class,
+        'Alerts'       => Litepie\Support\Facades\Alerts::class,
         'Calendar'     => Litepie\Support\Facades\Calendar::class,
         'Captcha'      => Litepie\Support\Facades\Captcha::class,
         'Filer'        => Litepie\Support\Facades\Filer::class,
@@ -265,6 +238,7 @@ return [
         'Menu'         => Litepie\Support\Facades\Menu::class,
         'Message'      => Litepie\Support\Facades\Message::class,
         'Revision'     => Litepie\Support\Facades\Revision::class,
+        'Role'         => Litepie\Support\Facades\Role::class,
         'Settings'     => Litepie\Support\Facades\Settings::class,
         'Task'         => Litepie\Support\Facades\Task::class,
         'Theme'        => Litepie\Support\Facades\Theme::class,
