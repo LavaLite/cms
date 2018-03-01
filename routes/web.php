@@ -18,4 +18,13 @@ Route::group(['prefix' => set_route_guard('web')], function () {
     Route::get('/', 'ResourceController@home');
 });
 
+Route::get('admin/clientpays', 'ClientPay\ClientPayController@index');
+Route::get('admin/clientpays/calc', 'ClientPay\ClientPayController@calc');
 
+/*
+Route::group(['prefix' => set_route_guard('web')], function () {
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('clientpays', 'ClientPay\ClientPayController@index');
+    });
+});
+*/
