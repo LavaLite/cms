@@ -30,6 +30,7 @@ class PublicController extends Controller
     public function home()
     {
         return $this->response->title('Home')
+            ->layout('home')
             ->view('home')
             ->output();
     }
