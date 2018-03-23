@@ -231,7 +231,6 @@ return [
         'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
 
         'Activities'   => Litepie\Support\Facades\Activities::class,
-        'Alerts'       => Litepie\Alerts\Facades\Alerts::class,
         'Calendar'     => Litepie\Calendar\Facades\Calendar::class,
         'Captcha'      => Litepie\Support\Facades\Captcha::class,
         'Filer'        => Litepie\Support\Facades\Filer::class,
