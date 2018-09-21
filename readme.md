@@ -1,6 +1,6 @@
 # Lavalite
 
-This is an implementation of Content Management System based on [Laravel 5.5](http://laravel.com/)
+This is an open source of Content Management System developed with [Laravel](http://laravel.com/) framework.
 
 ![Screen](https://raw.githubusercontent.com/LavaLite/docs/master/images/lavalite.png "Dashboards")
 
