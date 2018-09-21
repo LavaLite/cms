@@ -163,5 +163,5 @@ return [
         ],
     ],
 
-    'verify_email' => true,
+    'verify_email' => false,
 ];

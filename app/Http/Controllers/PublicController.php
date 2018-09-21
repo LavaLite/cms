@@ -29,9 +29,14 @@ class PublicController extends Controller
      */
     public function home()
     {
-        return $this->response->title('Home')
+        $page = app(\Litecms\Page\Interfaces\PageRepositoryInterface::class)->getPage('home');
+        return $this->response
+            ->setMetaKeyword(strip_tags($page->meta_keyword))
+            ->setMetaDescription(strip_tags($page->meta_description))
+            ->setMetaTitle(strip_tags($page->meta_title))
             ->layout('home')
             ->view('home')
+            ->data(compact('page'))
             ->output();
     }
 
