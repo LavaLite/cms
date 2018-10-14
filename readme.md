@@ -25,4 +25,7 @@ The Lavalite CMS is open-sourced software licensed under the [MIT license](http:
 ## Support 
 
 Make a donation to support the work of the Open Source Initiative.
-[DONATE](https://www.paypal.me/renfos)
+
+
+[![Backer](https://opencollective.com/cms/tiers/backer.svg?avatarHeight=36)](https://opencollective.com/cms)
+[![Sponser](https://opencollective.com/cms/tiers/sponsor.svg?avatarHeight=36)](https://opencollective.com/cms)
