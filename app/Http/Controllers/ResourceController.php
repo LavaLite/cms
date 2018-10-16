@@ -37,7 +37,7 @@ class ResourceController extends BaseController
      */
     public function home()
     {
-        return $this->response->title('Dashboard')
+        return $this->response->setMetaTitle(__('app.ashboard'))
             ->view('home')
             ->output();
     }
