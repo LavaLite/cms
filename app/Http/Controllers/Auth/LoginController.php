@@ -3,16 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Litepie\User\Traits\RoutesAndGuards;
+use App\Http\Response\Auth\Response as AuthResponse;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\Auth\AuthenticatesUsers;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use App\Http\Response\Auth\Response as AuthResponse;
+use Litepie\User\Traits\RoutesAndGuards;
 
 class LoginController extends Controller
 {
-
-
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -26,7 +24,6 @@ class LoginController extends Controller
 
     use RoutesAndGuards, ThemeAndViews, ValidatesRequests, AuthenticatesUsers;
 
-
     /**
      * Create a new controller instance.
      *
@@ -34,9 +31,9 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->response   = resolve(AuthResponse::class);
+        $this->response = resolve(AuthResponse::class);
         $this->setRedirectTo();
-        $this->middleware('guest:' . $this->getGuard(), ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
+        $this->middleware('guest:'.$this->getGuard(), ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
         $this->setTheme();
     }
 }

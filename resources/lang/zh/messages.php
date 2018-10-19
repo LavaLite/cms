@@ -9,7 +9,7 @@ return [
     |
     | The following language lines are the default for all packages
     |
-    | Simplified Chinese Translated by @佛壁灯 
+    | Simplified Chinese Translated by @佛壁灯
     |
      */
 

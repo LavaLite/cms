@@ -11,7 +11,7 @@ return [
     | validator class. Some of these rules have multiple versions such
     | as size rules. Feel free to tweak each of these messages here.
     |
-    | Simplified Chinese Translated by @佛壁灯 
+    | Simplified Chinese Translated by @佛壁灯
     |
     */
 

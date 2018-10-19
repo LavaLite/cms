@@ -159,7 +159,7 @@ return [
         'roles'   => [
             'client'    => null,
             'user'      => ['user'],
-            'admin'     => ['admin']
+            'admin'     => ['admin'],
         ],
     ],
 
