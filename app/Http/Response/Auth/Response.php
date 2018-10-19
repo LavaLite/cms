@@ -6,5 +6,4 @@ use App\Http\Response\Response as BaseResponse;
 
 class Response extends BaseResponse
 {
-
 }

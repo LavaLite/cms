@@ -25,9 +25,9 @@ return [
     ],
 
     'unprocessable' => 'Niet-verwerkbare entiteit.',
-    'areyousure' => 'Bent u zeker?',
-    'type' => [
+    'areyousure'    => 'Bent u zeker?',
+    'type'          => [
         'success' => 'Success',
-        'error' => 'Fout',
+        'error'   => 'Fout',
     ],
 ];

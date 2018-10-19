@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-
         $this->call(Litepie\MenuTableSeeder::class);
         $this->call(Litepie\UserTableSeeder::class);
         $this->call(Litepie\RoleTableSeeder::class);

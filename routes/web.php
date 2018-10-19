@@ -17,5 +17,3 @@ Route::group(['prefix' => set_route_guard('web')], function () {
     Auth::routes();
     Route::get('/', 'ResourceController@home');
 });
-
-

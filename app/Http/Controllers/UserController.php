@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller as BaseController;
+use App\Http\Response\ResourceResponse;
 use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\RoutesAndGuards;
 use Litepie\User\Traits\UserPages;
-use App\Http\Response\ResourceResponse;
-
 
 class UserController extends BaseController
 {
@@ -21,7 +20,7 @@ class UserController extends BaseController
     public function __construct()
     {
         if (!empty(app('auth')->getDefaultDriver())) {
-            $this->middleware('auth:' . app('auth')->getDefaultDriver());
+            $this->middleware('auth:'.app('auth')->getDefaultDriver());
         }
         $this->response = app(ResourceResponse::class);
         $this->setTheme();
@@ -40,5 +39,4 @@ class UserController extends BaseController
             ->view('home')
             ->output();
     }
-
 }

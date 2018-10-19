@@ -100,5 +100,4 @@ return [
         'view'    => 'views',
     ],
 
-
 ];

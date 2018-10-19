@@ -27,7 +27,7 @@ class AdminTest extends TestCase
     {
         $user = User::find(1);
 
-        putenv("guard=admin.web");
+        putenv('guard=admin.web');
         $response = $this->actingAs($user, 'admin.web')
             ->get('admin');
     }

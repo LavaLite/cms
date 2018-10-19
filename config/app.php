@@ -147,7 +147,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-
         Litepie\Activities\ActivitiesServiceProvider::class,
         Litepie\Calendar\CalendarServiceProvider::class,
         Litepie\Filer\FilerServiceProvider::class,
