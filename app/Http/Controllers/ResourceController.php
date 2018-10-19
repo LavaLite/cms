@@ -25,7 +25,7 @@ class ResourceController extends BaseController
             $this->middleware('role:' . $this->getGuardRoute());
             $this->middleware('active');
         }
-        
+
         $this->response = app(ResourceResponse::class);
         $this->setTheme();
     }
@@ -37,7 +37,7 @@ class ResourceController extends BaseController
      */
     public function home()
     {
-        return $this->response->setMetaTitle(__('app.ashboard'))
+        return $this->response->setMetaTitle(__('app.dashboard'))
             ->view('home')
             ->output();
     }
