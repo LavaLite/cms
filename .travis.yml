@@ -23,7 +23,6 @@ before_script:
   - composer install --no-interaction
   - php artisan key:generate
   - php artisan vendor:publish  --tag=storage
-  - php artisan optimize
   - php artisan migrate --seed
 
 script:
