@@ -1,5 +1,9 @@
 # Lavalite
 
+![Build Status](https://travis-ci.org/LavaLite/cms.svg?branch=master)
+![StyleCI](https://github.styleci.io/repos/18992087/shield?branch=master)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
 This is an open source of Content Management System developed with [Laravel](http://laravel.com/) framework.
 
 ![Screen](https://raw.githubusercontent.com/LavaLite/docs/master/images/lavalite.png "Dashboards")
