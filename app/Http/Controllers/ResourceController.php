@@ -23,6 +23,7 @@ class ResourceController extends BaseController
         if (!empty(app('auth')->getDefaultDriver())) {
             $this->middleware('auth:' . app('auth')->getDefaultDriver());
             $this->middleware('role:' . $this->getGuardRoute());
+            $this->middleware('active');
         }
         
         $this->response = app(ResourceResponse::class);
@@ -36,7 +37,7 @@ class ResourceController extends BaseController
      */
     public function home()
     {
-        return $this->response->setMetaTitle(__('app.dashboard'))
+        return $this->response->title('Dashboard')
             ->view('home')
             ->output();
     }

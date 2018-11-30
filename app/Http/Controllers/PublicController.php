@@ -21,6 +21,7 @@ class PublicController extends Controller
         $this->setTheme('public');
     }
 
+
     /**
      * Show dashboard for each user.
      *
@@ -28,14 +29,9 @@ class PublicController extends Controller
      */
     public function home()
     {
-        $page = app(\Litecms\Page\Interfaces\PageRepositoryInterface::class)->getPage('home');
-        return $this->response
-            ->setMetaKeyword(strip_tags($page->meta_keyword))
-            ->setMetaDescription(strip_tags($page->meta_description))
-            ->setMetaTitle(strip_tags($page->meta_title))
+        return $this->response->title('Home')
             ->layout('home')
             ->view('home')
-            ->data(compact('page'))
             ->output();
     }
 
