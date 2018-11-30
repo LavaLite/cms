@@ -11,7 +11,6 @@ use Litepie\User\Traits\RoutesAndGuards;
 
 class LoginController extends Controller
 {
-
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -33,7 +32,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->response = resolve(AuthResponse::class);
-        $this->middleware('guest:' . guard(), ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
+        $this->middleware('guest:'.guard(), ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
         $this->setTheme();
     }
 }
