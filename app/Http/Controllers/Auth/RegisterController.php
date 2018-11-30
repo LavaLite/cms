@@ -34,5 +34,4 @@ class RegisterController extends Controller
         $this->setTheme();
         $this->middleware('guest');
     }
-
 }
