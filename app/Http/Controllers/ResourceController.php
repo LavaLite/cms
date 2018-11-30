@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller as BaseController;
+use App\Http\Response\ResourceResponse;
 use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\RoutesAndGuards;
 use Litepie\User\Traits\UserPages;
-use App\Http\Response\ResourceResponse;
-
 
 class ResourceController extends BaseController
 {
@@ -21,11 +20,11 @@ class ResourceController extends BaseController
     public function __construct()
     {
         if (!empty(app('auth')->getDefaultDriver())) {
-            $this->middleware('auth:' . app('auth')->getDefaultDriver());
-            $this->middleware('role:' . $this->getGuardRoute());
+            $this->middleware('auth:'.app('auth')->getDefaultDriver());
+            $this->middleware('role:'.$this->getGuardRoute());
             $this->middleware('active');
         }
-        
+
         $this->response = app(ResourceResponse::class);
         $this->setTheme();
     }
@@ -37,9 +36,8 @@ class ResourceController extends BaseController
      */
     public function home()
     {
-        return $this->response->title('Dashboard')
+        return $this->response->setMetaTitle(__('app.dashboard'))
             ->view('home')
             ->output();
     }
-
 }

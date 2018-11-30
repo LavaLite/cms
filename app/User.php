@@ -12,6 +12,4 @@ class User extends BaseUser
      * @var array
      */
     protected $config = 'users.user.model';
-
-
 }

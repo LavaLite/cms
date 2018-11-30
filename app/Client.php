@@ -19,5 +19,4 @@ class Client extends BaseClient
      * @var array
      */
     protected $role = 'client';
-
 }

@@ -7,7 +7,7 @@ return [
     | Label language files for All Module
     |--------------------------------------------------------------------------
     |
-    | Simplified Chinese Translated by @佛壁灯 
+    | Simplified Chinese Translated by @佛壁灯
     |
      */
 
@@ -16,7 +16,7 @@ return [
     'name.short'     => '<b>L</b>l',
     'admin.panel'    => '管理面板',
     'dashboard'      => '仪表盘',
-    'all.rights'     => "<strong>版权所有 &copy; " . date('Y') . " <a href='http://lavalite.org' target='_blank'>Lavalite</a>.</strong> 保留一切权利。",
+    'all.rights'     => '<strong>版权所有 &copy; '.date('Y')." <a href='http://lavalite.org' target='_blank'>Lavalite</a>.</strong> 保留一切权利。",
     'version'        => '<b>Version</b> Develop',
 
     'add'            => '添加',

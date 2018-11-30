@@ -147,14 +147,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        /*
-         * Package Service Providers...
-         */
-        Litecms\Block\BlockServiceProvider::class,
-        Litecms\Contact\ContactServiceProvider::class,
-        //Litecms\Example\Providers\ExampleServiceProvider::class,
-        Litecms\Page\PageServiceProvider::class,
-
         Litepie\Activities\ActivitiesServiceProvider::class,
         Litepie\Calendar\CalendarServiceProvider::class,
         Litepie\Filer\FilerServiceProvider::class,
@@ -244,10 +236,6 @@ return [
         'Theme'        => Litepie\Support\Facades\Theme::class,
         'Trans'        => Litepie\Support\Facades\Trans::class,
         'User'         => Litepie\Support\Facades\User::class,
-
-        'Block'        => Litecms\Block\Facades\Block::class,
-        'Contact'      => Litecms\Contact\Facades\Contact::class,
-        'Page'         => Litecms\Page\Facades\Page::class,
     ],
 
 ];

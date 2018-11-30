@@ -14,8 +14,8 @@ return [
      */
 
     'defaults'     => [
-        'api'       => 'api',
-        'guard'     => 'web',
+        'api'       => 'client.api',
+        'guard'     => 'client.web',
         'passwords' => 'user',
     ],
 
@@ -159,9 +159,9 @@ return [
         'roles'   => [
             'client'    => null,
             'user'      => ['user'],
-            'admin'     => ['admin']
+            'admin'     => ['admin'],
         ],
     ],
 
-    'verify_email' => true,
+    'verify_email' => false,
 ];
