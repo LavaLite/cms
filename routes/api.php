@@ -12,6 +12,9 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('user', function (Request $request) {
-    return $request->user();
-})->middleware('auth.basic.once');
+
+Route::group(['prefix' => set_route_guard('web')], function () {
+	Route::get('/', function (Request $request) {
+	    return $request->user();
+	})->middleware('auth.basic.once');
+});

@@ -30,7 +30,6 @@ class ResetPasswordController extends Controller
     public function __construct()
     {
         $this->response = resolve(AuthResponse::class);
-        $this->setRedirectTo();
         $this->setTheme(null, 'auth');
         $this->middleware('guest');
     }
