@@ -29,7 +29,6 @@ class SocialAuthController extends Controller
     public function __construct()
     {
         $this->response   = resolve(AuthResponse::class);
-        $this->setRedirectTo();
         $this->middleware('guest', ['except' => 'logout']);
     }
 }
