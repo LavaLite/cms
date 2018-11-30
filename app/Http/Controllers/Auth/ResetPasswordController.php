@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Litepie\User\Traits\RoutesAndGuards;
+use App\Http\Response\Auth\Response as AuthResponse;
 use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\Auth\ResetsPasswords;
-use App\Http\Response\Auth\Response as AuthResponse;
+use Litepie\User\Traits\RoutesAndGuards;
 
 class ResetPasswordController extends Controller
 {
@@ -29,8 +29,7 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->response   = resolve(AuthResponse::class);
-        $this->setRedirectTo();
+        $this->response = resolve(AuthResponse::class);
         $this->setTheme(null, 'auth');
         $this->middleware('guest');
     }

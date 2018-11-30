@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth.basic:web')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => set_route_guard('web')], function () {
+	Route::get('/', function (Request $request) {
+	    return $request->user();
+	})->middleware('auth.basic.once');
 });
 
-Route::middleware('auth.basic:client.web')->get('/client', function (Request $request) {
-    return $request->user('client.web');
-});
+
