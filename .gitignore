@@ -9,3 +9,9 @@ Homestead.json
 Homestead.yaml
 composer.lock
 package-lock.json
+
+# PhpStorm 
+.idea/
+*.iml
+# File-based project format:
+*.iws 
