@@ -14,7 +14,9 @@ return [
     'name.short'     => '<b>L</b>l',
     'admin.panel'    => 'Admin Panel',
     'dashboard'      => 'Dashboard',
-    'rights'         => '<a href="https://lavalite.org/" target="_blank">Lavalite</a> &copy; 2018 All Rights Reserved, Built with <a href="https://laravel.com" target="_blank"><i class="fab fa-laravel"></i></a>, Created by <a href="http://renfos.com/" target="_blank">Renfos</a>.',
+    'rights'     => '<a href="https://lavalite.org/" target="_blank">Lavalite</a> &copy; 2018 All Rights Reserved,
+    Built with <a href="https://laravel.com" target="_blank"><i class="fab fa-laravel"></i></a>,
+    Created by <a href="http://renfos.com/" target="_blank">Renfos</a>.',
     'version'        => '<b>Version</b> Develop',
 
     'add'            => 'Add',
@@ -67,9 +69,11 @@ return [
     'verify'         => 'Verifyed',
     'yes'            => 'Yes',
 
-    'flash.success'  => 'Success',
-    'flash.error'    => 'Error',
-    'flash.warning'  => 'Warning',
-    'flash.info'     => 'Info',
+    'flash'          => [
+        'error'   => 'Success',
+        'error'   => 'Error',
+        'warning' => 'Warning',
+        'info'    => 'Info',
+    ],
 
 ];
