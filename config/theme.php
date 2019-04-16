@@ -26,8 +26,8 @@ return [
             'view'   => 'public',
         ],
         'user'    => [
-            'theme'  => 'user',
-            'view'   => 'user',
+            'theme'  => 'client',
+            'view'   => 'client',
         ],
         'client'    => [
             'theme'  => 'client',

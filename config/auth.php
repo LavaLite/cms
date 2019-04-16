@@ -155,7 +155,7 @@ return [
      */
 
     'register'     => [
-        'allowed' => ['client'],
+        'allowed' => ['client', 'user'],
         'roles'   => [
             'client'    => null,
             'user'      => ['user'],
