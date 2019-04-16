@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -11,10 +9,8 @@ use Illuminate\Http\Request;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/
+ */
 
-Route::group(['prefix' => set_route_guard('web')], function () {
-    Route::get('/', function (Request $request) {
-        return $request->user();
-    })->middleware('auth.basic.once');
+Route::prefix('{guard}')->group(function () {
+    Route::get('/', 'APIController@home');
 });
