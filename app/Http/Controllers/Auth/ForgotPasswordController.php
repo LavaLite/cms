@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Response\Auth\Response as AuthResponse;
-use Litepie\Theme\ThemeAndViews;
+
 use Litepie\User\Traits\Auth\SendsPasswordResetEmails;
-use Litepie\User\Traits\RoutesAndGuards;
+use Litepie\Theme\ThemeAndViews;
 
 class ForgotPasswordController extends Controller
 {
@@ -19,9 +19,9 @@ class ForgotPasswordController extends Controller
     | includes a trait which assists in sending these notifications from
     | your application to your users. Feel free to explore this trait.
     |
-     */
+    */
 
-    use RoutesAndGuards, ThemeAndViews, SendsPasswordResetEmails;
+    use SendsPasswordResetEmails, ThemeAndViews;
 
     /**
      * Create a new controller instance.
@@ -30,8 +30,10 @@ class ForgotPasswordController extends Controller
      */
     public function __construct()
     {
+        $guard = request()->guard;
+        guard($guard . '.web');
         $this->response = resolve(AuthResponse::class);
-        $this->setTheme();
         $this->middleware('guest');
+        $this->setTheme();
     }
 }

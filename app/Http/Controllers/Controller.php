@@ -10,6 +10,7 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
     /**
      * @var store response object
      */
@@ -19,4 +20,13 @@ class Controller extends BaseController
      * @var store repository object
      */
     public $repository;
+
+
+    public function callAction($method, $parameters)
+    {
+        unset($parameters['guard']);
+        unset($parameters['trans']);
+
+        return parent::callAction($method, $parameters);
+    }
 }

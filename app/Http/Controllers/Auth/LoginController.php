@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\Auth\AuthenticatesUsers;
 use Litepie\User\Traits\RoutesAndGuards;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -20,19 +21,28 @@ class LoginController extends Controller
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
-     */
+    */
 
     use RoutesAndGuards, ThemeAndViews, ValidatesRequests, AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request = null)
     {
+        $guard = request()->guard;
+        guard($guard . '.web');
         $this->response = resolve(AuthResponse::class);
-        $this->middleware('guest:'.guard(), ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
+        $this->middleware("guest:{$guard}.web", ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
         $this->setTheme();
     }
 }
