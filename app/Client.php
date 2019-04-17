@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail as ContractMustVerifyEmail;
 use Litepie\User\Models\Client as BaseClient;
+use Illuminate\Contracts\Auth\MustVerifyEmail as ContractMustVerifyEmail;
 use Litepie\User\Traits\Auth\MustVerifyEmail;
 
 class Client extends BaseClient implements ContractMustVerifyEmail
