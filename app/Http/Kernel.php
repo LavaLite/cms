@@ -51,20 +51,39 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth'            => \App\Http\Middleware\Authenticate::class,
-        'auth.basic'      => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+
+        'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.basic.once' => \App\Http\Middleware\AuthenticateOnceWithBasicAuth::class,
-        'bindings'        => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'cache.headers'   => \Illuminate\Http\Middleware\SetCacheHeaders::class,
-        'can'             => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest'           => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'signed'          => \Illuminate\Routing\Middleware\ValidateSignature::class,
-        'throttle'        => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'verified'        => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'auth.once.token' => \App\Http\Middleware\AuthenticateOnceWithToken::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        'can' => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
 
         // Lavalite middleware for roles and permissions
-        'role'          => \Litepie\Roles\Http\Middleware\VerifyRole::class,
-        'permission'    => \Litepie\Roles\Http\Middleware\VerifyPermission::class,
-        'level'         => \Litepie\Roles\Http\Middleware\VerifyLevel::class,
+        'role' => \Litepie\Roles\Http\Middleware\VerifyRole::class,
+        'permission' => \Litepie\Roles\Http\Middleware\VerifyPermission::class,
+        'level' => \Litepie\Roles\Http\Middleware\VerifyLevel::class,
+    ];
+
+    /**
+     * The priority-sorted list of middleware.
+     *
+     * This forces non-global middleware to always be in the given order.
+     *
+     * @var array
+     */
+    protected $middlewarePriority = [
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \App\Http\Middleware\Authenticate::class,
+        \App\Http\Middleware\GuardChecker::class,
+        \Illuminate\Session\Middleware\AuthenticateSession::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        \Illuminate\Auth\Middleware\Authorize::class,
     ];
 }
