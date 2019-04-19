@@ -8,17 +8,14 @@
 
         "php": ">=7.1.3",
         "fideloper/proxy": "~4.0",
-        "laravel/framework": "5.7.*",
+        "laravel/framework": "5.8.*",
         "laravel/tinker": "~1.0",
-        "lavalite/framework": "4.1.*",
-        "lavalite/theme": "4.1.*",
+        "lavalite/framework": "4.2.*",
+        "lavalite/theme": "4.2.*",
 
-        "litecms/block": "~4.0",
-        "litecms/contact": "~4.0",
-        "litecms/page": "~4.0",
-        "litepie/task": "~3.0",
-        "litepie/calendar": "~3.0",
-        "litepie/message": "~3.0"
+        "litecms/block": "4.2.*",
+        "litecms/contact": "4.2.*",
+        "litecms/page": "4.2.*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
