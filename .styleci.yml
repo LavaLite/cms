@@ -3,12 +3,10 @@ preset: recommended
 risky: false
 
 enabled:
-  - long_array_syntax
-  - unalign_double_arrow
+  - short_array_syntax
 
 disabled:
   - align_double_arrow
-  - short_array_syntax
 
 finder:
   exclude:
