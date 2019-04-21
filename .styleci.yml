@@ -1,0 +1,21 @@
+preset: recommended
+
+risky: false
+
+enabled:
+  - short_array_syntax
+
+disabled:
+  - align_double_arrow
+
+finder:
+  exclude:
+    - "tests"
+    - "storage"
+    - "resources"
+  name:
+    - "*.php"
+  not-name:
+    - "*Stub.php"
+  depth:
+    - "< 3"
