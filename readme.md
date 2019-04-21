@@ -1,6 +1,6 @@
 # Lavalite
 
-![Build Status](https://travis-ci.org/LavaLite/cms.svg?branch=master)
+![Build Status](https://travis-ci.org/LavaLite/cms.svg?branch=5.7)
 ![StyleCI](https://github.styleci.io/repos/18992087/shield?branch=master)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
