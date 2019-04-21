@@ -3,7 +3,6 @@ preset: recommended
 risky: false
 
 enabled:
-  - short_array_syntax
 
 disabled:
   - align_double_arrow
