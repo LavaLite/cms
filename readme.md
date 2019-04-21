@@ -1,7 +1,7 @@
 # Lavalite
 
 ![Build Status](https://travis-ci.org/LavaLite/cms.svg?branch=5.7)
-![StyleCI](https://github.styleci.io/repos/18992087/shield?branch=master)
+![StyleCI](https://github.styleci.io/repos/18992087/shield?branch=5.7)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 This is an open source of Content Management System developed with [Laravel](http://laravel.com/) framework.
