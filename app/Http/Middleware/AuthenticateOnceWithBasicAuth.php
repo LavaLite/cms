@@ -9,13 +9,13 @@ class AuthenticateOnceWithBasicAuth
     /**
      * Handle an incoming request.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \Closure                 $next
-     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, $next)
+    public function handle($request, $next, $guard = null)
     {
-        return Auth::onceBasic() ?: $next($request);
+        return Auth::guard($guard)->onceBasic() ?: $next($request);
     }
+
 }

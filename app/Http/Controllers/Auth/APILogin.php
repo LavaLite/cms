@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller as BaseController;
 use Illuminate\Http\Request;
 use Litepie\User\Traits\RoutesAndGuards;
 
-class APIController extends BaseController
+class APILogin extends BaseController
 {
     use RoutesAndGuards;
 
@@ -17,10 +17,9 @@ class APIController extends BaseController
      */
     public function __construct(Request $request = null)
     {
-        $guard = request()->guard;
-        guard($guard . '.api');
-        $this->middleware('auth:' . $guard . '.api');
-        $this->middleware('role:' . $guard);
+        $guard = $request->guard;
+        guard($guard . '.web');
+        $this->middleware('auth.basic.once');
     }
 
     /**
@@ -28,7 +27,7 @@ class APIController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function home(Request $request)
+    public function profile(Request $request)
     {
         return $request->user();
     }
