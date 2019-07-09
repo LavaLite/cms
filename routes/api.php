@@ -12,5 +12,5 @@
  */
 
 Route::prefix('{guard}')->group(function () {
-    Route::get('/', 'APIController@home');
+    Route::get('/', 'Auth\APILogin@profile');
 });
