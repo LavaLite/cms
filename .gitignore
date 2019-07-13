@@ -10,6 +10,9 @@ Homestead.yaml
 composer.lock
 package-lock.json
 
+# VScode
+~/
+ 
 # PhpStorm 
 .idea/
 *.iml
