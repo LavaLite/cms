@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Litepie\MenuTableSeeder::class);
         $this->call(Litepie\UserTableSeeder::class);
         $this->call(Litepie\RoleTableSeeder::class);
+        $this->call(Litepie\TeamTableSeeder::class);
 
         $this->call(Litepie\ClientTableSeeder::class);
         $this->call(Litepie\SettingTableSeeder::class);

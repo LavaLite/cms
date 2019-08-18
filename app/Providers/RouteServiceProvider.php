@@ -24,6 +24,8 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        
+        parent::pattern('guard', $this->getGuards());
 
         parent::boot();
     }
@@ -69,5 +71,10 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('api')
             ->namespace($this->namespace)
             ->group(base_path('routes/api.php'));
+    }
+
+    private function getGuards($seperator = '|'){
+        $guards = array_keys(\config('auth.guards'));
+        return implode($seperator, $guards);
     }
 }
