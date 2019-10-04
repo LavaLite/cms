@@ -13,9 +13,9 @@ return [
     |
      */
 
-    'defaults'     => [
-        'api'       => 'client.api',
-        'guard'     => 'client.web',
+    'defaults' => [
+        'api' => 'client.api',
+        'guard' => 'client.web',
         'passwords' => 'user',
     ],
 
@@ -36,42 +36,45 @@ return [
     |
      */
 
-    'guards'       => [
+    'guards' => [
 
-        'user'   => [
+        'user' => [
             'web' => [
-                'driver'   => 'session',
+                'driver' => 'session',
                 'provider' => 'users',
             ],
 
             'api' => [
-                'driver'   => 'token',
+                'driver' => 'token',
                 'provider' => 'users',
+                'hash' => false,
             ],
         ],
 
-        'admin'  => [
+        'admin' => [
             'web' => [
-                'driver'   => 'session',
+                'driver' => 'session',
                 'provider' => 'users',
             ],
 
             'api' => [
-                'driver'   => 'token',
+                'driver' => 'token',
                 'provider' => 'users',
+                'hash' => false,
             ],
 
         ],
 
         'client' => [
             'web' => [
-                'driver'   => 'session',
+                'driver' => 'session',
                 'provider' => 'clients',
             ],
 
             'api' => [
-                'driver'   => 'token',
+                'driver' => 'token',
                 'provider' => 'clients',
+                'hash' => false,
             ],
 
         ],
@@ -94,15 +97,15 @@ return [
     |
      */
 
-    'providers'    => [
-        'users'   => [
+    'providers' => [
+        'users' => [
             'driver' => 'eloquent',
-            'model'  => App\User::class,
+            'model' => App\User::class,
         ],
 
         'clients' => [
             'driver' => 'eloquent',
-            'model'  => App\Client::class,
+            'model' => App\Client::class,
         ],
     ],
 
@@ -125,23 +128,23 @@ return [
     |
      */
 
-    'passwords'    => [
-        'user'   => [
+    'passwords' => [
+        'user' => [
             'provider' => 'users',
-            'table'    => 'password_resets',
-            'expire'   => 60,
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
 
-        'admin'  => [
+        'admin' => [
             'provider' => 'users',
-            'table'    => 'password_resets',
-            'expire'   => 60,
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
 
         'client' => [
             'provider' => 'clients',
-            'table'    => 'password_resets',
-            'expire'   => 60,
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
     ],
 
@@ -154,12 +157,12 @@ return [
     | Second array contains roles to be attached while creating a user online
      */
 
-    'register'     => [
+    'register' => [
         'allowed' => ['client', 'user'],
-        'roles'   => [
-            'client'    => null,
-            'user'      => ['user'],
-            'admin'     => ['admin'],
+        'roles' => [
+            'client' => null,
+            'user' => ['user'],
+            'admin' => ['admin'],
         ],
     ],
 
