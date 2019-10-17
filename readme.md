@@ -1,4 +1,5 @@
 # Lavalite
+[![Financial Contributors on Open Collective](https://opencollective.com/cms/all/badge.svg?label=financial+contributors)](https://opencollective.com/cms) 
 
 This is an implementation of Content Management System based on [Laravel 5.5](http://laravel.com/)
 
@@ -26,3 +27,25 @@ The Lavalite CMS is open-sourced software licensed under the [MIT license](http:
 
 Make a donation to support the work of the Open Source Initiative.
 [DONATE](https://www.paypal.me/renfos)
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+
+<a href="https://github.com/LavaLite/cms/graphs/contributors"><img src="https://opencollective.com/cms/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/cms/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/XX"><img src="https://opencollective.com/cms/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/cms/contribute)]
+
+<a href="https://opencollective.com/cms/organization/0/website"><img src="https://opencollective.com/cms/organization/0/avatar.svg"></a>
