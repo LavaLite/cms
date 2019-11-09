@@ -10,11 +10,11 @@
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
 
-        "lavalite/framework": "^5.0",
+        "lavalite/framework": "^5.1",
 
-        "litecms/admin": "^5.0",
-        "litecms/client": "^5.0",
-        "litecms/public": "^5.0",
+        "litecms/admin": "^5.1",
+        "litecms/client": "^5.1",
+        "litecms/public": "^5.1",
 
         "litecms/block": "4.2.*",
         "litecms/contact": "4.2.*",
