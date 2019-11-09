@@ -11,7 +11,7 @@ return [
     | an array of paths that should be checked for your views. Of course
     | the usual Laravel view path has already been registered for you.
     |
-    */
+     */
 
     'paths' => [
         resource_path('views'),
@@ -26,8 +26,11 @@ return [
     | stored for your application. Typically, this is within the storage
     | directory. However, as usual, you are free to change this value.
     |
-    */
+     */
 
-    'compiled' => realpath(storage_path('framework/views')),
+    'compiled' => env(
+        'VIEW_COMPILED_PATH',
+        realpath(storage_path('framework/views'))
+    ),
 
 ];
