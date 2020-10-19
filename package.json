@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "admin-lte": "^2.4",
+    "admin-lte": "^3.0.0",
     "axios": "^0.18",
     "babel-loader": "^7.1.2",
     "bootstrap": "^3.3",
