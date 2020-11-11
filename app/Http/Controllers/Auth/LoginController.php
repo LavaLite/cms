@@ -42,7 +42,7 @@ class LoginController extends Controller
         $guard = request()->guard;
         guard($guard . '.web');
         $this->response = resolve(AuthResponse::class);
-        $this->middleware("guest:{$guard}.web", ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
+        $this->middleware(["guest:{$guard}.web", "throttle:20,15"], ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
         $this->setTheme();
     }
 }
