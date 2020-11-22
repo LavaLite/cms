@@ -16,5 +16,5 @@ Route::get('/', 'PublicController@home');
 Route::prefix('{guard}')->name('guard.')->group(function () {
     Auth::routes(['verify' => true]);
     Route::get('/', 'ResourceController@home');
-    Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+    Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider')->middleware('throttle:20,15');
 });
