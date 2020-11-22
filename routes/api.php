@@ -13,6 +13,6 @@
 
 Route::prefix('{guard}')->group(function () {
     Route::get('/me', 'Auth\APILoginController@profile');
-    Route::post('/login', 'Auth\APILoginController@postLogin');
+    Route::post('/login', 'Auth\APILoginController@postLogin')->middleware('throttle:20,15');
     Route::get('/my/{part?}', 'APIController@home');
 });
