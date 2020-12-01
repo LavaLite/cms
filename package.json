@@ -45,7 +45,7 @@
     "jquery-ui-dist": "^1.12",
     "jquery-validation": "^1.17",
     "jstree": "^3.3.5",
-    "laravel-mix": "^2.0",
+    "laravel-mix": "^4.0.0",
     "lodash": "^4.17",
     "material-icons": "^0",
     "materialize-css": "^0.100",
