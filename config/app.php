@@ -176,7 +176,7 @@ return [
         Litepie\Filer\FilerServiceProvider::class,
         Litepie\Form\FormServiceProvider::class,
         Litepie\Hashids\HashidsServiceProvider::class,
-        // Litepie\Install\InstallServiceProvider::class,
+        Litepie\Install\InstallServiceProvider::class,
         Litepie\Master\MasterServiceProvider::class,
         Litepie\Menu\MenuServiceProvider::class,
         Litepie\Roles\RolesServiceProvider::class,
