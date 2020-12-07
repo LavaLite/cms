@@ -28,8 +28,6 @@ class SocialAuthController extends Controller
      */
     public function __construct()
     {
-        $guard = request()->guard;
-        guard($guard . '.web');
         $this->response   = resolve(AuthResponse::class);
         $this->middleware('guest', ['except' => 'logout']);
     }

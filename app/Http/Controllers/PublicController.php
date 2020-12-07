@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Response\PublicResponse;
-use Litepie\Theme\ThemeAndViews;
-use Litepie\User\Traits\RoutesAndGuards;
+use Litepie\Http\Controllers\PublicController as BaseController;
+use Litepie\Http\Response\PublicResponse;
 
-class PublicController extends Controller
+class PublicController extends BaseController
 {
-    use ThemeAndViews, RoutesAndGuards;
 
     /**
      * Initialize public controller.
@@ -18,7 +16,7 @@ class PublicController extends Controller
     public function __construct()
     {
         $this->response = app(PublicResponse::class);
-        $this->setTheme('public');
+        $this->setTheme();
     }
 
     /**
@@ -28,15 +26,16 @@ class PublicController extends Controller
      */
     public function home()
     {
-        $page = app(\Litecms\Page\Interfaces\PageRepositoryInterface::class)->getPage('home');
+        $data = app(\Litecms\Page\Interfaces\PageRepositoryInterface::class)->getPage('home');
 
         return $this->response
-            ->setMetaKeyword(strip_tags($page->meta_keyword))
-            ->setMetaDescription(strip_tags($page->meta_description))
-            ->setMetaTitle(strip_tags($page->meta_title))
+            ->setMetaKeyword(strip_tags($data->meta_keyword))
+            ->setMetaDescription(strip_tags($data->meta_description))
+            ->setMetaTitle(strip_tags($data->meta_title))
             ->layout('home')
             ->view('home')
-            ->data(compact('page'))
+            ->data(compact('data'))
             ->output();
     }
+
 }

@@ -16,6 +16,7 @@ return [
         'updated' => ':Module has been updated successfully.',
         'deleted' => ':Module has been deleted successfully.',
         'changed' => ':Module has been  :status.',
+        'listed' => ':Module has been listed successfully.',
     ],
 
     'error'         => [

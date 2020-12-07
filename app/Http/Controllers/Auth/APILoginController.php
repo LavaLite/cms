@@ -3,25 +3,53 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller as BaseController;
+use App\User;
 use Illuminate\Http\Request;
-use Litepie\User\Traits\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 use Litepie\User\Traits\RoutesAndGuards;
 
 class APILoginController extends BaseController
 {
-    use RoutesAndGuards, AuthenticatesUsers;
+
+    use RoutesAndGuards;
+    /**
+     * @var form  array/collection.
+     */
+    protected $form;
 
     /**
      * Initialize public controller.
      *
      * @return null
      */
-    public function __construct(Request $request = null)
+    public function __construct()
     {
-        $guard = $request->guard;
-        guard($guard . '.web');
-        $this->middleware('auth.basic.once')->only(['profile']);
-        $this->middleware('web')->only(['postLogin', 'me']);
+        $this->setGuard();
+        $this->middleware('auth:' . guard(), ['except' => ['login']]);
+    }
+
+    /**
+     * Login using email and password.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'device_name' => 'required',
+        ]);
+        $model = $this->getAuthModel();
+        $user = $model::where('email', $request->email)->first();
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            throw ValidationException::withMessages([
+                'email' => ['The provided credentials are incorrect.'],
+            ]);
+        }
+
+        return ['token' => $user->createToken($request->device_name)->plainTextToken];
     }
 
     /**
@@ -31,30 +59,15 @@ class APILoginController extends BaseController
      */
     public function profile(Request $request)
     {
-        $data['user'] = $request->user();
-        return $data;
+        $user = $request->user()->only(['name',
+            'email',
+            'sex',
+            'mobile',
+            'languages',
+            'designation',
+            'picture']);
+        $user['token'] = $request->header('Authorization');
+        return compact('user');
     }
 
-    /**
-     * Show dashboard for each user.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function postLogin(Request $request)
-    {
-        return $this->login($request);
-    }
-
-    /**
-     * The user has been authenticated.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
-     * @return mixed
-     */
-    protected function authenticated(Request $request, $user)
-    {
-        $token['token'] = base64_encode($request->email . ':' . $request->password);
-        return $token;
-    }
 }

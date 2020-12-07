@@ -2,38 +2,6 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Themes
-    |--------------------------------------------------------------------------
-    |
-    | Themes used for the website.
-    | eg. admin, public, user etc.
-    |
-     */
-
-    'themes'        => [
-        'default' => [
-            'theme'  => 'public',
-            'view'   => 'public',
-        ],
-        'admin'   => [
-            'theme'  => 'admin',
-            'view'   => 'admin',
-        ],
-        'public'  => [
-            'theme'  => 'public',
-            'view'   => 'public',
-        ],
-        'user'    => [
-            'theme'  => 'client',
-            'view'   => 'client',
-        ],
-        'client'    => [
-            'theme'  => 'client',
-            'view'   => 'client',
-        ],
-    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +25,7 @@ return [
     |
      */
 
-    'themeDefault'  => 'public',
+    'themeDefault'  => 'default',
 
     /*
     |--------------------------------------------------------------------------
@@ -99,5 +67,4 @@ return [
         'widget'  => 'widgets',
         'view'    => 'views',
     ],
-
 ];

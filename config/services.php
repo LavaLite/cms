@@ -12,7 +12,7 @@ return [
     | location for this type of information, allowing packages to have
     | a conventional file to locate the various service credentials.
     |
-     */
+    */
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
@@ -28,42 +28,6 @@ return [
         'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-    ],
-     
-    'facebook' => [
-        'client_id' => env('FACEBOOK_CLIENT_ID'),         // Your GitHub Client ID
-        'client_secret' => env('FACEBOOK_CLIENT_SECRET'), // Your GitHub Client Secret
-        'redirect' => env('FACEBOOK_CALLBACK_URL'),
-    ],
-
-    'twitter' => [
-        'client_id' => env('TWITTER_CLIENT_ID'),         // Your GitHub Client ID
-        'client_secret' => env('TWITTER_CLIENT_SECRET'), // Your GitHub Client Secret
-        'redirect' => env('TWITTER_CALLBACK_URL'),
-    ],
-
-    'linkedin' => [
-        'client_id' => env('LINKEDIN_CLIENT_ID'),         // Your GitHub Client ID
-        'client_secret' => env('LINKEDIN_CLIENT_SECRET'), // Your GitHub Client Secret
-        'redirect' => env('LINKEDIN_CALLBACK_URL'),
-    ],
-
-    'google' => [
-        'client_id' => env('GOOGLE_CLIENT_ID'),         // Your GitHub Client ID
-        'client_secret' => env('GOOGLE_CLIENT_SECRET'), // Your GitHub Client Secret
-        'redirect' => env('GOOGLE_CALLBACK_URL'),
-    ],
-
-    'github' => [
-        'client_id' => env('GITHUB_CLIENT_ID'),         // Your GitHub Client ID
-        'client_secret' => env('GITHUB_CLIENT_SECRET'), // Your GitHub Client Secret
-        'redirect' => env('GITHUB_CALLBACK_URL'),
-    ],
-
-    'bitbucket' => [
-        'client_id' => env('BITBUCKET_CLIENT_ID'),         // Your GitHub Client ID
-        'client_secret' => env('BITBUCKET_CLIENT_SECRET'), // Your GitHub Client Secret
-        'redirect' => env('BITBUCKET_CALLBACK_URL'),
     ],
 
 ];

@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Response\Auth\Response as AuthResponse;
-use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Litepie\Http\Controllers\Controller;
+use Litepie\Http\Response\AuthResponse;
 use Litepie\Theme\ThemeAndViews;
-use Litepie\User\Traits\Auth\AuthenticatesUsers;
 use Litepie\User\Traits\RoutesAndGuards;
-use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -21,28 +20,41 @@ class LoginController extends Controller
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
-    */
+     */
 
-    use RoutesAndGuards, ThemeAndViews, ValidatesRequests, AuthenticatesUsers;
+    use RoutesAndGuards, ThemeAndViews, AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(Request $request = null)
+    public function __construct()
     {
-        $guard = request()->guard;
-        guard($guard . '.web');
+        $this->setGuard();
         $this->response = resolve(AuthResponse::class);
-        $this->middleware("guest:{$guard}.web", ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
+        $this->middleware("guest:" . guard(), ['except' => ['logout', 'verify', 'locked', 'sendVerification']]);
         $this->setTheme();
+    }
+
+    /**
+     * Show the user login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+        return $this->response
+            ->setMetaTitle(__('Login'))
+            ->layout('auth')
+            ->view('auth.login')
+            ->output();
     }
 }

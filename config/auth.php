@@ -14,9 +14,10 @@ return [
      */
 
     'defaults' => [
-        'api' => 'client.api',
-        'guard' => 'client.web',
+        'guard' => 'user.web',
+        'sub' => 'web',
         'passwords' => 'user',
+        'roles' => ['user'],
     ],
 
     /*
@@ -37,7 +38,6 @@ return [
      */
 
     'guards' => [
-
         'user' => [
             'web' => [
                 'driver' => 'session',
@@ -45,9 +45,8 @@ return [
             ],
 
             'api' => [
-                'driver' => 'token',
+                'driver' => 'sanctum',
                 'provider' => 'users',
-                'hash' => false,
             ],
         ],
 
@@ -58,13 +57,10 @@ return [
             ],
 
             'api' => [
-                'driver' => 'token',
+                'driver' => 'sanctum',
                 'provider' => 'users',
-                'hash' => false,
             ],
-
         ],
-
         'client' => [
             'web' => [
                 'driver' => 'session',
@@ -72,7 +68,7 @@ return [
             ],
 
             'api' => [
-                'driver' => 'token',
+                'driver' => 'sanctum',
                 'provider' => 'clients',
                 'hash' => false,
             ],
@@ -100,12 +96,12 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\User::class,
         ],
 
         'clients' => [
             'driver' => 'eloquent',
-            'model' => App\Client::class,
+            'model' => App\Models\Client::class,
         ],
     ],
 
@@ -114,13 +110,9 @@ return [
     | Resetting Passwords
     |--------------------------------------------------------------------------
     |
-    | Here you may set the options for resetting passwords including the view
-    | that is your password reset e-mail. You may also set the name of the
-    | table that maintains all of the reset tokens for your application.
-    |
     | You may specify multiple password reset configurations if you have more
     | than one user table or model in the application and you want to have
-    | seperate password reset settings based on the specific user types.
+    | separate password reset settings based on the specific user types.
     |
     | The expire time is the number of minutes that the reset token should be
     | considered valid. This security feature keeps tokens short-lived so
@@ -134,28 +126,28 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-
-        'admin' => [
-            'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
-
-        'client' => [
-            'provider' => 'clients',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Register User
+    | Password Confirmation Timeout
     |--------------------------------------------------------------------------
-    | User with following roles are  allowed to register online.
-    | other user can be created by higher levele of users in the organization
-    | Second array contains roles to be attached while creating a user online
+    |
+    | Here you may define the amount of seconds before a password confirmation
+    | times out and the user is prompted to re-enter their password via the
+    | confirmation screen. By default, the timeout lasts for three hours.
+    |
      */
+
+    'password_timeout' => 10800,
+/*
+|--------------------------------------------------------------------------
+| Register User
+|--------------------------------------------------------------------------
+| User with following roles are  allowed to register online.
+| other user can be created by higher levele of users in the organization
+| Second array contains roles to be attached while creating a user online
+ */
 
     'register' => [
         'allowed' => ['client', 'user'],
@@ -165,6 +157,4 @@ return [
             'admin' => ['admin'],
         ],
     ],
-
-    'verify_email' => false,
 ];

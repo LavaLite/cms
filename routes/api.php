@@ -1,18 +1,71 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
-| API Routes
+| Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register API routes for your application. These
+| Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
+| contains the "web" middleware group. Now create something great!
 |
  */
 
-Route::prefix('{guard}')->group(function () {
-    Route::get('/me', 'Auth\APILoginController@profile');
-    Route::post('/login', 'Auth\APILoginController@postLogin');
-    Route::get('/my/{part?}', 'APIController@home');
-});
+Route::get('/', 'PublicController@home');
+
+Route::group(
+    [
+        'prefix' => '{guard}',
+        'as' => 'guard.',
+        'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
+    ],
+
+    function () {
+        Route::post('login', 'Auth\APILoginController@login');
+        Route::get('profile', 'Auth\APILoginController@profile');
+        Route::post('profile', 'Auth\APILoginController@postProfile');
+        Route::get('/', 'ResourceController@home')->name('home');
+        Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+        Route::group(['prefix' => 'user'], function () {
+            Route::resource('user', 'User\UserResourceController');
+            Route::resource('{type}', 'User\ClientResourceController', ['parameters' => [
+                '{type}' => 'client',
+            ]]);
+        });
+        Route::get('profile/{user}', 'UserPublicController@profile');
+    }
+);
+
+Route::group(
+    [
+        'middleware' => 'trans',
+        'prefix' => '{trans}',
+        'as' => 'trans.',
+        'where' => ['trans' => Trans::keys('|')],
+    ],
+    function () {
+        Route::group(
+            [
+                'prefix' => '{guard}',
+                'as' => 'guard.',
+                'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
+            ],
+            function () {
+                Route::post('login', 'Auth\APILoginController@login');
+                Route::get('profile', 'Auth\APILoginController@profile');
+                Route::post('profile', 'Auth\APILoginController@postProfile');
+                Route::get('/', 'ResourceController@home')->name('home');
+                Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+                Route::group(['prefix' => 'user'], function () {
+                    Route::resource('user', 'User\UserResourceController');
+                    Route::resource('{type}', 'User\ClientResourceController', ['parameters' => [
+                        '{type}' => 'client',
+                    ]]);
+                });
+                Route::get('profile/{user}', 'UserPublicController@profile');
+            }
+        );
+    }
+);

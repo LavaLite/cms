@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Response\Auth\Response as AuthResponse;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
-use Litepie\Theme\ThemeAndViews;
 
 class VerificationController extends Controller
 {
@@ -18,16 +17,16 @@ class VerificationController extends Controller
     | user that recently registered with the application. Emails may also
     | be re-sent if the user didn't receive the original email message.
     |
-     */
+    */
 
-    use VerifiesEmails, ThemeAndViews;
+    use VerifiesEmails;
 
     /**
      * Where to redirect users after verification.
      *
      * @var string
      */
-    protected $redirectTo = '/user';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -36,13 +35,8 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
-        $guard = request()->guard;
-        guard($guard . '.web');
-        $this->redirectTo = $guard;
-        $this->response = resolve(AuthResponse::class);
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
-        $this->setTheme();
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
 }
