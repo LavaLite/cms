@@ -3,19 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail as ContractMustVerifyEmail;
-use Laravel\Sanctum\HasApiTokens;
-use Litepie\User\Models\User as BaseUser;
+use Litepie\User\Interfaces\UserPolicyInterface;
+use Litepie\User\Models\User as BaseModel;
 use Litepie\User\Traits\Auth\MustVerifyEmail;
 
-class User extends BaseUser implements ContractMustVerifyEmail
+class User extends BaseModel implements ContractMustVerifyEmail, UserPolicyInterface
 {
-
-    use MustVerifyEmail, HasApiTokens;
-    /**
-     * Configuartion for the model.
-     *
-     * @var array
-     */
-    protected $config = 'users.user.model';
-
+    use MustVerifyEmail;
 }
