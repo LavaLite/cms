@@ -1,19 +1,3 @@
-# laravel specific files
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.env.backup
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-composer.lock
-package-lock.json
-
 # ignore log files and databases
 *.log
 *.sql
@@ -103,3 +87,23 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+#Laravel Specific files
+/vendor
+.env
+.env.backup
+!.env.example
+# /public/.htaccess
+# storage/*
+# !storage/framework/cache/
+# !storage/framework/sessions/
+# !storage/framework/views/
+/storage/*.key
+/node_modules
+/public/hot
+/public/storage
+
+# composer files
+composer.dev.json
+composer.lock
+package-lock.json
