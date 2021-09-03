@@ -166,9 +166,10 @@ return [
          * Package Service Providers...
          */
         // Litecms Service Providers.
-        Litecms\Block\BlockServiceProvider::class,
+        Litecms\Block\Providers\BlockServiceProvider::class,
         Litecms\Contact\ContactServiceProvider::class,
         Litecms\Page\PageServiceProvider::class,
+        Litecms\Blog\Providers\BlogServiceProvider::class,
         // Litecms\Example\Providers\ExampleServiceProvider::class,
 
         // Litepie Service Providers.
@@ -176,17 +177,25 @@ return [
         Litepie\Filer\FilerServiceProvider::class,
         Litepie\Form\FormServiceProvider::class,
         Litepie\Hashids\HashidsServiceProvider::class,
-        // Litepie\Install\InstallServiceProvider::class,
-        Litepie\Master\MasterServiceProvider::class,
+        Litepie\Install\InstallServiceProvider::class,
         Litepie\Menu\MenuServiceProvider::class,
-        Litepie\Roles\RolesServiceProvider::class,
-        Litepie\Settings\SettingsServiceProvider::class,
         Litepie\Theme\ThemeServiceProvider::class,
         Litepie\Trans\TransServiceProvider::class,
-        Litepie\User\UserServiceProvider::class,
-        Litepie\Team\TeamServiceProvider::class,
-        // Litepie\Validators\ValidatorServiceProvider::class,
+        Litepie\Validators\ValidatorServiceProvider::class,
+        Litepie\Workflow\WorkflowServiceProvider::class,
 
+        // Bixo Service Providers.
+        // Bixo\Activities\Providers\ActivitiesServiceProvider::class,
+        // Bixo\Bixocampaigns\Providers\BixocampaignsServiceProvider::class,
+        // Bixo\Calendars\Providers\CalendarsServiceProvider::class,
+        // Bixo\Campaigns\Providers\CampaignsServiceProvider::class,
+        // Bixo\Categories\Providers\CategoriesServiceProvider::class,
+        // Bixo\Contacts\Providers\ContactsServiceProvider::class,
+        // Bixo\Deals\Providers\DealsServiceProvider::class,
+        // Bixo\Listings\Providers\ListingsServiceProvider::class,
+        // Bixo\Locations\Providers\LocationsServiceProvider::class,
+        // Bixo\Opportunities\Providers\OpportunitiesServiceProvider::class,
+        // Bixo\Recomentations\Providers\RecomentationsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -256,15 +265,20 @@ return [
         'Form' => Litepie\Support\Facades\Form::class,
         'Hashids' => Litepie\Support\Facades\Hashids::class,
         'Menu' => Litepie\Support\Facades\Menu::class,
-        'Role' => Litepie\Support\Facades\Role::class,
-        'Settings' => Litepie\Support\Facades\Settings::class,
         'Theme' => Litepie\Support\Facades\Theme::class,
         'Trans' => Litepie\Support\Facades\Trans::class,
-        'User' => Litepie\Support\Facades\User::class,
+        'Alerts' => Litepie\Notification\Facades\Alerts::class,
+        'Workflow' => Litepie\Workflow\Workflow::class,
+
+        'Role' => App\Facades\Role::class,
+        'User' => App\Facades\User::class,
+        'Settings' => App\Facades\Setting::class,
+        'Settings' => App\Facades\Master::class,
+
 
         'Block' => Litecms\Block\Facades\Block::class,
         'Contact' => Litecms\Contact\Facades\Contact::class,
-        'Page' => Litecms\Page\Facades\Page::class,
+        'Pages' => Litecms\Page\Facades\Pages::class,
     ],
 
 ];

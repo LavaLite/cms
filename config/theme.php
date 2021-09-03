@@ -1,6 +1,38 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Themes
+    |--------------------------------------------------------------------------
+    |
+    | Themes used for the website.
+    | eg. admin, public, user etc.
+    |
+     */
+
+    'themes'        => [
+        'default' => [
+            'theme'  => 'default',
+            'view'   => 'default',
+        ],
+        'admin'   => [
+            'theme'  => 'default',
+            'view'   => 'default',
+        ],
+        'public'  => [
+            'theme'  => 'default',
+            'view'   => 'default',
+        ],
+        'user'    => [
+            'theme'  => 'default',
+            'view'   => 'default',
+        ],
+        'client'    => [
+            'theme'  => 'default',
+            'view'   => 'default',
+        ],
+    ],
 
 
     /*
