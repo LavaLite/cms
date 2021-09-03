@@ -9,7 +9,6 @@ use App\Repositories\Eloquent\Presenters\MasterListPresenter;
 use Exception;
 use Litepie\Http\Controllers\ResourceController as BaseController;
 use Litepie\Master\Interfaces\MasterRepositoryInterface;
-use Litepie\Repository\Filter\RequestFilter;
 
 /**
  * Resource controller class for master.
@@ -27,7 +26,8 @@ class MasterResourceController extends BaseController
     {
         parent::__construct();
         $this->form = MasterForm::setAttributes()->toArray();
-        $this->modules = $this->modules(config('master.modules'), 'master', guard_url('master'));
+        $this->modules = $this->modules(config('master.modules'), 'master', guard_url('master'), '.');
+        $this->modules[0]['url'] = $this->form['urls']['list']['url'];
         $this->repository = $master;
     }
 
@@ -36,27 +36,28 @@ class MasterResourceController extends BaseController
      *
      * @return Response
      */
-    public function index(MasterRequest $request, $group = 'masters', $type = null)
+    public function index(MasterRequest $request, $type = null)
     {
 
         $pageLimit = $request->input('pageLimit', config('database.pagination.limit'));
         $data = $this->repository
-            ->pushFilter(RequestFilter::class)
             ->pushFilter(MasterResourceFilter::class)
             ->setPresenter(MasterListPresenter::class)
-            ->simplePaginate($pageLimit)
-        // ->withQueryString()
+            ->all()
             ->toArray();
+        $view = 'litepie.master.index';
+        if ($type != null) {
+            $view = 'litepie.master.list';
+        }
 
-        extract($data);
         $form = $this->form;
         $modules = $this->modules;
         $count = $this->repository->typeCount();
         $groups = $this->repository->groups();
 
-        return $this->response->setMetaTitle(trans('master::master.names'))
-            ->view('litepie.master.index')
-            ->data(compact('data', 'meta', 'links', 'groups', 'type', 'modules', 'form', 'count', 'groups'))
+        return $this->response->setMetaTitle(trans('master.master.names'))
+            ->view($view)
+            ->data(compact('data', 'groups', 'modules', 'form', 'count', 'groups'))
             ->output();
     }
 
@@ -73,9 +74,10 @@ class MasterResourceController extends BaseController
         $form = $this->form;
         $modules = $this->modules;
         $data = $repository->toArray();
+        $type = $data['type'];
         return $this->response
-            ->setMetaTitle(trans('app.view') . ' ' . trans('master::master.name'))
-            ->data(compact('data', 'form', 'modules', 'form'))
+            ->setMetaTitle(trans('app.view') . ' ' . trans('master.master.name'))
+            ->data(compact('data', 'modules', 'form', 'type'))
             ->view('litepie.master.show')
             ->output();
     }
@@ -92,9 +94,11 @@ class MasterResourceController extends BaseController
         $form = $this->form;
         $modules = $this->modules;
         $data = $repository->toArray();
-        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('master::master.name'))
+        $type = $data['type'];
+
+        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('master.master.name'))
             ->view('litepie.master.create')
-            ->data(compact('data', 'form', 'modules'))
+            ->data(compact('data', 'form', 'modules', 'type'))
             ->output();
     }
 
@@ -114,17 +118,17 @@ class MasterResourceController extends BaseController
             $repository->create($attributes);
             $data = $repository->toArray();
 
-            return $this->response->message(trans('messages.success.created', ['Module' => trans('master::master.name')]))
+            return $this->response->message(trans('messages.success.created', ['Module' => trans('master.master.name')]))
                 ->code(204)
                 ->data(compact('data'))
                 ->status('success')
-                ->url(guard_url('master/master/' . $data['id']))
+                ->url(guard_url('masters/master/' . $data['id']))
                 ->redirect();
         } catch (Exception $e) {
             return $this->response->message($e->getMessage())
                 ->code(400)
                 ->status('error')
-                ->url(guard_url('/master/master'))
+                ->url(guard_url('/masters/master'))
                 ->redirect();
         }
 
@@ -143,10 +147,11 @@ class MasterResourceController extends BaseController
         $form = $this->form;
         $modules = $this->modules;
         $data = $repository->toArray();
+        $type = $data['type'];
 
-        return $this->response->setMetaTitle(trans('app.edit') . ' ' . trans('master::master.name'))
+        return $this->response->setMetaTitle(trans('app.edit') . ' ' . trans('master.master.name'))
             ->view('litepie.master.edit')
-            ->data(compact('data', 'form', 'modules'))
+            ->data(compact('data', 'form', 'modules', 'type'))
             ->output();
     }
 
@@ -160,22 +165,23 @@ class MasterResourceController extends BaseController
      */
     public function update(MasterRequest $request, MasterRepositoryInterface $repository)
     {
+        $data['id'] = $repository->getRouteKey();
         try {
             $attributes = $request->all();
             $repository->update($attributes);
             $data = $repository->toArray();
 
-            return $this->response->message(trans('messages.success.updated', ['Module' => trans('master::master.name')]))
+            return $this->response->message(trans('messages.success.updated', ['Module' => trans('master.master.name')]))
                 ->code(204)
                 ->status('success')
                 ->data(compact('data'))
-                ->url(guard_url('master/master/' . $data['id']))
+                ->url(guard_url('masters/master/' . $data['id']))
                 ->redirect();
         } catch (Exception $e) {
             return $this->response->message($e->getMessage())
                 ->code(400)
                 ->status('error')
-                ->url(guard_url('master/master/' . $data['id']))
+                ->url(guard_url('masters/master/' . $data['id']))
                 ->redirect();
         }
 
@@ -194,11 +200,11 @@ class MasterResourceController extends BaseController
             $repository->delete();
             $data = $repository->toArray();
 
-            return $this->response->message(trans('messages.success.deleted', ['Module' => trans('master::master.name')]))
+            return $this->response->message(trans('messages.success.deleted', ['Module' => trans('master.master.name')]))
                 ->code(202)
                 ->status('success')
                 ->data(compact('data'))
-                ->url(guard_url('master/master/0'))
+                ->url(guard_url('masters/master/0'))
                 ->redirect();
 
         } catch (Exception $e) {

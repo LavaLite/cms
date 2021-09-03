@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Litepie\Http\Controllers\PublicController as BaseController;
-use Litepie\Http\Response\PublicResponse;
+use Pages;
 
 class PublicController extends BaseController
 {
-
-    /**
-     * Initialize public controller.
-     *
-     * @return null
-     */
-    public function __construct()
-    {
-        $this->response = app(PublicResponse::class);
-        $this->setTheme();
-    }
+    use AuthorizesRequests;
+    use DispatchesJobs;
+    use ValidatesRequests;
 
     /**
      * Show dashboard for each user.
@@ -26,12 +21,11 @@ class PublicController extends BaseController
      */
     public function home()
     {
-        $data = app(\Litecms\Page\Interfaces\PageRepositoryInterface::class)->getPage('home');
-
+        $data = Pages::getPage('home');
         return $this->response
-            ->setMetaKeyword(strip_tags($data->meta_keyword))
-            ->setMetaDescription(strip_tags($data->meta_description))
-            ->setMetaTitle(strip_tags($data->meta_title))
+            ->setMetaKeyword(strip_tags($data['meta_keyword']))
+            ->setMetaDescription(strip_tags($data['meta_description']))
+            ->setMetaTitle(strip_tags($data['meta_title']))
             ->layout('home')
             ->view('home')
             ->data(compact('data'))

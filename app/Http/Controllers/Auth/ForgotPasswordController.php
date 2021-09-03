@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Response\Auth\Response as AuthResponse;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Litepie\Http\Response\AuthResponse;
 use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\RoutesAndGuards;
 

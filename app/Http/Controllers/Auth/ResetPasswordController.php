@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Http\Response\Auth\Response as AuthResponse;
+use Litepie\Http\Response\AuthResponse;
 use Litepie\User\Traits\Auth\ResetsPasswords;
 use Litepie\Theme\ThemeAndViews;
 

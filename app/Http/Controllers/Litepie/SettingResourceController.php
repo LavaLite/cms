@@ -25,7 +25,7 @@ class SettingResourceController extends BaseController
     {
         parent::__construct();
         $this->form = SettingForm::setAttributes()->toArray();
-        $this->modules = $this->modules(config('setting.modules'), 'setting', guard_url('settings'), '.');
+        $this->modules = $this->modules(config('setting.modules'), '', guard_url('settings'), '');
         $this->repository = $setting;
     }
 
@@ -43,7 +43,7 @@ class SettingResourceController extends BaseController
             abort(404, "Page not found");
         }
 
-        return $this->response->setMetaTitle(trans('setting.setting.names'))
+        return $this->response->setMetaTitle(trans('setting.names'))
             ->view('litepie.settings.index')
             ->data(compact('modules', 'form'))
             ->output();
