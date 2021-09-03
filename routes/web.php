@@ -26,15 +26,10 @@ Route::group(
         Auth::routes();
         Route::get('/', 'ResourceController@home')->name('home');
         Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
-        Route::group(['prefix' => 'user'], function () {
-            Route::resource('user', 'User\UserResourceController');
-            Route::resource('{type}', 'User\ClientResourceController', ['parameters' => [
-                '{type}' => 'client',
-            ]]);
-        });
-        Route::get('profile/{user}', 'UserPublicController@profile');
+
     }
 );
+include 'litepie.php';
 
 Route::group(
     [
@@ -50,18 +45,14 @@ Route::group(
                 'as' => 'guard.',
                 'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
             ],
+
             function () {
                 Auth::routes();
                 Route::get('/', 'ResourceController@home')->name('home');
                 Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
-                Route::group(['prefix' => 'user'], function () {
-                    Route::resource('user', 'User\UserResourceController');
-                    Route::resource('{type}', 'User\ClientResourceController', ['parameters' => [
-                        '{type}' => 'client',
-                    ]]);
-                });
-                Route::get('profile/{user}', 'UserPublicController@profile');
+
             }
         );
+        include ('litepie.php');
     }
 );
