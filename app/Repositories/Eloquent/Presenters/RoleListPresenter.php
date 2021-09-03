@@ -7,5 +7,4 @@ use Litepie\Roles\Repositories\Eloquent\Presenters\RoleListPresenter as BasePres
 class RoleListPresenter extends BasePresenter
 {
 
-
 }

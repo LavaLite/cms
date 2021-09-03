@@ -7,5 +7,4 @@ use Litepie\Settings\Repositories\Eloquent\Presenters\SettingListPresenter as Ba
 class SettingListPresenter extends BasePresenter
 {
 
-
 }

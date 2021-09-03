@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Eloquent\Filters;
 
-use Litepie\User\Repositories\Eloquent\Filters\ClientPublicFilter as BasePresenter;
+use Litepie\Settings\Repositories\Eloquent\Filters\SettingPublicFilter as BasePresenter;
 
 class SettingPublicFilter extends BasePresenter
 {

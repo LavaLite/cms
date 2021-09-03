@@ -6,4 +6,5 @@ use Litepie\Settings\Repositories\Eloquent\Presenters\SettingItemPresenter as Ba
 
 class SettingItemPresenter extends BasePresenter
 {
+    
 }

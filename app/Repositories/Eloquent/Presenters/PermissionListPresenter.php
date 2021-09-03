@@ -7,5 +7,4 @@ use Litepie\Roles\Repositories\Eloquent\Presenters\PermissionListPresenter as Ba
 class PermissionListPresenter extends BasePresenter
 {
 
-
 }
