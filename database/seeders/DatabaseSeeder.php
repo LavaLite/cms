@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB;
+use Litecms\Block\Seeds\BlockTableSeeder;
+use Litecms\Blog\Seeds\BlogTableSeeder;
+use Litecms\Contact\Seeds\ContactTableSeeder;
+use Litecms\Page\Seeds\PageTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +23,10 @@ class DatabaseSeeder extends Seeder
         $this->call(TeamTableSeeder::class);
         $this->call(ClientTableSeeder::class);
         $this->call(SettingTableSeeder::class);
+        
+        $this->call(BlockTableSeeder::class);
+        $this->call(BlogTableSeeder::class);
+        $this->call(ContactTableSeeder::class);
+        $this->call(PageTableSeeder::class);
     }
 }

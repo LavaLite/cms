@@ -1,1 +1,109 @@
-*
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+_ide_helper.php
+/.idea
+/.vscode
+# Eclipse project files
+.buildpath
+.project
+.settings/
+workspace.xml
+
+# Ignore cache
+.cache/
+
+# Ignore user created files :)
+*.bak
+*.orig
+
+# Ignore system files
+.bash_history
+LICENSE_AFL.txt
+LICENSE.html
+LICENSE.txt
+LICENSE_EE*
+RELEASE_NOTES.txt
+.ssh/
+error_log 
+# .htpasswds
+# /.htaccess
+php.ini.sample
+.modgit/
+_vti_bin/
+_vti_cnf/
+_vti_inf.html
+_vti_log/
+_vti_pvt/
+_vti_txt/
+tmp/
+php.ini
+_old/
+# .htpasswds/
+# .htpasswd
+.viminfo
+.profile
+.bashrc
+.bash_logout
+.bash_history
+.modgit/
+.modman/
+pkginfo
+nohup.out
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+
+#Laravel Specific files
+/vendor
+.env
+.env.backup
+!.env.example
+# /public/.htaccess
+# storage/*
+# !storage/framework/cache/
+# !storage/framework/sessions/
+# !storage/framework/views/
+/storage/*.key
+/node_modules
+/public/hot
+/public/storage
+
+# composer files
+composer.dev.json
+composer.lock
+package-lock.json
