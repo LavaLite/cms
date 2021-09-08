@@ -27,7 +27,7 @@ class RoleResourceController extends BaseController
     {
         parent::__construct();
         $this->form = RoleForm::setAttributes()->toArray();
-        $this->modules = $this->modules(config('app.role.modules'), 'role', guard_url('role'));
+        $this->modules = $this->modules(config('role.modules'), 'role', guard_url('role'), '.');
         $this->repository = $role;
     }
 

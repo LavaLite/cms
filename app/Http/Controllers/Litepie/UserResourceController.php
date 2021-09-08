@@ -115,13 +115,13 @@ class UserResourceController extends BaseController
                 ->code(204)
                 ->data(compact('data'))
                 ->status('success')
-                ->url(guard_url('users/user/' . $data['id']))
+                ->url(guard_url('user/user/' . $data['id']))
                 ->redirect();
         } catch (Exception $e) {
             return $this->response->message($e->getMessage())
                 ->code(400)
                 ->status('error')
-                ->url(guard_url('/users/user'))
+                ->url(guard_url('/user/user'))
                 ->redirect();
         }
 
@@ -166,13 +166,13 @@ class UserResourceController extends BaseController
                 ->code(204)
                 ->status('success')
                 ->data(compact('data'))
-                ->url(guard_url('users/user/' . $data['id']))
+                ->url(guard_url('user/user/' . $data['id']))
                 ->redirect();
         } catch (Exception $e) {
             return $this->response->message($e->getMessage())
                 ->code(400)
                 ->status('error')
-                ->url(guard_url('users/user/' . $data['id']))
+                ->url(guard_url('user/user/' . $data['id']))
                 ->redirect();
         }
 
@@ -195,7 +195,7 @@ class UserResourceController extends BaseController
                 ->code(202)
                 ->status('success')
                 ->data(compact('data'))
-                ->url(guard_url('users/user/0'))
+                ->url(guard_url('user/user/0'))
                 ->redirect();
 
         } catch (Exception $e) {
@@ -203,7 +203,7 @@ class UserResourceController extends BaseController
             return $this->response->message($e->getMessage())
                 ->code(400)
                 ->status('error')
-                ->url(guard_url('users/user/' . $data['id']))
+                ->url(guard_url('user/user/' . $data['id']))
                 ->redirect();
         }
 

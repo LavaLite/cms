@@ -20,7 +20,7 @@ return [
     'role'       => [
         'model' => [
             'model' => \App\Models\Role::class,
-            'repository' => \App\Repositories\Role\Eloquent\RoleRepository::class,
+            'repository' => \App\Repositories\Eloquent\RoleRepository::class,
             'table' => 'roles',
             'hidden'=> [],
             'visible' => [],
@@ -68,7 +68,7 @@ return [
     'permission'       => [
         'model' => [
             'model' => \App\Models\Permission::class,
-            'repository' => \App\Repositories\Role\Eloquent\PermissionRepository::class,
+            'repository' => \App\Repositories\Eloquent\PermissionRepository::class,
             'table' => 'permissions',
             'hidden'=> [],
             'visible' => [],

@@ -2,9 +2,7 @@
 
 Route::prefix('{guard}/user')->group(function () {
     Route::resource('user', 'Litepie\UserResourceController');
-    Route::resource('{type}', 'Litepie\ClientResourceController', ['parameters' => [
-        '{type}' => 'client',
-    ]]);
+    Route::resource('client', 'Litepie\ClientResourceController');
 });
 Route::get('{guard}/profile/{user}', 'Litepie\UserProfileController@profile');
 Route::get('{guard}/profile', 'Litepie\UserProfileController@profile');
@@ -12,12 +10,12 @@ Route::post('{guard}/profile', 'Litepie\UserProfileController@postProfile');
 Route::get('{guard}/password', 'Litepie\UserProfileController@password');
 Route::post('{guard}/password', 'Litepie\UserProfileController@postPassword');
 
-Route::prefix('{guard}/roles')->group(function () {
+Route::prefix('{guard}/role')->group(function () {
     Route::resource('role', 'Litepie\RoleResourceController');
+    Route::resource('permission', 'Litepie\PermissionResourceController');
 });
 
-
-Route::prefix('{guard}/teams')->group(function () {
+Route::prefix('{guard}/team')->group(function () {
     Route::resource('team', 'Litepie\TeamResourceController');
 });
 
@@ -33,7 +31,6 @@ Route::prefix('{guard}/masters')->group(function () {
     Route::get('{type}/list', 'Litepie\MasterResourceController@index');
     Route::resource('master', 'Litepie\MasterResourceController');
 });
-
 
 // // Public routes for master
 // Route::get('masters/', 'Litepie\MasterPublicController@index');

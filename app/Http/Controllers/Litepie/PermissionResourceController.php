@@ -27,7 +27,7 @@ class PermissionResourceController extends BaseController
     {
         parent::__construct();
         $this->form = PermissionForm::setAttributes()->toArray();
-        $this->modules = $this->modules(config('app.role.modules'), 'role', guard_url('role'));
+        $this->modules = $this->modules(config('role.modules'), 'role', guard_url('role'), '.');
         $this->repository = $permission;
     }
 
@@ -38,7 +38,6 @@ class PermissionResourceController extends BaseController
      */
     public function index(PermissionRequest $request)
     {
-
         $pageLimit = $request->input('pageLimit', config('database.pagination.limit'));
         $data = $this->repository
             ->pushFilter(RequestFilter::class)

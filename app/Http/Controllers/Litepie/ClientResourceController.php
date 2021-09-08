@@ -68,7 +68,6 @@ class ClientResourceController extends BaseController
      */
     public function show(ClientRequest $request, ClientRepositoryInterface $repository)
     {
-        dd($repository);
         $form = $this->form;
         $modules = $this->modules;
         $data = $repository->toArray();

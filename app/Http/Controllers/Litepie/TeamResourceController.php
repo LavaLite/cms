@@ -27,7 +27,7 @@ class TeamResourceController extends BaseController
     {
         parent::__construct();
         $this->form = TeamForm::setAttributes()->toArray();
-        $this->modules = $this->modules(config('team.modules'), 'team', guard_url('team'));
+        $this->modules = $this->modules(config('team.modules'), '', guard_url('team'), '');
         $this->repository = $team;
     }
 
@@ -52,7 +52,7 @@ class TeamResourceController extends BaseController
         $form = $this->form;
         $modules = $this->modules;
 
-        return $this->response->setMetaTitle(trans('team.team.names'))
+        return $this->response->setMetaTitle(trans('team.names'))
             ->view('litepie.team.team.index')
             ->data(compact('data', 'meta', 'links', 'modules', 'form'))
             ->output();
