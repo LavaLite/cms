@@ -18,7 +18,15 @@
     "laravel/framework": "^8.54",
     "laravel/sanctum": "^2.11",
     "laravel/tinker": "^2.5",
-    "laravel/ui": "^2.1"
+    "laravel/ui": "^2.1",
+
+    "lavalite/framework": "^8.0",
+    "litefront/default": "^1.0",
+
+    "litecms/block": "^8.0",
+    "litecms/blog": "^8.0",
+    "litecms/contact": "^8.0",
+    "litecms/page": "^8.0"
   },
   "require-dev": {
     "facade/ignition": "^2.5",
