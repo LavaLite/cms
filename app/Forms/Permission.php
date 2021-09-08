@@ -2,7 +2,7 @@
 
 namespace App\Forms;
 
-use Litepie\Roles\Forms\Role as BaseForm;
+use Litepie\Roles\Forms\Permission as BaseForm;
 
 class Permission extends BaseForm
 {

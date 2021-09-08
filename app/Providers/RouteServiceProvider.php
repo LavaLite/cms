@@ -8,7 +8,7 @@ use Litepie\Master\Interfaces\MasterRepositoryInterface;
 use Litepie\Roles\Interfaces\PermissionRepositoryInterface;
 use Litepie\Roles\Interfaces\RoleRepositoryInterface;
 use Litepie\User\Interfaces\ClientRepositoryInterface;
-use litepie\User\Interfaces\UserRepositoryInterface;
+use Litepie\User\Interfaces\UserRepositoryInterface;
 use Request;
 
 class RouteServiceProvider extends ServiceProvider

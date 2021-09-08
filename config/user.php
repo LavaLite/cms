@@ -68,7 +68,6 @@ return [
     'client' => [
         'model' => [
             'model' => \App\Models\Client::class,
-            'interface' => \App\Interfaces\ClientRepositoryInterface::class,
             'repository' => \App\Repositories\Eloquent\ClientRepository::class,
             'table' => 'clients',
             'hidden' => [],
