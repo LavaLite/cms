@@ -6,5 +6,4 @@ use Litepie\Roles\Models\Role as BaseModel;
 
 class Role extends BaseModel
 {
-
 }

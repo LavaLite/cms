@@ -21,12 +21,10 @@ Route::group(
         'as' => 'guard.',
         'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
     ],
-
     function () {
         Auth::routes();
         Route::get('/', 'ResourceController@home')->name('home');
         Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
-
     }
 );
 include 'litepie.php';
@@ -45,14 +43,12 @@ Route::group(
                 'as' => 'guard.',
                 'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
             ],
-
             function () {
                 Auth::routes();
                 Route::get('/', 'ResourceController@home')->name('home');
                 Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
-
             }
         );
-        include ('litepie.php');
+        include 'litepie.php';
     }
 );

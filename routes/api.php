@@ -21,7 +21,6 @@ Route::group(
         'as' => 'guard.',
         'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
     ],
-
     function () {
         Route::post('login', 'Auth\APILoginController@login');
         Route::get('profile', 'Auth\APILoginController@profile');
@@ -30,7 +29,7 @@ Route::group(
         Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
     }
 );
-include('litepie.php');
+include 'litepie.php';
 Route::group(
     [
         'middleware' => 'trans',
@@ -53,6 +52,6 @@ Route::group(
                 Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
             }
         );
-    include('litepie.php');
+        include 'litepie.php';
     }
 );
