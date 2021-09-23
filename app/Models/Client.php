@@ -10,5 +10,4 @@ use Litepie\User\Traits\Auth\MustVerifyEmail;
 class Client extends BaseModel implements ContractMustVerifyEmail, UserPolicyInterface
 {
     use MustVerifyEmail;
-
 }

@@ -43,12 +43,14 @@ class RouteServiceProvider extends ServiceProvider
         if (Request::is('*admin/user/user/*')) {
             Route::bind('user', function ($user) {
                 $userRepo = $this->app->make(UserRepositoryInterface::class);
+
                 return $userRepo->findorNew($user);
             });
         }
         if (Request::is('*admin/user/client/*')) {
             Route::bind('client', function ($client) {
                 $clientRepo = $this->app->make(ClientRepositoryInterface::class);
+
                 return $clientRepo->findorNew($client);
             });
         }
@@ -56,6 +58,7 @@ class RouteServiceProvider extends ServiceProvider
         if (Request::is('*admin/role/role/*')) {
             Route::bind('role', function ($role) {
                 $roleRepo = $this->app->make(RoleRepositoryInterface::class);
+
                 return $roleRepo->findorNew($role);
             });
         }
@@ -63,30 +66,32 @@ class RouteServiceProvider extends ServiceProvider
         if (Request::is('*admin/role/permission/*')) {
             Route::bind('permission', function ($permission) {
                 $permissionRepo = $this->app->make(PermissionRepositoryInterface::class);
+
                 return $permissionRepo->findorNew($permission);
             });
         }
 
         if (Request::is('*admin/masters*')) {
-
             Route::bind('master', function ($master) {
                 $masterRepo = $this->app->make(MasterRepositoryInterface::class);
+
                 return $masterRepo->findorNew($master);
             });
         }
         if (Request::is('*admin/teams/*')) {
             Route::bind('team', function ($team) {
                 $teamRepo = $this->app->make(TeamRepositoryInterface::class);
+
                 return $teamRepo->findorNew($team);
             });
         }
         if (Request::is('*admin/settings/*')) {
             Route::bind('setting', function ($settinf) {
                 $settinfRepo = $this->app->make(SettingRepositoryInterface::class);
+
                 return $settinfRepo->findorNew($settinf);
             });
         }
-
     }
 
     /**

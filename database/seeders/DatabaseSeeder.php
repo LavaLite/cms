@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TeamTableSeeder::class);
         $this->call(ClientTableSeeder::class);
         $this->call(SettingTableSeeder::class);
-        
+
         $this->call(BlockTableSeeder::class);
         $this->call(BlogTableSeeder::class);
         $this->call(ContactTableSeeder::class);

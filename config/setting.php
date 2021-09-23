@@ -17,7 +17,6 @@ return [
      */
     'modules'   => ['setting'],
 
-    
     'setting'       => [
         'model' => [
             'model' => \App\Models\Setting::class,
@@ -33,7 +32,7 @@ return [
             'translatables' => [],
             'upload_folder' => 'settings/setting',
             'uploads' => [
-            /*
+                /*
                     'images' => [
                         'count' => 10,
                         'type'  => 'image',
@@ -46,7 +45,7 @@ return [
             ],
 
             'casts' => [
-            /*
+                /*
                 'images'    => 'array',
                 'file'      => 'array',
             */
@@ -57,7 +56,7 @@ return [
             'search'        => [
                 'name'  => 'like',
                 'status',
-            ]
+            ],
         ],
 
         'controller' => [

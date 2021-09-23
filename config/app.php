@@ -275,7 +275,6 @@ return [
         'Settings' => App\Facades\Setting::class,
         'Settings' => App\Facades\Master::class,
 
-
         'Block' => Litecms\Block\Facades\Block::class,
         'Contact' => Litecms\Contact\Facades\Contact::class,
         'Pages' => Litecms\Page\Facades\Pages::class,

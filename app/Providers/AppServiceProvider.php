@@ -21,8 +21,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(\Laravel\Socialite\SocialiteServiceProvider::class);
     }
 
-    public function registerRepositoryBibdings(){
-
+    public function registerRepositoryBibdings()
+    {
         $this->app->bind(
             'Litepie\User\Interfaces\UserRepositoryInterface',
             \App\Repositories\Eloquent\UserRepository::class
@@ -51,10 +51,10 @@ class AppServiceProvider extends ServiceProvider
             'Litepie\Team\Interfaces\TeamRepositoryInterface',
             \App\Repositories\Eloquent\TeamRepository::class
         );
-
     }
 
-    public function registerFacades(){
+    public function registerFacades()
+    {
         $this->app->bind('app.user', function ($app) {
             return $this->app->make(\App\Litepie\User::class);
         });
@@ -71,6 +71,7 @@ class AppServiceProvider extends ServiceProvider
             return $this->app->make(\App\Litepie\Team::class);
         });
     }
+
     /**
      * Bootstrap any application services.
      *
@@ -78,6 +79,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
     }
 }
