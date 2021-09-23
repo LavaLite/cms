@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Litepie;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use Litepie\Http\Controllers\Controller as BaseController;
@@ -8,8 +8,9 @@ use Litepie\Http\Response\ResourceResponse;
 use Litepie\Theme\ThemeAndViews;
 use Litepie\User\Traits\RoutesAndGuards;
 use Litepie\User\Traits\UserPages;
+use Form;
 
-class UserProfileController extends BaseController
+class ProfileController extends BaseController
 {
     use RoutesAndGuards, ThemeAndViews, UserPages;
 
@@ -22,7 +23,7 @@ class UserProfileController extends BaseController
     {
         $this->setGuard();
         $this->response = app(ResourceResponse::class);
-        $this->middleware("auth:" . guard())->except(['profile']);
+        $this->middleware("auth:" . guard());
         $this->setTheme();
     }
 
@@ -49,8 +50,18 @@ class UserProfileController extends BaseController
      */
     public function profile(Request $request)
     {
-        $user = $request->user();
-        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('user::user.name'))
+        $user = $request->user()->only([
+            'name',
+            'email',
+            'sex',
+            'mobile',
+            'languages',
+            'designation',
+            'picture',
+        ]);
+        $user['token'] = $request->header('Authorization');
+        Form::populate($user);
+        return $this->response->setMetaTitle(trans('Update') . ' ' . trans('user.user.title.profile'))
             ->data(compact('user'))
             ->layout('user')
             ->view('user.profile')
@@ -68,7 +79,7 @@ class UserProfileController extends BaseController
     public function password(Request $request)
     {
         $user = $request->user();
-        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('user::user.name'))
+        return $this->response->setMetaTitle(trans('user.user.title.change_password'))
             ->data(compact('user'))
             ->layout('user')
             ->view('user.password')
@@ -85,7 +96,7 @@ class UserProfileController extends BaseController
     public function postProfile(Request $request)
     {
         $user = $request->user();
-        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('user::user.name'))
+        return $this->response->setMetaTitle(trans('user.user.title.profile'))
             ->data(compact('user'))
             ->layout('user')
             ->view('user.profile')
@@ -103,7 +114,7 @@ class UserProfileController extends BaseController
     public function postPassword(Request $request)
     {
         $user = $request->user();
-        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('user::user.name'))
+        return $this->response->setMetaTitle(trans('user.user.title.password'))
             ->data(compact('user'))
             ->layout('user')
             ->view('user.password')

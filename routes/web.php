@@ -15,19 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PublicController@home');
 
-Route::group(
-    [
-        'prefix' => '{guard}',
-        'as' => 'guard.',
-        'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
-    ],
-    function () {
-        Auth::routes();
-        Route::get('/', 'ResourceController@home')->name('home');
-        Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
-    }
-);
-include 'litepie.php';
+
+include ('litepie.php');
 
 Route::group(
     [
@@ -37,18 +26,6 @@ Route::group(
         'where' => ['trans' => Trans::keys('|')],
     ],
     function () {
-        Route::group(
-            [
-                'prefix' => '{guard}',
-                'as' => 'guard.',
-                'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
-            ],
-            function () {
-                Auth::routes();
-                Route::get('/', 'ResourceController@home')->name('home');
-                Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
-            }
-        );
-        include 'litepie.php';
+        include ('litepie.php');
     }
 );
