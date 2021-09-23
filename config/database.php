@@ -145,7 +145,7 @@ return [
     ],
 
     /*
-     * 
+     *
      * Default pagination limit for the application.
      *
      */
@@ -153,17 +153,16 @@ return [
         'limit' => 10,
     ],
 
-
     'filter'   => [
         /*
          * Accepted Conditions
          *
          * Conditions accepted in consultations where the Criteria
-         * 
+         *
          */
         'conditions' => [
             '=', '>', '>=', '<', '<=', '!=', '<>', 'LIKE', 'NOT LIKE', 'BETWEEN',
             'NOT BETWEEN', 'IN', 'NOT IN', 'NULL', 'NOT NULL',
-        ]
+        ],
     ],
 ];

@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PublicController@home');
 
-include 'litepie.php';
+
+include ('litepie.php');
 
 Route::group(
     [

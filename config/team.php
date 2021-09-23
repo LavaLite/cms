@@ -17,7 +17,6 @@ return [
      */
     'modules'   => ['team'],
 
-    
     'team'       => [
         'model' => [
             'model' => \App\Models\Team::class,
@@ -33,7 +32,7 @@ return [
             'translatables' => [],
             'upload_folder' => 'team/team',
             'uploads' => [
-            /*
+                /*
                     'images' => [
                         'count' => 10,
                         'type'  => 'image',
@@ -46,7 +45,7 @@ return [
             ],
 
             'casts' => [
-            /*
+                /*
                 'images'    => 'array',
                 'file'      => 'array',
             */
@@ -57,7 +56,7 @@ return [
             'search'        => [
                 'name'  => 'like',
                 'status',
-            ]
+            ],
         ],
 
         'controller' => [

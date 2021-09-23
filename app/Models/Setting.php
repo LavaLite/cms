@@ -6,5 +6,4 @@ use Litepie\Settings\Models\Setting as BaseModel;
 
 class Setting extends BaseModel
 {
-
 }
