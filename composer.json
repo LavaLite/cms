@@ -22,6 +22,8 @@
 
     "lavalite/framework": "^8.0",
     "litefront/default": "^1.0",
+    "litefront/user": "^1.0",
+    "litefront/public": "^1.0",
 
     "litecms/block": "^8.0",
     "litecms/blog": "^8.0",
