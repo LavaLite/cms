@@ -13,8 +13,10 @@ Route::group(
         Route::post('profile', 'Auth\ProfileController@postProfile');
         Route::get('password', 'Auth\ProfileController@password');
         Route::post('password', 'Auth\ProfileController@postPassword');
-        Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
         Route::get('profile/{user}', 'Auth\ProfileController@profile');
+        Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+        Route::get('login/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+    
 
         Route::prefix('user')->group(function () {
             Route::resource('user', 'Litepie\UserResourceController');

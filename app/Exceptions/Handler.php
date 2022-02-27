@@ -10,7 +10,7 @@ class Handler extends ExceptionHandler
     /**
      * A list of the exception types that are not reported.
      *
-     * @var array
+     * @var array<int, class-string<Throwable>>
      */
     protected $dontReport = [
         //
@@ -19,39 +19,23 @@ class Handler extends ExceptionHandler
     /**
      * A list of the inputs that are never flashed for validation exceptions.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $dontFlash = [
+        'current_password',
         'password',
         'password_confirmation',
     ];
 
     /**
-     * Report or log an exception.
-     *
-     * @param \Throwable $exception
-     *
-     * @throws \Exception
+     * Register the exception handling callbacks for the application.
      *
      * @return void
      */
-    public function report(Throwable $exception)
+    public function register()
     {
-        parent::report($exception);
-    }
-
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \Throwable               $exception
-     *
-     * @throws \Throwable
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function render($request, Throwable $exception)
-    {
-        return parent::render($request, $exception);
+        $this->reportable(function (Throwable $e) {
+            //
+        });
     }
 }

@@ -95,7 +95,10 @@ class ProfileController extends BaseController
      */
     public function postProfile(Request $request)
     {
+        $data = $request->all();
         $user = $request->user();
+        $user->fill($data);
+        $user->save();
         return $this->response->setMetaTitle(trans('user.user.title.profile'))
             ->data(compact('user'))
             ->layout('user')
