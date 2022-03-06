@@ -187,8 +187,6 @@ return [
         Litecms\Contact\ContactServiceProvider::class,
         Litecms\Page\PageServiceProvider::class,
         Litecms\Blog\Providers\BlogServiceProvider::class,
-        Litecms\Blog\Providers\BlogServiceProvider::class,
-        Litecms\Advert\Providers\AdvertServiceProvider::class,
 
         /*
          * Application Service Providers...
