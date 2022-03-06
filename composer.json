@@ -19,15 +19,15 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.3",
     
-        "lavalite/framework": "^8.0",
-        "litefront/default": "^1.0",
-        "litefront/user": "^1.0",
-        "litefront/public": "^1.0",
+        "lavalite/framework": "^9.0",
+        "litefront/default": "^1.1",
+        "litefront/user": "^1.1",
+        "litefront/public": "^1.1",
     
-        "litecms/block": "^8.0",
-        "litecms/blog": "^8.0",
-        "litecms/contact": "^8.0",
-        "litecms/page": "^8.0"
+        "litecms/block": "^9.0",
+        "litecms/blog": "^9.0",
+        "litecms/contact": "^9.0",
+        "litecms/page": "^9.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
