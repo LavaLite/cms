@@ -1,70 +1,79 @@
 {
-  "name": "lavalite/cms",
-  "description": "Lavalite - The Laravel CMS.",
-  "keywords": [
-    "framework",
-    "laravel",
-    "lavalite",
-    "CMS",
-    "CRM",
-    "ERP"
-  ],
-  "license": "MIT",
-  "type": "cms",
-  "require": {
-    "php": "^7.3|^8.0",
-    "fruitcake/laravel-cors": "^2.0",
-    "guzzlehttp/guzzle": "^7.0.1",
-    "laravel/framework": "^8.54",
-    "laravel/sanctum": "^2.11",
-    "laravel/tinker": "^2.5",
-    "laravel/ui": "^2.1"
-  },
-  "require-dev": {
-    "facade/ignition": "^2.5",
-    "fakerphp/faker": "^1.9.1",
-    "laravel/sail": "^1.0.1",
-    "mockery/mockery": "^1.4.2",
-    "nunomaduro/collision": "^5.0",
-    "phpunit/phpunit": "^9.3.3"
-  },
-  "autoload": {
-    "psr-4": {
-      "App\\": "app/",
-      "Database\\Factories\\": "database/factories/",
-      "Database\\Seeders\\": "database/seeders/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Tests\\": "tests/"
-    }
-  },
-  "scripts": {
-    "post-autoload-dump": [
-      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-      "@php artisan package:discover --ansi"
+    "name": "lavalite/cms",
+    "description": "Lavalite - The Laravel CMS.",
+    "keywords": [
+        "framework",
+        "laravel",
+        "lavalite",
+        "CMS",
+        "CRM",
+        "ERP"
     ],
-    "post-update-cmd": [
-      "@php artisan vendor:publish --tag=laravel-assets --ansi"
-    ],
-    "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-    ],
-    "post-create-project-cmd": [
-      "@php artisan key:generate --ansi"
-    ]
-  },
-  "extra": {
-    "laravel": {
-      "dont-discover": []
-    }
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": "dist",
-    "sort-packages": true
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "license": "MIT",
+    "type": "cms",
+    "require": {
+        "php": "^8.0.2",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel/framework": "^9.2",
+        "laravel/sanctum": "^2.14.1",
+        "laravel/tinker": "^2.7",
+        "laravel/ui": "^3.3",
+    
+        "lavalite/framework": "^8.0",
+        "litefront/default": "^1.0",
+        "litefront/user": "^1.0",
+        "litefront/public": "^1.0",
+    
+        "litecms/block": "^8.0",
+        "litecms/blog": "^8.0",
+        "litecms/contact": "^8.0",
+        "litecms/page": "^8.0"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.5.10",
+        "spatie/laravel-ignition": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

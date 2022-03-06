@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 
 class CreateUsersTable extends Migration
 {
@@ -26,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 100)->nullable();
             $table->string('api_token', 60)->nullable();
             $table->string('remember_token', 255)->nullable();
-            $table->enum('sex', ['','Male','Female'])->nullable();
+            $table->enum('sex', ['', 'Male', 'Female'])->nullable();
             $table->date('dob')->nullable();
             $table->date('doj')->nullable();
             $table->string('designation', 50)->nullable();
@@ -41,7 +40,7 @@ class CreateUsersTable extends Migration
             $table->string('photo', 500)->nullable();
             $table->string('web', 100)->nullable();
             $table->longText('urls')->nullable();
-            $table->enum('status', ['New','Active','Suspended','Locked'])->nullable();
+            $table->enum('status', ['New', 'Active', 'Suspended', 'Locked'])->nullable();
             $table->dateTime('email_verified_at')->nullable();
             $table->integer('user_id')->nullable();
             $table->string('user_type', 50)->nullable();

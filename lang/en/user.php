@@ -2,8 +2,8 @@
 
 return [
     'package' => [
-        'name' => 'Master',
-        'names' => 'Masters',
+        'name' => 'User',
+        'names' => 'Users',
 
     ],
     'user' => [
@@ -30,6 +30,9 @@ return [
         'title' => [
             'main' => 'Users',
             'sub' => 'Users',
+            'profile' => 'Profile',
+            'password' => 'Password',
+            'change_password' => 'Change password',
         ],
 
         /**
@@ -68,6 +71,9 @@ return [
             'name' => 'Please enter name',
             'email' => 'Please enter email',
             'password' => 'Please enter password',
+            'current_password' => 'Please enter current password',
+            'new_password' => 'Please enter new password',
+            'new_password_confirmation' => 'Please enter confirm new password',
             'api_token' => 'Please enter api token',
             'remember_token' => 'Please enter remember token',
             'sex' => 'Please select sex',
@@ -82,6 +88,7 @@ return [
             'district' => 'Please enter district',
             'state' => 'Please enter state',
             'country' => 'Please enter country',
+            'zipcode' => 'Please enter zip code',
             'photo' => 'Please enter photo',
             'web' => 'Please enter web',
             'urls' => 'Please enter urls',
@@ -105,6 +112,9 @@ return [
             'name' => 'Name',
             'email' => 'Email',
             'password' => 'Password',
+            'current_password' => 'Current password',
+            'new_password' => 'New password',
+            'new_password_confirmation' => 'Confirm new password',
             'api_token' => 'Api token',
             'remember_token' => 'Remember token',
             'sex' => 'Sex',
@@ -119,6 +129,7 @@ return [
             'district' => 'District',
             'state' => 'State',
             'country' => 'Country',
+            'zipcode' => 'Zip code',
             'photo' => 'Photo',
             'web' => 'Web',
             'urls' => 'Urls',
@@ -132,6 +143,7 @@ return [
             'updated_at' => 'Updated at',
         ],
     ],
+
     'client' => [
         /*
         |--------------------------------------------------------------------------
@@ -193,6 +205,9 @@ return [
             'name' => 'Please enter name',
             'email' => 'Please enter email',
             'password' => 'Please enter password',
+            'current_password' => 'Please enter current password',
+            'new_password' => 'Please enter new password',
+            'new_password_confirmation' => 'Please enter confirm new password',
             'api_token' => 'Please enter api token',
             'remember_token' => 'Please enter remember token',
             'sex' => 'Please select sex',
@@ -228,6 +243,9 @@ return [
             'name' => 'Name',
             'email' => 'Email',
             'password' => 'Password',
+            'current_password' => 'Current password',
+            'new_password' => 'New password',
+            'new_password_confirmation' => 'Confirm new password',
             'api_token' => 'Api token',
             'remember_token' => 'Remember token',
             'sex' => 'Sex',

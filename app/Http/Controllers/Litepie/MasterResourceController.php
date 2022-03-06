@@ -38,7 +38,6 @@ class MasterResourceController extends BaseController
      */
     public function index(MasterRequest $request, $type = null)
     {
-
         $pageLimit = $request->input('pageLimit', config('database.pagination.limit'));
         $data = $this->repository
             ->pushFilter(MasterResourceFilter::class)
@@ -57,7 +56,7 @@ class MasterResourceController extends BaseController
 
         return $this->response->setMetaTitle(trans('master.master.names'))
             ->view($view)
-            ->data(compact('data', 'groups', 'modules', 'form', 'count', 'groups'))
+            ->data(compact('data', 'type', 'groups', 'modules', 'form', 'count'))
             ->output();
     }
 

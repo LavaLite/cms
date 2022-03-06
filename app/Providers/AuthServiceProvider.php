@@ -3,13 +3,14 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
     /**
      * The policy mappings for the application.
      *
-     * @var array
+     * @var array<class-string, class-string>
      */
     protected $policies = [
         \App\Repositories\Eloquent\ClientRepository::class => \App\Policies\ClientPolicy::class,
@@ -19,6 +20,7 @@ class AuthServiceProvider extends ServiceProvider
         \App\Repositories\Eloquent\SettingRepository::class => \App\Policies\SettingPolicy::class,
         \App\Repositories\Eloquent\UserRepository::class => \App\Policies\UserPolicy::class,
         \App\Repositories\Eloquent\TeamRepository::class => \App\Policies\TeamPolicy::class,
+        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
     ];
 
     /**

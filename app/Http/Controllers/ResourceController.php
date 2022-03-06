@@ -7,6 +7,4 @@ use Litepie\Http\Controllers\ResourceController as BaseController;
 
 class ResourceController extends BaseController
 {
-
-    
 }

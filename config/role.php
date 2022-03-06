@@ -32,7 +32,7 @@ return [
             'translatables' => [],
             'upload_folder' => 'role/role',
             'uploads' => [
-            /*
+                /*
                     'images' => [
                         'count' => 10,
                         'type'  => 'image',
@@ -45,7 +45,7 @@ return [
             ],
 
             'casts' => [
-            /*
+                /*
                 'images'    => 'array',
                 'file'      => 'array',
             */
@@ -56,7 +56,7 @@ return [
             'search'        => [
                 'name'  => 'like',
                 'status',
-            ]
+            ],
         ],
 
         'controller' => [
@@ -80,7 +80,7 @@ return [
             'translatables' => [],
             'upload_folder' => 'role/permission',
             'uploads' => [
-            /*
+                /*
                     'images' => [
                         'count' => 10,
                         'type'  => 'image',
@@ -93,7 +93,7 @@ return [
             ],
 
             'casts' => [
-            /*
+                /*
                 'images'    => 'array',
                 'file'      => 'array',
             */
@@ -104,7 +104,7 @@ return [
             'search'        => [
                 'name'  => 'like',
                 'status',
-            ]
+            ],
         ],
 
         'controller' => [

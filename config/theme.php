@@ -21,19 +21,18 @@ return [
             'view'   => 'default',
         ],
         'public'  => [
-            'theme'  => 'default',
-            'view'   => 'default',
+            'theme'  => 'public',
+            'view'   => 'public',
         ],
         'user'    => [
-            'theme'  => 'default',
-            'view'   => 'default',
+            'theme'  => 'user',
+            'view'   => 'user',
         ],
         'client'    => [
-            'theme'  => 'default',
-            'view'   => 'default',
+            'theme'  => 'user',
+            'view'   => 'user',
         ],
     ],
-
 
     /*
     |--------------------------------------------------------------------------
