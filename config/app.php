@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Facade;
+
 return [
 
     /*
@@ -54,7 +56,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL', null),
+    'asset_url' => env('ASSET_URL', '/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -125,6 +127,24 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Maintenance Mode Driver
+    |--------------------------------------------------------------------------
+    |
+    | These configuration options determine the driver used to determine and
+    | manage Laravel's "maintenance mode" status. The "cache" driver will
+    | allow maintenance mode to be controlled across multiple machines.
+    |
+    | Supported drivers: "file", "cache"
+    |
+    */
+
+    'maintenance' => [
+        'driver' => 'file',
+        // 'store'  => 'redis',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |
@@ -165,37 +185,34 @@ return [
         /*
          * Package Service Providers...
          */
-        // Litecms Service Providers.
-        Litecms\Block\Providers\BlockServiceProvider::class,
-        Litecms\Contact\ContactServiceProvider::class,
-        Litecms\Page\PageServiceProvider::class,
-        Litecms\Blog\Providers\BlogServiceProvider::class,
-        // Litecms\Example\Providers\ExampleServiceProvider::class,
 
-        // Litepie Service Providers.
-        Litepie\Activities\ActivitiesServiceProvider::class,
+        /*
+         * Lavalite Framework Service Providers...
+         */
+        Litepie\User\UserServiceProvider::class,
+
+        Litepie\Actions\ActionsServiceProvider::class,
+        Litepie\Log\LogServiceProvider::class,
         Litepie\Filer\FilerServiceProvider::class,
         Litepie\Form\FormServiceProvider::class,
         Litepie\Hashids\HashidsServiceProvider::class,
         Litepie\Install\InstallServiceProvider::class,
+        Litepie\Master\MasterServiceProvider::class,
         Litepie\Menu\MenuServiceProvider::class,
+        Litepie\Notification\NotificationServiceProvider::class,
+        Litepie\Setting\SettingServiceProvider::class,
+        Litepie\Team\TeamServiceProvider::class,
         Litepie\Theme\ThemeServiceProvider::class,
         Litepie\Trans\TransServiceProvider::class,
+        Litepie\Role\RoleServiceProvider::class,
         Litepie\Validators\ValidatorServiceProvider::class,
         Litepie\Workflow\WorkflowServiceProvider::class,
 
-        // Bixo Service Providers.
-        // Bixo\Activities\Providers\ActivitiesServiceProvider::class,
-        // Bixo\Bixocampaigns\Providers\BixocampaignsServiceProvider::class,
-        // Bixo\Calendars\Providers\CalendarsServiceProvider::class,
-        // Bixo\Campaigns\Providers\CampaignsServiceProvider::class,
-        // Bixo\Categories\Providers\CategoriesServiceProvider::class,
-        // Bixo\Contacts\Providers\ContactsServiceProvider::class,
-        // Bixo\Deals\Providers\DealsServiceProvider::class,
-        // Bixo\Listings\Providers\ListingsServiceProvider::class,
-        // Bixo\Locations\Providers\LocationsServiceProvider::class,
-        // Bixo\Opportunities\Providers\OpportunitiesServiceProvider::class,
-        // Bixo\Recomentations\Providers\RecomentationsServiceProvider::class,
+        // Litecms Service Providers.
+        Litecms\Block\Providers\BlockServiceProvider::class,
+        Litecms\Contact\Providers\ContactServiceProvider::class,
+        Litecms\Page\Providers\PageServiceProvider::class,
+        Litecms\Blog\Providers\BlogServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -219,65 +236,27 @@ return [
     |
     */
 
-    'aliases' => [
-
-        'App' => Illuminate\Support\Facades\App::class,
-        'Arr' => Illuminate\Support\Arr::class,
-        'Artisan' => Illuminate\Support\Facades\Artisan::class,
-        'Auth' => Illuminate\Support\Facades\Auth::class,
-        'Blade' => Illuminate\Support\Facades\Blade::class,
-        'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
-        'Bus' => Illuminate\Support\Facades\Bus::class,
-        'Cache' => Illuminate\Support\Facades\Cache::class,
-        'Config' => Illuminate\Support\Facades\Config::class,
-        'Cookie' => Illuminate\Support\Facades\Cookie::class,
-        'Crypt' => Illuminate\Support\Facades\Crypt::class,
-        'DB' => Illuminate\Support\Facades\DB::class,
-        'Eloquent' => Illuminate\Database\Eloquent\Model::class,
-        'Event' => Illuminate\Support\Facades\Event::class,
-        'File' => Illuminate\Support\Facades\File::class,
-        'Gate' => Illuminate\Support\Facades\Gate::class,
-        'Hash' => Illuminate\Support\Facades\Hash::class,
-        'Http' => Illuminate\Support\Facades\Http::class,
-        'Lang' => Illuminate\Support\Facades\Lang::class,
-        'Log' => Illuminate\Support\Facades\Log::class,
-        'Mail' => Illuminate\Support\Facades\Mail::class,
-        'Notification' => Illuminate\Support\Facades\Notification::class,
-        'Password' => Illuminate\Support\Facades\Password::class,
-        'Queue' => Illuminate\Support\Facades\Queue::class,
-        'Redirect' => Illuminate\Support\Facades\Redirect::class,
-        'Redis' => Illuminate\Support\Facades\Redis::class,
-        'Request' => Illuminate\Support\Facades\Request::class,
-        'Response' => Illuminate\Support\Facades\Response::class,
-        'Route' => Illuminate\Support\Facades\Route::class,
-        'Schema' => Illuminate\Support\Facades\Schema::class,
-        'Session' => Illuminate\Support\Facades\Session::class,
-        'Storage' => Illuminate\Support\Facades\Storage::class,
-        'Str' => Illuminate\Support\Str::class,
-        'URL' => Illuminate\Support\Facades\URL::class,
-        'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
-        'Activities' => Litepie\Support\Facades\Activities::class,
+    'aliases' => Facade::defaultAliases()->merge([
         'Captcha' => Litepie\Support\Facades\Captcha::class,
         'Filer' => Litepie\Support\Facades\Filer::class,
         'Form' => Litepie\Support\Facades\Form::class,
         'Hashids' => Litepie\Support\Facades\Hashids::class,
-        'Menu' => Litepie\Support\Facades\Menu::class,
         'Theme' => Litepie\Support\Facades\Theme::class,
         'Trans' => Litepie\Support\Facades\Trans::class,
         'Alerts' => Litepie\Notification\Facades\Alerts::class,
         'Workflow' => Litepie\Workflow\Workflow::class,
 
-        'Role' => App\Facades\Role::class,
-        'User' => App\Facades\User::class,
-        'Settings' => App\Facades\Setting::class,
-        'Settings' => App\Facades\Master::class,
+        'Role' => Litepie\Role\Facades\Role::class,
+        'User' => Litepie\User\Facades\User::class,
+        'Settings' => Litepie\Setting\Facades\Setting::class,
+        'Menu' => \Litepie\Menu\Facades\Menu::class,
+        'Master' => Litepie\Master\Facades\Master::class,
 
         'Block' => Litecms\Block\Facades\Block::class,
         'Contact' => Litecms\Contact\Facades\Contact::class,
         'Pages' => Litecms\Page\Facades\Pages::class,
-    ],
+        'LitecmsAdverts' => Litecms\Advert\Facades\Adverts::class,
+
+    ])->toArray(),
 
 ];

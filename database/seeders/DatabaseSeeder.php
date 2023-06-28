@@ -2,31 +2,26 @@
 
 namespace Database\Seeders;
 
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Litecms\Block\Seeds\BlockTableSeeder;
-use Litecms\Blog\Seeds\BlogTableSeeder;
-use Litecms\Contact\Seeds\ContactTableSeeder;
-use Litecms\Page\Seeds\PageTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
-        $this->call(MenuTableSeeder::class);
-        $this->call(UserTableSeeder::class);
-        $this->call(RoleTableSeeder::class);
-        $this->call(TeamTableSeeder::class);
-        $this->call(ClientTableSeeder::class);
-        $this->call(SettingTableSeeder::class);
+        $this->call(\Litepie\Menu\Database\Seeders\MenuTableSeeder::class);
+        $this->call(\Litepie\User\Database\Seeders\UserTableSeeder::class);
+        $this->call(\Litepie\Role\Database\Seeders\RoleTableSeeder::class);
+        $this->call(\Litepie\Team\Database\Seeders\TeamTableSeeder::class);
+        $this->call(\Litepie\User\Database\Seeders\ClientTableSeeder::class);
+        $this->call(\Litepie\Setting\Database\Seeders\SettingTableSeeder::class);
 
-        $this->call(BlockTableSeeder::class);
-        $this->call(BlogTableSeeder::class);
-        $this->call(ContactTableSeeder::class);
-        $this->call(PageTableSeeder::class);
+        $this->call(\Litecms\Block\Seeders\BlockTableSeeder::class);
+        $this->call(\Litecms\Blog\Seeders\BlogTableSeeder::class);
+        $this->call(\Litecms\Contact\Seeders\ContactTableSeeder::class);
+        $this->call(\Litecms\Page\Seeders\PageTableSeeder::class);
     }
 }

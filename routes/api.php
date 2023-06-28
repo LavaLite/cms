@@ -14,17 +14,16 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', 'PublicController@home');
-
-include 'litepie.php';
+include 'routes.php';
 
 Route::group(
     [
         'middleware' => 'trans',
         'prefix' => '{trans}',
         'as' => 'trans.',
-        'where' => ['trans' => Trans::keys('|')],
+        'where' => ['trans' => '[a-zA-Z]{2}'],
     ],
     function () {
-        include 'litepie.php';
+        include 'routes.php';
     }
 );
