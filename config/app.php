@@ -212,7 +212,6 @@ return [
         Litecms\Block\Providers\BlockServiceProvider::class,
         Litecms\Contact\Providers\ContactServiceProvider::class,
         Litecms\Page\Providers\PageServiceProvider::class,
-        Litecms\Blog\Providers\BlogServiceProvider::class,
 
         /*
          * Application Service Providers...
