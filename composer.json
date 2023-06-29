@@ -16,11 +16,14 @@
         "laravel/socialite": "~5.1",
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.2",
-        "lavalite/framework": "dev-develop",
+        "lavalite/framework": "^10.0",
         "league/fractal": "^0.20.1",
         "litecms/block": "^10.0",
         "litecms/contact": "^10.0",
-        "litecms/page": "^10.0"
+        "litecms/page": "^10.0",
+        "litefront/default": "^2.0",
+        "litefront/user": "^2.0",
+        "litefront/public": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -43,16 +46,6 @@
             "Tests\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "packages/lavalite/*"
-        },
-        {
-            "type": "path",
-            "url": "packages/litecms/*"
-        }
-    ],
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
