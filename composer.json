@@ -18,11 +18,9 @@
         "laravel/ui": "^4.2",
         "lavalite/framework": "dev-develop",
         "league/fractal": "^0.20.1",
-        "litecms/advert": "dev-develop",
-        "litecms/block": "dev-develop",
-        "litecms/blog": "dev-develop",
-        "litecms/contact": "dev-develop",
-        "litecms/page": "dev-develop"
+        "litecms/block": "^10.0",
+        "litecms/contact": "^10.0",
+        "litecms/page": "^10.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
