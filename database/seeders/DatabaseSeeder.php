@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(\Litepie\Setting\Database\Seeders\SettingTableSeeder::class);
 
         $this->call(\Litecms\Block\Seeders\BlockTableSeeder::class);
-        $this->call(\Litecms\Blog\Seeders\BlogTableSeeder::class);
         $this->call(\Litecms\Contact\Seeders\ContactTableSeeder::class);
         $this->call(\Litecms\Page\Seeders\PageTableSeeder::class);
     }
