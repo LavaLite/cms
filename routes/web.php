@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Arr;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,8 @@ Route::group(
     ],
     function () {
         include 'routes.php';
+
     }
 );
+
+require __DIR__.'/auth.php';

@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+
 Route::group(
     [
         'prefix' => '{guard}',
@@ -7,16 +10,15 @@ Route::group(
         'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
     ],
     function () {
-        Auth::routes();
-        Route::post('sanctum/login', 'Auth\SanctumController@login');
-        Route::get('sanctum/profile', 'Auth\SanctumController@profile');
         Route::get('/', 'ResourceController@home')->name('home');
-        Route::get('profile', 'Auth\ProfileController@profile');
-        Route::post('profile', 'Auth\ProfileController@postProfile');
-        Route::get('password', 'Auth\ProfileController@password');
-        Route::post('password', 'Auth\ProfileController@postPassword');
-        Route::get('profile/{user}', 'Auth\ProfileController@profile');
-        Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
-        Route::get('login/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        // Route::get('password', 'Auth\ProfileController@password');
+        // Route::post('password', 'Auth\ProfileController@postPassword');
+        // Route::get('profile/{user}', 'Auth\ProfileController@profile');
+        // Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+        // Route::get('login/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+        require __DIR__.'/auth.php';
     }
 );

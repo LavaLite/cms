@@ -15,7 +15,7 @@ class SetRouteGuard
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $guard = request()->guard;
+        $guard = request()->guard ?: 'client';
         $sub = request()->is('*api/*') ? 'api' : 'web';
         guard($guard . '.' . $sub);
         return $next($request);
