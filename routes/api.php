@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedApiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,6 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', 'PublicController@home');
-include 'routes.php';
 
 Route::group(
     [
@@ -24,6 +25,24 @@ Route::group(
         'where' => ['trans' => '[a-zA-Z]{2}'],
     ],
     function () {
-        include 'routes.php';
+
+        Route::post('logout', [AuthenticatedApiController::class, 'destroy'])
+            ->name('api.logout');
+    }
+);
+
+Route::group(
+    [
+        'prefix' => '{guard}',
+        'as' => 'guard.',
+        'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
+    ],
+    function () {
+        Route::get('profile', [AuthenticatedApiController::class, 'profile'])
+            ->name('api.profile');
+        Route::get('login', [AuthenticatedApiController::class, 'create'])
+            ->name('api.login');
+        Route::post('login', [AuthenticatedApiController::class, 'store'])
+            ->name('api.login');
     }
 );

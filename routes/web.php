@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ResourceController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Arr;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,6 @@ use Illuminate\Support\Arr;
 
 Route::get('/', 'PublicController@home');
 
-include 'routes.php';
-
 Route::group(
     [
         'middleware' => 'trans',
@@ -26,9 +25,26 @@ Route::group(
         'where' => ['trans' => '[a-zA-Z]{2}'],
     ],
     function () {
-        include 'routes.php';
-
+        Route::get('/', 'ResourceController@home')->name('home');
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        require __DIR__.'/auth.php';
     }
 );
 
-require __DIR__.'/auth.php';
+Route::group(
+    [
+        'prefix' => '{guard}',
+        'as' => 'guard.',
+        'where' => ['guard' => implode('|', array_keys(config('auth.guards')))],
+        'middleware' => ['set.guard']
+    ],
+    function () {
+        Route::get('/', [ResourceController::class, 'home'])->name('home');
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        require __DIR__.'/auth.php';
+    }
+);

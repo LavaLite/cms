@@ -8,8 +8,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Inertia\Inertia;
-use Inertia\Response;
 use Litepie\Http\Response\AuthResponse;
 use Litepie\Theme\ThemeAndViews;
 
@@ -22,9 +20,8 @@ class ProfileController extends Controller
      * @return void
      */
     public function __construct()
-    {
-        $this->middleware('set.guard');
-        $this->middleware('auth');
+    {        
+
         $this->middleware(function ($request, $next) {
             $this->response = resolve(AuthResponse::class);
             $this->setTheme();
@@ -37,15 +34,15 @@ class ProfileController extends Controller
      */
     public function edit(Request $request)
     {
-        return $this->response->setMetaTitle('Forgot Password')
-            ->layout('app')
-            ->view('user.profile')
+        return $this->response->setMetaTitle('Update Profile')
+        ->layout('user')
+        ->view('user.profile')
             ->data([
                 'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
                 'status' => session('status'),
             ])
             ->output();
-        
+
     }
 
     /**
@@ -61,7 +58,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit');
+        return Redirect::back();
     }
 
     /**

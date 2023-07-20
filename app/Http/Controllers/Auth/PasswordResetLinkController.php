@@ -36,7 +36,7 @@ class PasswordResetLinkController extends Controller
     {
         return $this->response->setMetaTitle('Forgot Password')
             ->layout('auth')
-            ->view('auth.passwords.email')
+            ->view('password.email')
             ->output();
     }
 
