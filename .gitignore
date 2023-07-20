@@ -106,4 +106,9 @@ Homestead.json
 # composer files
 composer.dev.json
 composer.lock
+
+# package files
 package-lock.json
+
+# all lock files
+*.lock
