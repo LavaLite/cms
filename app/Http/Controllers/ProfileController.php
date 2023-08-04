@@ -21,7 +21,7 @@ class ProfileController extends Controller
      */
     public function __construct()
     {        
-
+        $this->middleware('auth');
         $this->middleware(function ($request, $next) {
             $this->response = resolve(AuthResponse::class);
             $this->setTheme();
