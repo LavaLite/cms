@@ -7,13 +7,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Litepie\Role\Traits\CheckRoleAndPermission;
+use Litepie\User\Traits\CanResetPassword;
+use Litepie\User\Traits\UserProfile;
 
 class Client extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
     use Notifiable;
+    use CanResetPassword;
     use CheckRoleAndPermission;
+    use UserProfile;
 
     /**
      * Initialiaze client modal.
@@ -24,7 +28,6 @@ class Client extends Authenticatable
     {
         $this->setRole('client');
     }
-
 
     /**
      * The attributes that are mass assignable.
